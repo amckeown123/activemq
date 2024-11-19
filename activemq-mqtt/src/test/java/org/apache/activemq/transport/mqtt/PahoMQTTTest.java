@@ -452,7 +452,7 @@ public class PahoMQTTTest extends MQTTTestSupport {
         public void messageArrived(String topic, MqttMessage message) throws Exception {
             LOG.info("Received: {}", message);
             received.incrementAndGet();
-            messageQ.put(new AbstractMap.SimpleEntry(topic, new String(message.getPayload(), StandardCharsets.UTF_8)));
+            messageQ.put(new AbstractMap.SimpleEntry<String, String>(topic, new String(message.getPayload(), StandardCharsets.UTF_8)));
         }
 
         @Override

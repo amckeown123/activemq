@@ -16,7 +16,7 @@
  */
 package org.apache.activemq.console.command.store;
 
-import org.apache.activemq.console.command.store.protobuf.*;
+import org.apache.activemq.console.command.store.proto.*;
 import org.apache.activemq.console.command.store.tar.TarEntry;
 import org.apache.activemq.console.command.store.tar.TarOutputStream;
 import org.apache.activemq.protobuf.AsciiBuffer;
