@@ -301,7 +301,7 @@
     								<artifactId>
     									maven-dependency-plugin
     								</artifactId>
-    								<versionRange>[2.8,)</versionRange>
+    								<versionRange>[3.8,)</versionRange>
     								<goals>
     									<goal>unpack</goal>
     								</goals>
