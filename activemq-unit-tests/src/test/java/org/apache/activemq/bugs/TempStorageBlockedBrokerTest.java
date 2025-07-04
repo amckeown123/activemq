@@ -127,7 +127,7 @@ public class TempStorageBlockedBrokerTest extends TestSupport {
             }
         }
 
-        LOG.info("Connection Timeout: Retrying.. count: " + count);
+        LOG.info("Connection Timeout: Retrying. count: " + count);
 
         while ((m = consumer.receive(messageReceiveTimeout)) != null) {
             count++;

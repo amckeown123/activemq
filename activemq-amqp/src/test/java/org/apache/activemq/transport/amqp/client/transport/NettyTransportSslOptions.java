@@ -53,10 +53,10 @@ public class NettyTransportSslOptions extends NettyTransportOptions {
     private int defaultSslPort = DEFAULT_SSL_PORT;
 
     static {
-        INSTANCE.setKeyStoreLocation(System.getProperty("javax.net.ssl.keyStore"));
-        INSTANCE.setKeyStorePassword(System.getProperty("javax.net.ssl.keyStorePassword"));
-        INSTANCE.setTrustStoreLocation(System.getProperty("javax.net.ssl.trustStore"));
-        INSTANCE.setTrustStorePassword(System.getProperty("javax.net.ssl.keyStorePassword"));
+        INSTANCE.setKeyStoreLocation(System.getProperty("jakarta.net.ssl.keyStore"));
+        INSTANCE.setKeyStorePassword(System.getProperty("jakarta.net.ssl.keyStorePassword"));
+        INSTANCE.setTrustStoreLocation(System.getProperty("jakarta.net.ssl.trustStore"));
+        INSTANCE.setTrustStorePassword(System.getProperty("jakarta.net.ssl.keyStorePassword"));
     }
 
     /**

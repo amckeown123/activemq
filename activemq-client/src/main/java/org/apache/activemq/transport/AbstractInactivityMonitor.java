@@ -118,14 +118,14 @@ public abstract class AbstractInactivityMonitor extends TransportFilter {
                 LOG.debug("{}ms elapsed since last read check.", elapsed);
             }
 
-            // Perhaps the timer executed a read check late.. and then executes
+            // Perhaps the timer executed a read check late. and then executes
             // the next read check on time which causes the time elapsed between
-            // read checks to be small..
+            // read checks to be small.
 
             // If less than 90% of the read check Time elapsed then abort this
             // read check.
             if (!allowReadCheck(elapsed)) {
-                LOG.debug("Aborting read check...Not enough time elapsed since last read check.");
+                LOG.debug("Aborting read check..Not enough time elapsed since last read check.");
                 return;
             }
 

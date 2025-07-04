@@ -40,7 +40,7 @@ public class Subscriber implements MessageListener {
         if (args.length > 0) {
             url = args[0].trim();
         }
-        System.out.println("\nWaiting to receive messages... Either waiting for END message or press Ctrl+C to exit");
+        System.out.println("\nWaiting to receive messages.. Either waiting for END message or press Ctrl+C to exit");
         ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory("admin", "password", url);
         Connection connection = null;
         final CountDownLatch latch = new CountDownLatch(1);
@@ -71,7 +71,7 @@ public class Subscriber implements MessageListener {
                 try {
                     connection.close();
                 } catch (JMSException e) {
-                    System.out.println("Could not close an open connection...");
+                    System.out.println("Could not close an open connection..");
                 }
             }
         }

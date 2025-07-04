@@ -311,7 +311,7 @@ abstract public class MessagePriorityTest extends CombinationTestSupport {
             assertNotNull("Message " + i + " was null", msg);
             assertEquals("Message " + i + " has wrong priority", i < MSG_NUM ? HIGH_PRI : LOW_PRI, msg.getJMSPriority());
             if (i>0 && i%closeFrequency==0) {
-                LOG.info("Closing durable sub.. on: " + i);
+                LOG.info("Closing durable sub. on: " + i);
                 sub.close();
                 sub = sess.createDurableSubscriber(topic, subName);
             }
@@ -586,7 +586,7 @@ abstract public class MessagePriorityTest extends CombinationTestSupport {
         highPri.start();
         highPri.join();
 
-        LOG.info("Starting consumer...");
+        LOG.info("Starting consumer..");
         MessageConsumer queueConsumer = sess.createConsumer(queue);
         for (int i = 0; i < 500; i++) {
             Message msg = queueConsumer.receive(20000);

@@ -26,11 +26,11 @@ import java.net.UnknownHostException;
 import java.nio.ByteBuffer;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import javax.net.SocketFactory;
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.SSLEngine;
-import javax.net.ssl.SSLEngineResult;
-import javax.net.ssl.SSLParameters;
+import jakarta.net.SocketFactory;
+import jakarta.net.ssl.SSLContext;
+import jakarta.net.ssl.SSLEngine;
+import jakarta.net.ssl.SSLEngineResult;
+import jakarta.net.ssl.SSLParameters;
 
 import org.apache.activemq.thread.TaskRunnerFactory;
 import org.apache.activemq.util.IOExceptionSupport;

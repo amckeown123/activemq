@@ -128,7 +128,7 @@ public abstract class AbstractKahaDBMessageStoreSizeTest extends AbstractMessage
             FileUtils.deleteQuietly(index);
         }
 
-        //append more messages...at this point the index should be rebuilt
+        //append more messages..at this point the index should be rebuilt
         createStore(false, dataDirectory);
         writeMessages();
 

@@ -22,7 +22,7 @@ import java.security.NoSuchAlgorithmException;
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
-import javax.security.sasl.SaslException;
+import jakarta.security.sasl.SaslException;
 
 /**
  * Implements the SASL PLAIN authentication Mechanism.

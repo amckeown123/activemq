@@ -87,11 +87,11 @@ public class PageFile {
     // And the file names in that directory will be based on this name.
     private final String name;
 
-    // File handle used for reading pages..
+    // File handle used for reading pages.
     private RecoverableRandomAccessFile readFile;
-    // File handle used for writing pages..
+    // File handle used for writing pages.
     private RecoverableRandomAccessFile writeFile;
-    // File handle used for writing pages..
+    // File handle used for writing pages.
     private RecoverableRandomAccessFile recoveryFile;
 
     // The size of pages
@@ -99,7 +99,7 @@ public class PageFile {
 
     // The minimum number of space allocated to the recovery file in number of pages.
     private int recoveryFileMinPageCount = 1000;
-    // The max size that we let the recovery file grow to.. ma exceed the max, but the file will get resize
+    // The max size that we let the recovery file grow to. ma exceed the max, but the file will get resize
     // to this max size as soon as  possible.
     private int recoveryFileMaxPageCount = 10000;
     // The number of pages in the current recovery buffer
@@ -118,7 +118,7 @@ public class PageFile {
     private int pageCacheSize = DEFAULT_PAGE_CACHE_SIZE;
 
     // Should first log the page write to the recovery buffer? Avoids partial
-    // page write failures..
+    // page write failures.
     private boolean enableRecoveryFile = true;
     // Will we sync writes to disk. Ensures that data will not be lost after a checkpoint()
     private boolean enableDiskSyncs = true;
@@ -417,7 +417,7 @@ public class PageFile {
                     loadFreeList();
                 }
             } else {
-                LOG.debug(toString() + ", Recovering page file...");
+                LOG.debug(toString() + ", Recovering page file..");
                 nextTxid.set(redoRecoveryUpdates());
                 trackingFreeDuringRecovery.set(new SequenceSet());
             }
@@ -459,7 +459,7 @@ public class PageFile {
     }
 
     private void recoverFreePages(final long lastRecoveryPage) throws Exception {
-        LOG.info(toString() + ". Recovering pageFile free list due to prior unclean shutdown..");
+        LOG.info(toString() + ". Recovering pageFile free list due to prior unclean shutdown.");
         SequenceSet newFreePages = new SequenceSet();
         // need new pageFile instance to get unshared readFile
         PageFile recoveryPageFile = new PageFile(directory, name);
@@ -681,7 +681,7 @@ public class PageFile {
         } else if (v2 == null || v1.metaDataTxId < 0) {
             metaData = v1;
         } else if (v1.metaDataTxId == v2.metaDataTxId) {
-            metaData = v1; // use the first since the 2nd could be a partial..
+            metaData = v1; // use the first since the 2nd could be a partial.
         } else {
             metaData = v2; // use the second cause the first is probably a partial.
         }
@@ -698,7 +698,7 @@ public class PageFile {
         if (os.size() > PAGE_FILE_HEADER_SIZE / 2) {
             throw new IOException("Configuation is larger than: " + PAGE_FILE_HEADER_SIZE / 2);
         }
-        // Fill the rest with space...
+        // Fill the rest with space..
         byte[] filler = new byte[(PAGE_FILE_HEADER_SIZE / 2) - os.size()];
         Arrays.fill(filler, (byte) ' ');
         os.write(filler);
@@ -706,7 +706,7 @@ public class PageFile {
 
         byte[] d = os.toByteArray();
 
-        // So we don't loose it.. write it 2 times...
+        // So we don't loose it. write it 2 times..
         writeFile.seek(0);
         writeFile.write(d);
         writeFile.sync();
@@ -929,13 +929,13 @@ public class PageFile {
 
         Sequence seq = freeList.removeFirstSequence(count);
 
-        // We may need to create new free pages...
+        // We may need to create new free pages..
         if (seq == null) {
 
             Page<T> first = null;
             int c = count;
 
-            // Perform the id's only once....
+            // Perform the id's only once..
             long pageId = nextFreePageId.getAndAdd(count);
             long writeTxnId = nextTxid.getAndAdd(count);
 
@@ -1054,7 +1054,7 @@ public class PageFile {
     private boolean canStartWriteBatch() {
         int capacityUsed = ((writes.size() * 100) / writeBatchSize);
         if (enabledWriteThread) {
-            // The constant 10 here controls how soon write batches start going to disk..
+            // The constant 10 here controls how soon write batches start going to disk.
             // would be nice to figure out how to auto tune that value.  Make to small and
             // we reduce through put because we are locking the write mutex too often doing writes
             return capacityUsed >= 10 || checkpointLatch != null;
@@ -1095,17 +1095,17 @@ public class PageFile {
     }
 
     ///////////////////////////////////////////////////////////////////
-    // Internal Double write implementation follows...
+    // Internal Double write implementation follows..
     ///////////////////////////////////////////////////////////////////
 
     private void pollWrites() {
         try {
             while (!stopWriter.get()) {
-                // Wait for a notification...
+                // Wait for a notification..
                 synchronized (writes) {
                     writes.notifyAll();
 
-                    // If there is not enough to write, wait for a notification...
+                    // If there is not enough to write, wait for a notification..
                     while (writes.isEmpty() && checkpointLatch == null && !stopWriter.get()) {
                         writes.wait(100);
                     }
@@ -1128,7 +1128,7 @@ public class PageFile {
         CountDownLatch checkpointLatch;
         ArrayList<PageWrite> batch;
         synchronized (writes) {
-            // If there is not enough to write, wait for a notification...
+            // If there is not enough to write, wait for a notification..
 
             batch = new ArrayList<PageWrite>(writes.size());
             // build a write batch from the current write cache.
@@ -1168,7 +1168,7 @@ public class PageFile {
 
                 // Record the page writes in the recovery buffer.
                 recoveryFile.seek(0);
-                // Store the next tx id...
+                // Store the next tx id..
                 recoveryFile.writeLong(nextTxid.get());
                 // Store the checksum for thw write batch so that on recovery we
                 // know if we have a consistent
@@ -1255,7 +1255,7 @@ public class PageFile {
 
         // Are we initializing the recovery file?
         if (recoveryFile.length() == 0) {
-            // Write an empty header..
+            // Write an empty header.
             recoveryFile.write(new byte[RECOVERY_FILE_HEADER_SIZE]);
             return 0;
         }
@@ -1281,7 +1281,7 @@ public class PageFile {
                 batch.put(offset, data);
             }
         } catch (Exception e) {
-            // If an error occurred it was cause the redo buffer was not full written out correctly.. so don't redo it.
+            // If an error occurred it was cause the redo buffer was not full written out correctly. so don't redo it.
             // as the pages should still be consistent.
             LOG.debug("Redo buffer was not fully intact: ", e);
             return nextTxId;

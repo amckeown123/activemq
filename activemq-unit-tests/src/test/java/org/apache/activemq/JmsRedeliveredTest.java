@@ -87,7 +87,7 @@ public class JmsRedeliveredTest extends TestCase {
         MessageProducer producer = createProducer(session, queue);
         producer.send(createTextMessage(session));
 
-        // Consume the message...
+        // Consume the message..
         MessageConsumer consumer = session.createConsumer(queue);
         Message msg = consumer.receive(1000);
         assertNotNull(msg);
@@ -99,7 +99,7 @@ public class JmsRedeliveredTest extends TestCase {
         session.close();
         session = connection.createSession(false, Session.CLIENT_ACKNOWLEDGE);
 
-        // Attempt to Consume the message...
+        // Attempt to Consume the message..
         consumer = session.createConsumer(queue);
         msg = consumer.receive(2000);
         assertNotNull(msg);
@@ -120,7 +120,7 @@ public class JmsRedeliveredTest extends TestCase {
         producer.send(createTextMessage(session, "1"));
         producer.send(createTextMessage(session, "2"));
 
-        // Consume the message...
+        // Consume the message..
         MessageConsumer consumer = session.createConsumer(queue);
         Message msg = consumer.receive(1000);
         assertNotNull(msg);
@@ -139,7 +139,7 @@ public class JmsRedeliveredTest extends TestCase {
         session.close();
         session = connection.createSession(false, Session.CLIENT_ACKNOWLEDGE);
 
-        // Attempt to Consume the message...
+        // Attempt to Consume the message..
         consumer = session.createConsumer(queue);
         msg = consumer.receive(2000);
         assertNotNull(msg);
@@ -164,7 +164,7 @@ public class JmsRedeliveredTest extends TestCase {
         MessageProducer producer = createProducer(session, queue);
         producer.send(createTextMessage(session));
 
-        // Consume the message...
+        // Consume the message..
         MessageConsumer consumer = session.createConsumer(queue);
         Message msg = consumer.receive(1000);
         assertNotNull(msg);
@@ -175,7 +175,7 @@ public class JmsRedeliveredTest extends TestCase {
         // redelivered.
         session.recover();
 
-        // Attempt to Consume the message...
+        // Attempt to Consume the message..
         msg = consumer.receive(2000);
         assertNotNull(msg);
         assertTrue("Message should be redelivered.", msg.getJMSRedelivered());
@@ -199,16 +199,16 @@ public class JmsRedeliveredTest extends TestCase {
         producer.send(createTextMessage(session));
         session.commit();
 
-        // Get the message... Should not be redelivered.
+        // Get the message.. Should not be redelivered.
         MessageConsumer consumer = session.createConsumer(queue);
         Message msg = consumer.receive(1000);
         assertNotNull(msg);
         assertFalse("Message should not be redelivered.", msg.getJMSRedelivered());
 
-        // Rollback.. should cause redelivery.
+        // Rollback. should cause redelivery.
         session.rollback();
 
-        // Attempt to Consume the message...
+        // Attempt to Consume the message..
         msg = consumer.receive(2000);
         assertNotNull(msg);
         assertTrue("Message should be redelivered.", msg.getJMSRedelivered());
@@ -240,7 +240,7 @@ public class JmsRedeliveredTest extends TestCase {
         producer.setDeliveryMode(DeliveryMode.PERSISTENT);
         producer.send(createTextMessage(session));
 
-        // Consume the message...
+        // Consume the message..
         Message msg = consumer.receive(1000);
         assertNotNull(msg);
         assertFalse("Message should not be re-delivered.", msg.getJMSRedelivered());
@@ -251,7 +251,7 @@ public class JmsRedeliveredTest extends TestCase {
         session.close();
         session = connection.createSession(false, Session.CLIENT_ACKNOWLEDGE);
 
-        // Attempt to Consume the message...
+        // Attempt to Consume the message..
         consumer = session.createDurableSubscriber(topic, "sub1");
         msg = consumer.receive(2000);
         assertNotNull(msg);
@@ -279,7 +279,7 @@ public class JmsRedeliveredTest extends TestCase {
         MessageProducer producer = createProducer(session, topic);
         producer.send(createTextMessage(session));
 
-        // Consume the message...
+        // Consume the message..
         Message msg = consumer.receive(1000);
         assertNotNull(msg);
         assertFalse("Message should not be redelivered.", msg.getJMSRedelivered());
@@ -289,7 +289,7 @@ public class JmsRedeliveredTest extends TestCase {
         // redelivered.
         session.recover();
 
-        // Attempt to Consume the message...
+        // Attempt to Consume the message..
         msg = consumer.receive(2000);
         assertNotNull(msg);
         assertTrue("Message should be redelivered.", msg.getJMSRedelivered());
@@ -316,15 +316,15 @@ public class JmsRedeliveredTest extends TestCase {
         producer.send(createTextMessage(session));
         session.commit();
 
-        // Get the message... Should not be redelivered.
+        // Get the message.. Should not be redelivered.
         Message msg = consumer.receive(1000);
         assertNotNull(msg);
         assertFalse("Message should not be redelivered.", msg.getJMSRedelivered());
 
-        // Rollback.. should cause redelivery.
+        // Rollback. should cause redelivery.
         session.rollback();
 
-        // Attempt to Consume the message...
+        // Attempt to Consume the message..
         msg = consumer.receive(2000);
         assertNotNull(msg);
         assertTrue("Message should be redelivered.", msg.getJMSRedelivered());
@@ -350,7 +350,7 @@ public class JmsRedeliveredTest extends TestCase {
         MessageProducer producer = createProducer(session, topic);
         producer.send(createTextMessage(session));
 
-        // Consume the message...
+        // Consume the message..
         Message msg = consumer.receive(1000);
         assertNotNull(msg);
         assertFalse("Message should not be redelivered.", msg.getJMSRedelivered());
@@ -360,7 +360,7 @@ public class JmsRedeliveredTest extends TestCase {
         // redelivered.
         session.recover();
 
-        // Attempt to Consume the message...
+        // Attempt to Consume the message..
         msg = consumer.receive(2000);
         assertNotNull(msg);
         assertTrue("Message should be redelivered.", msg.getJMSRedelivered());
@@ -387,15 +387,15 @@ public class JmsRedeliveredTest extends TestCase {
         producer.send(createTextMessage(session));
         session.commit();
 
-        // Get the message... Should not be redelivered.
+        // Get the message.. Should not be redelivered.
         Message msg = consumer.receive(1000);
         assertNotNull(msg);
         assertFalse("Message should not be redelivered.", msg.getJMSRedelivered());
 
-        // Rollback.. should cause redelivery.
+        // Rollback. should cause redelivery.
         session.rollback();
 
-        // Attempt to Consume the message...
+        // Attempt to Consume the message..
         msg = consumer.receive(2000);
         assertNotNull(msg);
         assertTrue("Message should be redelivered.", msg.getJMSRedelivered());

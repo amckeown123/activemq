@@ -176,7 +176,7 @@ public final class ThreadPoolUtils {
             if (executorService.awaitTermination(interval, TimeUnit.MILLISECONDS)) {
                 return;
             } else {
-                LOG.info("Waited {} for ExecutorService: {} to terminate...", TimeUtils.printDuration(watch.taken()), executorService);
+                LOG.info("Waited {} for ExecutorService: {} to terminate..", TimeUtils.printDuration(watch.taken()), executorService);
             }
         }
     }
@@ -201,7 +201,7 @@ public final class ThreadPoolUtils {
             if (executorService.awaitTermination(interval, TimeUnit.MILLISECONDS)) {
                 done = true;
             } else {
-                LOG.info("Waited {} for ExecutorService: {} to terminate...", TimeUtils.printDuration(watch.taken()), executorService);
+                LOG.info("Waited {} for ExecutorService: {} to terminate..", TimeUtils.printDuration(watch.taken()), executorService);
                 // recalculate interval
                 interval = Math.min(2000, shutdownAwaitTermination - watch.taken());
             }

@@ -96,10 +96,10 @@ public class DoubleSubscriptionTest extends NetworkTestSupport {
         } catch (InvalidClientIDException expected) {
             // //AMQ-6561 - delayed stop for all exceptions on addConnection
         }
-        // After this there should be 2 messages on the broker...
+        // After this there should be 2 messages on the broker..
         connection2.request(createMessage(producerInfo2, destination, DeliveryMode.PERSISTENT));
 
-        // ... let's start a fresh consumer...
+        // .. let's start a fresh consumer..
         connection1.stop();
         StubConnection connection3 = createRemoteConnection();
         ConnectionInfo connectionInfo3 = createConnectionInfo();
@@ -109,7 +109,7 @@ public class DoubleSubscriptionTest extends NetworkTestSupport {
         connection3.send(sessionInfo3);
         connection3.request(consumerInfo3);
 
-        // ... and then grab the 2 that should be there.
+        // .. and then grab the 2 that should be there.
         assertNotNull(receiveMessage(connection3));
         assertNotNull(receiveMessage(connection3));
         assertNoMessagesLeft(connection3);

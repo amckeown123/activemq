@@ -78,7 +78,7 @@ public class Client {
                 try {
                     connection.close();
                 } catch (JMSException e) {
-                    System.out.println("Could not close an open connection...");
+                    System.out.println("Could not close an open connection..");
                 }
             }
         }
@@ -95,11 +95,11 @@ public class Client {
                 break;
             } else if (line.length() > 0) {
                 if (line.trim().equals("ROLLBACK")) {
-                    System.out.println("Rolling back...");
+                    System.out.println("Rolling back..");
                     senderSession.rollback();
                     System.out.println("Messages have been rolledback");
                 } else if (line.trim().equals("COMMIT")) {
-                    System.out.println("Committing... ");
+                    System.out.println("Committing.. ");
                     senderSession.commit();
                     System.out.println("Messages should have been sent");
                 } else {

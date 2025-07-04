@@ -91,11 +91,11 @@ public class AMQ1936Test extends TestCase {
                 receiver.setShouldStop(true);
             }
 
-            logger.info("Waiting for receivers to shutdown..");
+            logger.info("Waiting for receivers to shutdown.");
             if (!threadPool.awaitTermination(10, TimeUnit.SECONDS)) {
                 logger.warn("Not all receivers completed shutdown.");
             } else {
-                logger.info("All receivers shutdown successfully..");
+                logger.info("All receivers shutdown successfully.");
             }
         }
 

@@ -18,6 +18,8 @@ package org.apache.activemq.filter;
 
 import java.util.HashMap;
 import java.util.List;
+
+
 import org.apache.activemq.filter.function.FilterFunction;
 
 /**
@@ -28,10 +30,10 @@ import org.apache.activemq.filter.function.FilterFunction;
  */
 
 public class FunctionCallExpression implements Expression {
-    protected static final HashMap<String, functionRegistration> functionRegistry = new HashMap();
+    protected static final HashMap<String, functionRegistration> functionRegistry = new HashMap<String, functionRegistration>();
 
     protected String functionName;
-    protected java.util.ArrayList arguments;
+    protected java.util.ArrayList<Expression> arguments;
     protected FilterFunction filterFunc;
 
     static {
@@ -99,7 +101,7 @@ public class FunctionCallExpression implements Expression {
         }
 
         if (func_reg != null) {
-            this.arguments = new java.util.ArrayList();
+            this.arguments = new java.util.ArrayList<Expression>();
             this.arguments.addAll(args);
             this.functionName = func_name;
             this.filterFunc = func_reg.getFilterFunction();
@@ -270,7 +272,12 @@ public class FunctionCallExpression implements Expression {
      */
 
     public static class invalidFunctionExpressionException extends java.lang.Exception {
-        public invalidFunctionExpressionException(String msg) {
+        /**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
+
+		public invalidFunctionExpressionException(String msg) {
             super(msg);
         }
 

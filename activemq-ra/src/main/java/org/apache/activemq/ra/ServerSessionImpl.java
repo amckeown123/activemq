@@ -131,7 +131,7 @@ public class ServerSessionImpl implements ServerSession, InboundContext, Work, D
         log.debug("Starting run.");
         try {
             workManager.scheduleWork(this, WorkManager.INDEFINITE, null, new WorkListener() {
-                // The work listener is useful only for debugging...
+                // The work listener is useful only for debugging..
                 public void workAccepted(WorkEvent event) {
                     log.debug("Work accepted: " + event);
                 }
@@ -234,7 +234,7 @@ public class ServerSessionImpl implements ServerSession, InboundContext, Work, D
                 if (transactionContext != null && transactionContext.isInLocalTransaction()) {
                     if (!useRAManagedTx) {
                         // Sanitiy Check: If the local transaction has not been
-                        // commited..
+                        // commited.
                         // Commit it now.
                         log.warn("Local transaction had not been commited. Commiting now.");
                     }
@@ -249,7 +249,7 @@ public class ServerSessionImpl implements ServerSession, InboundContext, Work, D
     }
 
     /**
-     * @see javax.resource.spi.work.Work#release()
+     * @see jakarta.resource.spi.work.Work#release()
      */
     public void release() {
         log.debug("release called");

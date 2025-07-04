@@ -27,7 +27,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import javax.net.ssl.SSLSocketFactory;
+import jakarta.net.ssl.SSLSocketFactory;
 
 import org.apache.activemq.util.Wait;
 import org.fusesource.mqtt.client.BlockingConnection;

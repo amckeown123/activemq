@@ -101,7 +101,7 @@ class Listener {
             }
         });
 
-        // Wait forever..
+        // Wait forever.
         synchronized (Listener.class) {
             while(true)
                 Listener.class.wait();

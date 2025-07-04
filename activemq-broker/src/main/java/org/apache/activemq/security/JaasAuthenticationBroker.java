@@ -20,8 +20,8 @@ import java.security.Principal;
 import java.security.cert.X509Certificate;
 import java.util.Set;
 
-import javax.security.auth.Subject;
-import javax.security.auth.login.LoginContext;
+import jakarta.security.auth.Subject;
+import jakarta.security.auth.login.LoginContext;
 
 import org.apache.activemq.broker.Broker;
 import org.apache.activemq.broker.ConnectionContext;

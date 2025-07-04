@@ -20,7 +20,7 @@ package org.apache.activemq.jaas;
 import java.security.cert.X509Certificate;
 import java.util.Set;
 
-import javax.security.auth.login.LoginException;
+import jakarta.security.auth.login.LoginException;
 
 public class StubCertificateLoginModule extends CertificateLoginModule {
     final String userName;

@@ -62,7 +62,7 @@ class Publisher {
         for( int i=1; i <= messages; i ++) {
 
             // Send the publish without waiting for it to complete. This allows us
-            // to send multiple message without blocking..
+            // to send multiple message without blocking.
             queue.add(connection.publish(topic, msg, QoS.AT_LEAST_ONCE, false));
 
             // Eventually we start waiting for old publish futures to complete

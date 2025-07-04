@@ -257,7 +257,7 @@ public class JmsSessionRecoverTest extends TestCase {
                         assertFalse(message.getJMSRedelivered());
                         break;
                     case 2:
-                        // This should rollback the delivery of this message..
+                        // This should rollback the delivery of this message.
                         // and re-deliver.
                         assertEquals("Second", message.getText());
                         assertFalse(message.getJMSRedelivered());

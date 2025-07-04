@@ -70,7 +70,7 @@ public class AMQ4323Test {
         configurePersistence(broker, delete);
 
         broker.start();
-        LOG.info("Starting broker..");
+        LOG.info("Starting broker.");
     }
 
     protected void configurePersistence(BrokerService brokerService, boolean deleteAllOnStart) throws Exception {

@@ -95,7 +95,7 @@ public class NetworkReconnectTest extends TestCase {
         assertEquals(messageId, message.getJMSMessageID());
         assertNull(consumer.receiveNoWait());
 
-        // Restart the first broker...
+        // Restart the first broker..
         stopProducerBroker();
         startProducerBroker();
 
@@ -125,7 +125,7 @@ public class NetworkReconnectTest extends TestCase {
         assertEquals(messageId, message.getJMSMessageID());
         assertNull(consumer.receiveNoWait());
 
-        // Restart the first broker...
+        // Restart the first broker..
         stopConsumerBroker();
         waitForConsumerToLeave(counter);
         startConsumerBroker();

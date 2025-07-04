@@ -20,7 +20,7 @@ import java.io.IOException;
 import java.security.cert.X509Certificate;
 
 import javax.management.remote.JMXPrincipal;
-import javax.net.ssl.SSLSocket;
+import jakarta.net.ssl.SSLSocket;
 
 /**
  * 

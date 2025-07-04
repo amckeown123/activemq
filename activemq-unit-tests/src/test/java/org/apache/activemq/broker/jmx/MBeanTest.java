@@ -380,7 +380,7 @@ public class MBeanTest extends EmbeddedBrokerTestSupport {
         echo("current queue size: " + initialQueueSize);
         assertTrue("dest has some memory usage", queue.getMemoryPercentUsage() > 0);
 
-        // lets create a duff consumer which keeps rolling back...
+        // lets create a duff consumer which keeps rolling back..
         Session session = connection.createSession(true, Session.SESSION_TRANSACTED);
         MessageConsumer consumer = session.createConsumer(new ActiveMQQueue(getDestinationString()));
         Message message = consumer.receive(5000);
@@ -610,13 +610,13 @@ public class MBeanTest extends EmbeddedBrokerTestSupport {
         String queueName = getDestinationString() + ".SendMBBean";
 
         ObjectName brokerName = assertRegisteredObjectName(domain + ":type=Broker,brokerName=localhost");
-        echo("Create QueueView MBean...");
+        echo("Create QueueView MBean..");
         BrokerViewMBean broker = MBeanServerInvocationHandler.newProxyInstance(mbeanServer, brokerName, BrokerViewMBean.class, true);
         broker.addQueue(queueName);
 
         ObjectName queueViewMBeanName = assertRegisteredObjectName(domain + ":type=Broker,brokerName=localhost,destinationType=Queue,destinationName=" + queueName);
 
-        echo("Create QueueView MBean...");
+        echo("Create QueueView MBean..");
         QueueViewMBean proxy = MBeanServerInvocationHandler.newProxyInstance(mbeanServer, queueViewMBeanName, QueueViewMBean.class, true);
 
         proxy.purge();
@@ -702,13 +702,13 @@ public class MBeanTest extends EmbeddedBrokerTestSupport {
         String queueName = getDestinationString() + ".SendMBBean";
 
         ObjectName brokerName = assertRegisteredObjectName(domain + ":type=Broker,brokerName=localhost");
-        echo("Create QueueView MBean...");
+        echo("Create QueueView MBean..");
         BrokerViewMBean broker = MBeanServerInvocationHandler.newProxyInstance(mbeanServer, brokerName, BrokerViewMBean.class, true);
         broker.addQueue(queueName);
 
         ObjectName queueViewMBeanName = assertRegisteredObjectName(domain + ":type=Broker,brokerName=localhost,destinationType=Queue,destinationName=" + queueName);
 
-        echo("Create QueueView MBean...");
+        echo("Create QueueView MBean..");
         QueueViewMBean proxy = MBeanServerInvocationHandler.newProxyInstance(mbeanServer, queueViewMBeanName, QueueViewMBean.class, true);
 
         proxy.purge();
@@ -736,13 +736,13 @@ public class MBeanTest extends EmbeddedBrokerTestSupport {
         String queueName = getDestinationString() + ".SendMBBean";
 
         ObjectName brokerName = assertRegisteredObjectName(domain + ":type=Broker,brokerName=localhost");
-        echo("Create QueueView MBean...");
+        echo("Create QueueView MBean..");
         BrokerViewMBean broker = MBeanServerInvocationHandler.newProxyInstance(mbeanServer, brokerName, BrokerViewMBean.class, true);
         broker.addQueue(queueName);
 
         ObjectName queueViewMBeanName = assertRegisteredObjectName(domain + ":type=Broker,brokerName=localhost,destinationType=Queue,destinationName=" + queueName);
 
-        echo("Create QueueView MBean...");
+        echo("Create QueueView MBean..");
         QueueViewMBean proxy = MBeanServerInvocationHandler.newProxyInstance(mbeanServer, queueViewMBeanName, QueueViewMBean.class, true);
 
         proxy.purge();
@@ -779,7 +779,7 @@ public class MBeanTest extends EmbeddedBrokerTestSupport {
 
         ObjectName queueViewMBeanName = assertRegisteredObjectName(domain + ":type=Broker,brokerName=localhost,destinationType=Queue,destinationName=" + getDestinationString());
 
-        echo("Create QueueView MBean...");
+        echo("Create QueueView MBean..");
         QueueViewMBean proxy = MBeanServerInvocationHandler.newProxyInstance(mbeanServer, queueViewMBeanName, QueueViewMBean.class, true);
 
         long concount = proxy.getConsumerCount();
@@ -829,7 +829,7 @@ public class MBeanTest extends EmbeddedBrokerTestSupport {
     protected void assertCreateAndDestroyDurableSubscriptions() throws Exception {
         // lets create a new topic
         ObjectName brokerName = assertRegisteredObjectName(domain + ":type=Broker,brokerName=localhost");
-        echo("Create QueueView MBean...");
+        echo("Create QueueView MBean..");
         BrokerViewMBean broker = MBeanServerInvocationHandler.newProxyInstance(mbeanServer, brokerName, BrokerViewMBean.class, true);
 
         broker.addTopic(getDestinationString());
@@ -854,7 +854,7 @@ public class MBeanTest extends EmbeddedBrokerTestSupport {
     protected void assertCreateAndDestroyOfflineDurableSubscriptions() throws Exception {
         // lets create a new topic
         ObjectName brokerName = assertRegisteredObjectName(domain + ":type=Broker,brokerName=localhost");
-        echo("Create QueueView MBean...");
+        echo("Create QueueView MBean..");
         BrokerViewMBean broker = MBeanServerInvocationHandler.newProxyInstance(mbeanServer, brokerName, BrokerViewMBean.class, true);
 
         broker.addTopic(getDestinationString());
@@ -1044,7 +1044,7 @@ public class MBeanTest extends EmbeddedBrokerTestSupport {
     protected void tearDown() throws Exception {
         if (waitForKeyPress) {
             // We are running from the command line so let folks browse the
-            // mbeans...
+            // mbeans..
             System.out.println();
             System.out.println("Press enter to terminate the program.");
             System.out.println("In the meantime you can use your JMX console to view the current MBeans");
@@ -1353,7 +1353,7 @@ public class MBeanTest extends EmbeddedBrokerTestSupport {
         Topic topic = session.createTopic(topicName);
 
         ObjectName brokerName = assertRegisteredObjectName(domain + ":type=Broker,brokerName=localhost");
-        echo("Create QueueView MBean...");
+        echo("Create QueueView MBean..");
         BrokerViewMBean broker = MBeanServerInvocationHandler.newProxyInstance(mbeanServer, brokerName, BrokerViewMBean.class, true);
 
         assertEquals("Durable subscriber count", 0, broker.getDurableTopicSubscribers().length);

@@ -382,7 +382,7 @@ public class Topic extends BaseDestination implements Task {
         }
 
         // There is delay between the client sending it and it arriving at the
-        // destination.. it may have expired.
+        // destination. it may have expired.
         if (message.isExpired()) {
             broker.messageExpired(context, message, null);
             getDestinationStatistics().getExpired().increment();
@@ -423,7 +423,7 @@ public class Topic extends BaseDestination implements Task {
                             public void run() {
                                 try {
 
-                                    // While waiting for space to free up...
+                                    // While waiting for space to free up..
                                     // the transaction may be done
                                     if (message.isInTransaction()) {
                                         if (context.getTransaction() == null || context.getTransaction().getState() > IN_USE_STATE) {
@@ -498,7 +498,7 @@ public class Topic extends BaseDestination implements Task {
                     }
 
                     // The usage manager could have delayed us by the time
-                    // we unblock the message could have expired..
+                    // we unblock the message could have expired.
                     if (message.isExpired()) {
                         getDestinationStatistics().getExpired().increment();
                         LOG.debug("Expired message: {}", message);
@@ -555,8 +555,8 @@ public class Topic extends BaseDestination implements Task {
                 @Override
                 public void afterCommit() throws Exception {
                     // It could take while before we receive the commit
-                    // operation.. by that time the message could have
-                    // expired..
+                    // operation. by that time the message could have
+                    // expired.
                     if (message.isExpired()) {
                         if (broker.isExpired(message)) {
                             getDestinationStatistics().getExpired().increment();
@@ -734,7 +734,7 @@ public class Topic extends BaseDestination implements Task {
 
     private void registerCallbackForNotFullNotification() {
         // If the usage manager is not full, then the task will not
-        // get called..
+        // get called.
         if (!memoryUsage.notifyCallbackWhenNotFull(sendMessagesWaitingForSpaceTask)) {
             // so call it directly here.
             sendMessagesWaitingForSpaceTask.run();

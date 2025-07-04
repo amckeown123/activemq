@@ -21,7 +21,7 @@ import java.security.Principal;
 import java.security.cert.X509Certificate;
 import java.util.Set;
 
-import javax.security.auth.Subject;
+import jakarta.security.auth.Subject;
 
 /**
  * Extends the SecurityContext to provide a username which is the

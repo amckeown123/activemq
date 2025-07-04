@@ -88,7 +88,7 @@ public class TransactionNotStartedErrorTest extends TestCase {
         broker.setUseJmx(true);
         broker.addConnector("tcp://localhost:0").setName("Default");
         broker.start();
-        LOG.info("Starting broker..");
+        LOG.info("Starting broker.");
     }
 
     public void tearDown() throws Exception {

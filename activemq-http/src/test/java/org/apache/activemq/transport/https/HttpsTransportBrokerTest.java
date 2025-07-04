@@ -33,13 +33,13 @@ public class HttpsTransportBrokerTest extends HttpTransportBrokerTest {
         setAutoFail(true);
         setMaxTestTime(300000);
 
-        System.setProperty("javax.net.ssl.trustStore", "src/test/resources/client.keystore");
-        System.setProperty("javax.net.ssl.trustStorePassword", "password");
-        System.setProperty("javax.net.ssl.trustStoreType", "jks");
-        System.setProperty("javax.net.ssl.keyStore", "src/test/resources/server.keystore");
-        System.setProperty("javax.net.ssl.keyStorePassword", "password");
-        System.setProperty("javax.net.ssl.keyStoreType", "jks");
-        //System.setProperty("javax.net.debug", "ssl,handshake,data,trustmanager");
+        System.setProperty("jakarta.net.ssl.trustStore", "src/test/resources/client.keystore");
+        System.setProperty("jakarta.net.ssl.trustStorePassword", "password");
+        System.setProperty("jakarta.net.ssl.trustStoreType", "jks");
+        System.setProperty("jakarta.net.ssl.keyStore", "src/test/resources/server.keystore");
+        System.setProperty("jakarta.net.ssl.keyStorePassword", "password");
+        System.setProperty("jakarta.net.ssl.keyStoreType", "jks");
+        //System.setProperty("jakarta.net.debug", "ssl,handshake,data,trustmanager");
         super.setUp();
     }
 

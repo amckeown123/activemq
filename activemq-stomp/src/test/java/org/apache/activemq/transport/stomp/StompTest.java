@@ -1797,7 +1797,7 @@ public class StompTest extends StompTestSupport {
 
         stompConnection.begin("tx2");
 
-        // Previously delivered message need to get re-acked...
+        // Previously delivered message need to get re-acked..
         stompConnection.ack(frame, "tx2");
         stompConnection.ack(frame1, "tx2");
 

@@ -22,7 +22,7 @@ import java.net.URISyntaxException;
 
 import org.apache.activemq.util.ServiceListener;
 
-import javax.net.ServerSocketFactory;
+import jakarta.net.ServerSocketFactory;
 
 /**
  * A TCP based implementation of {@link TransportServer}

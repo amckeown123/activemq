@@ -82,7 +82,7 @@ public class KahaDBXARecoveryBrokerTest  extends XARecoveryBrokerTest {
             connection.send(createPrepareTransaction(connectionInfo, txid));
         }
 
-        // Since prepared but not committed.. they should not get delivered.
+        // Since prepared but not committed. they should not get delivered.
         assertNull(receiveMessage(connection));
         assertNoMessagesLeft(connection);
         connection.request(closeConnectionInfo(connectionInfo));
@@ -105,7 +105,7 @@ public class KahaDBXARecoveryBrokerTest  extends XARecoveryBrokerTest {
         consumerInfo = createConsumerInfo(sessionInfo, destination);
         connection.send(consumerInfo);
 
-        // Since committed ... they should get delivered.
+        // Since committed .. they should get delivered.
         for (int i = 0; i < 4; i++) {
             assertNotNull(receiveMessage(connection));
         }
@@ -150,7 +150,7 @@ public class KahaDBXARecoveryBrokerTest  extends XARecoveryBrokerTest {
             connection.send(createPrepareTransaction(connectionInfo, txid));
         }
 
-        // Since prepared but not committed.. they should not get delivered.
+        // Since prepared but not committed. they should not get delivered.
         assertNull(receiveMessage(connection));
         assertNoMessagesLeft(connection);
         connection.request(closeConnectionInfo(connectionInfo));
@@ -173,7 +173,7 @@ public class KahaDBXARecoveryBrokerTest  extends XARecoveryBrokerTest {
         consumerInfo = createConsumerInfo(sessionInfo, destination);
         connection.send(consumerInfo);
 
-        // Since rolledback but not committed.. they should not get delivered.
+        // Since rolledback but not committed. they should not get delivered.
         assertNull(receiveMessage(connection));
         assertNoMessagesLeft(connection);
 

@@ -32,10 +32,10 @@ import javax.naming.NameClassPair;
 import javax.naming.NamingEnumeration;
 import javax.naming.directory.DirContext;
 import javax.naming.directory.InitialDirContext;
-import javax.security.auth.callback.*;
-import javax.security.auth.login.FailedLoginException;
-import javax.security.auth.login.LoginContext;
-import javax.security.auth.login.LoginException;
+import jakarta.security.auth.callback.*;
+import jakarta.security.auth.login.FailedLoginException;
+import jakarta.security.auth.login.LoginContext;
+import jakarta.security.auth.login.LoginException;
 
 import java.io.IOException;
 import java.util.HashSet;

@@ -104,7 +104,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.slf4j.MDC;
 
-import jakarta.jms.ResourceAllocationException;
+
 
 public class TransportConnection implements Connection, Task, CommandVisitor {
     private static final Logger LOG = LoggerFactory.getLogger(TransportConnection.class);
@@ -127,8 +127,8 @@ public class TransportConnection implements Connection, Task, CommandVisitor {
     private final Transport transport;
     private MessageAuthorizationPolicy messageAuthorizationPolicy;
     private WireFormatInfo wireFormatInfo;
-    // Used to do async dispatch.. this should perhaps be pushed down into the
-    // transport layer..
+    // Used to do async dispatch. this should perhaps be pushed down into the
+    // transport layer.
     private boolean inServiceException;
     private final ConnectionStatistics statistics = new ConnectionStatistics();
     private boolean manageable;
@@ -794,7 +794,7 @@ public class TransportConnection implements Connection, Task, CommandVisitor {
 
     @Override
     public Response processAddConnection(ConnectionInfo info) throws Exception {
-        // Older clients should have been defaulting this field to true.. but
+        // Older clients should have been defaulting this field to true. but
         // they were not.
         if (wireFormatInfo != null && wireFormatInfo.getVersion() <= 2) {
             info.setClientMaster(true);
@@ -1146,9 +1146,9 @@ public class TransportConnection implements Connection, Task, CommandVisitor {
     }
 
     public void stopAsync() {
-        // If we're in the middle of starting then go no further... for now.
+        // If we're in the middle of starting then go no further.. for now.
         if (status.compareAndSet(STARTING, PENDING_STOP)) {
-            LOG.debug("stopAsync() called in the middle of start(). Delaying till start completes..");
+            LOG.debug("stopAsync() called in the middle of start(). Delaying till start completes.");
             return;
         }
         if (stopping.compareAndSet(false, true)) {
@@ -1401,7 +1401,7 @@ public class TransportConnection implements Connection, Task, CommandVisitor {
             }
         } else if (info.isNetworkConnection() && info.isDuplexConnection()) {
             // so this TransportConnection is the rear end of a network bridge
-            // We have been requested to create a two way pipe ...
+            // We have been requested to create a two way pipe ..
             try {
                 NetworkBridgeConfiguration config = getNetworkConfiguration(info);
                 config.setBrokerName(broker.getBrokerName());

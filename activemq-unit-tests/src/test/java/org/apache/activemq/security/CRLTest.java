@@ -47,12 +47,12 @@ public class CRLTest {
 
     @Test
     public void testCRL() throws Exception {
-        System.setProperty("javax.net.ssl.trustStore", "src/test/resources/org/apache/activemq/security/client.ts");
-        System.setProperty("javax.net.ssl.trustStorePassword", "password");
-        System.setProperty("javax.net.ssl.trustStoreType", "jks");
-        System.setProperty("javax.net.ssl.keyStore", "src/test/resources/org/apache/activemq/security/activemq-revoke.jks");
-        System.setProperty("javax.net.ssl.keyStorePassword", "password");
-        System.setProperty("javax.net.ssl.keyStoreType", "jks");
+        System.setProperty("jakarta.net.ssl.trustStore", "src/test/resources/org/apache/activemq/security/client.ts");
+        System.setProperty("jakarta.net.ssl.trustStorePassword", "password");
+        System.setProperty("jakarta.net.ssl.trustStoreType", "jks");
+        System.setProperty("jakarta.net.ssl.keyStore", "src/test/resources/org/apache/activemq/security/activemq-revoke.jks");
+        System.setProperty("jakarta.net.ssl.keyStorePassword", "password");
+        System.setProperty("jakarta.net.ssl.keyStoreType", "jks");
 
 
         boolean failed = false;

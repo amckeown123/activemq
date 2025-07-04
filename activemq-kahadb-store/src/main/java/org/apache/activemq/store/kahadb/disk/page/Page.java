@@ -36,7 +36,7 @@ public class Page<T> {
     // The following fields are persisted
     byte type = PAGE_FREE_TYPE;
     long txId;
-    // A field reserved to hold checksums..  Not in use (yet)
+    // A field reserved to hold checksums.  Not in use (yet)
     int checksum;
 
     // Points to the next page in the chunk stream

@@ -71,7 +71,7 @@ public class KahaDBTest extends TestCase {
         sendMessages(1000);
         broker.stop();
 
-        // Delete some journal files..
+        // Delete some journal files.
         assertExistsAndDelete(new File(kaha.getDirectory(), "db-4.log"));
         assertExistsAndDelete(new File(kaha.getDirectory(), "db-8.log"));
 
@@ -96,7 +96,7 @@ public class KahaDBTest extends TestCase {
         sendMessages(1000);
         broker.stop();
 
-        // Delete some journal files..
+        // Delete some journal files.
         assertExistsAndDelete(new File(kaha.getDirectory(), "db-4.log"));
         assertExistsAndDelete(new File(kaha.getDirectory(), "db-8.log"));
 
@@ -125,7 +125,7 @@ public class KahaDBTest extends TestCase {
         sendMessages(1000);
         broker.stop();
 
-        // Modify/Corrupt some journal files..
+        // Modify/Corrupt some journal files.
         assertExistsAndCorrupt(new File(kaha.getDirectory(), "db-4.log"));
         assertExistsAndCorrupt(new File(kaha.getDirectory(), "db-8.log"));
 
@@ -169,7 +169,7 @@ public class KahaDBTest extends TestCase {
         RandomAccessFile f = new RandomAccessFile(file, "rw");
         try {
             f.seek(1024*5+134);
-            f.write("... corruption string ...".getBytes());
+            f.write(".. corruption string ..".getBytes());
         } finally {
             f.close();
         }
@@ -183,7 +183,7 @@ public class KahaDBTest extends TestCase {
         sendMessages(1000);
         broker.stop();
 
-        // Delete some journal files..
+        // Delete some journal files.
         assertExistsAndCorrupt(new File(kaha.getDirectory(), "db-4.log"));
         assertExistsAndCorrupt(new File(kaha.getDirectory(), "db-8.log"));
 
@@ -195,7 +195,7 @@ public class KahaDBTest extends TestCase {
 
         // We know we won't get all the messages but we should get most of them.
         int count = receiveMessages();
-        assertTrue("Expected to received a min # of messages.. Got: "+count,  count > 990 );
+        assertTrue("Expected to received a min # of messages. Got: "+count,  count > 990 );
         assertTrue( count < 1000 );
 
         broker.stop();

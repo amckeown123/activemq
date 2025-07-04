@@ -26,7 +26,7 @@ import java.util.Collection;
 import java.util.Vector;
 import java.util.concurrent.TimeUnit;
 
-import javax.net.ssl.SSLSocketFactory;
+import jakarta.net.ssl.SSLSocketFactory;
 
 import org.apache.activemq.broker.BrokerService;
 import org.apache.activemq.broker.TransportConnector;
@@ -67,12 +67,12 @@ public class OpenWireConnectionTimeoutTest {
     protected Vector<Throwable> exceptions = new Vector<Throwable>();
 
     static {
-        System.setProperty("javax.net.ssl.trustStore", TRUST_KEYSTORE);
-        System.setProperty("javax.net.ssl.trustStorePassword", PASSWORD);
-        System.setProperty("javax.net.ssl.trustStoreType", KEYSTORE_TYPE);
-        System.setProperty("javax.net.ssl.keyStore", SERVER_KEYSTORE);
-        System.setProperty("javax.net.ssl.keyStoreType", KEYSTORE_TYPE);
-        System.setProperty("javax.net.ssl.keyStorePassword", PASSWORD);
+        System.setProperty("jakarta.net.ssl.trustStore", TRUST_KEYSTORE);
+        System.setProperty("jakarta.net.ssl.trustStorePassword", PASSWORD);
+        System.setProperty("jakarta.net.ssl.trustStoreType", KEYSTORE_TYPE);
+        System.setProperty("jakarta.net.ssl.keyStore", SERVER_KEYSTORE);
+        System.setProperty("jakarta.net.ssl.keyStoreType", KEYSTORE_TYPE);
+        System.setProperty("jakarta.net.ssl.keyStorePassword", PASSWORD);
     }
 
     @Parameters(name="{0}")
@@ -200,9 +200,9 @@ public class OpenWireConnectionTimeoutTest {
         brokerService.setUseJmx(false);
         brokerService.getManagementContext().setCreateConnector(false);
 
-        // Setup SSL context...
+        // Setup SSL context..
         final File classesDir = new File(OpenWireConnectionTimeoutTest.class.getProtectionDomain().getCodeSource().getLocation().getFile());
-        File keystore = new File(classesDir, "../../src/test/resources/server.keystore");
+        File keystore = new File(classesDir, "././src/test/resources/server.keystore");
         final SpringSslContext sslContext = new SpringSslContext();
         sslContext.setKeyStore(keystore.getCanonicalPath());
         sslContext.setKeyStorePassword("password");
@@ -211,12 +211,12 @@ public class OpenWireConnectionTimeoutTest {
         sslContext.afterPropertiesSet();
         brokerService.setSslContext(sslContext);
 
-        System.setProperty("javax.net.ssl.trustStore", keystore.getCanonicalPath());
-        System.setProperty("javax.net.ssl.trustStorePassword", "password");
-        System.setProperty("javax.net.ssl.trustStoreType", "jks");
-        System.setProperty("javax.net.ssl.keyStore", keystore.getCanonicalPath());
-        System.setProperty("javax.net.ssl.keyStorePassword", "password");
-        System.setProperty("javax.net.ssl.keyStoreType", "jks");
+        System.setProperty("jakarta.net.ssl.trustStore", keystore.getCanonicalPath());
+        System.setProperty("jakarta.net.ssl.trustStorePassword", "password");
+        System.setProperty("jakarta.net.ssl.trustStoreType", "jks");
+        System.setProperty("jakarta.net.ssl.keyStore", keystore.getCanonicalPath());
+        System.setProperty("jakarta.net.ssl.keyStorePassword", "password");
+        System.setProperty("jakarta.net.ssl.keyStoreType", "jks");
 
         TransportConnector connector = null;
 

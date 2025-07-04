@@ -256,7 +256,7 @@ public abstract class TransportFactory {
     }
 
     /**
-     * Similar to configure(...) but this avoid adding in the MutexTransport and
+     * Similar to configure(..) but this avoid adding in the MutexTransport and
      * ResponseCorrelator transport layers so that the resulting transport can
      * more efficiently be used as part of a composite transport.
      *

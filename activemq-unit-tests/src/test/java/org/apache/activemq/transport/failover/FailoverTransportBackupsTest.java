@@ -113,7 +113,7 @@ public class FailoverTransportBackupsTest {
             }
         }));
 
-        assertEquals("conected to..", "1", currentBrokerInfo.getBrokerName());
+        assertEquals("conected to.", "1", currentBrokerInfo.getBrokerName());
         broker1.stop();
 
         assertTrue("Timed out waiting for Backups to connect.", Wait.waitFor(new Wait.Condition() {
@@ -127,7 +127,7 @@ public class FailoverTransportBackupsTest {
         assertTrue("Incorrect number of Transport interruptions", transportInterruptions >= 1);
         assertTrue("Incorrect number of Transport resumptions", transportResumptions >= 1);
 
-        assertEquals("conected to..", "2", currentBrokerInfo.getBrokerName());
+        assertEquals("conected to.", "2", currentBrokerInfo.getBrokerName());
         broker2.stop();
 
         assertTrue("Timed out waiting for Backups to connect.", Wait.waitFor(new Wait.Condition() {
@@ -141,7 +141,7 @@ public class FailoverTransportBackupsTest {
         assertTrue("Incorrect number of Transport interruptions", transportInterruptions >= 2);
         assertTrue("Incorrect number of Transport resumptions", transportResumptions >= 2);
 
-        assertEquals("conected to..", "3", currentBrokerInfo.getBrokerName());
+        assertEquals("conected to.", "3", currentBrokerInfo.getBrokerName());
     }
 
     @Test

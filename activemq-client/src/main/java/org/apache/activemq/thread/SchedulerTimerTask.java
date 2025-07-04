@@ -48,7 +48,7 @@ public class SchedulerTimerTask extends TimerTask {
             // and the task does not get executed.
             //
             // In practice, this makes the ActiveMQ client unable to refresh connections to brokers. Generally, tasks
-            // are well coded to not throw exceptions but if they do, problems ensue...
+            // are well coded to not throw exceptions but if they do, problems ensue..
             //
             // The answer, here, is to log the exception and then carry on without throwing further. This gives the
             // added benefit that, having seen the exception thrown, one can then go and fix the offending task!

@@ -68,12 +68,12 @@ public class TopicSessionTest extends PubSubTestCase
          subscriber = subscriberSession.createSubscriber(subscriberTopic);
          subscriberConnection.start();
 
-         // we create a message...
+         // we create a message..
          TextMessage message = publisherSession.createTextMessage();
          message.setText("testRollbackReceivedMessage");
-         // ... publish it ...
+         // .. publish it ..
          publisher.publish(message);
-         // ... and commit the transaction
+         // .. and commit the transaction
          publisherSession.commit();
 
          // we receive it

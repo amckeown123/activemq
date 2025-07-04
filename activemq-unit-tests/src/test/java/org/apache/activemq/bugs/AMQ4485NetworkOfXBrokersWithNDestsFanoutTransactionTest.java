@@ -148,10 +148,10 @@ public class AMQ4485NetworkOfXBrokersWithNDestsFanoutTransactionTest extends Jms
 
         startAllGWFanoutConsumers(numBrokers);
 
-        LOG.info("Waiting for percolation of consumers..");
+        LOG.info("Waiting for percolation of consumers.");
         TimeUnit.SECONDS.sleep(5);
 
-        LOG.info("Produce mesages..");
+        LOG.info("Produce mesages.");
         long startTime = System.currentTimeMillis();
 
         // produce
@@ -327,7 +327,7 @@ public class AMQ4485NetworkOfXBrokersWithNDestsFanoutTransactionTest extends Jms
                 LOG.info(info.getBrokerName());
                 missing.remove(info.getBrokerName());
             }
-            LOG.info("Broker infos off.." + missing);
+            LOG.info("Broker infos off." + missing);
         }
         assertEquals(broker.getBrokerName(), max, regionBroker.getPeerBrokerInfos().length);
     }

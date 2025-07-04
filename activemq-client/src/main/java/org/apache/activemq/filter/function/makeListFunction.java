@@ -64,19 +64,19 @@ public class makeListFunction implements FilterFunction {
 
     public Object evaluate(FunctionCallExpression expr, MessageEvaluationContext message)
             throws jakarta.jms.JMSException {
-        java.util.ArrayList ele_arr;
+        java.util.ArrayList<String> ele_arr;
         int num_arg;
         int cur;
 
         num_arg = expr.getNumArguments();
-        ele_arr = new java.util.ArrayList(num_arg);
+        ele_arr = new java.util.ArrayList<String>(num_arg);
 
         cur = 0;
         while (cur < num_arg) {
-            ele_arr.add(expr.getArgument(cur).evaluate(message));
+            ele_arr.add((String) expr.getArgument(cur).evaluate(message));
             cur++;
         }
 
-        return (java.util.List) ele_arr;
+        return (java.util.List<String>) ele_arr;
     }
 }

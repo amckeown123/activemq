@@ -76,9 +76,9 @@ public class MirroredQueueCorrectMemoryUsageTest extends EmbeddedBrokerTestSuppo
 
     @Override
     protected BrokerService createBroker() throws Exception {
-        // Create the broker service instance....
+        // Create the broker service instance..
         BrokerService broker = super.createBroker();
-        // Create and add the mirrored queue destination interceptor ....
+        // Create and add the mirrored queue destination interceptor ..
         DestinationInterceptor[] destinationInterceptors = new DestinationInterceptor[1];
         MirroredQueue mq = new MirroredQueue();
         mq.setCopyMessage(true);
@@ -126,7 +126,7 @@ public class MirroredQueueCorrectMemoryUsageTest extends EmbeddedBrokerTestSuppo
         // Set the persistent adapter
         KahaDBPersistenceAdapter persistenceAdapter = new KahaDBPersistenceAdapter();
         persistenceAdapter.setJournalMaxFileLength((int)TEN_MB);
-        // Delete all current messages...
+        // Delete all current messages..
         IOHelper.deleteFile(persistenceAdapter.getDirectory());
         broker.setPersistenceAdapter(persistenceAdapter);
         return broker;

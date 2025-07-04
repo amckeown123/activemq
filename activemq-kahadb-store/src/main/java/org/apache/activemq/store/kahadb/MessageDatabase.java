@@ -332,7 +332,7 @@ public abstract class MessageDatabase extends ServiceSupport implements BrokerSe
                 @Override
                 public void execute(Transaction tx) throws IOException {
                     if (pageFile.getPageCount() == 0) {
-                        // First time this is created.. Initialize the metadata
+                        // First time this is created. Initialize the metadata
                         Page<Metadata> page = tx.allocate();
                         assert page.getPageId() == 0;
                         page.set(metadata);
@@ -730,7 +730,7 @@ public abstract class MessageDatabase extends ServiceSupport implements BrokerSe
                         journal.cleanup();
                     }
                     if (LOG.isInfoEnabled() && redoCounter % 100000 == 0) {
-                        LOG.info("@" + recoveryPosition + ", " + redoCounter + " entries recovered ..");
+                        LOG.info("@" + recoveryPosition + ", " + redoCounter + " entries recovered .");
                     }
                 }
                 if (LOG.isInfoEnabled()) {
@@ -859,7 +859,7 @@ public abstract class MessageDatabase extends ServiceSupport implements BrokerSe
 
     protected void recoverIndex(Transaction tx) throws IOException {
         long start = System.currentTimeMillis();
-        // It is possible index updates got applied before the journal updates..
+        // It is possible index updates got applied before the journal updates.
         // in that case we need to removed references to messages that are not in the journal
         final Location lastAppendLocation = journal.getLastAppendLocation();
         long undoCounter=0;
@@ -987,7 +987,7 @@ public abstract class MessageDatabase extends ServiceSupport implements BrokerSe
                     }
                 });
 
-                // If some message references are affected by the missing data files...
+                // If some message references are affected by the missing data files..
                 if (!matches.isEmpty()) {
 
                     // We either 'gracefully' recover dropping the missing messages or
@@ -1066,12 +1066,12 @@ public abstract class MessageDatabase extends ServiceSupport implements BrokerSe
 
         if (!this.forceRecoverIndex) {
 
-            // If we need to recover the transactions..
+            // If we need to recover the transactions.
             if (metadata.firstInProgressTransactionLocation != null) {
                 return metadata.firstInProgressTransactionLocation;
             }
 
-            // Perhaps there were no transactions...
+            // Perhaps there were no transactions..
             if( metadata.lastUpdate!=null) {
                 // Start replay at the record after the last one recorded in the index file.
                 return getNextInitializedLocation(metadata.lastUpdate);
@@ -1564,9 +1564,9 @@ public abstract class MessageDatabase extends ServiceSupport implements BrokerSe
                 id = -1;
             }
         } else {
-            // restore the previous value.. Looks like this was a redo of a previously
+            // restore the previous value. Looks like this was a redo of a previously
             // added message. We don't want to assign it a new id as the other indexes would
-            // be wrong..
+            // be wrong.
             sd.locationIndex.put(tx, location, previous);
             // ensure sequence is not broken
             sd.orderIndex.revertNextMessageId();
@@ -1639,7 +1639,7 @@ public abstract class MessageDatabase extends ServiceSupport implements BrokerSe
         StoredDestination sd = getStoredDestination(command.getDestination(), tx);
         if (!command.hasSubscriptionKey()) {
 
-            // In the queue case we just remove the message from the index..
+            // In the queue case we just remove the message from the index.
             Long sequenceId = sd.messageIdIndex.remove(tx, command.getMessageId());
             if (sequenceId != null) {
                 MessageKeys keys = sd.orderIndex.remove(tx, sequenceId);
@@ -1659,7 +1659,7 @@ public abstract class MessageDatabase extends ServiceSupport implements BrokerSe
             // by all the subs
             Long sequence = sd.messageIdIndex.get(tx, command.getMessageId());
 
-            // Make sure it's a valid message id...
+            // Make sure it's a valid message id..
             if (sequence != null) {
                 String subscriptionKey = command.getSubscriptionKey();
                 if (command.getAck() != UNMATCHED) {
@@ -1742,7 +1742,7 @@ public abstract class MessageDatabase extends ServiceSupport implements BrokerSe
         StoredDestination sd = getStoredDestination(command.getDestination(), tx);
         final String subscriptionKey = command.getSubscriptionKey();
 
-        // If set then we are creating it.. otherwise we are destroying the sub
+        // If set then we are creating it. otherwise we are destroying the sub
         if (command.hasSubscriptionInfo()) {
             Location existing = sd.subLocations.get(tx, subscriptionKey);
             if (existing != null && existing.compareTo(location) == 0) {
@@ -1762,7 +1762,7 @@ public abstract class MessageDatabase extends ServiceSupport implements BrokerSe
             sd.subscriptionAcks.put(tx, subscriptionKey, new LastAck(ackLocation));
             sd.subscriptionCache.add(subscriptionKey);
         } else {
-            // delete the sub...
+            // delete the sub..
             sd.subscriptions.remove(tx, subscriptionKey);
             sd.subLocations.remove(tx, subscriptionKey);
             sd.subscriptionAcks.remove(tx, subscriptionKey);
@@ -2712,10 +2712,10 @@ public abstract class MessageDatabase extends ServiceSupport implements BrokerSe
      * @throws IOException
      */
     private StoredDestination loadStoredDestination(Transaction tx, String key, boolean topic) throws IOException {
-        // Try to load the existing indexes..
+        // Try to load the existing indexes.
         StoredDestination rc = metadata.destinations.get(tx, key);
         if (rc == null) {
-            // Brand new destination.. allocate indexes for it.
+            // Brand new destination. allocate indexes for it.
             rc = new StoredDestination();
             rc.orderIndex.allocate(tx);
             rc.locationIndex = new BTreeIndex<>(pageFile, tx.allocate());
@@ -2765,7 +2765,7 @@ public abstract class MessageDatabase extends ServiceSupport implements BrokerSe
             }
         }
 
-        // If it was a topic...
+        // If it was a topic..
         if (topic) {
 
             rc.subscriptions.setKeyMarshaller(StringMarshaller.INSTANCE);
@@ -3145,7 +3145,7 @@ public abstract class MessageDatabase extends ServiceSupport implements BrokerSe
     private void removeAckLocation(KahaRemoveMessageCommand command,
             Transaction tx, StoredDestination sd, String subscriptionKey,
             Long messageSequence) throws IOException {
-        // Remove the sub from the previous location set..
+        // Remove the sub from the previous location set.
         if (messageSequence != null) {
             SequenceSet range = sd.ackPositions.get(tx, subscriptionKey);
             if (range != null && !range.isEmpty()) {

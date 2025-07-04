@@ -16,7 +16,7 @@
  */
 package org.apache.activemq.transport;
 
-import javax.net.ssl.SSLContext;
+import jakarta.net.ssl.SSLContext;
 
 import org.apache.activemq.broker.SslContext;
 import org.apache.activemq.transport.http.BlockingQueueTransport;
@@ -31,11 +31,11 @@ import org.eclipse.jetty.util.ssl.SslContextFactory;
 
 public class SecureSocketConnectorFactory extends SocketConnectorFactory {
 
-    private String keyPassword = System.getProperty("javax.net.ssl.keyPassword");
-    private String keyStorePassword = System.getProperty("javax.net.ssl.keyStorePassword");
-    private String keyStore = System.getProperty("javax.net.ssl.keyStore");
-    private String trustStorePassword = System.getProperty("javax.net.ssl.trustStorePassword");
-    private String trustStore = System.getProperty("javax.net.ssl.trustStore");
+    private String keyPassword = System.getProperty("jakarta.net.ssl.keyPassword");
+    private String keyStorePassword = System.getProperty("jakarta.net.ssl.keyStorePassword");
+    private String keyStore = System.getProperty("jakarta.net.ssl.keyStore");
+    private String trustStorePassword = System.getProperty("jakarta.net.ssl.trustStorePassword");
+    private String trustStore = System.getProperty("jakarta.net.ssl.trustStore");
     private boolean needClientAuth;
     private boolean wantClientAuth;
     private String keyStoreType;
@@ -67,14 +67,14 @@ public class SecureSocketConnectorFactory extends SocketConnectorFactory {
 
         SSLContext sslContext = context == null ? null : context.getSSLContext();
 
-        // Get a reference to the current ssl context factory...
+        // Get a reference to the current ssl context factory..
 
         SslContextFactory.Server factory;
         if (contextFactory == null) {
             factory = new SslContextFactory.Server();
             if (context != null) {
                 // Should not be using this method since it does not use all of the values
-                // from the passed SslContext instance.....
+                // from the passed SslContext instance...
                 factory.setSslContext(sslContext);
 
             } else {

@@ -22,8 +22,8 @@ import java.net.URI;
 import java.security.KeyManagementException;
 import java.security.SecureRandom;
 
-import javax.net.ssl.KeyManager;
-import javax.net.ssl.TrustManager;
+import jakarta.net.ssl.KeyManager;
+import jakarta.net.ssl.TrustManager;
 
 import org.apache.activemq.transport.TransportFactorySupport;
 import org.apache.activemq.transport.TransportServer;

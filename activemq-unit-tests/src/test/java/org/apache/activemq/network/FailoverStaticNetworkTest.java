@@ -37,8 +37,8 @@ import jakarta.jms.Message;
 import jakarta.jms.MessageConsumer;
 import jakarta.jms.Session;
 import javax.management.ObjectName;
-import javax.net.ssl.KeyManager;
-import javax.net.ssl.TrustManager;
+import jakarta.net.ssl.KeyManager;
+import jakarta.net.ssl.TrustManager;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
 import org.apache.activemq.AutoFailTestSupport;
@@ -416,7 +416,7 @@ public class FailoverStaticNetworkTest {
 
     private void doTestNetworkSendReceive(final BrokerService to, final BrokerService from) throws Exception, JMSException {
 
-        LOG.info("Creating Consumer on the networked broker ..." + from);
+        LOG.info("Creating Consumer on the networked broker .." + from);
 
         SslContext.setCurrentSslContext(sslContext);
         // Create a consumer on brokerA

@@ -56,7 +56,7 @@ public class Sequence extends LinkedNode<Sequence> {
     
     @Override
     public String toString() {
-        return first == last ? "" + first : first + ".." + last;
+        return first == last ? "" + first : first + "." + last;
     }
 
     public long getFirst() {

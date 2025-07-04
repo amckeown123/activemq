@@ -124,7 +124,7 @@ public class RecoveryBrokerTest extends BrokerRestartTestSupport {
                 sentAfterCreateConsumer.add(m.getMessageId());
             }
 
-            // We should get the recovered messages...
+            // We should get the recovered messages..
             for (int i = 0; i < 4; i++) {
                 Message m2 = receiveMessage(connection2);
                 assertNotNull("Recovered message missing: " + i, m2);

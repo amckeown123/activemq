@@ -21,7 +21,7 @@ import java.net.InetAddress;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
-import javax.jmdns.JmDNS;
+import jakarta.jmdns.JmDNS;
 
 public final class JmDNSFactory {
 

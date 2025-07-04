@@ -93,7 +93,7 @@ public class AMQDeadlockTest3 extends org.apache.activemq.test.TestSupport {
             acf = createConnectionFactory(URL1);
             pcf = new PooledConnectionFactory(acf);
 
-            // Only listen on the first queue.. let the 2nd queue fill up.
+            // Only listen on the first queue. let the 2nd queue fill up.
             doneLatch = new CountDownLatch(NUM_MESSAGE_TO_SEND);
             container1 = createDefaultMessageListenerContainer(acf, new TestMessageListener1(500), QUEUE1_NAME);
             container1.afterPropertiesSet();

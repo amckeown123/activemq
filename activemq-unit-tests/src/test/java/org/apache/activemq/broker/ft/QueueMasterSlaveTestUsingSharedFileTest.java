@@ -28,7 +28,7 @@ public class QueueMasterSlaveTestUsingSharedFileTest extends
     }
     
     protected void createSlave() throws Exception {    	
-    	// Start the Brokers async since starting them up could be a blocking operation..
+    	// Start the Brokers async since starting them up could be a blocking operation.
         new Thread(new Runnable() {
             public void run() {
                 try {

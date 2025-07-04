@@ -68,13 +68,13 @@ public class AMQ4636Test {
         broker.deleteAllMessages();
         broker.start();
         broker.waitUntilStarted();
-        LOG.info("Broker started...");
+        LOG.info("Broker started..");
     }
 
     @After
     public void stopBroker() throws Exception {
         if (broker != null) {
-            LOG.info("Stopping broker...");
+            LOG.info("Stopping broker..");
             broker.stop();
             broker.waitUntilStopped();
         }
@@ -165,7 +165,7 @@ public class AMQ4636Test {
     public void createDurableConsumer(String topic,
                                       String transportURL) throws JMSException {
         Connection connection = null;
-        LOG.info("*** createDurableConsumer() called ...");
+        LOG.info("*** createDurableConsumer() called ..");
 
         try {
 
@@ -204,7 +204,7 @@ public class AMQ4636Test {
             producer.setDeliveryMode(DeliveryMode.PERSISTENT);
 
             Message m = session.createTextMessage("testMessage");
-            LOG.info("*** send message to broker...");
+            LOG.info("*** send message to broker..");
 
             // trigger SQL exception in transactionContext
             throwSQLException = new CountDownLatch(1);

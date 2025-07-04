@@ -257,7 +257,7 @@ public class JMSClientTest extends JMSClientTestSupport {
 
         assertEquals(totalCount, proxy.getQueueSize());
 
-        // Consume again..check we receive all the messages.
+        // Consume again.check we receive all the messages.
         Set<Integer> messageNumbers = new HashSet<>();
         for (int i = 1; i <= totalCount; i++) {
             messageNumbers.add(i);

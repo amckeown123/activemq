@@ -309,7 +309,7 @@ public class Queue extends BaseDestination implements Task, UsageListener, Index
                         (int) (recoveredAccumulator * 100 / totalMessageCount));
             }
             // Message could have expired while it was being
-            // loaded..
+            // loaded.
             message.setRegionDestination(Queue.this);
             if (message.isExpired() && broker.isExpired(message)) {
                 toExpire.add(message);
@@ -387,7 +387,7 @@ public class Queue extends BaseDestination implements Task, UsageListener, Index
         // Usage
         // since it turns into a shared blocking queue which can lead to a
         // network deadlock.
-        // If we are cursoring to disk..it's not and issue because it does not
+        // If we are cursoring to disk.it's not and issue because it does not
         // block due
         // to large disk sizes.
         if (messages instanceof VMPendingMessageCursor) {
@@ -617,7 +617,7 @@ public class Queue extends BaseDestination implements Task, UsageListener, Index
     public void send(final ProducerBrokerExchange producerExchange, final Message message) throws Exception {
         final ConnectionContext context = producerExchange.getConnectionContext();
         // There is delay between the client sending it and it arriving at the
-        // destination.. it may have expired.
+        // destination. it may have expired.
         message.setRegionDestination(this);
         ProducerState state = producerExchange.getProducerState();
         if (state == null) {
@@ -691,7 +691,7 @@ public class Queue extends BaseDestination implements Task, UsageListener, Index
                             public void run() {
 
                                 try {
-                                    // While waiting for space to free up... the
+                                    // While waiting for space to free up.. the
                                     // transaction may be done
                                     if (message.isInTransaction()) {
                                         if (context.getTransaction() == null || context.getTransaction().getState() > IN_USE_STATE) {
@@ -755,7 +755,7 @@ public class Queue extends BaseDestination implements Task, UsageListener, Index
                     }
 
                     // The usage manager could have delayed us by the time
-                    // we unblock the message could have expired..
+                    // we unblock the message could have expired.
                     if (message.isExpired()) {
                         LOG.debug("Expired message: {}", message);
                         broker.getRoot().messageExpired(context, message, null);
@@ -773,7 +773,7 @@ public class Queue extends BaseDestination implements Task, UsageListener, Index
 
     private void registerCallbackForNotFullNotification() {
         // If the usage manager is not full, then the task will not
-        // get called..
+        // get called.
         if (!memoryUsage.notifyCallbackWhenNotFull(sendMessagesWaitingForSpaceTask)) {
             // so call it directly here.
             sendMessagesWaitingForSpaceTask.run();
@@ -973,7 +973,7 @@ public class Queue extends BaseDestination implements Task, UsageListener, Index
             return;
         }
 
-        LOG.debug("{} expiring messages ..", getActiveMQDestination().getQualifiedName());
+        LOG.debug("{} expiring messages .", getActiveMQDestination().getQualifiedName());
 
         // just track the insertion count
         List<Message> browsedMessages = new InsertionCountList<Message>();
@@ -1870,7 +1870,7 @@ public class Queue extends BaseDestination implements Task, UsageListener, Index
     protected void removeMessage(ConnectionContext context, Subscription sub, final QueueMessageReference reference,
             MessageAck ack) throws IOException {
         LOG.trace("ack of {} with {}", reference.getMessageId(), ack);
-        // This sends the ack the the journal..
+        // This sends the ack the the journal.
         if (!ack.isInTransaction()) {
             acknowledge(context, sub, ack, reference);
             dropMessage(context, reference);
@@ -2170,7 +2170,7 @@ public class Queue extends BaseDestination implements Task, UsageListener, Index
             }
 
             doActualDispatch(dispatchPendingList);
-            // and now see if we can dispatch the new stuff.. and append to the pending
+            // and now see if we can dispatch the new stuff. and append to the pending
             // list anything that does not actually get dispatched.
             if (list != null && !list.isEmpty()) {
                 if (dispatchPendingList.isEmpty()) {

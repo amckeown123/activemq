@@ -179,7 +179,7 @@ public class AMQ5626Test {
             brokerService.start();
             brokerService.waitUntilStarted();
 
-            LOG.info(">>>BROKER RESTARTED..");
+            LOG.info(">>>BROKER RESTARTED.");
         } catch (Exception e) {
             LOG.error("FAILED TO STOP/START BROKER EXCEPTION", e);
             fail("FAILED TO STOP/START BROKER" + e);

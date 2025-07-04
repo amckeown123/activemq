@@ -20,7 +20,7 @@ import java.io.IOException;
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.util.Random;
-import javax.net.ServerSocketFactory;
+import jakarta.net.ServerSocketFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

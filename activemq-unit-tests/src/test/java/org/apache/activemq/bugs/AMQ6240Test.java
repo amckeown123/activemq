@@ -59,7 +59,7 @@ public class AMQ6240Test extends EmbeddedBrokerTestSupport {
                     for(; count<100; count++){
                         producer.send(message);
                     }
-                    LOG.info("Done sending..");
+                    LOG.info("Done sending.");
                 } catch (JMSException e) {
                     if (e.getCause() instanceof RequestTimedOutIOException) {
                         exceptionCount.incrementAndGet();

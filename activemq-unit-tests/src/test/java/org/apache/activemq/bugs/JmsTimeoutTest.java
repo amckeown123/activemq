@@ -66,7 +66,7 @@ public class JmsTimeoutTest extends EmbeddedBrokerTestSupport {
                     for(int count=0; count<messageCount; count++){
                         producer.send(message);
                     }
-                    LOG.info("Done sending..");
+                    LOG.info("Done sending.");
                 } catch (JMSException e) {
                     if (e.getCause() instanceof RequestTimedOutIOException) {
                         exceptionCount.incrementAndGet();
@@ -109,7 +109,7 @@ public class JmsTimeoutTest extends EmbeddedBrokerTestSupport {
                     for(int count=0; count<messageCount; count++){
                         producer.send(message);
                     }
-                    LOG.info("Done sending..");
+                    LOG.info("Done sending.");
                 } catch (JMSException e) {
                     if (e instanceof ResourceAllocationException || e.getCause() instanceof RequestTimedOutIOException) {
                         exceptionCount.incrementAndGet();

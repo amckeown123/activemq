@@ -50,7 +50,7 @@ public class NoSpaceIOTest {
         File dataDir = new File("/Volumes/NO NAME/");
         File useUpSpace = new File(dataDir, "bigFile");
         if (!useUpSpace.exists()) {
-            LOG.info("using up some space...");
+            LOG.info("using up some space..");
             RandomAccessFile filler = new RandomAccessFile(useUpSpace, "rw");
             filler.setLength(1024*1024*1212); // use ~1.xG of 2G (usb) volume
             filler.close();

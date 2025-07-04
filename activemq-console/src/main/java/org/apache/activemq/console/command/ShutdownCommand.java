@@ -30,7 +30,7 @@ import org.apache.activemq.console.util.JmxMBeansUtil;
 public class ShutdownCommand extends AbstractJmxCommand {
 
     protected String[] helpFile = new String[] {
-        "Task Usage: Main stop [stop-options] [broker-name1] [broker-name2] ...",
+        "Task Usage: Main stop [stop-options] [broker-name1] [broker-name2] ..",
         "Description: Stops a running broker.",
         "", 
         "Stop Options:",

@@ -57,12 +57,12 @@ public class JaasNetworkTest extends TestCase {
 
     public void testNetwork() throws Exception {
         
-        System.setProperty("javax.net.ssl.trustStore", "src/test/resources/org/apache/activemq/security/client.ts");
-        System.setProperty("javax.net.ssl.trustStorePassword", "password");
-        System.setProperty("javax.net.ssl.trustStoreType", "jks");
-        System.setProperty("javax.net.ssl.keyStore", "src/test/resources/org/apache/activemq/security/client.ks");
-        System.setProperty("javax.net.ssl.keyStorePassword", "password");
-        System.setProperty("javax.net.ssl.keyStoreType", "jks");  
+        System.setProperty("jakarta.net.ssl.trustStore", "src/test/resources/org/apache/activemq/security/client.ts");
+        System.setProperty("jakarta.net.ssl.trustStorePassword", "password");
+        System.setProperty("jakarta.net.ssl.trustStoreType", "jks");
+        System.setProperty("jakarta.net.ssl.keyStore", "src/test/resources/org/apache/activemq/security/client.ks");
+        System.setProperty("jakarta.net.ssl.keyStorePassword", "password");
+        System.setProperty("jakarta.net.ssl.keyStoreType", "jks");  
         
         ActiveMQConnectionFactory producerFactory  = new ActiveMQConnectionFactory("ssl://localhost:61617?verifyHostName=false");
         Connection producerConn = producerFactory.createConnection();

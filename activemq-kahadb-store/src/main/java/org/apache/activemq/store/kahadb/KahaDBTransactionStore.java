@@ -109,7 +109,7 @@ public class KahaDBTransactionStore implements TransactionStore {
                 results.add(cmd.run());
 
             }
-            // And removes..
+            // And removes.
             for (RemoveMessageCommand cmd : acks) {
                 cmd.run();
                 results.add(cmd.run());

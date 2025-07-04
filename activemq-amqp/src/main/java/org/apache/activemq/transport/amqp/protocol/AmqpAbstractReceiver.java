@@ -114,7 +114,7 @@ public abstract class AmqpAbstractReceiver extends AmqpAbstractLink<Receiver> {
             }
         }
 
-        // Expecting more deliveries..
+        // Expecting more deliveries.
         if (count == 0) {
             return;
         }

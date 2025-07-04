@@ -97,7 +97,7 @@ public class KahaDBStoreRecoveryBrokerTest extends RecoveryBrokerTest {
                 break;
             case LoadCorrupt:
                 // loadable but invalid metadata
-                // location of order index low priority index for first destination...
+                // location of order index low priority index for first destination..
                 raf.seek(8*1024 + 57);
                 raf.writeLong(Integer.MAX_VALUE-10);
                 break;

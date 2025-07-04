@@ -84,7 +84,7 @@ public class DstatCommand extends AbstractJmxCommand {
         final String header = "%-50s  %10s  %10s  %10s  %10s  %10s  %10s  %10s";
         final String tableRow = "%-50s  %10d  %10d  %10d  %10d  %10d  %10d  %10d";
 
-        // sort list so the names is A..Z
+        // sort list so the names is A.Z
         Collections.sort(queueList, new ObjectInstanceComparator());
 
         context.print(String.format(Locale.US, header, "Name", "Queue Size", "Producer #", "Consumer #", "Enqueue #", "Dequeue #", "Forward #", "Memory %"));
@@ -158,7 +158,7 @@ public class DstatCommand extends AbstractJmxCommand {
         final String header = "%-50s  %10s  %10s  %10s  %10s  %10s  %10s  %10s";
         final String tableRow = "%-50s  %10d  %10d  %10d  %10d  %10d  %10d  %10d";
 
-        // sort list so the names is A..Z
+        // sort list so the names is A.Z
         Collections.sort(topicsList, new ObjectInstanceComparator());
 
         context.print(String.format(Locale.US, header, "Name", "Queue Size", "Producer #", "Consumer #", "Enqueue #", "Dequeue #", "Forward #", "Memory %"));

@@ -174,7 +174,7 @@ public class FailoverConsumerUnconsumedTest {
         Executors.newSingleThreadExecutor().execute(new Runnable() {
             public void run() {
                 try {
-                    LOG.info("add last consumer...");
+                    LOG.info("add last consumer..");
                     TestConsumer testConsumer = new TestConsumer(consumerSession, destination, connection);
                     testConsumer.setMessageListener(new MessageListener() {
                                 @Override
@@ -298,7 +298,7 @@ public class FailoverConsumerUnconsumedTest {
         Executors.newSingleThreadExecutor().execute(new Runnable() {
             public void run() {
                 try {
-                    LOG.info("add last consumer...");
+                    LOG.info("add last consumer..");
                     testConsumers.add(new TestConsumer(consumerSession, destination, connection));
                     shutdownConsumerAdded.countDown();
                     LOG.info("done add last consumer");

@@ -140,7 +140,7 @@ public class BTreeIndexTest extends IndexTestSupport {
         this.index.load(tx);
         tx.commit();
 
-        // Insert in reverse order..
+        // Insert in reverse order.
         doInsertReverse(1000);
 
         this.index.unload(tx);
@@ -170,7 +170,7 @@ public class BTreeIndexTest extends IndexTestSupport {
         this.index.load(tx);
         tx.commit();
 
-        // Insert in reverse order..
+        // Insert in reverse order.
         doInsertReverse(1000);
 
         this.index.unload(tx);
@@ -199,7 +199,7 @@ public class BTreeIndexTest extends IndexTestSupport {
         this.index.load(tx);
         tx.commit();
 
-        // Insert in reverse order..
+        // Insert in reverse order.
         doInsert(1000);
 
         this.index.unload(tx);

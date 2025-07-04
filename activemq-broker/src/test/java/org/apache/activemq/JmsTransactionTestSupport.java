@@ -393,7 +393,7 @@ public abstract class JmsTransactionTestSupport extends TestSupport implements M
         assertEquals(outbound[1], message);
         rollbackTx();
 
-        // Consume again.. the prev message should
+        // Consume again. the prev message should
         // get redelivered.
         beginTx();
         message = consumer.receive(5000);
@@ -440,7 +440,7 @@ public abstract class JmsTransactionTestSupport extends TestSupport implements M
         assertEquals(outbound[1], message);
         rollbackTx();
 
-        // Consume again.. the prev message should
+        // Consume again. the prev message should
         // get redelivered.
         beginTx();
         message = consumer.receive(5000);

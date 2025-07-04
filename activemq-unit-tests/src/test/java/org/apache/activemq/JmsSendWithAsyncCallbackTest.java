@@ -63,7 +63,7 @@ public class JmsSendWithAsyncCallbackTest extends TestSupport {
         Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
         Queue queue = session.createQueue(getName());
 
-        // setup a consumer to drain messages..
+        // setup a consumer to drain messages.
         MessageConsumer consumer = session.createConsumer(queue);
         consumer.setMessageListener(new MessageListener() {
             @Override
@@ -71,7 +71,7 @@ public class JmsSendWithAsyncCallbackTest extends TestSupport {
             }
         });
 
-        // warmup...
+        // warmup..
         for (int i = 0; i < 10; i++) {
             benchmarkNonCallbackRate();
             benchmarkCallbackRate();
@@ -83,7 +83,7 @@ public class JmsSendWithAsyncCallbackTest extends TestSupport {
         LOG.info(String.format("AsyncCallback Send rate: %,.2f m/s", callbackRate));
         LOG.info(String.format("NonAsyncCallback Send rate: %,.2f m/s", nonCallbackRate));
 
-        // The async style HAS to be faster than the non-async style..
+        // The async style HAS to be faster than the non-async style.
         assertTrue("async rate[" + callbackRate + "] should beat non-async rate[" + nonCallbackRate + "]", callbackRate / nonCallbackRate > 1.5);
     }
 

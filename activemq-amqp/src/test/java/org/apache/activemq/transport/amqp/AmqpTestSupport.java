@@ -34,10 +34,10 @@ import jakarta.jms.Session;
 import jakarta.jms.TextMessage;
 import javax.management.MalformedObjectNameException;
 import javax.management.ObjectName;
-import javax.net.ServerSocketFactory;
-import javax.net.ssl.KeyManager;
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.TrustManager;
+import jakarta.net.ServerSocketFactory;
+import jakarta.net.ssl.KeyManager;
+import jakarta.net.ssl.SSLContext;
+import jakarta.net.ssl.TrustManager;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
 import org.apache.activemq.broker.BrokerPlugin;
@@ -134,9 +134,9 @@ public class AmqpTestSupport {
         ctx.init(new KeyManager[0], new TrustManager[]{new DefaultTrustManager()}, new SecureRandom());
         SSLContext.setDefault(ctx);
 
-        // Setup SSL context...
+        // Setup SSL context..
         final File classesDir = new File(AmqpConnection.class.getProtectionDomain().getCodeSource().getLocation().getFile());
-        File keystore = new File(classesDir, "../../src/test/resources/keystore");
+        File keystore = new File(classesDir, "././src/test/resources/keystore");
         final SpringSslContext sslContext = new SpringSslContext();
         sslContext.setKeyStore(keystore.getCanonicalPath());
         sslContext.setKeyStorePassword("password");
@@ -145,12 +145,12 @@ public class AmqpTestSupport {
         sslContext.afterPropertiesSet();
         brokerService.setSslContext(sslContext);
 
-        System.setProperty("javax.net.ssl.trustStore", keystore.getCanonicalPath());
-        System.setProperty("javax.net.ssl.trustStorePassword", "password");
-        System.setProperty("javax.net.ssl.trustStoreType", "jks");
-        System.setProperty("javax.net.ssl.keyStore", keystore.getCanonicalPath());
-        System.setProperty("javax.net.ssl.keyStorePassword", "password");
-        System.setProperty("javax.net.ssl.keyStoreType", "jks");
+        System.setProperty("jakarta.net.ssl.trustStore", keystore.getCanonicalPath());
+        System.setProperty("jakarta.net.ssl.trustStorePassword", "password");
+        System.setProperty("jakarta.net.ssl.trustStoreType", "jks");
+        System.setProperty("jakarta.net.ssl.keyStore", keystore.getCanonicalPath());
+        System.setProperty("jakarta.net.ssl.keyStorePassword", "password");
+        System.setProperty("jakarta.net.ssl.keyStoreType", "jks");
 
         ArrayList<BrokerPlugin> plugins = new ArrayList<>();
 

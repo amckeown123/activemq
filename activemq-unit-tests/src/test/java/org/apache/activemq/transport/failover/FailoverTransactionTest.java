@@ -190,7 +190,7 @@ public class FailoverTransactionTest extends TestSupport {
                         context.setDontSendReponse(true);
                         Executors.newSingleThreadExecutor().execute(new Runnable() {
                             public void run() {
-                                LOG.info("Stopping broker post commit...");
+                                LOG.info("Stopping broker post commit..");
                                 try {
                                     broker.stop();
                                 } catch (Exception e) {
@@ -217,7 +217,7 @@ public class FailoverTransactionTest extends TestSupport {
         // broker will die on commit reply so this will hang till restart
         Executors.newSingleThreadExecutor().execute(new Runnable() {
             public void run() {
-                LOG.info("doing async commit...");
+                LOG.info("doing async commit..");
                 try {
                     session.commit();
                 } catch (JMSException e) {
@@ -250,7 +250,7 @@ public class FailoverTransactionTest extends TestSupport {
         broker.stop();
         broker.waitUntilStopped();
 
-        LOG.info("Checking for remaining/hung messages..");
+        LOG.info("Checking for remaining/hung messages.");
         broker = createBroker(false, url);
         setDefaultPersistenceAdapter(broker);
         broker.start();
@@ -285,7 +285,7 @@ public class FailoverTransactionTest extends TestSupport {
                         context.setDontSendReponse(true);
                         Executors.newSingleThreadExecutor().execute(new Runnable() {
                             public void run() {
-                                LOG.info("Stopping broker post commit...");
+                                LOG.info("Stopping broker post commit..");
                                 try {
                                     broker.stop();
                                 } catch (Exception e) {
@@ -312,7 +312,7 @@ public class FailoverTransactionTest extends TestSupport {
         // broker will die on commit reply so this will hang till restart
         Executors.newSingleThreadExecutor().execute(new Runnable() {
             public void run() {
-                LOG.info("doing async commit...");
+                LOG.info("doing async commit..");
                 try {
                     session.commit();
                 } catch (JMSException e) {
@@ -346,7 +346,7 @@ public class FailoverTransactionTest extends TestSupport {
         broker.stop();
         broker.waitUntilStopped();
 
-        LOG.info("Checking for remaining/hung messages..");
+        LOG.info("Checking for remaining/hung messages.");
         broker = createBroker(false, url);
         setDefaultPersistenceAdapter(broker);
         broker.setPlugins(new BrokerPlugin[]{new DestinationPathSeparatorBroker()});
@@ -396,7 +396,7 @@ public class FailoverTransactionTest extends TestSupport {
                         producerExchange.getConnectionContext().setDontSendReponse(true);
                         Executors.newSingleThreadExecutor().execute(new Runnable() {
                             public void run() {
-                                LOG.info("Stopping broker post send...");
+                                LOG.info("Stopping broker post send..");
                                 try {
                                     broker.stop();
                                 } catch (Exception e) {
@@ -421,7 +421,7 @@ public class FailoverTransactionTest extends TestSupport {
         // broker will die on send reply so this will hang till restart
         Executors.newSingleThreadExecutor().execute(new Runnable() {
             public void run() {
-                LOG.info("doing async send...");
+                LOG.info("doing async send..");
                 try {
                     produceMessage(session, destination);
                 } catch (JMSException e) {
@@ -438,7 +438,7 @@ public class FailoverTransactionTest extends TestSupport {
         broker.waitUntilStopped();
         broker = createBroker(false, url);
         setDefaultPersistenceAdapter(broker);
-        LOG.info("restarting....");
+        LOG.info("restarting..");
         broker.start();
 
         assertTrue("message sent through failover", sendDoneLatch.await(30, TimeUnit.SECONDS));
@@ -459,7 +459,7 @@ public class FailoverTransactionTest extends TestSupport {
         broker.stop();
         broker.waitUntilStopped();
 
-        LOG.info("Checking for remaining/hung messages with second restart..");
+        LOG.info("Checking for remaining/hung messages with second restart.");
         broker = createBroker(false, url);
         setDefaultPersistenceAdapter(broker);
         broker.start();
@@ -517,7 +517,7 @@ public class FailoverTransactionTest extends TestSupport {
                             producerExchange.getConnectionContext().setDontSendReponse(true);
                             Executors.newSingleThreadExecutor().execute(new Runnable() {
                                 public void run() {
-                                    LOG.info("Stopping connection post send...");
+                                    LOG.info("Stopping connection post send..");
                                     try {
                                         proxy.close();
                                     } catch (Exception e) {
@@ -546,7 +546,7 @@ public class FailoverTransactionTest extends TestSupport {
         // proxy connection will die on send reply so this will hang on failover reconnect till open
         Executors.newSingleThreadExecutor().execute(new Runnable() {
             public void run() {
-                LOG.info("doing async send...");
+                LOG.info("doing async send..");
                 try {
                     produceMessage(session, destination);
                 } catch (JMSException e) {
@@ -579,7 +579,7 @@ public class FailoverTransactionTest extends TestSupport {
         broker.stop();
         broker.waitUntilStopped();
 
-        LOG.info("Checking for remaining/hung messages with restart..");
+        LOG.info("Checking for remaining/hung messages with restart.");
         broker = createBroker(false, url);
         setDefaultPersistenceAdapter(broker);
         broker.start();
@@ -782,7 +782,7 @@ public class FailoverTransactionTest extends TestSupport {
         final AtomicBoolean gotTransactionRolledBackException = new AtomicBoolean(false);
         Executors.newSingleThreadExecutor().execute(new Runnable() {
             public void run() {
-                LOG.info("doing async commit after consume...");
+                LOG.info("doing async commit after consume..");
                 try {
                     Message msg = consumer1.receive(20000);
                     LOG.info("consumer1 first attempt got message: " + msg);
@@ -852,7 +852,7 @@ public class FailoverTransactionTest extends TestSupport {
         broker.stop();
         broker.waitUntilStopped();
 
-        LOG.info("Checking for remaining/hung messages..");
+        LOG.info("Checking for remaining/hung messages.");
         broker = createBroker(false, url);
         setDefaultPersistenceAdapter(broker);
         broker.start();
@@ -1072,7 +1072,7 @@ public class FailoverTransactionTest extends TestSupport {
         // will block pending re-deliveries
         Executors.newSingleThreadExecutor().execute(new Runnable() {
             public void run() {
-                LOG.info("doing async commit...");
+                LOG.info("doing async commit..");
                 try {
                     consumerSession.commit();
                 } catch (JMSException ignored) {
@@ -1133,7 +1133,7 @@ public class FailoverTransactionTest extends TestSupport {
         // commit will fail due to failover with outstanding ack
         Executors.newSingleThreadExecutor().execute(new Runnable() {
             public void run() {
-                LOG.info("doing async commit...");
+                LOG.info("doing async commit..");
                 try {
                     consumerSession.commit();
                 } catch (TransactionRolledBackException ex) {

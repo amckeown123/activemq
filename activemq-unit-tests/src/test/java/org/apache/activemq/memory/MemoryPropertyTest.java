@@ -37,7 +37,7 @@ public class MemoryPropertyTest extends TestCase {
     @Override
     protected void setUp() throws Exception {
         // Create broker from resource
-        LOG.info("Creating broker... ");
+        LOG.info("Creating broker.. ");
         broker = createBroker("xbean:org/apache/activemq/memory/activemq.xml");
         LOG.info("Success");
         super.setUp();
@@ -58,7 +58,7 @@ public class MemoryPropertyTest extends TestCase {
         if (broker != null) {
             broker.stop();
         }
-        LOG.info("Broker closed...");
+        LOG.info("Broker closed..");
     }
 
     public void testBrokerInitialized() {

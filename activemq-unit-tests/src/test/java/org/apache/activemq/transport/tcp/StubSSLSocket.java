@@ -19,9 +19,9 @@ package org.apache.activemq.transport.tcp;
 
 import java.io.IOException;
 
-import javax.net.ssl.HandshakeCompletedListener;
-import javax.net.ssl.SSLSession;
-import javax.net.ssl.SSLSocket;
+import jakarta.net.ssl.HandshakeCompletedListener;
+import jakarta.net.ssl.SSLSession;
+import jakarta.net.ssl.SSLSocket;
 
 public class StubSSLSocket extends SSLSocket {
 

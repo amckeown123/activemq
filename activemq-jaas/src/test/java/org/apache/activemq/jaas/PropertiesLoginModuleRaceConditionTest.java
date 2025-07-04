@@ -32,8 +32,8 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
-import javax.security.auth.Subject;
-import javax.security.auth.callback.CallbackHandler;
+import jakarta.security.auth.Subject;
+import jakarta.security.auth.callback.CallbackHandler;
 
 import org.junit.After;
 import org.junit.Before;

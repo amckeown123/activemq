@@ -81,7 +81,7 @@ public class StoreExporter {
             throw new Exception("required --file option missing");
         }
         System.out.println("Loading: " + config);
-        BrokerFactory.setStartDefault(false); // to avoid the broker auto-starting..
+        BrokerFactory.setStartDefault(false); // to avoid the broker auto-starting.
         BrokerService broker = BrokerFactory.createBroker(config);
         BrokerFactory.resetStartDefault();
         PersistenceAdapter store = broker.getPersistenceAdapter();

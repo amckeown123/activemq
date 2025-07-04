@@ -83,7 +83,7 @@ public class TransactDatabaseLocker extends DefaultDatabaseLocker {
                 }
             }
 
-            LOG.debug("Sleeping for " + lockAcquireSleepInterval + " milli(s) before trying again to get the lock...");
+            LOG.debug("Sleeping for " + lockAcquireSleepInterval + " milli(s) before trying again to get the lock..");
             try {
             	Thread.sleep(lockAcquireSleepInterval);
             } catch (InterruptedException ie) {

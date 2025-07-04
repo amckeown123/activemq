@@ -39,7 +39,7 @@ public abstract class IndexBenchmark extends TestCase {
     private static final long SAMPLES = Integer.parseInt(System.getProperty("SAMPLES", "" + 60 * 1000 / SAMPLE_DURATION));
     // How many indexes will we be benchmarking concurrently?
     private static final int INDEX_COUNT = Integer.parseInt(System.getProperty("INDEX_COUNT", "" + 1));
-    // Indexes tend to perform worse when they get big.. so how many items
+    // Indexes tend to perform worse when they get big. so how many items
     // should we put into the index before we start sampling.
     private static final int INDEX_PRE_LOAD_COUNT = Integer.parseInt(System.getProperty("INDEX_PRE_LOAD_COUNT", "" + 10000 / INDEX_COUNT));
 
@@ -107,7 +107,7 @@ public abstract class IndexBenchmark extends TestCase {
                     String key = key(c);
                     index.put(tx, key, c);
                     tx.commit();
-                    Thread.yield(); // This avoids consumer starvation..
+                    Thread.yield(); // This avoids consumer starvation.
 
                     onProduced(counter++);
                 }
@@ -153,7 +153,7 @@ public abstract class IndexBenchmark extends TestCase {
                     Long record = index.get(tx, key);
                     if (record != null) {
                         if( index.remove(tx, key) == null ) {
-                            System.out.print("Remove failed...");
+                            System.out.print("Remove failed..");
                         }
                         tx.commit();
                         onConsumed(counter++);
@@ -227,7 +227,7 @@ public abstract class IndexBenchmark extends TestCase {
 
             System.out.println(((end-sample_start)/1000f)+", "+p+", "+(p * 1000f / (end - start)) + ", "+ c+", " + (c * 1000f / (end - start))+", "+(usedMemory/(1024)) );
         }
-        System.out.println("Samples done... Shutting down the producers and consumers...");
+        System.out.println("Samples done.. Shutting down the producers and consumers..");
         for (int i = 0; i < INDEX_COUNT; i++) {
             producers[i].shutdown();
             consumers[i].shutdown();

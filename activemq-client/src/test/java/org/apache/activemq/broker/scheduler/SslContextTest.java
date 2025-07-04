@@ -20,7 +20,7 @@ package org.apache.activemq.broker.scheduler;
 import org.apache.activemq.broker.SslContext;
 import org.junit.Test;
 
-import javax.net.ssl.SSLContext;
+import jakarta.net.ssl.SSLContext;
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
 import java.security.NoSuchProviderException;

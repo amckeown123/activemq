@@ -74,7 +74,7 @@ public class ActiveMQResourceAdapter extends ActiveMQConnectionSupport implement
     }
 
     /**
-     * @see javax.resource.spi.ResourceAdapter#start(javax.resource.spi.BootstrapContext)
+     * @see jakarta.resource.spi.ResourceAdapter#start(jakarta.resource.spi.BootstrapContext)
      */
     @Override
     public void start(BootstrapContext bootstrapContext) throws ResourceAdapterInternalException {
@@ -107,7 +107,7 @@ public class ActiveMQResourceAdapter extends ActiveMQConnectionSupport implement
             brokerStartThread.setDaemon(true);
             brokerStartThread.start();
 
-            // Wait up to 5 seconds for the broker to start up in the async thread.. otherwise keep going without it..
+            // Wait up to 5 seconds for the broker to start up in the async thread. otherwise keep going without it.
             try {
                 brokerStartThread.join(1000*5);
             } catch (InterruptedException e) {
@@ -155,7 +155,7 @@ public class ActiveMQResourceAdapter extends ActiveMQConnectionSupport implement
     }
 
     /**
-     * @see javax.resource.spi.ResourceAdapter#stop()
+     * @see jakarta.resource.spi.ResourceAdapter#stop()
      */
     @Override
     public void stop() {
@@ -194,8 +194,8 @@ public class ActiveMQResourceAdapter extends ActiveMQConnectionSupport implement
     }
 
     /**
-     * @see javax.resource.spi.ResourceAdapter#endpointActivation(javax.resource.spi.endpoint.MessageEndpointFactory,
-     *      javax.resource.spi.ActivationSpec)
+     * @see jakarta.resource.spi.ResourceAdapter#endpointActivation(jakarta.resource.spi.endpoint.MessageEndpointFactory,
+     *      jakarta.resource.spi.ActivationSpec)
      */
     @Override
     public void endpointActivation(MessageEndpointFactory endpointFactory, ActivationSpec activationSpec) throws ResourceException {
@@ -210,7 +210,7 @@ public class ActiveMQResourceAdapter extends ActiveMQConnectionSupport implement
         }
 
         ActiveMQEndpointActivationKey key = new ActiveMQEndpointActivationKey(endpointFactory, (MessageActivationSpec)activationSpec);
-        // This is weird.. the same endpoint activated twice.. must be a
+        // This is weird. the same endpoint activated twice. must be a
         // container error.
         if (endpointWorkers.containsKey(key)) {
             throw new IllegalStateException("Endpoint previously activated");
@@ -223,8 +223,8 @@ public class ActiveMQResourceAdapter extends ActiveMQConnectionSupport implement
     }
 
     /**
-     * @see javax.resource.spi.ResourceAdapter#endpointDeactivation(javax.resource.spi.endpoint.MessageEndpointFactory,
-     *      javax.resource.spi.ActivationSpec)
+     * @see jakarta.resource.spi.ResourceAdapter#endpointDeactivation(jakarta.resource.spi.endpoint.MessageEndpointFactory,
+     *      jakarta.resource.spi.ActivationSpec)
      */
     @Override
     public void endpointDeactivation(MessageEndpointFactory endpointFactory, ActivationSpec activationSpec) {
@@ -235,7 +235,7 @@ public class ActiveMQResourceAdapter extends ActiveMQConnectionSupport implement
                 worker = endpointWorkers.remove(key);
             }
             if (worker == null) {
-                // This is weird.. that endpoint was not activated.. oh well..
+                // This is weird. that endpoint was not activated. oh well.
                 // this method
                 // does not throw exceptions so just return.
                 return;
@@ -243,9 +243,9 @@ public class ActiveMQResourceAdapter extends ActiveMQConnectionSupport implement
             try {
                 worker.stop();
             } catch (InterruptedException e) {
-                // We interrupted.. we won't throw an exception but will stop
+                // We interrupted. we won't throw an exception but will stop
                 // waiting for the worker
-                // to stop.. we tried our best. Keep trying to interrupt the
+                // to stop. we tried our best. Keep trying to interrupt the
                 // thread.
                 Thread.currentThread().interrupt();
             }
@@ -258,7 +258,7 @@ public class ActiveMQResourceAdapter extends ActiveMQConnectionSupport implement
      * We only connect to one resource manager per ResourceAdapter instance, so
      * any ActivationSpec will return the same XAResource.
      *
-     * @see javax.resource.spi.ResourceAdapter#getXAResources(javax.resource.spi.ActivationSpec[])
+     * @see jakarta.resource.spi.ResourceAdapter#getXAResources(jakarta.resource.spi.ActivationSpec[])
      */
     @Override
     public XAResource[] getXAResources(ActivationSpec[] activationSpecs) throws ResourceException {

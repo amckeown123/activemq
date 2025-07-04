@@ -24,10 +24,10 @@ import org.xml.sax.InputSource;
 import jakarta.jms.BytesMessage;
 import jakarta.jms.JMSException;
 import jakarta.jms.TextMessage;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.xpath.XPath;
-import javax.xml.xpath.XPathConstants;
-import javax.xml.xpath.XPathFactory;
+import javax.xml.namespace.DocumentBuilder;
+import jakarta.xml.xpath.XPath;
+import jakarta.xml.xpath.XPathConstants;
+import jakarta.xml.xpath.XPathFactory;
 import java.io.StringReader;
 
 public class JAXPXPathEvaluator implements XPathExpression.XPathEvaluator {

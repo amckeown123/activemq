@@ -23,7 +23,6 @@ import org.apache.activemq.broker.Broker;
 import org.apache.activemq.broker.BrokerFilter;
 import org.apache.activemq.broker.ConnectionContext;
 import org.apache.activemq.broker.region.Subscription;
-import org.apache.activemq.command.ActiveMQDestination;
 import org.apache.activemq.command.ConsumerId;
 import org.apache.activemq.command.ConsumerInfo;
 import org.slf4j.Logger;
@@ -46,7 +45,6 @@ public class ConnectionSplitBroker extends BrokerFilter{
         
     public Subscription addConsumer(ConnectionContext context, ConsumerInfo info)
             throws Exception {
-        ActiveMQDestination dest = info.getDestination();
 
         synchronized (networkConsumerList) {
             if (info.isNetworkSubscription()) {

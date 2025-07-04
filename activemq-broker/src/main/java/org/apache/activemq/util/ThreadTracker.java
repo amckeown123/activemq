@@ -27,7 +27,7 @@ import org.slf4j.LoggerFactory;
  * To use, add to a method as follows:<code>
  *  public void someMethod() {
  *      ThreadTracker.track("someMethod");
- *      ...
+ *      ..
  *  }</code>
  *  and at some stage call <code>result</code> to get a LOG
  *  output of the callers with an associated call count
@@ -61,7 +61,7 @@ public class ThreadTracker {
     public static void result() {
         synchronized(trackers) {
             for (Entry<String, Tracker> t: trackers.entrySet()) {
-                LOG.info("Tracker: " + t.getKey() + ", " + t.getValue().size() + " entry points...");
+                LOG.info("Tracker: " + t.getKey() + ", " + t.getValue().size() + " entry points..");
                 for (Trace trace : t.getValue().values()) {
                     LOG.info("count: " + trace.count, trace);
                 }

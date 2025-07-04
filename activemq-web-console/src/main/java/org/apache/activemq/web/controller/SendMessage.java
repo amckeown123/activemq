@@ -171,7 +171,7 @@ public class SendMessage extends DestinationFacade implements Controller {
         if (jmsText != null) {
             return client.getSession().createTextMessage(jmsText);
         }
-        // TODO create Bytes message from request body...
+        // TODO create Bytes message from request body..
         return client.getSession().createMessage();
     }
 

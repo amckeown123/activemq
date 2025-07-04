@@ -35,9 +35,9 @@ public class NetworkConnectorDefaultsTest extends TestCase {
 
     @Test
     public void testDefaultValues() throws Exception {
-        LOG.info("testIsStarted is starting...");
+        LOG.info("testIsStarted is starting..");
 
-        LOG.info("Adding network connector...");
+        LOG.info("Adding network connector..");
         NetworkConnector nc = localBroker.addNetworkConnector("static:(" + REMOTE_BROKER_TRANSPORT_URI + ")");
         nc.setName("NC1");
 

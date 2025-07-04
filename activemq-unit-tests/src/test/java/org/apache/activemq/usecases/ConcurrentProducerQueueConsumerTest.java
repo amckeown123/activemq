@@ -107,7 +107,7 @@ public class ConcurrentProducerQueueConsumerTest extends TestSupport
                 try {
                     MessageConsumer consumer = null;
                     for (int i = 0; i < consumersToActivate; i++) {
-                        LOG.info("Waiting for add signal from producer...");
+                        LOG.info("Waiting for add signal from producer..");
                         synchronized (addConsumerSignal) {
                             addConsumerSignal.wait(30 * 60 * 1000);
                         }

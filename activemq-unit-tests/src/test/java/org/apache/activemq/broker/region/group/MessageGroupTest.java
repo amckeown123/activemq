@@ -53,7 +53,7 @@ public class MessageGroupTest extends JmsTestSupport {
             producer.send(message);
         }
 
-        // All the messages should have been sent down connection 1.. just get
+        // All the messages should have been sent down connection 1. just get
         // the first 3
         for (int i = 0; i < 3; i++) {
             TextMessage m1 = (TextMessage)consumer1.receive(500);
@@ -126,7 +126,7 @@ public class MessageGroupTest extends JmsTestSupport {
 
 
 
-        // All the messages should have been sent down consumer1.. just get
+        // All the messages should have been sent down consumer1. just get
         // the first 3
         for (int i = 0; i < 3; i++) {
             TextMessage m1 = (TextMessage)consumer1.receive(500);

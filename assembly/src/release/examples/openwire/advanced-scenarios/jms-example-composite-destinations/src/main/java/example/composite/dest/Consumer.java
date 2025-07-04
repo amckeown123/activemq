@@ -34,7 +34,7 @@ public class Consumer {
         if (args.length > 0) {
             url = args[0].trim();
         }
-        System.out.println("\nWaiting to receive messages... will timeout after " + TIMEOUT / 1000 +"s");
+        System.out.println("\nWaiting to receive messages.. will timeout after " + TIMEOUT / 1000 +"s");
         ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory("admin", "password", url);
         Connection connection = null;
 
@@ -113,7 +113,7 @@ public class Consumer {
                 try {
                     connection.close();
                 } catch (JMSException e) {
-                    System.out.println("Could not close an open connection...");
+                    System.out.println("Could not close an open connection..");
                 }
             }
         }

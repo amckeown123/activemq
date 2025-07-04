@@ -138,7 +138,7 @@ public class DuplexAdvisoryRaceTest {
         connections.add(demand(brokerAFactory, numDests/2, numDests, numConsumersPerDest));
 
 
-        LOG.info("Allow duplex bridge to connect....");
+        LOG.info("Allow duplex bridge to connect..");
         // allow bridge to start
         brokerB.startTransportConnector(brokerB.addConnector(networkConnectorUrlString + "?transport.socketBufferSize=1024"));
 

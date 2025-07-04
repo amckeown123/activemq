@@ -19,8 +19,8 @@ package org.apache.activemq.transport.stomp;
 import java.io.IOException;
 import java.net.Socket;
 
-import javax.net.SocketFactory;
-import javax.net.ssl.SSLSocketFactory;
+import jakarta.net.SocketFactory;
+import jakarta.net.ssl.SSLSocketFactory;
 
 public class Stomp12NIOSSLTest extends Stomp12Test {
 

@@ -91,10 +91,10 @@ public abstract class AutoFailTestSupport extends TestCase {
         }, "AutoFailThread");
 
         if (verbose) {
-            LOG.info("Starting auto fail thread...");
+            LOG.info("Starting auto fail thread..");
         }
 
-        LOG.info("Starting auto fail thread...");
+        LOG.info("Starting auto fail thread..");
         autoFailThread.start();
     }
 
@@ -108,10 +108,10 @@ public abstract class AutoFailTestSupport extends TestCase {
             isTestSuccess.set(true);
 
             if (verbose) {
-                LOG.info("Stopping auto fail thread...");
+                LOG.info("Stopping auto fail thread..");
             }
 
-            LOG.info("Stopping auto fail thread...");
+            LOG.info("Stopping auto fail thread..");
             autoFailThread.interrupt();
         }
     }

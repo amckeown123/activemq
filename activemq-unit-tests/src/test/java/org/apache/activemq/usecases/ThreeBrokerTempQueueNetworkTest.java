@@ -59,7 +59,7 @@ public class ThreeBrokerTempQueueNetworkTest extends JmsMultipleBrokersTestSuppo
         }
     }
 
-    // this actually uses 4 brokers ...
+    // this actually uses 4 brokers ..
     public void testTempQueueRecovery() throws Exception {
         // Setup broker networks
         bridgeBrokers("BrokerA", "BrokerB", false, 3);

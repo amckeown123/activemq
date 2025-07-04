@@ -226,7 +226,7 @@ public class ListIndexTest extends IndexTestSupport {
 
         tx = pf.tx();
         final int entryCount = 200;
-        // Insert in reverse order..
+        // Insert in reverse order.
         doInsertReverse(entryCount);
         this.index.unload(tx);
         tx.commit();
@@ -258,7 +258,7 @@ public class ListIndexTest extends IndexTestSupport {
         this.index.load(tx);
         tx.commit();
 
-        // Insert in reverse order..
+        // Insert in reverse order.
         final int entryCount = 200;
         doInsert(entryCount);
 

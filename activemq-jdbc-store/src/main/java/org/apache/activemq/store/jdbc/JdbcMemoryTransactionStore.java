@@ -72,7 +72,7 @@ public class JdbcMemoryTransactionStore extends MemoryTransactionStore {
                 AddMessageCommand cmd = iter.next();
                 cmd.run(ctx);
             }
-            // And removes..
+            // And removes.
             for (Iterator<RemoveMessageCommand> iter = tx.acks.iterator(); iter.hasNext();) {
                 RemoveMessageCommand cmd = iter.next();
                 cmd.run(ctx);

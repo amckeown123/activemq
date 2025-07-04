@@ -21,8 +21,8 @@ import java.net.Socket;
 import java.net.URI;
 import java.net.URISyntaxException;
 
-import javax.net.ServerSocketFactory;
-import javax.net.ssl.SSLContext;
+import jakarta.net.ServerSocketFactory;
+import jakarta.net.ssl.SSLContext;
 
 import org.apache.activemq.transport.Transport;
 import org.apache.activemq.transport.tcp.TcpTransportFactory;

@@ -21,7 +21,7 @@ import java.io.IOException;
 import java.net.InetAddress;
 import java.net.ServerSocket;
 
-import javax.net.ssl.SSLServerSocketFactory;
+import jakarta.net.ssl.SSLServerSocketFactory;
 
 public class StubSSLSocketFactory extends SSLServerSocketFactory {
 

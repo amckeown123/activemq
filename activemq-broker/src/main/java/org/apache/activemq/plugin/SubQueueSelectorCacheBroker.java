@@ -127,7 +127,7 @@ public class SubQueueSelectorCacheBroker extends BrokerFilter implements Runnabl
             try {
                 broker.getManagementContext().unregisterMBean(objectName);
             } catch (JMException e) {
-                LOG.warn("Trying uninstall VirtualDestinationSelectorCache; couldn't uninstall mbeans, continuting...");
+                LOG.warn("Trying uninstall VirtualDestinationSelectorCache; couldn't uninstall mbeans, continuting..");
             }
         }
     }
@@ -197,7 +197,7 @@ public class SubQueueSelectorCacheBroker extends BrokerFilter implements Runnabl
                 try (FileInputStream fis = new FileInputStream(persistFile);) {
                     ObjectInputStream in = new SubSelectorClassObjectInputStream(fis);
                     try {
-                        LOG.debug("Reading selector cache....");
+                        LOG.debug("Reading selector cache..");
                         subSelectorCache = (ConcurrentHashMap<String, Set<String>>) in.readObject();
 
                         if (LOG.isDebugEnabled()) {
@@ -218,7 +218,7 @@ public class SubQueueSelectorCacheBroker extends BrokerFilter implements Runnabl
                     }
                 }
             } catch (IOException ex) {
-                LOG.error("Unable to read persisted selector cache...it will be ignored!", ex);
+                LOG.error("Unable to read persisted selector cache..it will be ignored!", ex);
             }
         }
     }
@@ -227,7 +227,7 @@ public class SubQueueSelectorCacheBroker extends BrokerFilter implements Runnabl
      * Persist the selector cache.
      */
     private void persistCache() {
-        LOG.debug("Persisting selector cache....");
+        LOG.debug("Persisting selector cache..");
         try {
             FileOutputStream fos = new FileOutputStream(persistFile);
             try {

@@ -34,7 +34,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Properties;
 
-import javax.net.ssl.SSLContext;
+import jakarta.net.ssl.SSLContext;
 
 /**
  * Utilities for properties
@@ -403,7 +403,7 @@ public class PropertyUtil {
                         if (value instanceof Boolean || value instanceof Number || value instanceof String || value instanceof URI || value instanceof URL) {
                             properties.put(pd.getName(), ("" + value));
                         } else if (value instanceof SSLContext) {
-                            // ignore this one..
+                            // ignore this one.
                         } else {
                             Map<String, String> inner = getProperties(value);
                             for (Map.Entry<String, String> entry : inner.entrySet()) {

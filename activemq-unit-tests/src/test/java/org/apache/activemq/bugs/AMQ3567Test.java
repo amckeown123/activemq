@@ -128,7 +128,7 @@ public class AMQ3567Test {
     }
 
     private void initializeConsumer() throws JMSException {
-        logger.info("Initializing the consumer messagor that will just not do anything....");
+        logger.info("Initializing the consumer messagor that will just not do anything..");
         factory = new ActiveMQConnectionFactory();
         factory.setBrokerURL("failover:("+connectionUri+"?wireFormat.maxInactivityDuration=30000&keepAlive=true&soTimeout=60000)?jms.watchTopicAdvisories=false&jms.useAsyncSend=false&jms.dispatchAsync=true&jms.producerWindowSize=10485760&jms.copyMessageOnSend=false&jms.disableTimeStampsByDefault=true&InitialReconnectDelay=1000&maxReconnectDelay=10000&maxReconnectAttempts=400&useExponentialBackOff=true");
         connection = factory.createConnection();

@@ -248,7 +248,7 @@ public class AdvisoryBrokerTest extends BrokerTestSupport {
         connection2.send(sessionInfo2);
         connection2.send(producerInfo2);
         
-        // Create the advisory consumer.. it should see the previous producer        
+        // Create the advisory consumer. it should see the previous producer        
         ConsumerInfo consumerInfo1 = createConsumerInfo(sessionInfo1, destination);
         consumerInfo1.setPrefetchSize(100);
         connection1.send(consumerInfo1);
@@ -283,7 +283,7 @@ public class AdvisoryBrokerTest extends BrokerTestSupport {
         SessionInfo sessionInfo1 = createSessionInfo(connectionInfo1);
         connection1.send(connectionInfo1);
         connection1.send(sessionInfo1);
-        // Create the first consumer..         
+        // Create the first consumer.         
         ConsumerInfo consumerInfo1 = createConsumerInfo(sessionInfo1, destination);
         consumerInfo1.setPrefetchSize(100);
         connection1.send(consumerInfo1);
@@ -303,7 +303,7 @@ public class AdvisoryBrokerTest extends BrokerTestSupport {
         assertNotNull(m1.getDataStructure());
         assertEquals(((ProducerInfo)m1.getDataStructure()).getProducerId(), producerInfo2.getProducerId());
         
-        // Create the 2nd consumer..         
+        // Create the 2nd consumer.         
         ConsumerInfo consumerInfo2 = createConsumerInfo(sessionInfo2, destination);
         consumerInfo2.setPrefetchSize(100);
         connection2.send(consumerInfo2);

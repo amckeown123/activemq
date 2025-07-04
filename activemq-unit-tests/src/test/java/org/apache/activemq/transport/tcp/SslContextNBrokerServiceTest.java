@@ -22,11 +22,11 @@ import java.security.cert.X509Certificate;
 import java.util.Iterator;
 import java.util.Map;
 
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.SSLSocket;
-import javax.net.ssl.SSLSocketFactory;
-import javax.net.ssl.TrustManager;
-import javax.net.ssl.X509TrustManager;
+import jakarta.net.ssl.SSLContext;
+import jakarta.net.ssl.SSLSocket;
+import jakarta.net.ssl.SSLSocketFactory;
+import jakarta.net.ssl.TrustManager;
+import jakarta.net.ssl.X509TrustManager;
 
 import org.junit.After;
 import org.junit.Before;
@@ -116,7 +116,7 @@ public class SslContextNBrokerServiceTest {
 
     @Before
     public void setUp() throws Exception {
-        // System.setProperty("javax.net.debug", "ssl");
+        // System.setProperty("jakarta.net.debug", "ssl");
         Thread.currentThread().setContextClassLoader(SslContextNBrokerServiceTest.class.getClassLoader());
         context = new ClassPathXmlApplicationContext("org/apache/activemq/transport/tcp/n-brokers-ssl.xml");
         beansOfType = context.getBeansOfType(BrokerService.class);

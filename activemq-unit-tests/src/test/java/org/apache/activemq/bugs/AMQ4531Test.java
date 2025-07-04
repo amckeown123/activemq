@@ -115,7 +115,7 @@ public class AMQ4531Test extends TestCase {
         }
 
         // Wait for all the clients to finish
-        LOG.info("Waiting for latch...");
+        LOG.info("Waiting for latch..");
         done.await();
         LOG.info("Latch complete.");
         LOG.info("FD count: " + openFileDescriptorCount());

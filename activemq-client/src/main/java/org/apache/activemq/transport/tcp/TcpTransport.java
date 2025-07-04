@@ -36,7 +36,7 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
 
-import javax.net.SocketFactory;
+import jakarta.net.SocketFactory;
 
 import org.apache.activemq.Service;
 import org.apache.activemq.TransportLoggerSupport;
@@ -518,7 +518,7 @@ public class TcpTransport extends TransportThreadSupport implements Transport, S
                 socket.bind(localAddress);
             }
 
-            // If it's a server accepted socket.. we don't need to connect it
+            // If it's a server accepted socket. we don't need to connect it
             // to a remote address.
             if (remoteAddress != null) {
                 if (connectionTimeout >= 0) {
@@ -529,7 +529,7 @@ public class TcpTransport extends TransportThreadSupport implements Transport, S
             }
 
         } else {
-            // For SSL sockets.. you can't create an unconnected socket :(
+            // For SSL sockets. you can't create an unconnected socket :(
             // This means the timout option are not supported either.
             if (localAddress != null) {
                 socket = socketFactory.createSocket(remoteAddress.getAddress(), remoteAddress.getPort(),
@@ -549,8 +549,8 @@ public class TcpTransport extends TransportThreadSupport implements Transport, S
             LOG.debug("Stopping transport " + this);
         }
 
-        // Closing the streams flush the sockets before closing.. if the socket
-        // is hung.. then this hangs the close.
+        // Closing the streams flush the sockets before closing. if the socket
+        // is hung. then this hangs the close.
         // closeStreams();
         if (socket != null) {
             if (closeAsync) {

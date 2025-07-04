@@ -74,7 +74,7 @@ public abstract class DataFileGeneratorTestSupport extends TestSupport {
         File basedir = null;
         try {
             URL resource = DataFileGeneratorTestSupport.class.getResource("DataFileGeneratorTestSupport.class");
-            URI baseURI = new URI(resource.toString()).resolve("../../../../..");
+            URI baseURI = new URI(resource.toString()).resolve("././././.");
             basedir = new File(baseURI).getCanonicalFile();
         } catch (Exception e) {
             throw new RuntimeException(e);

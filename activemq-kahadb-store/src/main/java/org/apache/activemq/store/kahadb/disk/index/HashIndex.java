@@ -81,7 +81,7 @@ public class HashIndex<Key,Value> implements Index<Key,Value> {
         
         private Page<Metadata> page;
         
-        // When the index is initializing or resizing.. state changes so that
+        // When the index is initializing or resizing. state changes so that
         // on failure it can be properly recovered.
         private int state;
         private long binPageId;
@@ -151,13 +151,13 @@ public class HashIndex<Key,Value> implements Index<Key,Value> {
                 clear(tx);
 
                 // If failure happens now we can continue initializing the
-                // the hash bins...
+                // the hash bins..
             } else {
 
                 metadata = metadataPage.get();
                 metadata.page = metadataPage;
                 
-                // If we did not have a clean shutdown...
+                // If we did not have a clean shutdown..
                 if (metadata.state == OPEN_STATE ) {
                     // Figure out the size and the # of bins that are
                     // active. Yeah This loads the first page of every bin. :(
@@ -312,8 +312,8 @@ public class HashIndex<Key,Value> implements Index<Key,Value> {
         int resizeCapacity = newSize;
         long resizePageId = tx.allocate(resizeCapacity).getPageId();
 
-        // In Phase 1 we copy the data to the new bins..
-        // Initialize the bins..
+        // In Phase 1 we copy the data to the new bins.
+        // Initialize the bins.
         for (int i = 0; i < resizeCapacity; i++) {
             long pageId = resizePageId + i;
             clearBinAtPage(tx, pageId);

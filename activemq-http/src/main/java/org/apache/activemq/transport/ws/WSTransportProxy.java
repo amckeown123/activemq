@@ -161,11 +161,11 @@ public final class WSTransportProxy extends TransportSupport implements Transpor
     @Override
     public void onWebSocketBinary(byte[] payload, int offset, int length) {
         if (!transportStartedAtLeastOnce()) {
-            LOG.debug("Waiting for WebSocket to be properly started...");
+            LOG.debug("Waiting for WebSocket to be properly started..");
             try {
                 socketTransportStarted.await();
             } catch (InterruptedException e) {
-                LOG.warn("While waiting for WebSocket to be properly started, we got interrupted!! Should be okay, but you could see race conditions...");
+                LOG.warn("While waiting for WebSocket to be properly started, we got interrupted!! Should be okay, but you could see race conditions..");
             }
         }
 
@@ -182,11 +182,11 @@ public final class WSTransportProxy extends TransportSupport implements Transpor
     @Override
     public void onWebSocketText(String data) {
         if (!transportStartedAtLeastOnce()) {
-            LOG.debug("Waiting for WebSocket to be properly started...");
+            LOG.debug("Waiting for WebSocket to be properly started..");
             try {
                 socketTransportStarted.await();
             } catch (InterruptedException e) {
-                LOG.warn("While waiting for WebSocket to be properly started, we got interrupted!! Should be okay, but you could see race conditions...");
+                LOG.warn("While waiting for WebSocket to be properly started, we got interrupted!! Should be okay, but you could see race conditions..");
             }
         }
 
@@ -235,11 +235,11 @@ public final class WSTransportProxy extends TransportSupport implements Transpor
     @Override
     public void onSocketOutboundText(String data) throws IOException {
         if (!transportStartedAtLeastOnce()) {
-            LOG.debug("Waiting for WebSocket to be properly started...");
+            LOG.debug("Waiting for WebSocket to be properly started..");
             try {
                 socketTransportStarted.await();
             } catch (InterruptedException e) {
-                LOG.warn("While waiting for WebSocket to be properly started, we got interrupted!! Should be okay, but you could see race conditions...");
+                LOG.warn("While waiting for WebSocket to be properly started, we got interrupted!! Should be okay, but you could see race conditions..");
             }
         }
 
@@ -255,11 +255,11 @@ public final class WSTransportProxy extends TransportSupport implements Transpor
     @Override
     public void onSocketOutboundBinary(ByteBuffer data) throws IOException {
         if (!transportStartedAtLeastOnce()) {
-            LOG.debug("Waiting for WebSocket to be properly started...");
+            LOG.debug("Waiting for WebSocket to be properly started..");
             try {
                 socketTransportStarted.await();
             } catch (InterruptedException e) {
-                LOG.warn("While waiting for WebSocket to be properly started, we got interrupted!! Should be okay, but you could see race conditions...");
+                LOG.warn("While waiting for WebSocket to be properly started, we got interrupted!! Should be okay, but you could see race conditions..");
             }
         }
 

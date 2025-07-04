@@ -96,7 +96,7 @@ public class SlowConsumerTest extends TestCase {
                     while (messagesCount != MESSAGES_COUNT) {
                         Message msg = consumer.receive(messageReceiveTimeout);
                         if (msg == null) {
-                            LOG.warn("Got null message at count: " + messagesCount + ". Continuing...");
+                            LOG.warn("Got null message at count: " + messagesCount + ". Continuing..");
                             break;
                         }
                         String text = ((TextMessage)msg).getText();

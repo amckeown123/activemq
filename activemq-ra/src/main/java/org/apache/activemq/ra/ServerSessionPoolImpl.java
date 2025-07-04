@@ -162,7 +162,7 @@ public class ServerSessionPoolImpl implements ServerSessionPool {
             }
         } else if (force || activeSessions.size() >= maxSessions) {
             // If we are at the upper limit
-            // then reuse the already created sessions..
+            // then reuse the already created sessions.
             // This is going to queue up messages into a session for
             // processing.
             ss = getExistingActiveServerSession();

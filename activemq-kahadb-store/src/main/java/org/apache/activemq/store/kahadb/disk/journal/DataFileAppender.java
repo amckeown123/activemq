@@ -185,7 +185,7 @@ class DataFileAppender implements FileAppender {
                     enqueueMutex.notifyAll();
                     break;
                 } else {
-                    // Append to current batch if possible..
+                    // Append to current batch if possible.
                     if (nextWriteBatch.canAppend(write)) {
                         nextWriteBatch.append(write);
                         break;
@@ -196,7 +196,7 @@ class DataFileAppender implements FileAppender {
                                 final long start = System.currentTimeMillis();
                                 enqueueMutex.wait();
                                 if (maxStat > 0) {
-                                    logger.info("Waiting for write to finish with full batch... millis: " +
+                                    logger.info("Waiting for write to finish with full batch.. millis: " +
                                                 (System.currentTimeMillis() - start));
                                }
                             }

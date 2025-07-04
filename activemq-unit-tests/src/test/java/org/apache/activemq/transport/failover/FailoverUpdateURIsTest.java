@@ -76,7 +76,7 @@ public class FailoverUpdateURIsTest extends TestCase {
         bs1 = createBroker("bs1", firstTcpUri);
         bs1.start();
 
-        // no failover uri's to start with, must be read from file...
+        // no failover uri's to start with, must be read from file..
         ActiveMQConnectionFactory cf = new ActiveMQConnectionFactory("failover:()?updateURIsURL=file:///" + updateFile.getAbsoluteFile());
         connection = cf.createConnection();
         connection.start();

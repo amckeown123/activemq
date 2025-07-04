@@ -324,7 +324,7 @@ public class MKahaDBTxRecoveryTest {
             broker.stop();
 
             // and without checksum
-            LOG.info("Check for journal read failure... no checksum");
+            LOG.info("Check for journal read failure.. no checksum");
             foundSomeCorruption.set(false);
             prepareBrokerWithMultiStore(false);
             ((MultiKahaDBPersistenceAdapter) broker.getPersistenceAdapter()).setCheckForCorruption(false);

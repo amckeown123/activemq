@@ -161,7 +161,7 @@ public class FailoverDuplicateTest extends TestSupport {
         Executors.newSingleThreadExecutor().execute(new Runnable() {
             @Override
             public void run() {
-                LOG.info("doing async send...");
+                LOG.info("doing async send..");
                 try {
                     produceMessage(sendSession, destination, "will resend", 1);
                 } catch (JMSException e) {
@@ -218,7 +218,7 @@ public class FailoverDuplicateTest extends TestSupport {
         broker.stop();
         broker.waitUntilStopped();
 
-        LOG.info("Checking for remaining/hung messages with second restart..");
+        LOG.info("Checking for remaining/hung messages with second restart.");
         broker = createBroker(false, url);
         setDefaultPersistenceAdapter(broker);
         broker.start();

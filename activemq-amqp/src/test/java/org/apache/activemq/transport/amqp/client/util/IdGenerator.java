@@ -206,7 +206,7 @@ public class IdGenerator {
      * @param id1 the lhs of the comparison.
      * @param id2 the rhs of the comparison.
      *
-     * @return 0 if equal else a positive if {@literal id1 > id2} ...
+     * @return 0 if equal else a positive if {@literal id1 > id2} ..
      */
     public static int compare(String id1, String id2) {
         int result = -1;
@@ -230,7 +230,7 @@ public class IdGenerator {
      * <code>
      * java.net.UnknownHostException: &lt;hostname&gt;: &lt;hostname&gt;
      *  at java.net.InetAddress.getLocalHost(InetAddress.java:1425)
-     *   ...
+     *   ..
      * </code>
      * Instead of just throwing an UnknownHostException and giving up, this
      * method grabs a suitable hostname from the exception and prevents the

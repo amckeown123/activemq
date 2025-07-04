@@ -23,8 +23,8 @@ import java.net.Socket;
 import java.util.Arrays;
 import java.util.Collection;
 
-import javax.net.SocketFactory;
-import javax.net.ssl.SSLSocketFactory;
+import jakarta.net.SocketFactory;
+import jakarta.net.ssl.SSLSocketFactory;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

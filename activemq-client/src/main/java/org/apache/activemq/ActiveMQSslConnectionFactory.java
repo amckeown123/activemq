@@ -30,10 +30,10 @@ import java.security.KeyStore;
 import java.security.SecureRandom;
 
 import jakarta.jms.JMSException;
-import javax.net.ssl.KeyManager;
-import javax.net.ssl.KeyManagerFactory;
-import javax.net.ssl.TrustManager;
-import javax.net.ssl.TrustManagerFactory;
+import jakarta.net.ssl.KeyManager;
+import jakarta.net.ssl.KeyManagerFactory;
+import jakarta.net.ssl.TrustManager;
+import jakarta.net.ssl.TrustManagerFactory;
 
 import org.apache.activemq.broker.SslContext;
 import org.apache.activemq.transport.Transport;

@@ -126,23 +126,23 @@ public class JMSXPropertyTest extends PTPTestCase
          receiver = receiverSession.createReceiver(receiverQueue);
          receiverConnection.start();
 
-         // we send a message...
+         // we send a message..
          TextMessage message = senderSession.createTextMessage();
          message.setText("testJMSXDeliveryCount");
          sender.send(message);
-         // ... and commit the *producer* transaction
+         // .. and commit the *producer* transaction
          senderSession.commit();
 
-         // we receive a message...
+         // we receive a message..
          Message m = receiver.receive(TestConfig.TIMEOUT);
          Assert.assertTrue(m != null);
          Assert.assertTrue(m instanceof TextMessage);
          TextMessage msg = (TextMessage)m;
-         // ... which is the one which was sent...
+         // .. which is the one which was sent..
          Assert.assertEquals("testJMSXDeliveryCount", msg.getText());
-         // ...and has not been redelivered
+         // ..and has not been redelivered
          Assert.assertEquals(false, msg.getJMSRedelivered());
-         // ... so it has been delivered once
+         // .. so it has been delivered once
          int jmsxDeliveryCount = msg.getIntProperty("JMSXDeliveryCount");
          Assert.assertEquals(1, jmsxDeliveryCount);
          // we rollback the *consumer* transaction
@@ -153,11 +153,11 @@ public class JMSXPropertyTest extends PTPTestCase
          Assert.assertTrue(m != null);
          Assert.assertTrue(m instanceof TextMessage);
          msg = (TextMessage)m;
-         // ... which is still the one which was sent...
+         // .. which is still the one which was sent..
          Assert.assertEquals("testJMSXDeliveryCount", msg.getText());
-         // .. but this time, it has been redelivered
+         // . but this time, it has been redelivered
          Assert.assertEquals(true, msg.getJMSRedelivered());
-         // ... so it has been delivered a second time
+         // .. so it has been delivered a second time
          jmsxDeliveryCount = msg.getIntProperty("JMSXDeliveryCount");
          Assert.assertEquals(2, jmsxDeliveryCount);
       }

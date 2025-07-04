@@ -69,7 +69,7 @@ public class ErrorOnFutureSendTest {
         broker.setDataDirectory(dataDir.getRoot().getAbsolutePath());
         adapter = (KahaDBPersistenceAdapter) broker.getPersistenceAdapter();
         broker.start();
-        LOG.info("Starting broker..");
+        LOG.info("Starting broker.");
     }
 
     @Before

@@ -235,8 +235,8 @@ public class DestinationMapTest extends TestCase {
         put(".TopicA", v2);
         put("TopicA.", v3);
         put(".", v4);
-        put("..TopicA", v5);
-        put("..", v6);
+        put(".TopicA", v5);
+        put(".", v6);
 
         // test wildcard patterns "#", "+", "+/#", "/+", "+/", "+/+", "+/+/", "+/+/+"
         assertMapValue(">", v1, v2, v3, v4, v5, v6);

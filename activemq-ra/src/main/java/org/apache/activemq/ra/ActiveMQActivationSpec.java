@@ -82,7 +82,7 @@ public class ActiveMQActivationSpec implements MessageActivationSpec, Serializab
     private boolean useJndi;
 
     /**
-     * @see javax.resource.spi.ActivationSpec#validate()
+     * @see jakarta.resource.spi.ActivationSpec#validate()
      */
     public void validate() throws InvalidPropertyException {
         List<String> errorMessages = new ArrayList<String>();
@@ -223,7 +223,7 @@ public class ActiveMQActivationSpec implements MessageActivationSpec, Serializab
     }
 
     /**
-     * @see javax.resource.spi.ResourceAdapterAssociation#setResourceAdapter(javax.resource.spi.ResourceAdapter)
+     * @see jakarta.resource.spi.ResourceAdapterAssociation#setResourceAdapter(jakarta.resource.spi.ResourceAdapter)
      */
     public void setResourceAdapter(ResourceAdapter resourceAdapter) throws ResourceException {
         // spec section 5.3.3

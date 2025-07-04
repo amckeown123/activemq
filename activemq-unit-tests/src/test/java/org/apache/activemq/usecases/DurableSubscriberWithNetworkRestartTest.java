@@ -105,7 +105,7 @@ public class DurableSubscriberWithNetworkRestartTest extends JmsMultipleBrokersT
             createBroker(new URI("broker:(tcp://localhost:61616)/" + SPOKE + options));
             bridge(SPOKE, HUB);
             brokers.get(SPOKE).broker.start();
-            LOG.info("restarted spoke..:" + i);
+            LOG.info("restarted spoke.:" + i);
 
             assertTrue("got mbeans on restart", Wait.waitFor(new Wait.Condition() {
                 @Override

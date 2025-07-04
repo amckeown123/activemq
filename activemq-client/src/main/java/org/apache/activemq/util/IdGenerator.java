@@ -211,7 +211,7 @@ public class IdGenerator {
      *
      * @param id1
      * @param id2
-     * @return 0 if equal else a positive if id1 is > id2 ...
+     * @return 0 if equal else a positive if id1 is > id2 ..
      */
     public static int compare(String id1, String id2) {
         int result = -1;

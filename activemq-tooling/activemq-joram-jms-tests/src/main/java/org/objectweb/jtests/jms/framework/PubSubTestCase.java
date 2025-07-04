@@ -109,7 +109,7 @@ public abstract class PubSubTestCase extends JMSTestCase
 
       try
       {
-         // ...and creates administrated objects and binds them
+         // ..and creates administrated objects and binds them
          admin.createTopicConnectionFactory(PubSubTestCase.TCF_NAME);
          admin.createTopic(PubSubTestCase.TOPIC_NAME);
 

@@ -300,7 +300,7 @@ public class JmsSendReceiveWithMessageExpirationTest extends TestSupport {
     }
 
     protected void tearDown() throws Exception {
-        LOG.info("Dumping stats...");
+        LOG.info("Dumping stats..");
         LOG.info("Closing down connection");
 
         session.close();

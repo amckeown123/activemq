@@ -67,7 +67,7 @@ public class SpringTestSupport extends TestCase {
 
         // now lets check that the consumer has received some messages
         List<Message> messages = consumer.flushMessages();
-        LOG.info("Consumer has received messages....");
+        LOG.info("Consumer has received messages..");
         for (Iterator<Message> iter = messages.iterator(); iter.hasNext();) {
             Object message = iter.next();
             LOG.info("Received: " + message);

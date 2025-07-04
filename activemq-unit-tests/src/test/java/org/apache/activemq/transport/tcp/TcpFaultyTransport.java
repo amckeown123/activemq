@@ -25,7 +25,7 @@ import org.apache.activemq.transport.Transport;
 
 import org.apache.activemq.wireformat.WireFormat;
 
-import javax.net.SocketFactory;
+import jakarta.net.SocketFactory;
 
 /**
  * An implementation of the {@link Transport} interface using raw tcp/ip

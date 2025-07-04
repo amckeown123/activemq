@@ -73,7 +73,7 @@ public class ProducerThread extends Thread {
             initPayLoad();
             running = true;
 
-            LOG.info(threadName +  " Started to calculate elapsed time ...\n");
+            LOG.info(threadName +  " Started to calculate elapsed time ..\n");
             long tStart = System.currentTimeMillis();
 
             if (runIndefinitely) {

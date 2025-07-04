@@ -71,7 +71,7 @@ public class NetworkAsyncStartSslTest extends JmsMultipleBrokersTestSupport {
         bridgeBroker(brokerA, brokerCUri);
         LOG.info("Added bridge to: " + brokerCUri);
 
-        LOG.info("starting A..");
+        LOG.info("starting A.");
         brokerA.start();
 
         // wait for A to get bridge to B

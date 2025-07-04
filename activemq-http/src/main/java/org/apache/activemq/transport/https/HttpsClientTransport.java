@@ -20,7 +20,7 @@ package org.apache.activemq.transport.https;
 import java.io.IOException;
 import java.net.URI;
 
-import javax.net.ssl.HostnameVerifier;
+import jakarta.net.ssl.HostnameVerifier;
 
 import org.apache.activemq.broker.SslContext;
 import org.apache.activemq.transport.http.HttpClientTransport;
@@ -38,7 +38,7 @@ import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 
 public class HttpsClientTransport extends HttpClientTransport {
 
-    private final javax.net.ssl.SSLSocketFactory sslSocketFactory;
+    private final jakarta.net.ssl.SSLSocketFactory sslSocketFactory;
     private boolean verifyHostName = true;
 
     public HttpsClientTransport(TextWireFormat wireFormat, URI remoteUrl) {
@@ -76,7 +76,7 @@ public class HttpsClientTransport extends HttpClientTransport {
      * @return Newly created (Ssl)SocketFactory.
      * @throws IOException
      */
-    protected javax.net.ssl.SSLSocketFactory createSocketFactory() throws IOException {
+    protected jakarta.net.ssl.SSLSocketFactory createSocketFactory() throws IOException {
         if (SslContext.getCurrentSslContext() != null) {
             SslContext ctx = SslContext.getCurrentSslContext();
             try {
@@ -85,7 +85,7 @@ public class HttpsClientTransport extends HttpClientTransport {
                 throw IOExceptionSupport.create(e);
             }
         } else {
-            return (javax.net.ssl.SSLSocketFactory) javax.net.ssl.SSLSocketFactory.getDefault();
+            return (jakarta.net.ssl.SSLSocketFactory) jakarta.net.ssl.SSLSocketFactory.getDefault();
         }
 
     }

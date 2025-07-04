@@ -65,7 +65,7 @@ public class RedeliveryPluginHeaderTest extends TestCase {
         broker.start();
         broker.waitUntilStarted();
 
-        LOG.info("***Broker started...");
+        LOG.info("***Broker started..");
 
         //pushed message to broker
 
@@ -87,21 +87,21 @@ public class RedeliveryPluginHeaderTest extends TestCase {
             producerQ1.setDeliveryMode(DeliveryMode.PERSISTENT);
 
             Message m = session.createTextMessage("testMessage");
-            LOG.info("*** send message to broker...");
+            LOG.info("*** send message to broker..");
             producerQ1.send(m);
             session.commit();
 
             //consume message from Q1 and rollback to get it redelivered
             MessageConsumer consumerQ1 = session.createConsumer(destinationQ1);
 
-            LOG.info("*** consume message from Q1 and rolled back..");
+            LOG.info("*** consume message from Q1 and rolled back.");
 
             TextMessage textMessage = (TextMessage) consumerQ1.receive();
             LOG.info("got redelivered: " + textMessage);
             assertFalse("JMSRedelivered flag is not set", textMessage.getJMSRedelivered());
             session.rollback();
 
-            LOG.info("*** consumed message from Q1 again and sending to Q2..");
+            LOG.info("*** consumed message from Q1 again and sending to Q2.");
             TextMessage textMessage2 = (TextMessage) consumerQ1.receive();
             LOG.info("got: " + textMessage2);
             session.commit();

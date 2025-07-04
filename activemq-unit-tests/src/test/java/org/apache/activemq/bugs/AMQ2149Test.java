@@ -200,7 +200,7 @@ public class AMQ2149Test {
                     LOG.info(dest + " received " + seqNum);
                     
                     if (transactional) {
-                        LOG.info("committing..");
+                        LOG.info("committing.");
                         session.commit();
                     }
                 }
@@ -497,7 +497,7 @@ public class AMQ2149Test {
         class RestartTask extends TimerTask {
             public void run() {
                 synchronized (brokerLock) {
-                    LOG.info("stopping broker..");
+                    LOG.info("stopping broker.");
                     try {
                         broker.stop();
                         broker.waitUntilStopped();
@@ -564,7 +564,7 @@ public class AMQ2149Test {
                 AutoFailTestSupport.dumpAllThreads("Send blocked");
             }
         }
-        LOG.info("senders done..." + threads);
+        LOG.info("senders done.." + threads);
 
         while(!receivers.isEmpty() && System.currentTimeMillis() < expiry) {
             Receiver receiver = receivers.firstElement();

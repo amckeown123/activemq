@@ -21,7 +21,7 @@ import java.net.Socket;
 import java.net.URI;
 import java.net.UnknownHostException;
 
-import javax.net.SocketFactory;
+import jakarta.net.SocketFactory;
 
 import org.apache.activemq.transport.nio.NIOTransport;
 import org.apache.activemq.wireformat.WireFormat;

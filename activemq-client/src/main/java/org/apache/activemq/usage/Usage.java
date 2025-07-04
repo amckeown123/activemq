@@ -289,7 +289,7 @@ public abstract class Usage<T extends Usage> implements Service {
             LOG.debug(getName() + ": usage change from: " + oldPercentUsage + "% of available memory, to: " + newPercentUsage + "% of available memory");
         }
         if (started.get()) {
-            // Switching from being full to not being full..
+            // Switching from being full to not being full.
             if (oldPercentUsage >= 100 && newPercentUsage < 100) {
                 waitForSpaceCondition.signalAll();
                 if (!callbacks.isEmpty()) {

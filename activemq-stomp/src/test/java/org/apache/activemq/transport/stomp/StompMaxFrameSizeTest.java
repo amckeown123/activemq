@@ -25,8 +25,8 @@ import java.net.Socket;
 import java.util.Arrays;
 import java.util.Collection;
 
-import javax.net.SocketFactory;
-import javax.net.ssl.SSLSocketFactory;
+import jakarta.net.SocketFactory;
+import jakarta.net.ssl.SSLSocketFactory;
 
 import org.junit.Assume;
 import org.junit.Test;

@@ -154,28 +154,28 @@ public class AMQ5266SingleDestTest {
         ExportQueueConsumer consumer = null;
 
         LOG.info("Publisher will publish " + (publisherMessagesPerThread * publisherThreadCount) + " messages to each queue specified.");
-        LOG.info("\nBuilding Publisher...");
+        LOG.info("\nBuilding Publisher..");
 
         publisher = new ExportQueuePublisher(activemqURL, activemqQueues, publisherMessagesPerThread, publisherThreadCount);
 
-        LOG.info("Building Consumer...");
+        LOG.info("Building Consumer..");
 
         consumer = new ExportQueueConsumer(activemqURL, activemqQueues, consumerThreadsPerQueue, consumerBatchSize, publisherMessagesPerThread * publisherThreadCount);
 
         long totalStart = System.currentTimeMillis();
 
-        LOG.info("Starting Publisher...");
+        LOG.info("Starting Publisher..");
 
         publisher.start();
 
-        LOG.info("Starting Consumer...");
+        LOG.info("Starting Consumer..");
 
         consumer.start();
 
         int distinctPublishedCount = 0;
 
 
-        LOG.info("Waiting For Publisher Completion...");
+        LOG.info("Waiting For Publisher Completion..");
 
         publisher.waitForCompletion();
 

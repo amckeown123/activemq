@@ -130,7 +130,7 @@ public class TopicOutboundBridgeReconnectTest {
         assertEquals("test123", ((TextMessage)message).getText());
         assertNull(consumer.receiveNoWait());
 
-        // Restart the first broker...
+        // Restart the first broker..
         stopProducerBroker();
         startProducerBroker();
 
@@ -163,7 +163,7 @@ public class TopicOutboundBridgeReconnectTest {
         assertNull(consumer1.receiveNoWait());
         consumer1.close();
 
-        // Restart the first broker...
+        // Restart the first broker..
         stopConsumerBroker();
         startConsumerBroker();
 

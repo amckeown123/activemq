@@ -35,6 +35,6 @@ public class BaseDataStreamMarshallerTest {
         Arrays.fill(message, '1');
         String cutMessage = (new WireFormatInfoMarshaller()).cutMessageIfNeeded(String.valueOf(message));
         assertEquals("Expected length " + MAX_MESSAGE_LENGTH, MAX_MESSAGE_LENGTH, cutMessage.length());
-        assertTrue("Expected message tail ...", cutMessage.endsWith("..."));
+        assertTrue("Expected message tail ..", cutMessage.endsWith(".."));
     }
 }

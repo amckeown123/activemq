@@ -451,7 +451,7 @@ public class MulticastDiscoveryAgent implements DiscoveryAgent, Runnable {
                 mcast.send(packet);
             } catch (IOException e) {
                 // If a send fails, chances are all subsequent sends will fail
-                // too.. No need to keep reporting the
+                // too. No need to keep reporting the
                 // same error over and over.
                 if (reportAdvertizeFailed) {
                     reportAdvertizeFailed = false;

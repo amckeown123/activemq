@@ -403,7 +403,7 @@ public class RegionBroker extends EmptyBroker {
             inactiveDestinationsPurgeLock.readLock().lock();
             try {
                 // This seems to cause the destination to be added but without
-                // advisories firing...
+                // advisories firing..
                 context.getBroker().addDestination(context, destination, isAllowTempAutoCreationOnSend());
                 getRegion(destination).addProducer(context, info);
             } finally {
@@ -912,7 +912,7 @@ public class RegionBroker extends EmptyBroker {
                     if (dest instanceof BaseDestination) {
                         log = ((BaseDestination) dest).getLog();
                     }
-                    log.info("{} Inactive for longer than {} ms - removing ...", dest.getName(), dest.getInactiveTimeoutBeforeGC());
+                    log.info("{} Inactive for longer than {} ms - removing ..", dest.getName(), dest.getInactiveTimeoutBeforeGC());
                     try {
                         getRoot().removeDestination(context, dest.getActiveMQDestination(), isAllowTempAutoCreationOnSend() ? 1 : 0);
                     } catch (Throwable e) {

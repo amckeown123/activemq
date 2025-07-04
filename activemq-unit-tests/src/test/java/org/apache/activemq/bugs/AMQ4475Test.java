@@ -107,7 +107,7 @@ public class AMQ4475Test {
 
     @Test
     public void testIndividualDeadLetterAndTimeStampPlugin() {
-        LOG.info("Starting test ..");
+        LOG.info("Starting test .");
 
         long startTime = System.nanoTime();
 

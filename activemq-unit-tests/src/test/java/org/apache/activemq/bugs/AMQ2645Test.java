@@ -81,10 +81,10 @@ public class AMQ2645Test extends EmbeddedBrokerTestSupport {
                 }
             });
 
-            LOG.info("Stopping broker....");
+            LOG.info("Stopping broker..");
             broker.stop();
 
-            LOG.info("Creating new broker...");
+            LOG.info("Creating new broker..");
             broker = createBroker();
             startBroker();
             broker.waitUntilStarted();

@@ -20,17 +20,17 @@ import org.w3c.dom.Attr;
 import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
 
-import javax.xml.XMLConstants;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.*;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
-import javax.xml.xpath.XPath;
-import javax.xml.xpath.XPathConstants;
-import javax.xml.xpath.XPathExpressionException;
-import javax.xml.xpath.XPathFactory;
+import javax.xml.namespace.*;
+import javax.xml.namespace.DocumentBuilder;
+import javax.xml.namespace.DocumentBuilderFactory;
+import javax.xml.namespace.ParserConfigurationException;
+import javax.xml.parsers.*;
+import javax.xml.parsers.dom.DOMSource;
+import javax.xml.parsers.stream.StreamResult;
+import jakarta.xml.xpath.XPath;
+import jakarta.xml.xpath.XPathConstants;
+import jakarta.xml.xpath.XPathExpressionException;
+import jakarta.xml.xpath.XPathFactory;
 import java.io.*;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
@@ -79,7 +79,7 @@ public class CreateCommand extends AbstractCommand {
     }
 
     protected void runTask(List<String> tokens) throws Exception {
-        context.print("Running create broker task...");
+        context.print("Running create broker task..");
         amqHome = new File(System.getProperty("activemq.home"));
         for (String token : tokens) {
 
@@ -209,7 +209,7 @@ public class CreateCommand extends AbstractCommand {
     // utlity method to write an xml source to file
     private void writeToFile(Source src, File file) throws TransformerException {
         TransformerFactory tFactory = TransformerFactory.newInstance();
-        tFactory.setFeature(javax.xml.XMLConstants.FEATURE_SECURE_PROCESSING, Boolean.TRUE);
+        tFactory.setFeature(javax.xml.namespace.FEATURE_SECURE_PROCESSING, Boolean.TRUE);
 
         Transformer fileTransformer = tFactory.newTransformer();
 
@@ -289,7 +289,7 @@ public class CreateCommand extends AbstractCommand {
        res.append("    PRG=`dirname \"$PRG\"`\"/$link\"\n");
        res.append("  fi\n");
        res.append("done\n");
-       res.append("ACTIVEMQ_BASE=`dirname \"$PRG\"`/..\n");
+       res.append("ACTIVEMQ_BASE=`dirname \"$PRG\"`/.\n");
        res.append("cd \"$saveddir\"\n\n");
        res.append("ACTIVEMQ_BASE=`cd \"$ACTIVEMQ_BASE\" && pwd`\n\n");
        res.append("## Enable remote debugging\n");

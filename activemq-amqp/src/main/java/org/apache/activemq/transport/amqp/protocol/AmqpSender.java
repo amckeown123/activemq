@@ -287,14 +287,14 @@ public class AmqpSender extends AmqpAbstractLink<Sender> {
             } else if (state instanceof Modified) {
                 Modified modified = (Modified) state;
                 if (Boolean.TRUE.equals(modified.getDeliveryFailed())) {
-                    // increment delivery counter..
+                    // increment delivery counter.
                     md.setRedeliveryCounter(md.getRedeliveryCounter() + 1);
                 }
                 LOG.trace("onDelivery: Modified state = {}, delivery count now {}", state, md.getRedeliveryCounter());
                 byte ackType = -1;
                 Boolean undeliverableHere = modified.getUndeliverableHere();
                 if (undeliverableHere != null && undeliverableHere) {
-                    // receiver does not want the message..
+                    // receiver does not want the message.
                     // perhaps we should DLQ it?
                     ackType = MessageAck.POISON_ACK_TYPE;
                 }
@@ -503,7 +503,7 @@ public class AmqpSender extends AmqpAbstractLink<Sender> {
         }
 
         if (ackType == -1) {
-            // we are going to settle, but redeliver.. we we won't yet ack to ActiveMQ
+            // we are going to settle, but redeliver. we we won't yet ack to ActiveMQ
             delivery.settle();
             onMessageDispatch((MessageDispatch) delivery.getContext());
         } else {

@@ -129,7 +129,7 @@ public class AMQ4361Test {
             @Override
             public void run() {
                 try {
-                    LOG.info("Attempting close..");
+                    LOG.info("Attempting close.");
                     producer.close();
                 } catch (Exception e) {
                     closeException.set(e);

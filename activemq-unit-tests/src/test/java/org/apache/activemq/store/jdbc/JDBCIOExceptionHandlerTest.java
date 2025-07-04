@@ -306,7 +306,7 @@ public class JDBCIOExceptionHandlerTest {
             Wait.waitFor(new Wait.Condition() {
                 @Override
                 public boolean isSatisified() throws Exception {
-                    LOG.debug("*** checking connector to start...");
+                    LOG.debug("*** checking connector to start..");
                     try {
                         checkTransportConnectorStarted();
                         return true;
@@ -319,7 +319,7 @@ public class JDBCIOExceptionHandlerTest {
 
 
         } finally {
-            LOG.debug("*** broker is stopping...");
+            LOG.debug("*** broker is stopping..");
             broker.stop();
             broker.waitUntilStopped();
         }
@@ -411,7 +411,7 @@ public class JDBCIOExceptionHandlerTest {
             EmbeddedDataSource newDatasource =
                     (EmbeddedDataSource) DataSourceServiceSupport.createDataSource(broker.getDataDirectoryFile().getCanonicalPath());
             newDatasource.getConnection();
-            LOG.info("*** DB restarted now...");
+            LOG.info("*** DB restarted now..");
             Object existingDataSource = realDatasource;
             synchronized (existingDataSource) {
                 this.realDatasource = new SyncCreateDataSource(newDatasource);
@@ -419,7 +419,7 @@ public class JDBCIOExceptionHandlerTest {
         }
 
         public void stopDB() {
-            LOG.info("***DB is being shutdown...");
+            LOG.info("***DB is being shutdown..");
             synchronized (realDatasource) {
                 DataSourceServiceSupport.shutdownDefaultDataSource(realDatasource.getDelegate());
             }

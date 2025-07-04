@@ -134,7 +134,7 @@ public class ConcurrentDestinationCreationTest extends org.apache.activemq.TestS
             LOG.info("Supports dead lock detection: " + bean.isSynchronizerUsageSupported());
             long[] threadIds = bean.findDeadlockedThreads();
             if (threadIds != null) {
-                System.err.println("Dead locked threads....");
+                System.err.println("Dead locked threads..");
                 ThreadInfo[] infos = bean.getThreadInfo(threadIds);
 
                 for (ThreadInfo info : infos) {

@@ -22,9 +22,9 @@ import java.net.Socket;
 import java.net.URI;
 import java.net.URISyntaxException;
 
-import javax.net.ssl.SSLServerSocket;
-import javax.net.ssl.SSLServerSocketFactory;
-import javax.net.ssl.SSLSocket;
+import jakarta.net.ssl.SSLServerSocket;
+import jakarta.net.ssl.SSLServerSocketFactory;
+import jakarta.net.ssl.SSLSocket;
 
 import org.apache.activemq.transport.Transport;
 import org.apache.activemq.wireformat.WireFormat;

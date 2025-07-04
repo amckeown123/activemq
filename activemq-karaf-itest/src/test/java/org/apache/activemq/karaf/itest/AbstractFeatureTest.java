@@ -30,7 +30,7 @@ import java.nio.channels.FileChannel;
 import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 
 import org.apache.karaf.features.FeaturesService;
 import org.apache.karaf.shell.api.console.SessionFactory;
@@ -141,7 +141,7 @@ public abstract class AbstractFeatureTest {
         return configureBrokerStart("activemq");
     }
 
-    public static Option configure(String... features) {
+    public static Option configure(String.. features) {
         String karafVersion = MavenUtils.getArtifactVersion("org.apache.karaf", "apache-karaf");
         MavenUrlReference karafUrl = maven().groupId("org.apache.karaf").artifactId("apache-karaf")
             .type("tar.gz").versionAsInProject();

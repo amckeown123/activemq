@@ -46,7 +46,7 @@ public class HttpsClientSettingsHostnameVerificationTest extends JmsTopicSendRec
     @Override
     protected void setUp() throws Exception {
         // Create the broker service from the configuration and wait until it
-        // has been started...
+        // has been started..
         broker = new BrokerService();
         SpringSslContext sslContext = new SpringSslContext();
         sslContext.setKeyStorePassword(PASSWORD);

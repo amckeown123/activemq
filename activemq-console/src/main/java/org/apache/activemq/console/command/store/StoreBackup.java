@@ -90,7 +90,7 @@ public class StoreBackup {
 
         setFile(new File(filename));
         System.out.println("Loading: " + config);
-        BrokerFactory.setStartDefault(false); // to avoid the broker auto-starting..
+        BrokerFactory.setStartDefault(false); // to avoid the broker auto-starting.
         BrokerService broker = BrokerFactory.createBroker(config);
         BrokerFactory.resetStartDefault();
         PersistenceAdapter store = broker.getPersistenceAdapter();

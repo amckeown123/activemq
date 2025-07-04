@@ -76,7 +76,7 @@ public class QueueMbeanRestartTest extends TestSupport {
 
         sendMessages();
         verifyPresenceOfQueueMbean();
-        LOG.info("restart....");
+        LOG.info("restart..");
 
         restartBroker();
         verifyPresenceOfQueueMbean();

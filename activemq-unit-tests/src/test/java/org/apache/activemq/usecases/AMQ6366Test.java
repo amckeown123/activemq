@@ -128,7 +128,7 @@ public class AMQ6366Test extends JmsMultipleBrokersTestSupport {
     @Override
     public void setUp() throws Exception {
         File dataDir = new File(IOHelper.getDefaultDataDirectory());
-        LOG.info("Delete dataDir.." + dataDir.getCanonicalPath());
+        LOG.info("Delete dataDir." + dataDir.getCanonicalPath());
         org.apache.activemq.TestSupport.recursiveDelete(dataDir);
         super.setAutoFail(true);
         super.setUp();

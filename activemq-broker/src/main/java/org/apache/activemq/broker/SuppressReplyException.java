@@ -26,7 +26,12 @@ import java.io.IOException;
  *
  */
 public class SuppressReplyException extends RuntimeException {
-    public SuppressReplyException(Throwable cause) {
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public SuppressReplyException(Throwable cause) {
         super(cause);
     }
 

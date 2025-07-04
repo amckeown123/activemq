@@ -113,7 +113,7 @@ public class PerDestinationStoreLimitTest extends JmsTestSupport {
         };
         thread.start();
 		
-        assertTrue("filler started..", fillerStarted.await(20, TimeUnit.SECONDS));
+        assertTrue("filler started.", fillerStarted.await(20, TimeUnit.SECONDS));
         waitForBlocked(done);
 
         // consume and rollback some so message gets to DLQ
@@ -152,7 +152,7 @@ public class PerDestinationStoreLimitTest extends JmsTestSupport {
             Thread.sleep(1000);
             // the producer is blocked once the done flag stays true
             if (done.get()) {
-                LOG.info("Blocked....");
+                LOG.info("Blocked..");
                 break;
             }
             done.set(true);

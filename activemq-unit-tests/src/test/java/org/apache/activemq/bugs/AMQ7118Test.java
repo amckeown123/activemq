@@ -126,7 +126,7 @@ public class AMQ7118Test {
         checkFiles(true, 23, "db-23.log");
 
         //Read out the rest of the messages
-        LOG.info("Consuming the rest of the files...");
+        LOG.info("Consuming the rest of the files..");
         for (int i = 0; i < 20; i++) {
             msg = consumer.receive(5000);
         }
@@ -183,7 +183,7 @@ public class AMQ7118Test {
         };
 
         if(doCheckpoint) {
-            LOG.info("Initiating checkpointUpdate "+ ++checkpointIndex + " ...");
+            LOG.info("Initiating checkpointUpdate "+ ++checkpointIndex + " ..");
             broker.getPersistenceAdapter().checkpoint(true);
             TimeUnit.SECONDS.sleep(4);
             LOG.info("Checkpoint complete.");

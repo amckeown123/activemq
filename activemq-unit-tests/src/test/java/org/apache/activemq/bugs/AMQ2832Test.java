@@ -94,7 +94,7 @@ public class AMQ2832Test {
         cf = new ActiveMQConnectionFactory(connectionUri);
 
         broker.start();
-        LOG.info("Starting broker..");
+        LOG.info("Starting broker.");
     }
 
     protected void configurePersistence(BrokerService brokerService, boolean recover) throws Exception {

@@ -227,14 +227,14 @@ public class AMQ4351Test extends BrokerTestSupport {
             LOG.info("All subscribers started.");
             producer.sendMessage();
 
-            LOG.info("Stopping 97 subscribers....");
+            LOG.info("Stopping 97 subscribers..");
             for (ConsumingClient client : subscribers) {
                 client.stopAsync();
             }
             shutdownLatch.await(10, TimeUnit.SECONDS);
 
             // Start producing messages for 10 minutes, at high rate
-            LOG.info("Starting mass message producer...");
+            LOG.info("Starting mass message producer..");
             producer.start();
 
             long lastSize = listener1.size.get();

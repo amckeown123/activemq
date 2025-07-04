@@ -26,8 +26,8 @@ import java.util.List;
 import java.util.Set;
 import java.util.Vector;
 
-import javax.security.auth.Subject;
-import javax.security.auth.login.LoginException;
+import jakarta.security.auth.Subject;
+import jakarta.security.auth.login.LoginException;
 
 import junit.framework.TestCase;
 

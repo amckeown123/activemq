@@ -2,7 +2,7 @@
     Licensed to the Apache Software Foundation (ASF) under one or more
     contributor license agreements.  See the NOTICE file distributed with
     this work for additional information regarding copyright ownership.
-    The ASF licenses this file to You under the Apache License, Version 2.0
+    The ASF licenses this file to You under the Apache License, version 2.0
     (the "License"); you may not use this file except in compliance with
     the License.  You may obtain a copy of the License at
 
@@ -21,13 +21,35 @@
   <parent>
     <groupId>org.apache.activemq.tooling</groupId>
     <artifactId>activemq-tooling</artifactId>
-    <version>6.2.0-SNAPSHOT</version>
+    <version>6.1.0</version>
   </parent>
 
   <artifactId>activemq-junit</artifactId>
   <name>ActiveMQ :: JUnit Rule</name>
 
   <description>JUnit Rule for Embedded ActiveMQ Brokers</description>
+  
+     <properties>
+    <java.version>17</java.version>
+    <maven.compiler.source>${java.version}</maven.compiler.source>
+    <maven.compiler.target>${java.version}</maven.compiler.target>
+    <localRepository>C:/Users/a-mck/.m2</localRepository>
+        <!-- Plugins and Build -->
+    <maven.version>3.9.9</maven.version>
+     
+    <!-- Java SE version -->
+    <maven.compiler.source>${java.version}</maven.compiler.source>
+    <maven.compiler.target>${java.version}</maven.compiler.target>
+
+    <maven.compiler.release>${java.version}</maven.compiler.release>
+    <version.plugin.bundle>3.3.0</version.plugin.bundle>
+    <version.plugin.javadoc>3.0.1</version.plugin.javadoc>
+    <version.asciidoclet>1.5.0</version.asciidoclet>
+    <version.surefire>3.0.0-M5</version.surefire>
+    <surefire.argLine>-Xmx512M</surefire.argLine>
+
+</properties>
+
 
   <dependencies>
     <dependency>
@@ -50,17 +72,20 @@
       <artifactId>activemq-pool</artifactId>
       <scope>provided</scope>
     </dependency>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <scope>provided</scope>
-    </dependency>
+  
 
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-simple</artifactId>
       <scope>test</scope>
     </dependency>
+  
+    <dependency>
+  <groupId>jakarta.xml.bind</groupId>
+<artifactId>jakarta.xml.bind-api</artifactId>
+<version>4.0.2</version>
+</dependency>
+  
   </dependencies>
 
 </project>

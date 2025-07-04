@@ -68,7 +68,7 @@ public class AbortSlowConsumerStrategyView implements AbortSlowConsumerStrategyV
         TabularType tt = new TabularType("SlowConsumers", "Table of current slow Consumers", ct, new String[] {"subscription" });
         TabularDataSupport rc = new TabularDataSupport(tt);
         
-        int index = 0;
+     
         Map<Subscription, SlowConsumerEntry> slowConsumers = strategy.getSlowConsumers();
         for (Map.Entry<Subscription, SlowConsumerEntry> entry : slowConsumers.entrySet()) {
             entry.getValue().setSubscription(broker.getSubscriberObjectName(entry.getKey()));

@@ -17,11 +17,8 @@
 package org.apache.activemq.broker.jmx;
 
 import org.apache.activemq.management.TimeStatisticImpl;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class NetworkDestinationView implements NetworkDestinationViewMBean {
-    private static final Logger LOG = LoggerFactory.getLogger(NetworkDestinationView.class);
     private TimeStatisticImpl timeStatistic = new TimeStatisticImpl("networkEnqueue","network messages enqueued");
 
     private final String name;

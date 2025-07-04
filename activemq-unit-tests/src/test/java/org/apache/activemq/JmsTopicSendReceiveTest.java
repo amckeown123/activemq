@@ -79,7 +79,7 @@ public class JmsTopicSendReceiveTest extends JmsSendReceiveTestSupport {
     }
 
     protected void tearDown() throws Exception {
-        LOG.info("Dumping stats...");
+        LOG.info("Dumping stats..");
         // connectionFactory.getStats().reset();
 
         LOG.info("Closing down connection");

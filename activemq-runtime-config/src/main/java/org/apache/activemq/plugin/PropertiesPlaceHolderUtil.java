@@ -91,7 +91,7 @@ public class PropertiesPlaceHolderUtil {
         // find resources
         //        <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         //            <property name="locations" || name="properties">
-        //              ...
+        //              ..
         //            </property>
         //          </bean>
         LinkedList<String> resources = new LinkedList<String>();

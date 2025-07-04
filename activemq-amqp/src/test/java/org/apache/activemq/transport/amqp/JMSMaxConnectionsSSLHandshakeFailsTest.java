@@ -122,7 +122,7 @@ public class JMSMaxConnectionsSSLHandshakeFailsTest extends JMSClientTestSupport
     }
 
     protected String getUntrustedKeyStoreLocation() {
-        File brokerKeyStore = new File(System.getProperty("javax.net.ssl.keyStore"));
+        File brokerKeyStore = new File(System.getProperty("jakarta.net.ssl.keyStore"));
         File untrustedStore = new File(brokerKeyStore.getParent(), "alternative.keystore");
 
         return untrustedStore.toString();

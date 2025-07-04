@@ -23,7 +23,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
-import javax.net.ServerSocketFactory;
+import jakarta.net.ServerSocketFactory;
 import javax.transaction.xa.Xid;
 
 public class TestUtils {

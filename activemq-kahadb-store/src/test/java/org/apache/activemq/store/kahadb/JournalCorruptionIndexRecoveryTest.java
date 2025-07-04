@@ -101,7 +101,7 @@ public class JournalCorruptionIndexRecoveryTest {
         cf = new ActiveMQConnectionFactory(connectionUri);
 
         broker.start();
-        LOG.info("Starting broker..");
+        LOG.info("Starting broker.");
     }
 
     protected void configurePersistence(BrokerService brokerService) throws Exception {

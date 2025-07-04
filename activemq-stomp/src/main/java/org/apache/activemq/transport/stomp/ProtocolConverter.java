@@ -153,7 +153,7 @@ public class ProtocolConverter {
                 @Override
                 public void onResponse(ProtocolConverter converter, Response response) throws IOException {
                     if (response.isException()) {
-                        // Generally a command can fail.. but that does not invalidate the connection.
+                        // Generally a command can fail. but that does not invalidate the connection.
                         // We report back the failure but we don't close the connection.
                         Throwable exception = ((ExceptionResponse)response).getException();
                         handleException(exception, command);
@@ -653,7 +653,7 @@ public class ProtocolConverter {
                 @Override
                 public void onResponse(ProtocolConverter converter, Response response) throws IOException {
                     if (response.isException()) {
-                        // Generally a command can fail.. but that does not invalidate the connection.
+                        // Generally a command can fail. but that does not invalidate the connection.
                         // We report back the failure but we don't close the connection.
                         Throwable exception = ((ExceptionResponse)response).getException();
                         handleException(exception, cmd);

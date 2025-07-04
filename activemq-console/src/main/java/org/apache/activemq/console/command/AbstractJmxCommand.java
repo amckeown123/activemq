@@ -91,7 +91,7 @@ public abstract class AbstractJmxCommand extends AbstractCommand {
 
                 String javaHome = System.getProperty("java.home");
                 String tools = javaHome + File.separator +
-                        ".." + File.separator + "lib" + File.separator + "tools.jar";
+                        "." + File.separator + "lib" + File.separator + "tools.jar";
                 URLClassLoader loader = new URLClassLoader(new URL[]{new File(tools).toURI().toURL()});
 
                 Class virtualMachine = Class.forName("com.sun.tools.attach.VirtualMachine", true, loader);
@@ -147,7 +147,7 @@ public abstract class AbstractJmxCommand extends AbstractCommand {
 
                     String javaHome = System.getProperty("java.home");
                     String tools = javaHome + File.separator +
-                            ".." + File.separator + "lib" + File.separator + "tools.jar";
+                            "." + File.separator + "lib" + File.separator + "tools.jar";
                     URLClassLoader loader = new URLClassLoader(new URL[]{new File(tools).toURI().toURL()});
 
                     Class virtualMachine = Class.forName("com.sun.tools.attach.VirtualMachine", true, loader);

@@ -218,7 +218,7 @@ public class NetworkLoadTest extends TestCase {
 	public void testRequestReply() throws Exception {
 
 		final int to = 0; // Send to the first broker
-		int from = brokers.length-1; // consume from the last broker..
+		int from = brokers.length-1; // consume from the last broker.
 				
 	    LOG.info("Staring Final Consumer");
 
@@ -232,13 +232,13 @@ public class NetworkLoadTest extends TestCase {
 		final AtomicLong receivedMessages = new AtomicLong();
 		final AtomicBoolean done = new AtomicBoolean();
 
-		// Setup the consumer..
+		// Setup the consumer.
 		consumer.setMessageListener(new MessageListener() {
 			public void onMessage(Message msg) {
 				ActiveMQTextMessage m = (ActiveMQTextMessage) msg;
 				ActiveMQTextMessage last = lastMessageReceived.get();
 				if( last!=null ) {
-					// Some order checking...
+					// Some order checking..
 					if( last.getMessageId().getProducerSequenceId() > m.getMessageId().getProducerSequenceId() ) {
 						System.out.println("Received an out of order message. Got "+m.getMessageId()+", expected something after "+last.getMessageId());
 					}
@@ -272,7 +272,7 @@ public class NetworkLoadTest extends TestCase {
 			
 		    private String createMessageText(int index) {
 				StringBuffer buffer = new StringBuffer(MESSAGE_SIZE);
-				buffer.append(index + " on " + new Date() + " ...");
+				buffer.append(index + " on " + new Date() + " ..");
 				if (buffer.length() > MESSAGE_SIZE) {
 					return buffer.substring(0, MESSAGE_SIZE);
 				}
@@ -287,7 +287,7 @@ public class NetworkLoadTest extends TestCase {
 	
 		
 		// Give the forwarding clients a chance to get going and fill the down
-		// stream broker queues..
+		// stream broker queues.
 		Thread.sleep(BROKER_COUNT*200);
 		
         for (int i = 0; i < SAMPLES; i++) {

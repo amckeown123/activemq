@@ -131,7 +131,7 @@ public class ActiveMQCommand extends AbstractCommand implements CompletableFunct
 
             if (argumentValues.size() == 1 && arguments.size() == 1) {
                 Object val = argumentValues.values().iterator().next();
-                // short circut convert via blueprint... cause all our commands match this
+                // short circut convert via blueprint.. cause all our commands match this
                 // bluepring was failing to convert the last long param to a string for browse
                 // where dest is a numeric value - activemq-karaf-itests
                 // see: org.apache.activemq.karaf.itest.ActiveMQBrokerFeatureTest.test()

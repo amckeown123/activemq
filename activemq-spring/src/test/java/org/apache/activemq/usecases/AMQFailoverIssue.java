@@ -78,7 +78,7 @@ public class AMQFailoverIssue extends org.apache.activemq.test.TestSupport {
             brokerService1.start();
             acf = createConnectionFactory(URL1, USE_FAILOVER);
             pcf = new PooledConnectionFactory(acf);
-            // Only listen on the first queue.. let the 2nd queue fill up.
+            // Only listen on the first queue. let the 2nd queue fill up.
             doneLatch = new CountDownLatch(TOTAL_MESSAGES);
             container1 = createDefaultMessageListenerContainer(acf, new TestMessageListener1(0), QUEUE1_NAME);
             container1.afterPropertiesSet();

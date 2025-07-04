@@ -61,7 +61,7 @@ public class BacklogNetworkCrossTalkTest extends JmsMultipleBrokersTestSupport {
         sendMessages("B", destB, numMessages);
 
         // consume across network
-        LOG.info("starting consumers..");
+        LOG.info("starting consumers.");
 
         // Setup consumers
         MessageConsumer clientA = createConsumer("A", destB);

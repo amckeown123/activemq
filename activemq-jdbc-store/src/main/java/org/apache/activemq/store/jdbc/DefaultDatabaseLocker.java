@@ -107,7 +107,7 @@ public class DefaultDatabaseLocker extends AbstractJDBCLocker {
                 }
             }
 
-            LOG.info("Failed to acquire lock.  Sleeping for " + lockAcquireSleepInterval + " milli(s) before trying again...");
+            LOG.info("Failed to acquire lock.  Sleeping for " + lockAcquireSleepInterval + " milli(s) before trying again..");
             try {
                 Thread.sleep(lockAcquireSleepInterval);
             } catch (InterruptedException ie) {

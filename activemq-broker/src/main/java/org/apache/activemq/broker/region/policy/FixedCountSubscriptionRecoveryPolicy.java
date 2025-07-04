@@ -56,7 +56,7 @@ public class FixedCountSubscriptionRecoveryPolicy implements SubscriptionRecover
     public synchronized void recover(ConnectionContext context, Topic topic, SubscriptionRecovery sub) throws Exception {
         // Re-dispatch the last message seen.
         int t = tail;
-        // The buffer may not have rolled over yet..., start from the front
+        // The buffer may not have rolled over yet.., start from the front
         if (messages[t] == null) {
             t = 0;
         }

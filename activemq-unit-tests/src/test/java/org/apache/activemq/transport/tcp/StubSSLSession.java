@@ -21,9 +21,9 @@ import java.security.Principal;
 import java.security.cert.Certificate;
 import java.security.cert.X509Certificate;
 
-import javax.net.ssl.SSLPeerUnverifiedException;
-import javax.net.ssl.SSLSession;
-import javax.net.ssl.SSLSessionContext;
+import jakarta.net.ssl.SSLPeerUnverifiedException;
+import jakarta.net.ssl.SSLSession;
+import jakarta.net.ssl.SSLSessionContext;
 
 class StubSSLSession implements SSLSession {
 
@@ -95,7 +95,7 @@ class StubSSLSession implements SSLSession {
         return null;
     }
 
-    public javax.security.cert.X509Certificate[] getPeerCertificateChain() throws SSLPeerUnverifiedException {
+    public jakarta.security.cert.X509Certificate[] getPeerCertificateChain() throws SSLPeerUnverifiedException {
         return null;
     }
 

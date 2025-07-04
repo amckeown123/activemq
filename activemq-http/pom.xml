@@ -3,7 +3,7 @@
   Licensed to the Apache Software Foundation (ASF) under one or more
   contributor license agreements.  See the NOTICE file distributed with
   this work for additional information regarding copyright ownership.
-  The ASF licenses this file to You under the Apache License, Version 2.0
+  The ASF licenses this file to You under the Apache License, version 2.0
   (the "License"); you may not use this file except in compliance with
   the License.  You may obtain a copy of the License at
 
@@ -22,13 +22,35 @@
   <parent>
     <groupId>org.apache.activemq</groupId>
     <artifactId>activemq-parent</artifactId>
-    <version>6.2.0-SNAPSHOT</version>
+    <version>6.1.0</version>
   </parent>
 
   <artifactId>activemq-http</artifactId>
   <packaging>jar</packaging>
   <name>ActiveMQ :: HTTP Protocol Support</name>
   <description>ActiveMQ HTTP Protocol Support</description>
+
+   <properties>
+    <java.version>17</java.version>
+    <maven.compiler.source>${java.version}</maven.compiler.source>
+    <maven.compiler.target>${java.version}</maven.compiler.target>
+    <localRepository>C:/Users/a-mck/.m2</localRepository>
+        <!-- Plugins and Build -->
+    <maven.version>3.9.9</maven.version>
+     
+    <!-- Java SE version -->
+    <maven.compiler.source>${java.version}</maven.compiler.source>
+    <maven.compiler.target>${java.version}</maven.compiler.target>
+
+    <maven.compiler.release>${java.version}</maven.compiler.release>
+    <version.plugin.bundle>3.3.0</version.plugin.bundle>
+    <version.plugin.javadoc>3.0.1</version.plugin.javadoc>
+    <version.asciidoclet>1.5.0</version.asciidoclet>
+    <version.surefire>3.0.0-M5</version.surefire>
+    <surefire.argLine>-Xmx512M</surefire.argLine>
+
+</properties>
+
 
   <dependencies>
     <dependency>
@@ -107,12 +129,7 @@
     <groupId>org.apache.commons</groupId>
     <artifactId>commons-lang3</artifactId>
 </dependency>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <scope>compile</scope>
-      <optional>true</optional>
-    </dependency>
+ 
     <dependency>
       <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j-slf4j2-impl</artifactId>
@@ -135,6 +152,12 @@
       <artifactId>mockito-core</artifactId>
       <scope>test</scope>
     </dependency>
+    
+      <dependency>
+  <groupId>jakarta.xml.bind</groupId>
+<artifactId>jakarta.xml.bind-api</artifactId>
+<version>4.0.2</version>
+</dependency>
   </dependencies>
   <build>
     <plugins>
@@ -154,16 +177,16 @@
             <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
             <Fragment-Host>org.apache.activemq.activemq-core</Fragment-Host>
             <Export-Package>
-              org.apache.activemq.transport.http*;version=${project.version};-noimport:=;-split-package:=merge-last,
-              org.apache.activemq.transport.https*;version=${project.version};-noimport:=;-split-package:=merge-last
+              org.apache.activemq.transport.http*;version=${revision};-noimport:=;-split-package:=merge-last,
+              org.apache.activemq.transport.https*;version=${revision};-noimport:=;-split-package:=merge-last
             </Export-Package>
             <Import-Package>
               org.eclipse.jetty*;version="[9.0,10.0)";resolution:=optional,
-              !org.apache.activemq.transport.ws*;version=${project.version},
-              !org.apache.activemq.transport.xstream;version=${project.version},
-              !org.apache.activemq.transport.util;version=${project.version},
+              !org.apache.activemq.transport.ws*;version=${revision},
+              !org.apache.activemq.transport.xstream;version=${revision},
+              !org.apache.activemq.transport.util;version=${revision},
               org.apache.xbean*;version="[3.13,5)",
-              org.apache.activemq*;version=${project.version};resolution:=optional
+              org.apache.activemq*;version=${revision};resolution:=optional
             </Import-Package>
           </instructions>
         </configuration>

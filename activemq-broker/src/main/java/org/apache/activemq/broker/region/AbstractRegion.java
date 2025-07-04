@@ -263,7 +263,7 @@ public abstract class AbstractRegion implements Region {
     public void removeDestination(ConnectionContext context, ActiveMQDestination destination, long timeout)
             throws Exception {
 
-        // No timeout.. then try to shut down right way, fails if there are
+        // No timeout. then try to shut down right way, fails if there are
         // current subscribers.
         if (timeout == 0) {
             for (Iterator<Subscription> iter = subscriptions.values().iterator(); iter.hasNext();) {
@@ -277,7 +277,7 @@ public abstract class AbstractRegion implements Region {
         if (timeout > 0) {
             // TODO: implement a way to notify the subscribers that we want to
             // take the down
-            // the destination and that they should un-subscribe.. Then wait up
+            // the destination and that they should un-subscribe. Then wait up
             // to timeout time before
             // dropping the subscription.
         }
@@ -561,7 +561,7 @@ public abstract class AbstractRegion implements Region {
 
         if (autoCreate && dest == null) {
             if (isAutoCreateDestinations()) {
-                // Try to auto create the destination... re-invoke broker
+                // Try to auto create the destination.. re-invoke broker
                 // from the
                 // top so that the proper security checks are performed.
                 dest = context.getBroker().addDestination(context, destination, createTemporary);

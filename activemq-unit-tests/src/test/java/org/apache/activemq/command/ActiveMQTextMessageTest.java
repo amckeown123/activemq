@@ -138,7 +138,7 @@ public class ActiveMQTextMessageTest extends TestCase {
         assertTrue(shortMessage.getText().equals(shortText));
         
         String longText = "Very very very very veeeeeeery loooooooooooooooooooooooooooooooooong text";
-        String longExpectedText = "Very very very very veeeeeeery looooooooooooo...ooooong text";
+        String longExpectedText = "Very very very very veeeeeeery looooooooooooo..ooooong text";
         ActiveMQTextMessage longMessage = new ActiveMQTextMessage();
         setContent(longMessage, longText);
         assertTrue(longMessage.toString().contains("text = " + longExpectedText));

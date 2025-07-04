@@ -17,7 +17,7 @@
 
 package org.apache.activemq.transport.tcp;
 
-import javax.net.ssl.SSLSocket;
+import jakarta.net.ssl.SSLSocket;
 
 import org.apache.activemq.wireformat.WireFormat;
 

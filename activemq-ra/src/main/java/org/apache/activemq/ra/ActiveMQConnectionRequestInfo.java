@@ -119,7 +119,7 @@ public class ActiveMQConnectionRequestInfo implements ConnectionRequestInfo, Ser
     }
 
     /**
-     * @see javax.resource.spi.ConnectionRequestInfo#hashCode()
+     * @see jakarta.resource.spi.ConnectionRequestInfo#hashCode()
      */
     @Override
     public int hashCode() {
@@ -137,7 +137,7 @@ public class ActiveMQConnectionRequestInfo implements ConnectionRequestInfo, Ser
     }
 
     /**
-     * @see javax.resource.spi.ConnectionRequestInfo#equals(java.lang.Object)
+     * @see jakarta.resource.spi.ConnectionRequestInfo#equals(java.lang.Object)
      */
     @Override
     public boolean equals(Object o) {

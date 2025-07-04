@@ -638,8 +638,8 @@ public class KahaDBStore extends MessageDatabase implements PersistenceAdapter, 
             final String key = identity.toProducerKey();
 
             // Hopefully one day the page file supports concurrent read
-            // operations... but for now we must
-            // externally synchronize...
+            // operations.. but for now we must
+            // externally synchronize..
             Location location;
             indexLock.writeLock().lock();
             try {

@@ -346,7 +346,7 @@ public abstract class ComparisonExpression extends BinaryExpression implements B
                 return;
             }
 
-            // Else it's boolean or a String..
+            // Else it's boolean or a String.
             throw new RuntimeException("Value '" + expr + "' cannot be compared.");
         }
         if (expr instanceof BooleanExpression) {

@@ -316,8 +316,8 @@ public class ActiveMQActivationSpecTest {
         * but because of a bug in the PropertyDescriptor class, it incorrectly fails.  The problem is that the
         * PropertyDescriptor class implements the equals() method but not the hashCode() method and almost all
         * of the java collection classes use hashCode() for testing equality.  The one exception I found was
-        * the ArrayList class which uses equals() for testing equality.  Since Arrays.asList(...) returns an
-        * ArrayList, I use it below.  Yes, ugly ... I know.
+        * the ArrayList class which uses equals() for testing equality.  Since Arrays.asList(..) returns an
+        * ArrayList, I use it below.  Yes, ugly .. I know.
         *
         * see http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=4634390
         */

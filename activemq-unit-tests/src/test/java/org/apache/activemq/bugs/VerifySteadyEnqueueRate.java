@@ -148,6 +148,6 @@ public class VerifySteadyEnqueueRate extends TestCase {
 
         broker.addConnector("tcp://localhost:0").setName("Default");
         broker.start();
-        LOG.info("Starting broker..");
+        LOG.info("Starting broker.");
     }
 }

@@ -88,7 +88,7 @@ public class NetworkBrokerDetachTest {
         networkConnector.setDynamicOnly(dynamicOnly);
     }
 
-    // variants for each store....
+    // variants for each store..
     protected void configureBroker(BrokerService broker) throws Exception {
         KahaDBPersistenceAdapter persistenceAdapter = new KahaDBPersistenceAdapter();
         persistenceAdapter.setDirectory(new File("target/activemq-data/kahadb/" + broker.getBrokerName() + "NetworBrokerDetatchTest"));
@@ -121,7 +121,7 @@ public class NetworkBrokerDetachTest {
 
     @Test
     public void testNetworkedBrokerDetach() throws Exception {
-        LOG.info("Creating Consumer on the networked broker ...");
+        LOG.info("Creating Consumer on the networked broker ..");
         // Create a consumer on the networked broker
         ConnectionFactory consFactory = createConnectionFactory(networkedBroker);
         Connection consConn = consFactory.createConnection();
@@ -134,7 +134,7 @@ public class NetworkBrokerDetachTest {
         assertTrue("got expected consumer count from mbean within time limit",
                    verifyConsumerCount(1, destination, broker));
 
-        LOG.info("Stopping Consumer on the networked broker ...");
+        LOG.info("Stopping Consumer on the networked broker ..");
         // Closing the connection will also close the consumer
         consConn.close();
 
@@ -153,7 +153,7 @@ public class NetworkBrokerDetachTest {
             }
         };
 
-        LOG.info("Creating durable consumer on each broker ...");
+        LOG.info("Creating durable consumer on each broker ..");
         ActiveMQTopic destination = registerDurableConsumer(networkedBroker, counter);
         registerDurableConsumer(broker, counter);
 
@@ -167,15 +167,15 @@ public class NetworkBrokerDetachTest {
 
         assertTrue("Got one message on each", verifyMessageCount(2, count));
 
-        LOG.info("Stopping brokerTwo...");
+        LOG.info("Stopping brokerTwo..");
         networkedBroker.stop();
         networkedBroker.waitUntilStopped();
 
-        LOG.info("restarting  broker Two...");
+        LOG.info("restarting  broker Two..");
         networkedBroker = createNetworkedBroker();
         networkedBroker.start();
 
-        LOG.info("Recreating durable Consumer on the broker after restart...");
+        LOG.info("Recreating durable Consumer on the broker after restart..");
         registerDurableConsumer(networkedBroker, counter);
 
         // give advisories a chance to percolate

@@ -129,7 +129,7 @@ public class JournalCorruptionEofIndexRecoveryTest {
 
         broker.start();
         brokerDataDir = broker.getPersistenceAdapter().getDirectory();
-        LOG.info("Starting broker..");
+        LOG.info("Starting broker.");
     }
 
     protected void configurePersistence(BrokerService brokerService, boolean forceRecoverIndex) throws Exception {

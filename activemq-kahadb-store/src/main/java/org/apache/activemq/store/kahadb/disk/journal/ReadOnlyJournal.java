@@ -81,13 +81,13 @@ public class ReadOnlyJournal extends Journal {
 //        // write to it.
 //        if (!dataFiles.isEmpty()) {
 //
-//            // See if the lastSyncedLocation is valid..
+//            // See if the lastSyncedLocation is valid.
 //            Location l = lastAppendLocation.get();
 //            if (l != null && l.getDataFileId() != dataFiles.getTail().getDataFileId().intValue()) {
 //                l = null;
 //            }
 //            
-//            // If we know the last location that was ok.. then we can skip lots
+//            // If we know the last location that was ok. then we can skip lots
 //            // of checking
 //            try {
 //                l = recoveryCheck(dataFiles.getTail(), l);

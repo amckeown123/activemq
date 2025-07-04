@@ -36,7 +36,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.slf4j.LoggerFactory;
 
-import javax.net.ssl.*;
+import jakarta.net.ssl.*;
 import java.net.Socket;
 import java.net.URI;
 import java.util.concurrent.CountDownLatch;
@@ -61,12 +61,12 @@ public class TcpTransportCloseSocketNoWarnTest {
     private Logger rootLogger;
 
     static {
-        System.setProperty("javax.net.ssl.trustStore", TRUST_KEYSTORE);
-        System.setProperty("javax.net.ssl.trustStorePassword", PASSWORD);
-        System.setProperty("javax.net.ssl.trustStoreType", KEYSTORE_TYPE);
-        System.setProperty("javax.net.ssl.keyStore", SERVER_KEYSTORE);
-        System.setProperty("javax.net.ssl.keyStorePassword", PASSWORD);
-        System.setProperty("javax.net.ssl.keyStoreType", KEYSTORE_TYPE);
+        System.setProperty("jakarta.net.ssl.trustStore", TRUST_KEYSTORE);
+        System.setProperty("jakarta.net.ssl.trustStorePassword", PASSWORD);
+        System.setProperty("jakarta.net.ssl.trustStoreType", KEYSTORE_TYPE);
+        System.setProperty("jakarta.net.ssl.keyStore", SERVER_KEYSTORE);
+        System.setProperty("jakarta.net.ssl.keyStorePassword", PASSWORD);
+        System.setProperty("jakarta.net.ssl.keyStoreType", KEYSTORE_TYPE);
         
         appender = new AbstractAppender("testAppender", new AbstractFilter() {}, new MessageLayout(), false, new Property[0]) {
             @Override

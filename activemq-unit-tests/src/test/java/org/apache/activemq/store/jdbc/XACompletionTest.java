@@ -137,7 +137,7 @@ public class XACompletionTest extends TestSupport {
 
         dumpMessages();
 
-        LOG.info("Try jmx browse... after commit");
+        LOG.info("Try jmx browse.. after commit");
 
         ObjectName queueViewMBeanName = new ObjectName("org.apache.activemq:type=Broker,brokerName=localhost,destinationType=Queue,destinationName=TEST");
         QueueViewMBean proxy = (QueueViewMBean) broker.getManagementContext()
@@ -145,7 +145,7 @@ public class XACompletionTest extends TestSupport {
 
         assertEquals("size", 1, proxy.getQueueSize());
 
-        LOG.info("Try receive... after rollback");
+        LOG.info("Try receive.. after rollback");
         message = regularReceive("TEST");
 
         assertNotNull("message gone", message);
@@ -201,7 +201,7 @@ public class XACompletionTest extends TestSupport {
 
         dumpMessages();
 
-        LOG.info("Try jmx browse... after commit");
+        LOG.info("Try jmx browse.. after commit");
 
         ObjectName queueViewMBeanName = new ObjectName("org.apache.activemq:type=Broker,brokerName=localhost,destinationType=Queue,destinationName=TEST");
         QueueViewMBean proxy = (QueueViewMBean) broker.getManagementContext()
@@ -211,13 +211,13 @@ public class XACompletionTest extends TestSupport {
         assertEquals("prefetch 0", 0, proxy.getInFlightCount());
         assertEquals("size 0", 0, proxy.getQueueSize());
 
-        LOG.info("Try browse... after commit");
+        LOG.info("Try browse.. after commit");
         Message browsed = regularBrowseFirst();
 
 
         assertNull("message gone", browsed);
 
-        LOG.info("Try receive... after commit");
+        LOG.info("Try receive.. after commit");
         Message message = regularReceive("TEST");
 
         assertNull("message gone", message);
@@ -289,7 +289,7 @@ public class XACompletionTest extends TestSupport {
 
         dumpMessages();
 
-        LOG.info("Try jmx browse... after rollback");
+        LOG.info("Try jmx browse.. after rollback");
 
         assertEquals(10, proxy.browseMessages().size());
 
@@ -297,11 +297,11 @@ public class XACompletionTest extends TestSupport {
         assertEquals("size", 10, proxy.getQueueSize());
         assertEquals("cursor size", 0, proxy.cursorSize());
 
-        LOG.info("Try browse... after");
+        LOG.info("Try browse.. after");
         Message browsed = regularBrowseFirst();
         assertNotNull("message gone", browsed);
 
-        LOG.info("Try receive... after");
+        LOG.info("Try receive.. after");
         for (int i = 0; i < 10; i++) {
             Message message = regularReceive("TEST");
             assertNotNull("message gone", message);
@@ -364,7 +364,7 @@ public class XACompletionTest extends TestSupport {
         assertEquals("redrain", 5, drainUnack(5, "TEST"));
 
 
-        LOG.info("Try consume... after restart");
+        LOG.info("Try consume.. after restart");
         dumpMessages();
 
         ObjectName queueViewMBeanName = new ObjectName("org.apache.activemq:type=Broker,brokerName=localhost,destinationType=Queue,destinationName=TEST");
@@ -391,7 +391,7 @@ public class XACompletionTest extends TestSupport {
         xaResource.rollback(xids[0]);
 
 
-        LOG.info("Try receive... after rollback");
+        LOG.info("Try receive.. after rollback");
         for (int i = 0; i < 10; i++) {
             Message message = regularReceive("TEST");
             assertNotNull("message gone: " + i, message);
@@ -461,7 +461,7 @@ public class XACompletionTest extends TestSupport {
 
         broker = restartBroker();
 
-        LOG.info("Try consume... after restart");
+        LOG.info("Try consume.. after restart");
         dumpMessages();
 
         factory = new ActiveMQXAConnectionFactory(connectionUri + "?jms.prefetchPolicy.all=0");
@@ -536,7 +536,7 @@ public class XACompletionTest extends TestSupport {
 
         broker = restartBroker();
 
-        LOG.info("Try consume... after restart");
+        LOG.info("Try consume.. after restart");
         dumpMessages();
 
         factory = new ActiveMQXAConnectionFactory(connectionUri + "?jms.prefetchPolicy.all=0");
@@ -557,7 +557,7 @@ public class XACompletionTest extends TestSupport {
         assertTrue("got expected", consumeOnlyN(10,"durable", "sub1", destination));
         assertTrue("got expected", consumeOnlyN(5, "durable", "sub2", destination));
 
-        LOG.info("at end...");
+        LOG.info("at end..");
         dumpMessages();
 
     }
@@ -677,7 +677,7 @@ public class XACompletionTest extends TestSupport {
         // another prefetch demand of 1
         MessageConsumer consumer2 = session.createConsumer(new ActiveMQQueue("TEST?consumer.prefetchSize=2"));
 
-        LOG.info("Try receive... after rollback");
+        LOG.info("Try receive.. after rollback");
         Message message = regularReceiveWith(receiveFactory, "TEST");
         assertNotNull("message 1: ", message);
         LOG.info("Received : " + message);
@@ -783,7 +783,7 @@ public class XACompletionTest extends TestSupport {
         dumpMessages();
 
 
-        LOG.info("Try jmx browse... after commit");
+        LOG.info("Try jmx browse.. after commit");
 
         ObjectName queueViewMBeanName = new ObjectName("org.apache.activemq:type=Broker,brokerName=localhost,destinationType=Queue,destinationName=TEST");
         QueueViewMBean proxy = (QueueViewMBean) broker.getManagementContext()
@@ -1031,7 +1031,7 @@ public class XACompletionTest extends TestSupport {
         dumpMessages();
 
 
-        LOG.info("Try jmx browse... after commit");
+        LOG.info("Try jmx browse.. after commit");
 
         ObjectName queueViewMBeanName = new ObjectName("org.apache.activemq:type=Broker,brokerName=localhost,destinationType=Queue,destinationName=TEST");
         QueueViewMBean proxy = (QueueViewMBean) broker.getManagementContext()
@@ -1152,7 +1152,7 @@ public class XACompletionTest extends TestSupport {
         java.sql.Connection conn = ((JDBCPersistenceAdapter) broker.getPersistenceAdapter()).getDataSource().getConnection();
         PreparedStatement statement = conn.prepareStatement("SELECT ID, MSG, XID FROM ACTIVEMQ_MSGS");
         ResultSet result = statement.executeQuery();
-        LOG.info("Messages in broker db...");
+        LOG.info("Messages in broker db..");
         while (result.next()) {
             long id = result.getLong(1);
             org.apache.activemq.command.Message message = (org.apache.activemq.command.Message) wireFormat.unmarshal(new ByteSequence(result.getBytes(2)));
@@ -1163,7 +1163,7 @@ public class XACompletionTest extends TestSupport {
 
         statement = conn.prepareStatement("SELECT LAST_ACKED_ID, CLIENT_ID, SUB_NAME, PRIORITY, XID FROM ACTIVEMQ_ACKS");
         result = statement.executeQuery();
-        LOG.info("Messages in ACKS table db...");
+        LOG.info("Messages in ACKS table db..");
         while (result.next()) {
             LOG.info("lastAcked: {}, clientId: {}, SUB_NAME: {}, PRIORITY: {}, XID {}",
                     result.getLong(1), result.getString(2), result.getString(3), result.getInt(4), result.getString(5));

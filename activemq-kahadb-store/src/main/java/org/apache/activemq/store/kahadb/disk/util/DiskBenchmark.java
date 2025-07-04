@@ -228,7 +228,7 @@ public class DiskBenchmark {
                         break;
                     }
                 }
-                // Sync to disk so that the we actually write the data to disk..
+                // Sync to disk so that the we actually write the data to disk.
                 // otherwise OS buffering might not really do the write.
                 raf.getChannel().force(!SKIP_METADATA_UPDATE);
             }

@@ -50,7 +50,7 @@ public class TwoBrokerTopicSendReceiveTest extends JmsTopicSendReceiveWithTwoCon
         // so we don't lose messages when connection fails
         LOG.info("Waiting for brokers Initialize.");
         Thread.sleep(5000);
-        LOG.info("Brokers should be initialized by now.. starting test.");
+        LOG.info("Brokers should be initialized by now. starting test.");
 
         super.setUp();
     }

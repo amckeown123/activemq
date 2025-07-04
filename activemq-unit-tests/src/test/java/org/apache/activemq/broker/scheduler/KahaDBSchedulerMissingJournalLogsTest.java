@@ -61,7 +61,7 @@ public class KahaDBSchedulerMissingJournalLogsTest {
     static {
         try {
             ProtectionDomain protectionDomain = SchedulerDBVersionTest.class.getProtectionDomain();
-            basedir = new File(new File(protectionDomain.getCodeSource().getLocation().getPath()), "../.").getCanonicalPath();
+            basedir = new File(new File(protectionDomain.getCodeSource().getLocation().getPath()), "./.").getCanonicalPath();
         } catch (IOException e) {
             basedir = ".";
         }

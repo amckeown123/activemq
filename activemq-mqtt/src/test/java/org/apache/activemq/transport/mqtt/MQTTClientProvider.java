@@ -24,7 +24,7 @@ public interface  MQTTClientProvider {
     void subscribe(String topic,int qos) throws Exception;
     void unsubscribe(String topic) throws Exception;
     byte[] receive(int timeout) throws Exception;
-    void setSslContext(javax.net.ssl.SSLContext sslContext);
+    void setSslContext(jakarta.net.ssl.SSLContext sslContext);
     void setWillMessage(String string);
     void setWillTopic(String topic);
     void setClientId(String clientId);

@@ -38,19 +38,19 @@ public class HttpsJmsSendAndReceiveConfigurationSslConfigTest extends
 	@Override
 	protected void setUp() throws Exception {
 		// Create the broker service from the configuration and wait until it
-		// has been started...
+		// has been started..
 		broker = BrokerFactory.createBroker("xbean:activemq-https.xml");
 		broker.setPersistent(false);
 		broker.start();
 		broker.waitUntilStarted();
-		System.setProperty("javax.net.ssl.trustStore", TRUST_KEYSTORE);
-		System.setProperty("javax.net.ssl.trustStorePassword", PASSWORD);
-		System.setProperty("javax.net.ssl.trustStoreType", KEYSTORE_TYPE);
-		// Remove all references of the javax.net.ssl properties that can impact
-		// these tests....
-		System.getProperties().remove("javax.net.ssl.keyStore");
-		System.getProperties().remove("javax.net.ssl.keyStorePassword");
-		System.getProperties().remove("javax.net.ssl.keyStoreType");
+		System.setProperty("jakarta.net.ssl.trustStore", TRUST_KEYSTORE);
+		System.setProperty("jakarta.net.ssl.trustStorePassword", PASSWORD);
+		System.setProperty("jakarta.net.ssl.trustStoreType", KEYSTORE_TYPE);
+		// Remove all references of the jakarta.net.ssl properties that can impact
+		// these tests..
+		System.getProperties().remove("jakarta.net.ssl.keyStore");
+		System.getProperties().remove("jakarta.net.ssl.keyStorePassword");
+		System.getProperties().remove("jakarta.net.ssl.keyStoreType");
 		super.setUp();
 	}
 

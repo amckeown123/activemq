@@ -32,7 +32,7 @@ import jakarta.resource.spi.ManagedConnection;
 import jakarta.resource.spi.ManagedConnectionFactory;
 import jakarta.resource.spi.ResourceAdapter;
 import jakarta.resource.spi.ResourceAdapterAssociation;
-import javax.security.auth.Subject;
+import jakarta.security.auth.Subject;
 
 import org.slf4j.LoggerFactory;
 
@@ -46,7 +46,7 @@ public class ActiveMQManagedConnectionFactory extends ActiveMQConnectionSupport 
     private PrintWriter logWriter;
 
     /**
-     * @see javax.resource.spi.ResourceAdapterAssociation#setResourceAdapter(javax.resource.spi.ResourceAdapter)
+     * @see jakarta.resource.spi.ResourceAdapterAssociation#setResourceAdapter(jakarta.resource.spi.ResourceAdapter)
      */
     @Override
     public void setResourceAdapter(ResourceAdapter adapter) throws ResourceException {
@@ -107,7 +107,7 @@ public class ActiveMQManagedConnectionFactory extends ActiveMQConnectionSupport 
     }
 
     /**
-     * @see javax.resource.spi.ResourceAdapterAssociation#getResourceAdapter()
+     * @see jakarta.resource.spi.ResourceAdapterAssociation#getResourceAdapter()
      */
     @Override
     public ResourceAdapter getResourceAdapter() {
@@ -174,7 +174,7 @@ public class ActiveMQManagedConnectionFactory extends ActiveMQConnectionSupport 
     }
 
     /**
-     * @see javax.resource.spi.ManagedConnectionFactory#createConnectionFactory(javax.resource.spi.ConnectionManager)
+     * @see jakarta.resource.spi.ManagedConnectionFactory#createConnectionFactory(jakarta.resource.spi.ConnectionManager)
      */
     @Override
     public Object createConnectionFactory(ConnectionManager manager) throws ResourceException {
@@ -187,7 +187,7 @@ public class ActiveMQManagedConnectionFactory extends ActiveMQConnectionSupport 
      * it may be a better idea to not support this. The JMS api will have many
      * quirks the user may not expect when running through the resource adapter.
      *
-     * @see javax.resource.spi.ManagedConnectionFactory#createConnectionFactory()
+     * @see jakarta.resource.spi.ManagedConnectionFactory#createConnectionFactory()
      */
     @Override
     public Object createConnectionFactory() throws ResourceException {
@@ -195,8 +195,8 @@ public class ActiveMQManagedConnectionFactory extends ActiveMQConnectionSupport 
     }
 
     /**
-     * @see javax.resource.spi.ManagedConnectionFactory#createManagedConnection(javax.security.auth.Subject,
-     *      javax.resource.spi.ConnectionRequestInfo)
+     * @see jakarta.resource.spi.ManagedConnectionFactory#createManagedConnection(jakarta.security.auth.Subject,
+     *      jakarta.resource.spi.ConnectionRequestInfo)
      */
     @Override
     public ManagedConnection createManagedConnection(Subject subject, ConnectionRequestInfo connectionRequestInfo) throws ResourceException {
@@ -212,9 +212,9 @@ public class ActiveMQManagedConnectionFactory extends ActiveMQConnectionSupport 
     }
 
     /**
-     * @see javax.resource.spi.ManagedConnectionFactory#matchManagedConnections(java.util.Set,
-     *      javax.security.auth.Subject,
-     *      javax.resource.spi.ConnectionRequestInfo)
+     * @see jakarta.resource.spi.ManagedConnectionFactory#matchManagedConnections(java.util.Set,
+     *      jakarta.security.auth.Subject,
+     *      jakarta.resource.spi.ConnectionRequestInfo)
      */
     @Override
     public ManagedConnection matchManagedConnections(Set connections, Subject subject, ConnectionRequestInfo connectionRequestInfo) throws ResourceException {
@@ -234,7 +234,7 @@ public class ActiveMQManagedConnectionFactory extends ActiveMQConnectionSupport 
     }
 
     /**
-     * @see javax.resource.spi.ManagedConnectionFactory#setLogWriter(java.io.PrintWriter)
+     * @see jakarta.resource.spi.ManagedConnectionFactory#setLogWriter(java.io.PrintWriter)
      */
     @Override
     public void setLogWriter(PrintWriter aLogWriter) throws ResourceException {
@@ -245,7 +245,7 @@ public class ActiveMQManagedConnectionFactory extends ActiveMQConnectionSupport 
     }
 
     /**
-     * @see javax.resource.spi.ManagedConnectionFactory#getLogWriter()
+     * @see jakarta.resource.spi.ManagedConnectionFactory#getLogWriter()
      */
     @Override
     public PrintWriter getLogWriter() throws ResourceException {

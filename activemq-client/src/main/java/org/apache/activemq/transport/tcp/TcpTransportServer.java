@@ -40,9 +40,9 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 
-import javax.net.ServerSocketFactory;
-import javax.net.ssl.SSLParameters;
-import javax.net.ssl.SSLServerSocket;
+import jakarta.net.ServerSocketFactory;
+import jakarta.net.ssl.SSLParameters;
+import jakarta.net.ssl.SSLServerSocket;
 
 import org.apache.activemq.Service;
 import org.apache.activemq.ThreadPriorities;

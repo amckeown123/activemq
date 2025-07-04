@@ -119,7 +119,7 @@ public class TrapMessageInJDBCStoreTest extends TestCase {
         broker.waitUntilStarted();
 
         try {
-            LOG.info("***Broker started...");
+            LOG.info("***Broker started..");
 
             // failover but timeout in 5 seconds so the test does not hang
             String failoverTransportURL = "failover:(" + transportUrl
@@ -156,7 +156,7 @@ public class TrapMessageInJDBCStoreTest extends TestCase {
     public List<TextMessage> consumeMessages(String queue,
                                       String transportURL) throws JMSException {
         Connection connection = null;
-        LOG.debug("*** consumeMessages() called ...");
+        LOG.debug("*** consumeMessages() called ..");
 
         try {
 
@@ -209,7 +209,7 @@ public class TrapMessageInJDBCStoreTest extends TestCase {
 
             TextMessage m = session.createTextMessage("1");
 
-            LOG.debug("*** send message 1 to broker...");
+            LOG.debug("*** send message 1 to broker..");
             producer.send(m);
 
             // trigger SQL exception in transactionContext

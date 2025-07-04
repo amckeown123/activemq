@@ -84,7 +84,7 @@ public class MessageDatabaseSizeTest {
         adapter = (KahaDBPersistenceAdapter) broker.getPersistenceAdapter();
         adapter.setEnableSubscriptionStatistics(subStatsEnabled);
         broker.start();
-        LOG.info("Starting broker..");
+        LOG.info("Starting broker.");
     }
 
     @Before

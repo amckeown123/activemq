@@ -158,7 +158,7 @@ public class FailoverClusterTestSupport extends TestCase {
                 b.waitUntilStopped();
             } catch (Exception e) {
                 // Keep on going, we want to try and stop them all.
-                logger.info("Error while stopping broker["+ b.getBrokerName() +"] continuing...");
+                logger.info("Error while stopping broker["+ b.getBrokerName() +"] continuing..");
             }
         }
         brokers.clear();

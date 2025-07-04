@@ -23,8 +23,8 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Set;
 
-import javax.net.ssl.SSLServerSocket;
-import javax.net.ssl.SSLServerSocketFactory;
+import jakarta.net.ssl.SSLServerSocket;
+import jakarta.net.ssl.SSLServerSocketFactory;
 
 import org.apache.activemq.broker.BrokerService;
 import org.apache.activemq.transport.tcp.SslTransportFactory;

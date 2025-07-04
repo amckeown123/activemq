@@ -88,7 +88,7 @@ public class ConnectionFailureEvictsFromPoolTest extends TestSupport {
             public void onCommand(Object command) {
             }
             public void onException(IOException error) {
-                // we know connection is dead...
+                // we know connection is dead..
                 // listeners are fired async
                 gotExceptionEvent.countDown();
             }

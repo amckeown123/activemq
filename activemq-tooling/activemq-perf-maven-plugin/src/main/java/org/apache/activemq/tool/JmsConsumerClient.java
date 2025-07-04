@@ -81,7 +81,7 @@ public class JmsConsumerClient extends AbstractJmsMeasurableClient {
         try {
             getConnection().start();
 
-            LOG.info("Starting to synchronously receive messages for " + duration + " ms...");
+            LOG.info("Starting to synchronously receive messages for " + duration + " ms..");
             long endTime = System.currentTimeMillis() + duration;
 
             while (System.currentTimeMillis() - endTime < 0) {
@@ -107,7 +107,7 @@ public class JmsConsumerClient extends AbstractJmsMeasurableClient {
 
         try {
             getConnection().start();
-            LOG.info("Starting to synchronously receive " + count + " messages...");
+            LOG.info("Starting to synchronously receive " + count + " messages..");
 
             int recvCount = 0;
             while (recvCount < count) {
@@ -147,7 +147,7 @@ public class JmsConsumerClient extends AbstractJmsMeasurableClient {
 
         try {
             getConnection().start();
-            LOG.info("Starting to asynchronously receive messages for " + duration + " ms...");
+            LOG.info("Starting to asynchronously receive messages for " + duration + " ms..");
             try {
                 Thread.sleep(duration);
             } catch (InterruptedException e) {
@@ -190,7 +190,7 @@ public class JmsConsumerClient extends AbstractJmsMeasurableClient {
 
         try {
             getConnection().start();
-            LOG.info("Starting to asynchronously receive " + client.getRecvCount() + " messages...");
+            LOG.info("Starting to asynchronously receive " + client.getRecvCount() + " messages..");
             try {
                 while (recvCount.get() < count) {
                     synchronized (recvCount) {

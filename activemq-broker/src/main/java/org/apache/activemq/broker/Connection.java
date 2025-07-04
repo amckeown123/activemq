@@ -124,14 +124,14 @@ public interface Connection extends Service {
     /**
      * Returns the number of active transactions established on this Connection.
      *
-     * @return the number of active transactions established on this Connection..
+     * @return the number of active transactions established on this Connection.
      */
     public int getActiveTransactionCount();
 
     /**
      * Returns the number of active transactions established on this Connection.
      *
-     * @return the number of active transactions established on this Connection..
+     * @return the number of active transactions established on this Connection.
      */
     public Long getOldestActiveTransactionDuration();
 

@@ -76,7 +76,7 @@ public class TransportStatusDetector implements Service, Runnable {
     }
 
     protected void doSweep() {
-        for (Iterator i = connector.getConnections().iterator(); i.hasNext();) {
+        for (Iterator<?> i = connector.getConnections().iterator(); i.hasNext();) {
             TransportConnection connection = (TransportConnection)i.next();
             if (connection.isMarkedCandidate()) {
                 connection.doMark();

@@ -68,7 +68,7 @@ public class VMTransportWaitForTest {
         }
 
         // spawn a thread that will wait for an embedded broker to start via
-        // vm://..
+        // vm://.
         Thread t = new Thread("ClientConnectionThread") {
             @Override
             public void run() {

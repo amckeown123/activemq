@@ -24,9 +24,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import javax.net.ssl.KeyManager;
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.TrustManager;
+import jakarta.net.ssl.KeyManager;
+import jakarta.net.ssl.SSLContext;
+import jakarta.net.ssl.TrustManager;
 
 /**
  * A holder of SSL configuration.

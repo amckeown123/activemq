@@ -336,7 +336,7 @@ public class TopicSubscription extends AbstractSubscription {
             prefetchExtension.set(pull.getQuantity());
             dispatchMatched();
 
-            // If there was nothing dispatched.. we may need to setup a timeout.
+            // If there was nothing dispatched. we may need to setup a timeout.
             if (currentDispatchedCount == getSubscriptionStatistics().getDispatched().getCount() || pull.isAlwaysSignalDone()) {
 
                 // immediate timeout used by receiveNoWait()

@@ -110,7 +110,7 @@ public class MemoryTransactionStore implements TransactionStore {
                     AddMessageCommand cmd = iter.next();
                     cmd.run(ctx);
                 }
-                // And removes..
+                // And removes.
                 for (Iterator<RemoveMessageCommand> iter = acks.iterator(); iter.hasNext();) {
                     RemoveMessageCommand cmd = iter.next();
                     cmd.run(ctx);
@@ -313,7 +313,7 @@ public class MemoryTransactionStore implements TransactionStore {
 
     @Override
     public synchronized void recover(TransactionRecoveryListener listener) throws IOException {
-        // All the inflight transactions get rolled back..
+        // All the inflight transactions get rolled back.
         inflightTransactions.clear();
         this.doingRecover = true;
         try {

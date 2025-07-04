@@ -25,10 +25,10 @@ import java.util.Map;
 import java.util.Properties;
 
 import jakarta.jms.JMSException;
-import javax.xml.XMLConstants;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.namespace.*;
+import javax.xml.namespace.DocumentBuilder;
+import javax.xml.namespace.DocumentBuilderFactory;
+import javax.xml.namespace.ParserConfigurationException;
 
 import org.apache.activemq.command.Message;
 import org.apache.activemq.util.JMSExceptionSupport;

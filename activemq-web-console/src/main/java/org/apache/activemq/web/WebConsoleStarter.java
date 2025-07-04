@@ -36,7 +36,7 @@ public class WebConsoleStarter implements ServletContextListener {
     private static final Logger LOG = LoggerFactory.getLogger(WebConsoleStarter.class);
 
     public void contextInitialized(ServletContextEvent event) {
-        LOG.debug("Initializing ActiveMQ WebConsole...");
+        LOG.debug("Initializing ActiveMQ WebConsole..");
 
         String webconsoleType = getWebconsoleType();
 

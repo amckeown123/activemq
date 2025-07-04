@@ -187,7 +187,7 @@ public class DurableSubProcessMultiRestartTest {
 
         public void send() throws JMSException {
 
-            LOG.info("Sending ... ");
+            LOG.info("Sending .. ");
 
             Connection con = cf.createConnection();
 
@@ -280,7 +280,7 @@ public class DurableSubProcessMultiRestartTest {
                 while (end > System.currentTimeMillis()) {
                     Message message = consumer.receive(100);
                     if (message != null) {
-                        LOG.info(toString() + "received message...");
+                        LOG.info(toString() + "received message..");
                         msgCount++;
                     }
                 }

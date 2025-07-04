@@ -44,7 +44,7 @@ public final class Main {
             BrokerService broker = new BrokerService();
             broker.setPersistent(false);
 
-            // String brokerDir = "xbean:...;
+            // String brokerDir = "xbean:..;
             // System.setProperty("activemq.base", brokerDir);
             // BrokerService broker = BrokerFactory.createBroker(new URI(brokerDir + "/activemq.xml"));
 

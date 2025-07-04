@@ -25,9 +25,9 @@ import java.nio.ByteBuffer;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.net.ServerSocketFactory;
-import javax.net.SocketFactory;
-import javax.net.ssl.SSLEngine;
+import jakarta.net.ServerSocketFactory;
+import jakarta.net.SocketFactory;
+import jakarta.net.ssl.SSLEngine;
 
 import org.apache.activemq.TransportLoggerSupport;
 import org.apache.activemq.openwire.OpenWireFormat;

@@ -59,13 +59,13 @@ public class JmsAutoAckListenerTest extends TestSupport implements MessageListen
         MessageProducer producer = session.createProducer(queue);
         producer.send(session.createTextMessage("Hello"));
 
-        // Consume the message...
+        // Consume the message..
         MessageConsumer consumer = session.createConsumer(queue);
         consumer.setMessageListener(this);
 
         Thread.sleep(10000);
         session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
-        // Attempt to Consume the message...check if message was acknowledge
+        // Attempt to Consume the message..check if message was acknowledge
         consumer = session.createConsumer(queue);
         Message msg = consumer.receive(1000);
         assertNull(msg);

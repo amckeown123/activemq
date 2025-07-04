@@ -139,7 +139,7 @@ public class ManagedConnectionTest {
             }
         });
 
-        // Begin the transaction... that should kick off the event.
+        // Begin the transaction.. that should kick off the event.
         managedConnection.getLocalTransaction().begin();
         Session session = connection.createSession(true, 0);
         doWork(session);
@@ -154,7 +154,7 @@ public class ManagedConnectionTest {
     @Test(timeout = 60000)
     public void testCleanup() throws ResourceException, JMSException {
 
-        // Do some work and close it...
+        // Do some work and close it..
         Session session = connection.createSession(true, 0);
         doWork(session);
         connection.close();

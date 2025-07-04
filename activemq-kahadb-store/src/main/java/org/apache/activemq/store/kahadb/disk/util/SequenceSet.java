@@ -149,13 +149,13 @@ public class SequenceSet extends LinkedNodeList<Sequence> implements Iterable<Lo
         while (sequence != null) {
 
             if (sequence.isAdjacentToLast(value)) {
-                // grow the sequence...
+                // grow the sequence..
                 sequence.last = value;
-                // it might connect us to the next sequence..
+                // it might connect us to the next sequence.
                 if (sequence.getNext() != null) {
                     Sequence next = sequence.getNext();
                     if (next.isAdjacentToFirst(value)) {
-                        // Yep the sequence connected.. so join them.
+                        // Yep the sequence connected. so join them.
                         sequence.last = next.last;
                         next.unlink();
                     }
@@ -164,14 +164,14 @@ public class SequenceSet extends LinkedNodeList<Sequence> implements Iterable<Lo
             }
 
             if (sequence.isAdjacentToFirst(value)) {
-                // grow the sequence...
+                // grow the sequence..
                 sequence.first = value;
 
                 // it might connect us to the previous
                 if (sequence.getPrevious() != null) {
                     Sequence prev = sequence.getPrevious();
                     if (prev.isAdjacentToLast(value)) {
-                        // Yep the sequence connected.. so join them.
+                        // Yep the sequence connected. so join them.
                         sequence.first = prev.first;
                         prev.unlink();
                     }

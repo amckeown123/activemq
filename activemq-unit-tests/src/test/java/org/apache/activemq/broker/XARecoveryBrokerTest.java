@@ -211,7 +211,7 @@ public class XARecoveryBrokerTest extends BrokerRestartTestSupport {
             connection.send(createPrepareTransaction(connectionInfo, txid));
         }
 
-        // Since prepared but not committed.. they should not get delivered.
+        // Since prepared but not committed. they should not get delivered.
         assertNull(receiveMessage(connection));
         assertNoMessagesLeft(connection);
         connection.request(closeConnectionInfo(connectionInfo));
@@ -228,7 +228,7 @@ public class XARecoveryBrokerTest extends BrokerRestartTestSupport {
         consumerInfo = createConsumerInfo(sessionInfo, destination);
         connection.send(consumerInfo);
 
-        // Since prepared but not committed.. they should not get delivered.
+        // Since prepared but not committed. they should not get delivered.
         assertNull(receiveMessage(connection));
         assertNoMessagesLeft(connection);
 
@@ -312,7 +312,7 @@ public class XARecoveryBrokerTest extends BrokerRestartTestSupport {
             connection.send(createPrepareTransaction(connectionInfo, txid));
         }
 
-        // Since prepared but not committed.. they should not get delivered.
+        // Since prepared but not committed. they should not get delivered.
         assertNull(receiveMessage(connection));
         assertNoMessagesLeft(connection);
 
@@ -343,7 +343,7 @@ public class XARecoveryBrokerTest extends BrokerRestartTestSupport {
             assertNotNull("got non tx message after prepared", m);
         }
 
-        // Since prepared but not committed.. they should not get delivered.
+        // Since prepared but not committed. they should not get delivered.
         assertNull(receiveMessage(connection));
         assertNoMessagesLeft(connection);
 
@@ -414,7 +414,7 @@ public class XARecoveryBrokerTest extends BrokerRestartTestSupport {
             connection.send(createPrepareTransaction(connectionInfo, txid));
         }
 
-        // Since prepared but not committed.. they should not get delivered.
+        // Since prepared but not committed. they should not get delivered.
         assertNull(receiveMessage(connection));
         assertNoMessagesLeft(connection);
         connection.request(closeConnectionInfo(connectionInfo));
@@ -434,7 +434,7 @@ public class XARecoveryBrokerTest extends BrokerRestartTestSupport {
         consumerInfo.setSubscriptionName("durable");
         connection.send(consumerInfo);
 
-        // Since prepared but not committed.. they should not get delivered.
+        // Since prepared but not committed. they should not get delivered.
         assertNull(receiveMessage(connection));
         assertNoMessagesLeft(connection);
 
@@ -996,7 +996,7 @@ public class XARecoveryBrokerTest extends BrokerRestartTestSupport {
             }
         }
 
-        LOG.info("commit..");
+        LOG.info("commit.");
         // Commit
         connection.request(createCommitTransaction1Phase(connectionInfo, txid));
 
@@ -1206,7 +1206,7 @@ public class XARecoveryBrokerTest extends BrokerRestartTestSupport {
 
         connection.send(sessionInfo);
 
-        LOG.info("add consumers..");
+        LOG.info("add consumers.");
         for (ConsumerInfo info : consumerInfos) {
             connection.send(info);
         }

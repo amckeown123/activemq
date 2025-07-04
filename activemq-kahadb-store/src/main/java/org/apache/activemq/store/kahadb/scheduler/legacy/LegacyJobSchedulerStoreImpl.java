@@ -322,7 +322,7 @@ final class LegacyJobSchedulerStoreImpl extends ServiceSupport {
                         lockFile.lock();
                         break;
                     } catch (IOException e) {
-                        LOG.info("Database " + lockFileName + " is locked... waiting " + (DATABASE_LOCKED_WAIT_DELAY / 1000)
+                        LOG.info("Database " + lockFileName + " is locked.. waiting " + (DATABASE_LOCKED_WAIT_DELAY / 1000)
                             + " seconds for the database to be unlocked. Reason: " + e);
                         try {
                             Thread.sleep(DATABASE_LOCKED_WAIT_DELAY);

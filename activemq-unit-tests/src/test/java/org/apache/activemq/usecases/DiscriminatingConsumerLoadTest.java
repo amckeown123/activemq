@@ -127,14 +127,14 @@ public class DiscriminatingConsumerLoadTest extends TestSupport {
         Thread producerThread = new Thread(producer);
         producerThread.start();
 
-        // now that everything is running, let's wait for the consumer thread to finish ...
+        // now that everything is running, let's wait for the consumer thread to finish ..
         consumerThread.join();
         producer.stop = true;
 
         if (consumer.getCount() == testSize)
-            LOG.info("test complete .... all messsages consumed!!");
+            LOG.info("test complete .. all messsages consumed!!");
         else
-            LOG.info("test failed .... Sent " + (testSize / 1) + " messages intended to be consumed ( " + testSize + " total), but only consumed "
+            LOG.info("test failed .. Sent " + (testSize / 1) + " messages intended to be consumed ( " + testSize + " total), but only consumed "
                 + consumer.getCount());
 
         assertTrue("Sent " + testSize + " messages intended to be consumed, but only consumed " + consumer.getCount(), (consumer.getCount() == testSize));
@@ -176,16 +176,16 @@ public class DiscriminatingConsumerLoadTest extends TestSupport {
         Thread producerThread = new Thread(producer);
         producerThread.start();
 
-        // now that everything is running, let's wait for the consumer thread to finish ...
+        // now that everything is running, let's wait for the consumer thread to finish ..
         consumerThread.join();
         producer.stop = true;
 
         if (consumer.getCount() == (testSize / 2)) {
-            LOG.info("test complete .... all messsages consumed!!");
+            LOG.info("test complete .. all messsages consumed!!");
         } else {
-            LOG.info("test failed .... Sent " + testSize + " original messages, only half of which (" + (testSize / 2)
+            LOG.info("test failed .. Sent " + testSize + " original messages, only half of which (" + (testSize / 2)
                 + ") were intended to be consumed: consumer paused at: " + consumer.getCount());
-            // System.out.println("test failed .... Sent " + testSize + " original messages, only half of which (" +
+            // System.out.println("test failed .. Sent " + testSize + " original messages, only half of which (" +
             // (testSize / 2) +
             // ") were intended to be consumed: consumer paused at: " + consumer.getCount());
 
@@ -225,19 +225,19 @@ public class DiscriminatingConsumerLoadTest extends TestSupport {
                 MessageProducer producer = session.createProducer(queue);
 
                 while (!stop && (counterSent < testSize)) {
-                    // first send a message intended to be consumed ....
-                    TextMessage message = session.createTextMessage("*** Ill ....... Ini ***"); // alma mater ...
+                    // first send a message intended to be consumed ..
+                    TextMessage message = session.createTextMessage("*** Ill .... Ini ***"); // alma mater ..
                     message.setJMSType(JMSTYPE_EATME);
-                    // LOG.info("sending .... JMSType = " + message.getJMSType());
+                    // LOG.info("sending .. JMSType = " + message.getJMSType());
                     producer.send(message, DeliveryMode.NON_PERSISTENT, 0, 1800000);
 
                     counterSent++;
 
                     // now send a message intended to be consumed by some other consumer in the the future
-                    // ... we expect these messages to accrue in the queue
-                    message = session.createTextMessage("*** Ill ....... Ini ***"); // alma mater ...
+                    // .. we expect these messages to accrue in the queue
+                    message = session.createTextMessage("*** Ill .... Ini ***"); // alma mater ..
                     message.setJMSType(JMSTYPE_IGNOREME);
-                    // LOG.info("sending .... JMSType = " + message.getJMSType());
+                    // LOG.info("sending .. JMSType = " + message.getJMSType());
                     producer.send(message, DeliveryMode.NON_PERSISTENT, 0, 1800000);
 
                     counterSent++;
@@ -248,13 +248,13 @@ public class DiscriminatingConsumerLoadTest extends TestSupport {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            LOG.info("producer thread complete ... " + counterSent + " messages sent to the queue");
+            LOG.info("producer thread complete .. " + counterSent + " messages sent to the queue");
         }
     }
 
     /**
      * Helper class that will consume messages from the queue based on the supplied JMS selector. Thread will stop after
-     * the first receive(..) timeout, or once all expected messages have been received (see testSize). If the thread
+     * the first receive(.) timeout, or once all expected messages have been received (see testSize). If the thread
      * stops due to a timeout, it is experiencing the delivery pause that is symptomatic of a bug in the broker.
      *
      */
@@ -283,11 +283,11 @@ public class DiscriminatingConsumerLoadTest extends TestSupport {
                     TextMessage result = (TextMessage) consumer.receive(30000);
                     if (result != null) {
                         counterReceived++;
-                        // System.out.println("consuming .... JMSType = " + result.getJMSType() + " received = " +
+                        // System.out.println("consuming .. JMSType = " + result.getJMSType() + " received = " +
                         // counterReceived);
-                        LOG.info("consuming .... JMSType = " + result.getJMSType() + " received = " + counterReceived);
+                        LOG.info("consuming .. JMSType = " + result.getJMSType() + " received = " + counterReceived);
                     } else {
-                        LOG.info("consuming .... timeout while waiting for a message ... broker must have stopped delivery ...  received = " + counterReceived);
+                        LOG.info("consuming .. timeout while waiting for a message .. broker must have stopped delivery ..  received = " + counterReceived);
                         deliveryHalted = true;
                     }
                 }

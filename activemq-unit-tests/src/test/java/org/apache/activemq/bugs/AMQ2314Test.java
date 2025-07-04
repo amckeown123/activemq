@@ -110,10 +110,10 @@ public class AMQ2314Test extends CombinationTestSupport {
                         consumerReady.countDown();
                     }
                     count++;
-                    LOG.info("Received one... waiting");
+                    LOG.info("Received one.. waiting");
                     consumerContinue.await();
                     if (consumeAll) {
-                        LOG.info("Consuming the rest of the messages...");
+                        LOG.info("Consuming the rest of the messages..");
                         while (consumer.receive(messageReceiveTimeout) != null) {
                             count++;
                         }

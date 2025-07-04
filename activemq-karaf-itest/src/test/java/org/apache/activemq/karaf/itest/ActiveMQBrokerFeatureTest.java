@@ -79,7 +79,7 @@ public class ActiveMQBrokerFeatureTest extends AbstractFeatureTest {
     			.build();
 
         System.err.println(executeCommand("activemq:bstat").trim());
-        System.err.println("attempting to access web console..");
+        System.err.println("attempting to access web console.");
 
 		withinReason(new Callable<Boolean>() {
 			public Boolean call() throws Exception {
@@ -88,7 +88,7 @@ public class ActiveMQBrokerFeatureTest extends AbstractFeatureTest {
 			}
 		});
 
-        System.err.println("attempting publish via web console..");
+        System.err.println("attempting publish via web console.");
 
         // need to first get the secret
         CloseableHttpResponse response = client.execute(new HttpGet(WEB_CONSOLE_URL + "send.jsp"));

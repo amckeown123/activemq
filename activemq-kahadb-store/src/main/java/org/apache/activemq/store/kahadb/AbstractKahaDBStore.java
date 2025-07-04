@@ -709,7 +709,7 @@ public abstract class AbstractKahaDBStore extends LockableServiceSupport {
                                 }
                             }
                         } catch (InterruptedException e) {
-                            // Looks like someone really wants us to exit this thread...
+                            // Looks like someone really wants us to exit this thread..
                         } catch (IOException ioe) {
                             LOG.error("Checkpoint failed", ioe);
                             brokerService.handleIOException(ioe);

@@ -641,7 +641,7 @@ public abstract class BaseDestination implements Destination {
 
     /**
      * Provides a hook to allow messages with no consumer to be processed in
-     * some way - such as to send to a dead letter queue or something..
+     * some way - such as to send to a dead letter queue or something.
      */
     protected void onMessageWithNoConsumers(ConnectionContext context, Message msg) throws Exception {
         if (!msg.isPersistent()) {

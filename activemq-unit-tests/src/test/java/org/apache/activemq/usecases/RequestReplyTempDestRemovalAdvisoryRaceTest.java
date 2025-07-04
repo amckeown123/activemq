@@ -100,7 +100,7 @@ public class RequestReplyTempDestRemovalAdvisoryRaceTest extends JmsMultipleBrok
     }
 
     /**
-     * Notes: to reliably reproduce use debugger... set a "thread" breakpoint at line 679 in DemandForwardingBridgeSupport,
+     * Notes: to reliably reproduce use debugger.. set a "thread" breakpoint at line 679 in DemandForwardingBridgeSupport,
      * and only break on the "2nd" pass (broker C's bridge). Allow debugging to continue shortly after hitting
      * the breakpoint, for this test we use a logging appender to implement the pause,
      * it fails most of the time, hence the combos
@@ -398,7 +398,7 @@ public class RequestReplyTempDestRemovalAdvisoryRaceTest extends JmsMultipleBrok
                         LOG.info("SENDER: Got a response from echo service!" + ((TextMessage) incomingMessage).getText());
                         responseReceived.incrementAndGet();
                     } catch (JMSException e) {
-                        LOG.error("SENDER: might want to see why i'm getting non-text messages..." + incomingMessage, e);
+                        LOG.error("SENDER: might want to see why i'm getting non-text messages.." + incomingMessage, e);
                     }
                 } else {
                     LOG.info("SENDER: Did not get a response this time");

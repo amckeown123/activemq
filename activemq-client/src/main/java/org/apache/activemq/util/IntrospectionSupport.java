@@ -29,7 +29,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
-import javax.net.ssl.SSLServerSocket;
+import jakarta.net.ssl.SSLServerSocket;
 
 import org.apache.activemq.command.ActiveMQDestination;
 import org.slf4j.Logger;
@@ -169,9 +169,9 @@ public final class IntrospectionSupport {
             if (target instanceof SSLServerSocket) {
                 // overcome illegal access issues with internal implementation class
                 clazz = SSLServerSocket.class;
-            } else if (target instanceof javax.net.ssl.SSLSocket) {
+            } else if (target instanceof jakarta.net.ssl.SSLSocket) {
                 // overcome illegal access issues with internal implementation class
-                clazz = javax.net.ssl.SSLSocket.class;
+                clazz = jakarta.net.ssl.SSLSocket.class;
             }
             Method setter = findSetterMethod(clazz, name);
             if (setter == null) {

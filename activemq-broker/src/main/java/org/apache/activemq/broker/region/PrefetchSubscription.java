@@ -98,7 +98,7 @@ public abstract class PrefetchSubscription extends AbstractSubscription {
             dispatchPending();
 
             synchronized(this) {
-                // If there was nothing dispatched.. we may need to setup a timeout.
+                // If there was nothing dispatched. we may need to setup a timeout.
                 if (dispatchCounterBeforePull == getSubscriptionStatistics().getDispatched().getCount() || pull.isAlwaysSignalDone()) {
                     // immediate timeout used by receiveNoWait()
                     if (pull.getTimeout() == -1) {
@@ -144,7 +144,7 @@ public abstract class PrefetchSubscription extends AbstractSubscription {
     @Override
     public void add(MessageReference node) throws Exception {
         synchronized (pendingLock) {
-            // The destination may have just been removed...
+            // The destination may have just been removed..
             if (!destinations.contains(node.getRegionDestination()) && node != QueueMessageReference.NULL_MESSAGE) {
                 // perhaps we should inform the caller that we are no longer valid to dispatch to?
                 return;

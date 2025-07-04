@@ -29,7 +29,7 @@ import org.fusesource.hawtbuf.UTF8Buffer;
 
 import jakarta.jms.DeliveryMode;
 import jakarta.jms.JMSException;
-import javax.management.openmbean.ArrayType;
+
 import javax.management.openmbean.CompositeData;
 import javax.management.openmbean.CompositeDataSupport;
 import javax.management.openmbean.CompositeType;
@@ -55,14 +55,16 @@ public final class OpenTypeSupport {
         Map<String, Object> getFields(Object o) throws OpenDataException;
     }
 
-    private static final Map<Class, AbstractOpenTypeFactory> OPEN_TYPE_FACTORIES = new HashMap<Class, AbstractOpenTypeFactory>();
+    @SuppressWarnings("rawtypes")
+	private static final Map<Class, AbstractOpenTypeFactory> OPEN_TYPE_FACTORIES = new HashMap<Class, AbstractOpenTypeFactory>();
 
     public abstract static class AbstractOpenTypeFactory implements OpenTypeFactory {
 
         private CompositeType compositeType;
         private final List<String> itemNamesList = new ArrayList<String>();
         private final List<String> itemDescriptionsList = new ArrayList<String>();
-        private final List<OpenType> itemTypesList = new ArrayList<OpenType>();
+        @SuppressWarnings("rawtypes")
+		private final List<OpenType> itemTypesList = new ArrayList<OpenType>();
 
         public synchronized CompositeType getCompositeType() throws OpenDataException {
             if (compositeType == null) {
@@ -75,7 +77,8 @@ public final class OpenTypeSupport {
         protected void init() throws OpenDataException {
         }
 
-        protected CompositeType createCompositeType() throws OpenDataException {
+        @SuppressWarnings("rawtypes")
+		protected CompositeType createCompositeType() throws OpenDataException {
             String[] itemNames = itemNamesList.toArray(new String[itemNamesList.size()]);
             String[] itemDescriptions = itemDescriptionsList.toArray(new String[itemDescriptionsList.size()]);
             OpenType[] itemTypes = itemTypesList.toArray(new OpenType[itemTypesList.size()]);
@@ -84,7 +87,8 @@ public final class OpenTypeSupport {
 
         protected abstract String getTypeName();
 
-        protected void addItem(String name, String description, OpenType type) {
+        @SuppressWarnings("rawtypes")
+		protected void addItem(String name, String description, OpenType type) {
             itemNamesList.add(name);
             itemDescriptionsList.add(description);
             itemTypesList.add(type);
@@ -231,7 +235,8 @@ public final class OpenTypeSupport {
         }
 
 
-        protected <T> TabularType createTabularType(Class<T> type, OpenType openType) throws OpenDataException {
+        @SuppressWarnings("rawtypes")
+		protected <T> TabularType createTabularType(Class<T> type, OpenType openType) throws OpenDataException {
             String typeName = "java.util.Map<java.lang.String, " + type.getName() + ">";
             String[] keyValue = new String[]{"key", "value"};
             OpenType[] openTypes = new OpenType[]{SimpleType.STRING, openType};
@@ -239,7 +244,8 @@ public final class OpenTypeSupport {
             return new TabularType(typeName, typeName, rowType, new String[]{"key"});
         }
 
-        protected TabularDataSupport createTabularData(ActiveMQMessage m, TabularType type, Class valueType) throws IOException, OpenDataException {
+        @SuppressWarnings("rawtypes")
+		protected TabularDataSupport createTabularData(ActiveMQMessage m, TabularType type, Class valueType) throws IOException, OpenDataException {
             TabularDataSupport answer = new TabularDataSupport(type);
             Set<Map.Entry<String,Object>> entries = m.getProperties().entrySet();
             for (Map.Entry<String, Object> entry : entries) {
@@ -299,7 +305,7 @@ public final class OpenTypeSupport {
 
                 // This is whack! Java 1.5 JMX spec does not support primitive
                 // arrays!
-                // In 1.6 it seems it is supported.. but until then...
+                // In 1.6 it seems it is supported. but until then..
                 Byte data[] = new Byte[preview.length];
                 for (int i = 0; i < data.length; i++) {
                     data[i] = preview[i];

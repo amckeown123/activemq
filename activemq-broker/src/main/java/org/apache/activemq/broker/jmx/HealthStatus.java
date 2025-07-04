@@ -19,7 +19,11 @@ package org.apache.activemq.broker.jmx;
 import java.io.Serializable;
 
 public class HealthStatus implements Serializable {
-    private final String healthId;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private final String healthId;
     private final String level;
     private final String message;
     private final String resource;

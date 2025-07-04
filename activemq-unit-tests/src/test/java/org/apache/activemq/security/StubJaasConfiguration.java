@@ -17,8 +17,8 @@
 
 package org.apache.activemq.security;
 
-import javax.security.auth.login.AppConfigurationEntry;
-import javax.security.auth.login.Configuration;
+import jakarta.security.auth.login.AppConfigurationEntry;
+import jakarta.security.auth.login.Configuration;
 
 public class StubJaasConfiguration extends Configuration {
     private AppConfigurationEntry configEntry;

@@ -116,7 +116,7 @@ public class JDBCMessageStore extends AbstractMessageStore {
         // if xaXid present - this is a prepare - so we don't yet have an outcome
         final XATransactionId xaXid =  context != null ? context.getXid() : null;
 
-        // Serialize the Message..
+        // Serialize the Message.
         byte data[];
         try {
             ByteSequence packet = wireFormat.marshal(message);

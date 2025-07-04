@@ -203,7 +203,7 @@ public class MessageGroupDelayedTest extends JmsTestSupport {
                 while (true) {
                     if (counters[0] == 0 && counters[1] == 0 && counters[2] == 0) {
                         doneSignal.countDown();
-                        log.info(workerName + " done...");
+                        log.info(workerName + " done..");
                         break;
                     }
 

@@ -24,8 +24,8 @@ import java.security.cert.X509Certificate;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.net.ssl.SSLServerSocketFactory;
-import javax.net.ssl.SSLSocket;
+import jakarta.net.ssl.SSLServerSocketFactory;
+import jakarta.net.ssl.SSLSocket;
 
 import org.apache.activemq.broker.BrokerContext;
 import org.apache.activemq.broker.BrokerService;

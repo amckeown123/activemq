@@ -179,7 +179,7 @@ public class TwoBrokerVirtualTopicSelectorAwareForwardingTest extends
 
 
         // make sure if there are messages that are orphaned in the queue that this number doesn't
-        // grow...
+        // grow..
         final long currentDepth = brokerA.getDestination(new ActiveMQQueue("Consumer.B.VirtualTopic.tempTopic"))
                 .getDestinationStatistics().getMessages().getCount();
 

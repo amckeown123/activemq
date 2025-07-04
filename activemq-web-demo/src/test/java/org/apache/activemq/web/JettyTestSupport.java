@@ -27,8 +27,8 @@ import java.net.URL;
 import jakarta.jms.Connection;
 import jakarta.jms.MessageProducer;
 import jakarta.jms.Session;
-import javax.net.ServerSocketFactory;
-import javax.net.SocketFactory;
+import jakarta.net.ServerSocketFactory;
+import jakarta.net.SocketFactory;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
 import org.apache.activemq.broker.BrokerService;

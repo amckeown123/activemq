@@ -26,9 +26,9 @@ import java.util.Properties;
 import java.util.Set;
 import java.util.regex.Pattern;
 
-import javax.security.auth.Subject;
-import javax.security.auth.callback.CallbackHandler;
-import javax.security.auth.login.LoginException;
+import jakarta.security.auth.Subject;
+import jakarta.security.auth.callback.CallbackHandler;
+import jakarta.security.auth.login.LoginException;
 
 /**
  * A LoginModule allowing for SSL certificate based authentication based on

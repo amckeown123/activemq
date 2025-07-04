@@ -58,14 +58,14 @@ public class WSSTransportNeedClientAuthTest {
         broker.start();
         broker.waitUntilStarted();
 
-        // these are used for the client side... for the server side, the SSL context
+        // these are used for the client side.. for the server side, the SSL context
         // will be configured through the <sslContext> spring beans
-        System.setProperty("javax.net.ssl.trustStore", TRUST_KEYSTORE);
-        System.setProperty("javax.net.ssl.trustStorePassword", PASSWORD);
-        System.setProperty("javax.net.ssl.trustStoreType", KEYSTORE_TYPE);
-        System.setProperty("javax.net.ssl.keyStore", KEYSTORE);
-        System.setProperty("javax.net.ssl.keyStorePassword", PASSWORD);
-        System.setProperty("javax.net.ssl.keyStoreType", KEYSTORE_TYPE);
+        System.setProperty("jakarta.net.ssl.trustStore", TRUST_KEYSTORE);
+        System.setProperty("jakarta.net.ssl.trustStorePassword", PASSWORD);
+        System.setProperty("jakarta.net.ssl.trustStoreType", KEYSTORE_TYPE);
+        System.setProperty("jakarta.net.ssl.keyStore", KEYSTORE);
+        System.setProperty("jakarta.net.ssl.keyStorePassword", PASSWORD);
+        System.setProperty("jakarta.net.ssl.keyStoreType", KEYSTORE_TYPE);
     }
 
     @After

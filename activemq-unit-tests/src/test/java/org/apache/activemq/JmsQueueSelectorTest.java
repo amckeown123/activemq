@@ -40,7 +40,7 @@ public class JmsQueueSelectorTest extends JmsTopicSelectorTest {
         message.setBooleanProperty("booleanProperty", true);
         producer.send(message);
 
-        // don't consume any messages.. close the consumer so that messages that had
+        // don't consume any messages. close the consumer so that messages that had
         // been dispatched get marked as delivered, and queued for redelivery
         consumer.close();
 

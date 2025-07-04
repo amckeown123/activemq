@@ -104,7 +104,7 @@ public class TcpBufferedOutputStream extends FilterOutputStream implements TimeS
     /**
      * flush the data to the output stream This doesn't call flush on the
      * underlying outputstream, because Tcp is particularly efficent at doing
-     * this itself ....
+     * this itself ..
      * 
      * @throws IOException
      */

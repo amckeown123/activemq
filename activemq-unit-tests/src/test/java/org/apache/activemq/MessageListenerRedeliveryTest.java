@@ -143,8 +143,8 @@ public class MessageListenerRedeliveryTest {
         } catch (InterruptedException e) {
         }
 
-        // first try.. should get 2 since there is no delay on the
-        // first redeliver..
+        // first try. should get 2 since there is no delay on the
+        // first redeliver.
         assertEquals(2, listener.counter);
 
         try {

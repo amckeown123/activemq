@@ -117,34 +117,34 @@ public final class IOHelper {
     public static boolean delete(File top) {
         boolean result = true;
         Stack<File> files = new Stack<File>();
-        // Add file to the stack to be processed...
+        // Add file to the stack to be processed..
         files.push(top);
-        // Process all files until none remain...
+        // Process all files until none remain..
         while (!files.isEmpty()) {
             File file = files.pop();
             if (file.isDirectory()) {
                 File list[] = file.listFiles();
                 if (list == null || list.length == 0) {
-                    // The current directory contains no entries...
-                    // delete directory and continue...
+                    // The current directory contains no entries..
+                    // delete directory and continue..
                     result &= file.delete();
                 } else {
-                    // Add back the directory since it is not empty....
+                    // Add back the directory since it is not empty..
                     // and when we process it again it will be empty and can be
-                    // deleted safely...
+                    // deleted safely..
                     files.push(file);
                     for (File dirFile : list) {
                         if (dirFile.isDirectory()) {
-                            // Place the directory on the stack...
+                            // Place the directory on the stack..
                             files.push(dirFile);
                         } else {
-                            // This is a simple file, delete it...
+                            // This is a simple file, delete it..
                             result &= dirFile.delete();
                         }
                     }
                 }
             } else {
-                // This is a simple file, delete it...
+                // This is a simple file, delete it..
                 result &= file.delete();
             }
         }
@@ -172,7 +172,7 @@ public final class IOHelper {
             } else {
                 for (int i = 0; i < files.length; i++) {
                     File file = files[i];
-                    if (file.getName().equals(".") || file.getName().equals("..")) {
+                    if (file.getName().equals(".") || file.getName().equals(".")) {
                         continue;
                     }
                     if (file.isDirectory()) {

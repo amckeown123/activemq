@@ -45,7 +45,7 @@ public class BrowseCommand extends AbstractJmxCommand {
         "                                  the messages selector format.",
         "    -V<header|custom|body>        Predefined view that allows you to view the message header, custom", 
         "                                  message header, or the message body.",
-        "    --view <attr1>,<attr2>,...    Select the specific attribute of the message to view.", 
+        "    --view <attr1>,<attr2>,..    Select the specific attribute of the message to view.", 
         "    --jmxurl <url>                Set the JMX URL to connect to.",
         "    --pid <pid>                   Set the pid to connect to (only on Sun JVM).",            
         "    --jmxuser <user>              Set the JMX user used for authenticating.",

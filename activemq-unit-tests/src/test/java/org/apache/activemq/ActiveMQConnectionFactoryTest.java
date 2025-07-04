@@ -28,7 +28,7 @@ import java.net.URISyntaxException;
 import jakarta.jms.ExceptionListener;
 import jakarta.jms.JMSException;
 import jakarta.jms.Session;
-import javax.net.ServerSocketFactory;
+import jakarta.net.ServerSocketFactory;
 
 import org.apache.activemq.broker.BrokerRegistry;
 import org.apache.activemq.broker.BrokerService;

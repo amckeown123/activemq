@@ -41,13 +41,13 @@ public class EmbeddedActiveMQ
                 BrokerService brokerService = null;
                 Connection connection = null;
  
-                logger.info("Start...");
+                logger.info("Start..");
                 try
                 {
                         brokerService = new BrokerService();
                         brokerService.setBrokerName("TestMQ");
                         brokerService.setUseJmx(true);
-                        logger.info("Broker '" + brokerService.getBrokerName() + "' is starting........");
+                        logger.info("Broker '" + brokerService.getBrokerName() + "' is starting....");
                         brokerService.start();
                         ConnectionFactory fac = new ActiveMQConnectionFactory("vm://TestMQ");
                         connection = fac.createConnection();
@@ -59,7 +59,7 @@ public class EmbeddedActiveMQ
                             producer.send(msg);
                         }
                         logger.info(ThreadExplorer.show("Active threads after start:"));
-                        System.out.println("Press return to stop........");
+                        System.out.println("Press return to stop....");
                         String key = br.readLine();
                 }
  
@@ -72,7 +72,7 @@ public class EmbeddedActiveMQ
                         try
                         {
                                 br.close();
-                                logger.info("Broker '" + brokerService.getBrokerName() + "' is stopping........");
+                                logger.info("Broker '" + brokerService.getBrokerName() + "' is stopping....");
                                 connection.close();
                                 brokerService.stop(); 
                                 sleep(8);
@@ -85,7 +85,7 @@ public class EmbeddedActiveMQ
                         }
                 }
  
-                logger.info("Waiting for list theads is greater then 1 ...");
+                logger.info("Waiting for list theads is greater then 1 ..");
                 int numTh = ThreadExplorer.active();
  
                 while (numTh > 2)
@@ -95,14 +95,14 @@ public class EmbeddedActiveMQ
                         logger.info(ThreadExplorer.show("Still active threads:"));
                 }
  
-                System.out.println("Stop...");
+                System.out.println("Stop..");
         }
  
         private static void sleep(int second)
         {
                 try
                 {
-                        logger.info("Waiting for " + second + "s...");
+                        logger.info("Waiting for " + second + "s..");
                         Thread.sleep(second * 1000L);
                 }
                 catch (InterruptedException e)

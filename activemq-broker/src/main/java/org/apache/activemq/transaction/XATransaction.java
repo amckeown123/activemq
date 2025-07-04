@@ -190,7 +190,7 @@ public class XATransaction extends Transaction {
 
         switch (getState()) {
         case START_STATE:
-            // No work done.. no commit/rollback needed.
+            // No work done. no commit/rollback needed.
             setStateFinished();
             return XAResource.XA_RDONLY;
         case IN_USE_STATE:

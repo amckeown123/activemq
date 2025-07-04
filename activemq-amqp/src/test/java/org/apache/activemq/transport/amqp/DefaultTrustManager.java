@@ -19,7 +19,7 @@ package org.apache.activemq.transport.amqp;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 
-import javax.net.ssl.X509TrustManager;
+import jakarta.net.ssl.X509TrustManager;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

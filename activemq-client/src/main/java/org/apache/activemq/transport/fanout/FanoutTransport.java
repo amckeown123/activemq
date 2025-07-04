@@ -381,7 +381,7 @@ public class FanoutTransport implements CompositeTransport {
 
                     Exception error;
 
-                    // Throw the right kind of error..
+                    // Throw the right kind of error.
                     if (disposed) {
                         error = new IOException("Transport disposed.");
                     } else if (connectionFailure != null) {

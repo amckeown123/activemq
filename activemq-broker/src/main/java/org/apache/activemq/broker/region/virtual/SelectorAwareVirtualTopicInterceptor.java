@@ -74,7 +74,7 @@ public class SelectorAwareVirtualTopicInterceptor extends VirtualTopicIntercepto
 
     private boolean tryMatchingCachedSubs(final Broker broker, Destination dest, MessageEvaluationContext msgContext) {
         boolean matches = false;
-        LOG.debug("No active consumer match found. Will try cache if configured...");
+        LOG.debug("No active consumer match found. Will try cache if configured..");
 
         if (selectorCachePlugin != null) {
             final Set<String> selectors = selectorCachePlugin.getSelectorsForDestination(dest.getActiveMQDestination().getQualifiedName());

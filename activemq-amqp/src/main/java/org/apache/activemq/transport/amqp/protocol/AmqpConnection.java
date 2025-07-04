@@ -352,8 +352,8 @@ public class AmqpConnection implements AmqpProtocolConverter {
             switch (header.getProtocolId()) {
                 case 0:
                     authenticator = null;
-                    break; // nothing to do..
-                case 3: // Client will be using SASL for auth..
+                    break; // nothing to do.
+                case 3: // Client will be using SASL for auth.
                     authenticator = new AmqpAuthenticator(amqpTransport, protonTransport.sasl(), brokerService);
                     break;
                 default:

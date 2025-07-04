@@ -556,7 +556,7 @@ public class AmqpSession extends AmqpAbstractResource<Session> {
      * Create a receiver instance using the given address that creates a durable subscription.
      *
      * @param subscriptionName
-     *        the name of the subscription that should be queried for on the remote..
+     *        the name of the subscription that should be queried for on the remote.
      *
      * @return a newly created receiver that is ready for use if the subscription exists.
      *

@@ -3,7 +3,7 @@
   Licensed to the Apache Software Foundation (ASF) under one or more
   contributor license agreements.  See the NOTICE file distributed with
   this work for additional information regarding copyright ownership.
-  The ASF licenses this file to You under the Apache License, Version 2.0
+  The ASF licenses this file to You under the Apache License, version 2.0
   (the "License"); you may not use this file except in compliance with
   the License.  You may obtain a copy of the License at
 
@@ -22,20 +22,39 @@
   <parent>
     <groupId>org.apache.activemq</groupId>
     <artifactId>activemq-parent</artifactId>
-    <version>6.2.0-SNAPSHOT</version>
+    <version>6.1.0-SNAPSHOT</version>
   </parent>
 
   <artifactId>activemq-karaf</artifactId>
   <packaging>bundle</packaging>
   <name>ActiveMQ :: Apache Karaf</name>
   <description>Provides resources for running ActiveMQ in Apache Karaf</description>
+  
+     <properties>
+    <java.version>17</java.version>
+    <maven.compiler.source>${java.version}</maven.compiler.source>
+    <maven.compiler.target>${java.version}</maven.compiler.target>
+    <localRepository>C:/Users/a-mck/.m2</localRepository>
+        <!-- Plugins and Build -->
+    <maven.version>3.9.9</maven.version>
+     
+    <!-- Java SE version -->
+    <maven.compiler.source>${java.version}</maven.compiler.source>
+    <maven.compiler.target>${java.version}</maven.compiler.target>
 
-  <properties>
+    <maven.compiler.release>${java.version}</maven.compiler.release>
+    <version.plugin.bundle>3.3.0</version.plugin.bundle>
+    <version.plugin.javadoc>3.0.1</version.plugin.javadoc>
+    <version.asciidoclet>1.5.0</version.asciidoclet>
+    <version.surefire>3.0.0-M5</version.surefire>
+    <surefire.argLine>-Xmx512M</surefire.argLine>
     <xpp3-bundle-version>1.1.4c_5</xpp3-bundle-version>
     <dom4j-bundle-version>1.6.1_2</dom4j-bundle-version>
     <xstream-bundle-version>1.4.17_1</xstream-bundle-version>
     <servicemix.specs.version>2.4.0</servicemix.specs.version>
-  </properties>
+
+</properties>
+
 
   <dependencies>
     <dependency>
@@ -120,12 +139,12 @@
       	</exclusion>
       </exclusions>
     </dependency>
-    <!-- used for testing -->
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <scope>test</scope>
-    </dependency>
+  <dependency>
+  <groupId>jakarta.xml.bind</groupId>
+<artifactId>jakarta.xml.bind-api</artifactId>
+<version>4.0.2</version>
+</dependency>
+
   </dependencies>
 
   <build>
@@ -144,7 +163,7 @@
         <configuration>
           <instructions>
             <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
-            <Export-Package>org.apache.activemq.karaf*;version=${project.version};-split-package:=merge-first</Export-Package>
+            <Export-Package>org.apache.activemq.karaf*;version=${revision};-split-package:=merge-first</Export-Package>
             <Import-Package>
               !com.google.errorprone.annotations,
               !com.google.errorprone.annotations.concurrent,

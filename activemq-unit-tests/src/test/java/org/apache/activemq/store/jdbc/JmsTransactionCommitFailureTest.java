@@ -134,7 +134,7 @@ public class JmsTransactionCommitFailureTest {
         persistenceAdapter.setCommitFailureEnabled(true);
         // Send 2.message and 3.message in one JMS transaction
         try {
-            LOGGER.warn("Attempt to send Message-2/Message-3 (first time)...");
+            LOGGER.warn("Attempt to send Message-2/Message-3 (first time)..");
             sendMessage(queueName, 2);
             LOGGER.warn("Message-2/Message-3 successfuly sent (first time)");
             Assert.fail();
@@ -148,7 +148,7 @@ public class JmsTransactionCommitFailureTest {
         // Reset failure flag on persistence adapter
         persistenceAdapter.setCommitFailureEnabled(false);
         // Send 2.message again
-        LOGGER.warn("Attempt to send Message-2/Message-3 (second time)...");
+        LOGGER.warn("Attempt to send Message-2/Message-3 (second time)..");
         sendMessage(queueName, 2);
         LOGGER.warn("Message-2/Message-3 successfuly sent (second time)");
 

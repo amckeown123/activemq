@@ -38,36 +38,36 @@ public class NetworkConnectionsTest extends TestCase {
 
     @Test
     public void testIsStarted() throws Exception {
-        LOG.info("testIsStarted is starting...");
+        LOG.info("testIsStarted is starting..");
 
-        LOG.info("Adding network connector...");
+        LOG.info("Adding network connector..");
         NetworkConnector nc = localBroker.addNetworkConnector("static:(" + REMOTE_BROKER_TRANSPORT_URI + ")");
         nc.setName("NC1");
 
-        LOG.info("Starting network connector...");
+        LOG.info("Starting network connector..");
         nc.start();
         assertTrue(nc.isStarted());
 
-        LOG.info("Stopping network connector...");
+        LOG.info("Stopping network connector..");
         nc.stop();
 
         while (nc.isStopping()) {
-            LOG.info("... still stopping ...");
+            LOG.info(".. still stopping ..");
             Thread.sleep(100);
         }
 
         assertTrue(nc.isStopped());
         assertFalse(nc.isStarted());
 
-        LOG.info("Starting network connector...");
+        LOG.info("Starting network connector..");
         nc.start();
         assertTrue(nc.isStarted());
 
-        LOG.info("Stopping network connector...");
+        LOG.info("Stopping network connector..");
         nc.stop();
 
         while (nc.isStopping()) {
-            LOG.info("... still stopping ...");
+            LOG.info(".. still stopping ..");
             Thread.sleep(100);
         }
 
@@ -77,9 +77,9 @@ public class NetworkConnectionsTest extends TestCase {
 
     @Test
     public void testNetworkConnectionRestart() throws Exception {
-        LOG.info("testNetworkConnectionRestart is starting...");
+        LOG.info("testNetworkConnectionRestart is starting..");
 
-        LOG.info("Adding network connector...");
+        LOG.info("Adding network connector..");
         NetworkConnector nc = localBroker.addNetworkConnector("static:(" + REMOTE_BROKER_TRANSPORT_URI + ")");
         nc.setName("NC1");
         nc.start();
@@ -103,47 +103,47 @@ public class NetworkConnectionsTest extends TestCase {
         Message message = localSession.createTextMessage("test");
         localProducer.send(message);
 
-        LOG.info("Testing initial network connection...");
+        LOG.info("Testing initial network connection..");
         message = remoteConsumer.receive(10000);
         assertNotNull(message);
 
-        LOG.info("Stopping network connection...");
+        LOG.info("Stopping network connection..");
         nc.stop();
         assertFalse(nc.isStarted());
 
-        LOG.info("Sending 2nd message...");
+        LOG.info("Sending 2nd message..");
         message = localSession.createTextMessage("test stop");
         localProducer.send(message);
 
         message = remoteConsumer.receive(1000);
         assertNull("Message should not have been delivered since NetworkConnector was stopped", message);
 
-        LOG.info("(Re)starting network connection...");
+        LOG.info("(Re)starting network connection..");
         nc.start();
         assertTrue(nc.isStarted());
 
-        LOG.info("Wait for 2nd message to get forwarded and received...");
+        LOG.info("Wait for 2nd message to get forwarded and received..");
         message = remoteConsumer.receive(10000);
         assertNotNull("Should have received 2nd message", message);
     }
 
     @Test
     public void testNetworkConnectionReAddURI() throws Exception {
-        LOG.info("testNetworkConnectionReAddURI is starting...");
+        LOG.info("testNetworkConnectionReAddURI is starting..");
 
-        LOG.info("Adding network connector 'NC1'...");
+        LOG.info("Adding network connector 'NC1'..");
         NetworkConnector nc = localBroker.addNetworkConnector("static:(" + REMOTE_BROKER_TRANSPORT_URI + ")");
         nc.setName("NC1");
         nc.start();
         assertTrue(nc.isStarted());
 
-        LOG.info("Looking up network connector by name...");
+        LOG.info("Looking up network connector by name..");
         NetworkConnector nc1 = localBroker.getNetworkConnectorByName("NC1");
         assertNotNull("Should find network connector 'NC1'", nc1);
         assertTrue(nc1.isStarted());
         assertEquals(nc, nc1);
 
-        LOG.info("Setting up producer and consumer...");
+        LOG.info("Setting up producer and consumer..");
         ActiveMQQueue destination = new ActiveMQQueue(DESTINATION_NAME);
 
         ActiveMQConnectionFactory localFactory = new ActiveMQConnectionFactory(LOCAL_BROKER_TRANSPORT_URI);
@@ -161,40 +161,40 @@ public class NetworkConnectionsTest extends TestCase {
         Message message = localSession.createTextMessage("test");
         localProducer.send(message);
 
-        LOG.info("Testing initial network connection...");
+        LOG.info("Testing initial network connection..");
         message = remoteConsumer.receive(10000);
         assertNotNull(message);
 
-        LOG.info("Stopping network connector 'NC1'...");
+        LOG.info("Stopping network connector 'NC1'..");
         nc.stop();
         assertFalse(nc.isStarted());
 
-        LOG.info("Removing network connector...");
+        LOG.info("Removing network connector..");
         assertTrue(localBroker.removeNetworkConnector(nc));
 
         nc1 = localBroker.getNetworkConnectorByName("NC1");
         assertNull("Should not find network connector 'NC1'", nc1);
 
-        LOG.info("Re-adding network connector 'NC2'...");
+        LOG.info("Re-adding network connector 'NC2'..");
         nc = localBroker.addNetworkConnector("static:(" + REMOTE_BROKER_TRANSPORT_URI + ")");
         nc.setName("NC2");
         nc.start();
         assertTrue(nc.isStarted());
 
-        LOG.info("Looking up network connector by name...");
+        LOG.info("Looking up network connector by name..");
         NetworkConnector nc2 = localBroker.getNetworkConnectorByName("NC2");
         assertNotNull(nc2);
         assertTrue(nc2.isStarted());
         assertEquals(nc, nc2);
 
-        LOG.info("Testing re-added network connection...");
+        LOG.info("Testing re-added network connection..");
         message = localSession.createTextMessage("test");
         localProducer.send(message);
 
         message = remoteConsumer.receive(10000);
         assertNotNull(message);
 
-        LOG.info("Stopping network connector...");
+        LOG.info("Stopping network connector..");
         nc.stop();
         assertFalse(nc.isStarted());
 

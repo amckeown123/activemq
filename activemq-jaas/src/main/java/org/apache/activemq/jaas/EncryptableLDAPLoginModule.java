@@ -18,8 +18,8 @@ package org.apache.activemq.jaas;
 
 import java.util.Map;
 
-import javax.security.auth.Subject;
-import javax.security.auth.callback.CallbackHandler;
+import jakarta.security.auth.Subject;
+import jakarta.security.auth.callback.CallbackHandler;
 
 import org.jasypt.encryption.pbe.StandardPBEStringEncryptor;
 import org.jasypt.encryption.pbe.config.EnvironmentStringPBEConfig;

@@ -592,7 +592,7 @@ public class BrokerTest extends BrokerTestSupport {
         consumerInfo2.setPrefetchSize(1);
         connection2.send(consumerInfo2);
 
-        // All the messages should have been sent down connection 1.. just get
+        // All the messages should have been sent down connection 1. just get
         // the first 3
         for (int i = 0; i < 3; i++) {
             Message m1 = receiveMessage(connection1);
@@ -831,7 +831,7 @@ public class BrokerTest extends BrokerTestSupport {
         consumerInfo1.setExclusive(true);
         connection1.send(consumerInfo1);
 
-        // Send a message.. this should make consumer 1 the exclusive owner.
+        // Send a message. this should make consumer 1 the exclusive owner.
         connection1.request(createMessage(producerInfo, destination, deliveryMode));
 
         // Setup a second connection
@@ -1363,7 +1363,7 @@ public class BrokerTest extends BrokerTestSupport {
         removeInfo.setLastDeliveredSequenceId(lastDeliveredSeq);
         connection1.send(removeInfo);
 
-        // Drain any in flight messages..
+        // Drain any in flight messages.
         while (connection1.getDispatchQueue().poll(0, TimeUnit.MILLISECONDS) != null) {
         }
 

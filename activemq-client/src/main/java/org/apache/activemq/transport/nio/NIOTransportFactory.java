@@ -27,8 +27,8 @@ import java.net.UnknownHostException;
 import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
 
-import javax.net.ServerSocketFactory;
-import javax.net.SocketFactory;
+import jakarta.net.ServerSocketFactory;
+import jakarta.net.SocketFactory;
 
 import org.apache.activemq.transport.Transport;
 import org.apache.activemq.transport.tcp.TcpTransport;

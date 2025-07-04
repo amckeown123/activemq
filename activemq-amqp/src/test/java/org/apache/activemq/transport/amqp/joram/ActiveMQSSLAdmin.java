@@ -20,9 +20,9 @@ import java.io.File;
 import java.security.SecureRandom;
 
 import javax.naming.NamingException;
-import javax.net.ssl.KeyManager;
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.TrustManager;
+import jakarta.net.ssl.KeyManager;
+import jakarta.net.ssl.SSLContext;
+import jakarta.net.ssl.TrustManager;
 
 import org.apache.activemq.broker.TransportConnector;
 import org.apache.activemq.spring.SpringSslContext;
@@ -42,9 +42,9 @@ public class ActiveMQSSLAdmin extends ActiveMQAdmin {
         ctx.init(new KeyManager[0], new TrustManager[]{new DefaultTrustManager()}, new SecureRandom());
         SSLContext.setDefault(ctx);
 
-        // Setup SSL context...
+        // Setup SSL context..
         final File classesDir = new File(ActiveMQSSLAdmin.class.getProtectionDomain().getCodeSource().getLocation().getFile());
-        File keystore = new File(classesDir, "../../src/test/resources/keystore");
+        File keystore = new File(classesDir, "././src/test/resources/keystore");
         final SpringSslContext sslContext = new SpringSslContext();
         sslContext.setKeyStore(keystore.getCanonicalPath());
         sslContext.setKeyStorePassword("password");
@@ -84,12 +84,12 @@ public class ActiveMQSSLAdmin extends ActiveMQAdmin {
 
             SpringSslContext sslContext = (SpringSslContext) broker.getSslContext();
 
-            System.setProperty("javax.net.ssl.trustStore", sslContext.getTrustStore());
-            System.setProperty("javax.net.ssl.trustStorePassword", "password");
-            System.setProperty("javax.net.ssl.trustStoreType", "jks");
-            System.setProperty("javax.net.ssl.keyStore", sslContext.getKeyStore());
-            System.setProperty("javax.net.ssl.keyStorePassword", "password");
-            System.setProperty("javax.net.ssl.keyStoreType", "jks");
+            System.setProperty("jakarta.net.ssl.trustStore", sslContext.getTrustStore());
+            System.setProperty("jakarta.net.ssl.trustStorePassword", "password");
+            System.setProperty("jakarta.net.ssl.trustStoreType", "jks");
+            System.setProperty("jakarta.net.ssl.keyStore", sslContext.getKeyStore());
+            System.setProperty("jakarta.net.ssl.keyStorePassword", "password");
+            System.setProperty("jakarta.net.ssl.keyStoreType", "jks");
 
             context.bind(name, factory);
         } catch (NamingException e) {

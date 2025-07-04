@@ -99,12 +99,12 @@ public class DurableSyncNetworkBridgeTest extends DynamicNetworkTestSupport {
     public static final String TRUST_KEYSTORE = "src/test/resources/client.keystore";
 
     static {
-        System.setProperty("javax.net.ssl.trustStore", TRUST_KEYSTORE);
-        System.setProperty("javax.net.ssl.trustStorePassword", PASSWORD);
-        System.setProperty("javax.net.ssl.trustStoreType", KEYSTORE_TYPE);
-        System.setProperty("javax.net.ssl.keyStore", SERVER_KEYSTORE);
-        System.setProperty("javax.net.ssl.keyStoreType", KEYSTORE_TYPE);
-        System.setProperty("javax.net.ssl.keyStorePassword", PASSWORD);
+        System.setProperty("jakarta.net.ssl.trustStore", TRUST_KEYSTORE);
+        System.setProperty("jakarta.net.ssl.trustStorePassword", PASSWORD);
+        System.setProperty("jakarta.net.ssl.trustStoreType", KEYSTORE_TYPE);
+        System.setProperty("jakarta.net.ssl.keyStore", SERVER_KEYSTORE);
+        System.setProperty("jakarta.net.ssl.keyStoreType", KEYSTORE_TYPE);
+        System.setProperty("jakarta.net.ssl.keyStorePassword", PASSWORD);
     }
 
 
@@ -687,7 +687,7 @@ public class DurableSyncNetworkBridgeTest extends DynamicNetworkTestSupport {
 
     }
 
-    protected CompositeTopic createCompositeTopic(String name, ActiveMQDestination...forwardTo) {
+    protected CompositeTopic createCompositeTopic(String name, ActiveMQDestination..forwardTo) {
         CompositeTopic compositeTopic = new CompositeTopic();
         compositeTopic.setName(name);
         compositeTopic.setForwardOnly(true);

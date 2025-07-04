@@ -59,7 +59,7 @@ public class JmsAutoAckTest extends TestSupport {
         MessageProducer producer = session.createProducer(queue);
         producer.send(session.createTextMessage("Hello"));
 
-        // Consume the message...
+        // Consume the message..
         MessageConsumer consumer = session.createConsumer(queue);
         Message msg = consumer.receive(1000);
         assertNotNull(msg);
@@ -68,7 +68,7 @@ public class JmsAutoAckTest extends TestSupport {
         session.close();
         session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
         
-        // Attempt to Consume the message...
+        // Attempt to Consume the message..
         consumer = session.createConsumer(queue);
         msg = consumer.receive(1000);
         assertNull(msg);        

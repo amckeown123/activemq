@@ -193,7 +193,7 @@ public class ActiveMQSessionExecutor implements Task {
             }
         }
 
-        // No messages left queued on the listeners.. so now dispatch messages
+        // No messages left queued on the listeners. so now dispatch messages
         // queued on the session
         MessageDispatch message = messageQueue.dequeueNoWait();
         if (message == null) {

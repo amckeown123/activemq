@@ -121,7 +121,7 @@ public class MQTTNetworkOfBrokersFailoverTest extends NetworkTestSupport {
         remoteConn.publish("foo/bar", "Hello, World!".getBytes(), QoS.AT_LEAST_ONCE, false);
 
         // now we should see that message on the local broker because the subscription
-        // should have been properly networked... we'll give a sec of grace for the
+        // should have been properly networked.. we'll give a sec of grace for the
         // networking and forwarding to have happened properly
         org.fusesource.mqtt.client.Message msg = localConn.receive(100, TimeUnit.SECONDS);
         assertNotNull(msg);
@@ -130,8 +130,8 @@ public class MQTTNetworkOfBrokersFailoverTest extends NetworkTestSupport {
         assertEquals("Hello, World!", response);
         assertEquals("foo/bar", msg.getTopic());
 
-        // Now... we SHOULD NOT see a message on the remote broker because we already
-        // consumed it on the local broker... having the same message on the remote broker
+        // Now.. we SHOULD NOT see a message on the remote broker because we already
+        // consumed it on the local broker.. having the same message on the remote broker
         // would effectively give us duplicates in a distributed topic scenario:
         remoteConn.subscribe(new Topic[]{new Topic("foo/bar", QoS.AT_LEAST_ONCE)});
         msg = remoteConn.receive(500, TimeUnit.MILLISECONDS);
@@ -247,7 +247,7 @@ public class MQTTNetworkOfBrokersFailoverTest extends NetworkTestSupport {
             }
 
             @Override
-            public void debug(String message, Object... args) {
+            public void debug(String message, Object.. args) {
                 LOG.info(String.format(message, args));
             }
         };

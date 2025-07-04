@@ -18,7 +18,7 @@ package org.apache.activemq.transport.mqtt;
 
 import java.util.concurrent.TimeUnit;
 
-import javax.net.ssl.SSLContext;
+import jakarta.net.ssl.SSLContext;
 import org.fusesource.mqtt.client.BlockingConnection;
 import org.fusesource.mqtt.client.MQTT;
 import org.fusesource.mqtt.client.Message;

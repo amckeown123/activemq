@@ -98,7 +98,7 @@ public class JDBCMessagePriorityTest extends MessagePriorityTest {
             assertNotNull("Message " + i + " was null", msg);
             assertEquals("Message " + i + " has wrong priority", priorities[i / MSG_NUM], msg.getJMSPriority());
             if (i > 0 && i % closeFrequency == 0) {
-                LOG.info("Closing durable sub.. on: " + i);
+                LOG.info("Closing durable sub. on: " + i);
                 sub.close();
                 sub = sess.createDurableSubscriber(topic, subName);
             }
@@ -152,7 +152,7 @@ public class JDBCMessagePriorityTest extends MessagePriorityTest {
                     messageIds[msg.getJMSPriority()],((ActiveMQMessage)msg).getMessageId().getProducerSequenceId());
             messageIds[msg.getJMSPriority()]++;
             if (i > 0 && i % closeFrequency == 0) {
-                LOG.info("Closing durable sub.. on: " + i + ", counts: " + Arrays.toString(messageCounts));
+                LOG.info("Closing durable sub. on: " + i + ", counts: " + Arrays.toString(messageCounts));
                 sub.close();
                 sub = consumerSession.createDurableSubscriber(topic, subName);
             }

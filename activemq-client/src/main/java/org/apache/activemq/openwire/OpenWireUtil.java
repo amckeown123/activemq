@@ -18,7 +18,7 @@ package org.apache.activemq.openwire;
 
 public class OpenWireUtil {
 
-    private static final String jmsPackageToReplace = "javax.jms";
+    private static final String jmsPackageToReplace = "jakarta.jms";
     private static final String jmsPackageToUse = "jakarta.jms";
 
     /**

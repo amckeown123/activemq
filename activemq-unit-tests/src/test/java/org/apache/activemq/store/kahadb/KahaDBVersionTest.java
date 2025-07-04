@@ -45,7 +45,7 @@ public class KahaDBVersionTest extends TestCase {
     static {
         try {
             ProtectionDomain protectionDomain = KahaDBVersionTest.class.getProtectionDomain();
-            basedir = new File(new File(protectionDomain.getCodeSource().getLocation().getPath()), "../..").getCanonicalPath();
+            basedir = new File(new File(protectionDomain.getCodeSource().getLocation().getPath()), "./.").getCanonicalPath();
         } catch (IOException e) {
             basedir = ".";
         }

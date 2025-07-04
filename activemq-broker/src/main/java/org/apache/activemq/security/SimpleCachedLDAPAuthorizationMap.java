@@ -500,8 +500,8 @@ public class SimpleCachedLDAPAuthorizationMap implements AuthorizationMap {
 
     /**
      * Parses a DN into the equivalent {@link ActiveMQDestination}. The default implementation expects a format of
-     * cn=<PERMISSION_NAME>,ou=<DESTINATION_PATTERN>,.... or ou=<DESTINATION_PATTERN>,.... for permission and
-     * destination entries, respectively. For example {@code cn=admin,ou=$,ou=...} or {@code ou=$,ou=...}.
+     * cn=<PERMISSION_NAME>,ou=<DESTINATION_PATTERN>,.. or ou=<DESTINATION_PATTERN>,.. for permission and
+     * destination entries, respectively. For example {@code cn=admin,ou=$,ou=..} or {@code ou=$,ou=..}.
      *
      * @param dn
      *            the DN to parse

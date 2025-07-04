@@ -81,7 +81,7 @@ public class MessageExpirationTest extends BrokerTestSupport {
         connection.send(sessionInfo);
         connection.send(producerInfo);
 
-        // Start a consumer..
+        // Start a consumer.
         final StubConnection connection2 = createConnection();
         ConnectionInfo connectionInfo2 = createConnectionInfo();
         SessionInfo sessionInfo2 = createSessionInfo(connectionInfo2);
@@ -103,10 +103,10 @@ public class MessageExpirationTest extends BrokerTestSupport {
         final Message m4 = createMessage(producerInfo, destination, deliveryMode, 1000);
 
         // Produce in an async thread since the producer will be getting blocked
-        // by the usage manager..
+        // by the usage manager.
         new Thread() {
             public void run() {
-                // m1 and m3 should not expire.. but the others should.
+                // m1 and m3 should not expire. but the others should.
                 try {
                     connection.send(m1);
                     connection.send(m2);
@@ -128,7 +128,7 @@ public class MessageExpirationTest extends BrokerTestSupport {
         Thread.sleep(1500);
         connection2.send(createAck(consumerInfo2, m, 1, MessageAck.STANDARD_ACK_TYPE));
 
-        // 2nd message received should be m3.. it should have expired 2nd
+        // 2nd message received should be m3. it should have expired 2nd
         // message sent.
         m = receiveMessage(connection2);
         assertNotNull(m);
@@ -138,7 +138,7 @@ public class MessageExpirationTest extends BrokerTestSupport {
         Thread.sleep(1500);
         connection2.send(createAck(consumerInfo2, m, 1, MessageAck.STANDARD_ACK_TYPE));
 
-        // And there should be no messages left now..
+        // And there should be no messages left now.
         assertNoMessagesLeft(connection2);
 
         connection.send(closeConnectionInfo(connectionInfo));
@@ -168,11 +168,11 @@ public class MessageExpirationTest extends BrokerTestSupport {
         consumerInfo.setPrefetchSize(1000);
         connection.send(consumerInfo);
 
-        // Start the tx..
+        // Start the tx.
         LocalTransactionId txid = createLocalTransaction(sessionInfo);
         connection.send(createBeginTransaction(connectionInfo, txid));
 
-        // m1 and m3 should not expire.. but the others should.
+        // m1 and m3 should not expire. but the others should.
         Message m1 = createMessage(producerInfo, destination, deliveryMode);
         m1.setTransactionId(txid);
         connection.send(m1);
@@ -187,7 +187,7 @@ public class MessageExpirationTest extends BrokerTestSupport {
         connection.send(m);
 
         // Sleep before we commit so that the messages expire on the commit
-        // list..
+        // list.
         Thread.sleep(1500);
         connection.send(createCommitTransaction1Phase(connectionInfo, txid));
 
@@ -196,14 +196,14 @@ public class MessageExpirationTest extends BrokerTestSupport {
         assertEquals(m1.getMessageId(), m.getMessageId());
         connection.send(createAck(consumerInfo, m, 1, MessageAck.STANDARD_ACK_TYPE));
 
-        // 2nd message received should be m3.. it should have expired 2nd
+        // 2nd message received should be m3. it should have expired 2nd
         // message sent.
         m = receiveMessage(connection);
         assertNotNull(m);
         assertEquals(m3.getMessageId(), m.getMessageId());
         connection.send(createAck(consumerInfo, m, 1, MessageAck.STANDARD_ACK_TYPE));
 
-        // And there should be no messages left now..
+        // And there should be no messages left now.
         assertNoMessagesLeft(connection);
 
         connection.send(closeConnectionInfo(connectionInfo));
@@ -232,7 +232,7 @@ public class MessageExpirationTest extends BrokerTestSupport {
         consumerInfo.setPrefetchSize(1);
         connection.send(consumerInfo);
 
-        // m1 and m3 should not expire.. but the others should.
+        // m1 and m3 should not expire. but the others should.
         Message m1 = createMessage(producerInfo, destination, deliveryMode);
         connection.send(m1);
         connection.send(createMessage(producerInfo, destination, deliveryMode, 1000));
@@ -246,18 +246,18 @@ public class MessageExpirationTest extends BrokerTestSupport {
         assertEquals(m1.getMessageId(), m.getMessageId());
         assertNoMessagesLeft(connection);
 
-        // Sleep before we ack so that the messages expire on the pending list..
+        // Sleep before we ack so that the messages expire on the pending list.
         Thread.sleep(1500);
         connection.send(createAck(consumerInfo, m, 1, MessageAck.STANDARD_ACK_TYPE));
 
-        // 2nd message received should be m3.. it should have expired 2nd
+        // 2nd message received should be m3. it should have expired 2nd
         // message sent.
         m = receiveMessage(connection);
         assertNotNull(m);
         assertEquals(m3.getMessageId(), m.getMessageId());
         connection.send(createAck(consumerInfo, m, 1, MessageAck.STANDARD_ACK_TYPE));
 
-        // And there should be no messages left now..
+        // And there should be no messages left now.
         assertNoMessagesLeft(connection);
 
         connection.send(closeConnectionInfo(connectionInfo));

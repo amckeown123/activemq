@@ -20,9 +20,9 @@ package org.apache.activemq.jaas;
 import java.io.IOException;
 import java.security.cert.X509Certificate;
 
-import javax.security.auth.callback.Callback;
-import javax.security.auth.callback.CallbackHandler;
-import javax.security.auth.callback.UnsupportedCallbackException;
+import jakarta.security.auth.callback.Callback;
+import jakarta.security.auth.callback.CallbackHandler;
+import jakarta.security.auth.callback.UnsupportedCallbackException;
 
 /**
  * A Standard JAAS callback handler for SSL certificate requests. Will only

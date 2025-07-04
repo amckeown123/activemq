@@ -75,11 +75,11 @@ public class MQTTSocket extends AbstractMQTTSocket implements MQTTCodec.MQTTFram
     @Override
     public void onWebSocketBinary(byte[] bytes, int offset, int length) {
         if (!transportStartedAtLeastOnce()) {
-            LOG.debug("Waiting for MQTTSocket to be properly started...");
+            LOG.debug("Waiting for MQTTSocket to be properly started..");
             try {
                 socketTransportStarted.await();
             } catch (InterruptedException e) {
-                LOG.warn("While waiting for MQTTSocket to be properly started, we got interrupted!! Should be okay, but you could see race conditions...");
+                LOG.warn("While waiting for MQTTSocket to be properly started, we got interrupted!! Should be okay, but you could see race conditions..");
             }
         }
 

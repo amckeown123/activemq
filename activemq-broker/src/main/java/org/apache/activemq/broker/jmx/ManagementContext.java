@@ -158,7 +158,7 @@ public class ManagementContext implements Service {
                         }
                         try {
                             if (started.get() && server != null) {
-                                LOG.debug("Starting JMXConnectorServer...");
+                                LOG.debug("Starting JMXConnectorServer..");
                                 try {
                                     // need to remove MDC as we must not inherit MDC in child threads causing leaks
                                     MDC.remove("activemq.broker");

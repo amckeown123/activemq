@@ -31,14 +31,14 @@ import java.nio.channels.Selector;
 import java.security.cert.X509Certificate;
 import java.util.concurrent.CountDownLatch;
 
-import javax.net.SocketFactory;
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.SSLEngine;
-import javax.net.ssl.SSLEngineResult;
-import javax.net.ssl.SSLEngineResult.HandshakeStatus;
-import javax.net.ssl.SSLParameters;
-import javax.net.ssl.SSLPeerUnverifiedException;
-import javax.net.ssl.SSLSession;
+import jakarta.net.SocketFactory;
+import jakarta.net.ssl.SSLContext;
+import jakarta.net.ssl.SSLEngine;
+import jakarta.net.ssl.SSLEngineResult;
+import jakarta.net.ssl.SSLEngineResult.HandshakeStatus;
+import jakarta.net.ssl.SSLParameters;
+import jakarta.net.ssl.SSLPeerUnverifiedException;
+import jakarta.net.ssl.SSLSession;
 
 import org.apache.activemq.MaxFrameSizeExceededException;
 import org.apache.activemq.command.ConnectionInfo;

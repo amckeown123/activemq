@@ -21,7 +21,7 @@ import java.util.Collections;
 import java.util.List;
 
 import jakarta.jms.JMSSecurityException;
-import javax.security.sasl.SaslException;
+import jakarta.security.sasl.SaslException;
 
 import org.apache.qpid.proton.engine.Sasl;
 import org.slf4j.Logger;
@@ -120,7 +120,7 @@ public class SaslAuthenticator {
         }
     }
 
-    private Mechanism findMatchingMechanism(String...remoteMechanisms) {
+    private Mechanism findMatchingMechanism(String..remoteMechanisms) {
 
         Mechanism match = null;
         List<Mechanism> found = new ArrayList<Mechanism>();

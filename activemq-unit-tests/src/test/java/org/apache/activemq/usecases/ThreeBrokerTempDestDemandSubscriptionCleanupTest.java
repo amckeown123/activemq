@@ -124,7 +124,7 @@ public class ThreeBrokerTempDestDemandSubscriptionCleanupTest extends JmsMultipl
         threadService.shutdown();
         assertTrue("executor done on time", threadService.awaitTermination(30l, TimeUnit.SECONDS));
 
-        // for the real test... we should not have any subscriptions left on broker C for the temp dests
+        // for the real test.. we should not have any subscriptions left on broker C for the temp dests
         BrokerItem brokerC = brokers.get(BROKER_C);
         RegionBroker regionBroker = (RegionBroker) brokerC.broker.getRegionBroker();
         final AbstractRegion region = (AbstractRegion) regionBroker.getTempQueueRegion();
@@ -190,7 +190,7 @@ public class ThreeBrokerTempDestDemandSubscriptionCleanupTest extends JmsMultipl
 
         }
 
-        // for the real test... we should not have any subscriptions left on broker C for the temp dests
+        // for the real test.. we should not have any subscriptions left on broker C for the temp dests
         BrokerItem brokerC = brokers.get(BROKER_C);
         RegionBroker regionBroker = (RegionBroker) brokerC.broker.getRegionBroker();
         final AbstractRegion region = (AbstractRegion) regionBroker.getTempQueueRegion();

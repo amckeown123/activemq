@@ -18,8 +18,8 @@
 package org.apache.activemq.security;
 
 import jakarta.jms.InvalidClientIDException;
-import javax.security.auth.login.AppConfigurationEntry;
-import javax.security.auth.login.Configuration;
+import jakarta.security.auth.login.AppConfigurationEntry;
+import jakarta.security.auth.login.Configuration;
 import java.util.HashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 

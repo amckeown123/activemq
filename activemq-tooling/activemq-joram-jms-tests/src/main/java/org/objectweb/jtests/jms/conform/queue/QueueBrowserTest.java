@@ -63,7 +63,7 @@ public class QueueBrowserTest extends PTPTestCase
 
          receiver.close();
 
-         // send two messages...
+         // send two messages..
          sender.send(message_1);
          sender.send(message_2);
 
@@ -84,16 +84,16 @@ public class QueueBrowserTest extends PTPTestCase
          Assert.assertEquals(2, count);
 
          receiver = receiverSession.createReceiver(receiverQueue);
-         // receive the first message...
+         // receive the first message..
          Message m = receiver.receive(TestConfig.TIMEOUT);
-         // ... and check it is the first which was sent.
+         // .. and check it is the first which was sent.
          Assert.assertTrue(m instanceof TextMessage);
          TextMessage msg = (TextMessage)m;
          Assert.assertEquals("testBrowser:message_1", msg.getText());
 
-         // receive the second message...
+         // receive the second message..
          m = receiver.receive(TestConfig.TIMEOUT);
-         // ... and check it is the second which was sent.
+         // .. and check it is the second which was sent.
          Assert.assertTrue(m instanceof TextMessage);
          msg = (TextMessage)m;
          Assert.assertEquals("testBrowser:message_2", msg.getText());

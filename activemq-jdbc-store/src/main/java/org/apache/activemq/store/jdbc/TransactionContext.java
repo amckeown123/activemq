@@ -305,7 +305,7 @@ public class TransactionContext {
             }
         }
 
-        // simple delegate for the  rest of the impl..
+        // simple delegate for the  rest of the impl.
         @Override
         public Statement createStatement() throws SQLException {
             Statement statement = delegate.createStatement();

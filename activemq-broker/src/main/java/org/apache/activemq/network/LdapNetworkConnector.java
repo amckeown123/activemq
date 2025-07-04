@@ -201,7 +201,7 @@ public class LdapNetworkConnector extends NetworkConnector implements NamespaceC
      */
     @Override
     public void start() throws Exception {
-        LOG.info("connecting...");
+        LOG.info("connecting..");
         Hashtable<String, String> env = new Hashtable<String, String>();
         env.put(Context.INITIAL_CONTEXT_FACTORY, "com.sun.jndi.ldap.LdapCtxFactory");
         this.ldapURI = getUri();
@@ -242,7 +242,7 @@ public class LdapNetworkConnector extends NetworkConnector implements NamespaceC
         }
 
         // add connectors from search results
-        LOG.info("searching for network connectors...");
+        LOG.info("searching for network connectors..");
         LOG.debug("    base   [{}]", base);
         LOG.debug("    filter [{}]", searchFilter);
         LOG.debug("    scope  [{}]", searchControls.getSearchScope());
@@ -253,7 +253,7 @@ public class LdapNetworkConnector extends NetworkConnector implements NamespaceC
 
         // register persistent search event listener
         if (searchEventListener) {
-            LOG.info("registering persistent search listener...");
+            LOG.info("registering persistent search listener..");
             EventDirContext eventContext = (EventDirContext) context.lookup("");
             eventContext.addNamingListener(base, searchFilter, searchControls, this);
         } else { // otherwise close context (i.e. connection as it is no longer needed)
@@ -266,7 +266,7 @@ public class LdapNetworkConnector extends NetworkConnector implements NamespaceC
      */
     @Override
     public void stop() throws Exception {
-        LOG.info("stopping context...");
+        LOG.info("stopping context..");
         for (NetworkConnector connector : connectorMap.values()) {
             connector.stop();
         }

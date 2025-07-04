@@ -111,7 +111,7 @@ public class NettyTransportOptions implements Cloneable {
      */
     public void setTrafficClass(int trafficClass) {
         if (trafficClass < 0 || trafficClass > 255) {
-            throw new IllegalArgumentException("Traffic class must be in the range [0..255]");
+            throw new IllegalArgumentException("Traffic class must be in the range [0.255]");
         }
 
         this.trafficClass = trafficClass;

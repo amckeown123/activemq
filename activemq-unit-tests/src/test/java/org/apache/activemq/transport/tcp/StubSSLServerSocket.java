@@ -19,7 +19,7 @@ package org.apache.activemq.transport.tcp;
 
 import java.io.IOException;
 
-import javax.net.ssl.SSLServerSocket;
+import jakarta.net.ssl.SSLServerSocket;
 
 public class StubSSLServerSocket extends SSLServerSocket {
     public static final int UNTOUCHED = -1;

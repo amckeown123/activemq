@@ -93,7 +93,7 @@ public class JDBCDurableSubscriptionTest extends DurableSubscriptionTestSupport 
         printResults("ACKS", result);
         statement.close();
 
-        // need to wait for expiry to kick in.....
+        // need to wait for expiry to kick in...
         // browse till we get no messages and execute cleanup asap
         assertTrue("no messages from browse",
                 Wait.waitFor(new Wait.Condition() {

@@ -34,17 +34,17 @@ public class AnyChildDestinationNode implements DestinationNode {
         this.node = node;
     }
 
-    public void appendMatchingValues(Set answer, String[] paths, int startIndex) {
-        Iterator iter = getChildNodes().iterator();
+    public void appendMatchingValues(Set<DestinationNode> answer, String[] paths, int startIndex) {
+        Iterator<DestinationNode> iter = getChildNodes().iterator();
         while (iter.hasNext()) {
-            DestinationNode child = (DestinationNode) iter.next();
+            DestinationNode child = iter.next();
             child.appendMatchingValues(answer, paths, startIndex);
         }
     }
 
 
-    public void appendMatchingWildcards(Set answer, String[] paths, int startIndex) {
-        Iterator iter = getChildNodes().iterator();
+    public void appendMatchingWildcards(Set<DestinationNode> answer, String[] paths, int startIndex) {
+        Iterator<?> iter = getChildNodes().iterator();
         while (iter.hasNext()) {
             DestinationNode child = (DestinationNode) iter.next();
             child.appendMatchingWildcards(answer, paths, startIndex);
@@ -52,8 +52,8 @@ public class AnyChildDestinationNode implements DestinationNode {
     }
 
 
-    public void appendDescendantValues(Set answer) {
-        Iterator iter = getChildNodes().iterator();
+    public void appendDescendantValues(Set<DestinationNode> answer) {
+        Iterator<?> iter = getChildNodes().iterator();
         while (iter.hasNext()) {
             DestinationNode child = (DestinationNode) iter.next();
             child.appendDescendantValues(answer);
@@ -61,8 +61,8 @@ public class AnyChildDestinationNode implements DestinationNode {
     }
 
     public DestinationNode getChild(String path) {
-        final Collection list = new ArrayList();
-        Iterator iter = getChildNodes().iterator();
+        final Collection<DestinationNode> list = new ArrayList<DestinationNode>();
+        Iterator<?> iter = getChildNodes().iterator();
         while (iter.hasNext()) {
             DestinationNode child = (DestinationNode) iter.next();
             DestinationNode answer = child.getChild(path);
@@ -72,7 +72,7 @@ public class AnyChildDestinationNode implements DestinationNode {
         }
         if (!list.isEmpty()) {
             return new AnyChildDestinationNode(this) {
-                protected Collection getChildNodes() {
+                protected Collection<DestinationNode> getChildNodes() {
                     return list;
                 }
             };
@@ -82,55 +82,55 @@ public class AnyChildDestinationNode implements DestinationNode {
 
     public Collection getDesendentValues() {
         Collection answer = new ArrayList();
-        Iterator iter = getChildNodes().iterator();
+        Iterator<?> iter = getChildNodes().iterator();
         while (iter.hasNext()) {
             DestinationNode child = (DestinationNode) iter.next();
-            answer.addAll(child.getDesendentValues());
+            answer.add(child.getDesendentValues());
         }
         return answer;
     }
 
     public Collection getValues() {
         Collection answer = new ArrayList();
-        Iterator iter = getChildNodes().iterator();
+        Iterator<?> iter = getChildNodes().iterator();
         while (iter.hasNext()) {
             DestinationNode child = (DestinationNode) iter.next();
-            answer.addAll(child.getValues());
+            answer.add(child.getValues());
         }
         return answer;
     }
 
     public Collection getChildren() {
         Collection answer = new ArrayList();
-        Iterator iter = getChildNodes().iterator();
+        Iterator<?> iter = getChildNodes().iterator();
         while (iter.hasNext()) {
             DestinationNode child = (DestinationNode) iter.next();
-            answer.addAll(child.getChildren());
+            answer.add(child.getChildren());
         }
         return answer;
     }
 
     public Collection removeDesendentValues() {
         Collection answer = new ArrayList();
-        Iterator iter = getChildNodes().iterator();
+        Iterator<?> iter = getChildNodes().iterator();
         while (iter.hasNext()) {
             DestinationNode child = (DestinationNode) iter.next();
-            answer.addAll(child.removeDesendentValues());
+            answer.add((Collection<?>) child.removeDesendentValues());
         }
         return answer;
     }
 
     public Collection removeValues() {
-        Collection answer = new ArrayList();
-        Iterator iter = getChildNodes().iterator();
+        Collection answer = new ArrayList<Object>();
+        Iterator<?> iter = getChildNodes().iterator();
         while (iter.hasNext()) {
             DestinationNode child = (DestinationNode) iter.next();
-            answer.addAll(child.removeValues());
+            answer.add((Collection<?>) child.removeValues());
         }
         return answer;
     }
 
-    protected Collection getChildNodes() {
+    protected Collection<DestinationNode> getChildNodes() {
         return node.getChildren();
     }
 }

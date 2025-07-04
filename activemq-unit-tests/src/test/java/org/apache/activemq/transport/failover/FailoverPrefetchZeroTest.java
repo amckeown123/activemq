@@ -124,7 +124,7 @@ public class FailoverPrefetchZeroTest {
         Executors.newSingleThreadExecutor().execute(new Runnable() {
             public void run() {
                 try {
-                    LOG.info("receive one...");
+                    LOG.info("receive one..");
                     Message msg = consumer.receive(30000);
                     if (msg != null) {
                         received.add(msg);

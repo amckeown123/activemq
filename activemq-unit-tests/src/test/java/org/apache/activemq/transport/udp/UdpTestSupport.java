@@ -104,7 +104,7 @@ public abstract class UdpTestSupport extends TestCase implements TransportListen
 
             // lets send a dummy command to ensure things don't block if we
             // discard the last one
-            // keepalive does not have a commandId...
+            // keepalive does not have a commandId..
             // producer.oneway(new KeepAliveInfo());
             producer.oneway(new ProducerInfo());
             producer.oneway(new ProducerInfo());
@@ -201,7 +201,7 @@ public abstract class UdpTestSupport extends TestCase implements TransportListen
             LOG.info("Got WireFormatInfo: " + command);
         } else {
             if (command.isResponseRequired()) {
-                // lets send a response back...
+                // lets send a response back..
                 sendResponse(command);
 
             }

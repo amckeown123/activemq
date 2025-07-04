@@ -78,12 +78,12 @@ public class ReconnectTest extends TestCase {
                 }
 
                 public void transportInterupted() {
-                    LOG.info("Worker " + name + " was interrupted...");
+                    LOG.info("Worker " + name + " was interrupted..");
                     interruptedCount.incrementAndGet();
                 }
 
                 public void transportResumed() {
-                    LOG.info("Worker " + name + " was resummed...");
+                    LOG.info("Worker " + name + " was resummed..");
                     resumedCount.incrementAndGet();
                 }
             });
@@ -158,7 +158,7 @@ public class ReconnectTest extends TestCase {
         for (int k = 1; k < 10; k++) {
             LOG.info("Test run: " + k);
 
-            // Wait for at least one iteration to occur...
+            // Wait for at least one iteration to occur..
             for (int i = 0; i < WORKER_COUNT; i++) {
                 int c = 0;
                 for (int j = 0; j < 30; j++) {
@@ -183,20 +183,20 @@ public class ReconnectTest extends TestCase {
 
             assertTrue("Timed out waiting for all connections to be interrupted.", Wait.waitFor(new Wait.Condition(){
                 public boolean isSatisified() throws Exception {
-                    LOG.debug("Test run waiting for connections to get interrupted.. at: " + interruptedCount.get());
+                    LOG.debug("Test run waiting for connections to get interrupted. at: " + interruptedCount.get());
                     return interruptedCount.get() == WORKER_COUNT;
                 }
             }, TimeUnit.SECONDS.toMillis(60)));
 
-            // Wait for the connections to re-establish...
+            // Wait for the connections to re-establish..
             assertTrue("Timed out waiting for all connections to be resumed.", Wait.waitFor(new Wait.Condition(){
                 public boolean isSatisified() throws Exception {
-                    LOG.debug("Test run waiting for connections to get resumed.. at: " + resumedCount.get());
+                    LOG.debug("Test run waiting for connections to get resumed. at: " + resumedCount.get());
                     return resumedCount.get() >= WORKER_COUNT;
                 }
             }, TimeUnit.SECONDS.toMillis(60)));
 
-            // Reset the counters..
+            // Reset the counters.
             interruptedCount.set(0);
             resumedCount.set(0);
             for (int i = 0; i < WORKER_COUNT; i++) {

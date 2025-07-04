@@ -68,7 +68,7 @@ public class TempQueue extends Queue{
         // Only consumers on the same connection can consume from
         // the temporary destination
         // However, we could have failed over - and we do this
-        // check client side anyways ....
+        // check client side anyways ..
         if (!context.isFaultTolerant()
                 && (!context.isNetworkConnection() && !tempDest
                         .getConnectionId().equals(

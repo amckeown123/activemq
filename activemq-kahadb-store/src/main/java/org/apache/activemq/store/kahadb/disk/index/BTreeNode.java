@@ -103,7 +103,7 @@ public final class BTreeNode<Key,Value> {
             try {
                 while( current!=null ) {
                     if( nextIndex >= current.keys.length ) {
-                        // we need to roll to the next leaf..
+                        // we need to roll to the next leaf.
                         if( current.next >= 0 ) {
                             current = index.loadNode(tx, current.next, null);
                             assert !current.isBranch() : "Should have linked to the next leaf node.";
@@ -161,7 +161,7 @@ public final class BTreeNode<Key,Value> {
 
         public void writePayload(BTreeNode<Key,Value> node, DataOutput os) throws IOException {
             // Write the keys
-            short count = (short)node.keys.length; // cast may truncate value...
+            short count = (short)node.keys.length; // cast may truncate value..
             if( count != node.keys.length ) {
                 throw new IOException("Too many keys");
             }
@@ -172,7 +172,7 @@ public final class BTreeNode<Key,Value> {
             }
             
             if( node.isBranch() ) {
-                // If this is a branch...
+                // If this is a branch..
                 os.writeBoolean(true);
                 for (int i = 0; i < count+1; i++) {
                     os.writeLong(node.children[i]);
@@ -294,17 +294,17 @@ public final class BTreeNode<Key,Value> {
             }
             Value rc = child.remove(tx, key);
             
-            // child node is now empty.. remove it from the branch node.
+            // child node is now empty. remove it from the branch node.
             if( child.keys.length == 0 ) {
                 
                 // If the child node is a branch, promote
                 if( child.isBranch() ) {
-                    // This is cause branches are never really empty.. they just go down to 1 child..
+                    // This is cause branches are never really empty. they just go down to 1 child.
                     children[idx] = child.children[0];
                     tx.free(child.getPage());
                 } else {
                     
-                    // The child was a leaf. Then we need to actually remove it from this branch node..
+                    // The child was a leaf. Then we need to actually remove it from this branch node.
                     // and relink the previous leaf to skip to the next leaf.
 
                     BTreeNode<Key, Value> previousLeaf = null;
@@ -329,7 +329,7 @@ public final class BTreeNode<Key,Value> {
                         // Delete it and key to the right.
                         setBranchData(arrayDelete(keys, idx), arrayDelete(children, idx));
                     } else {
-                        // It was the last child.. Then delete it and key to the left
+                        // It was the last child. Then delete it and key to the left
                         setBranchData(arrayDelete(keys, idx-1), arrayDelete(children, idx));
                     }
                     
@@ -340,7 +340,7 @@ public final class BTreeNode<Key,Value> {
                         keys = child.keys;
                         children = child.children;
                         values = child.values;
-                        // free up the page..
+                        // free up the page.
                         tx.free(child.getPage());
                     }
                     
@@ -380,7 +380,7 @@ public final class BTreeNode<Key,Value> {
             
             Value oldValue=null;
             if (idx >= 0) {
-                // Key was found... Overwrite
+                // Key was found.. Overwrite
                 oldValue = values[idx];
                 values[idx] = value;
                 setLeafData(keys, values);

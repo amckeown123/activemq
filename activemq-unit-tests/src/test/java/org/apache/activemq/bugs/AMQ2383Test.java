@@ -45,7 +45,7 @@ public class AMQ2383Test {
 
         Session producerSession = producerConnection.createSession(false, Session.AUTO_ACKNOWLEDGE);
         MessageProducer producer = producerSession.createProducer(dest);
-        TextMessage sentMsg = producerSession.createTextMessage("test...");
+        TextMessage sentMsg = producerSession.createTextMessage("test..");
         producer.send(sentMsg);
         producerSession.close();
 

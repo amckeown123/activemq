@@ -512,7 +512,7 @@ public class JobSchedulerImpl extends ServiceSupport implements Runnable, JobSch
      * Removes all scheduled jobs within a given time range.
      *
      * The method can be used to clear the entire scheduler index by specifying a range that
-     * encompasses all time [0...Long.MAX_VALUE] or a single execution time can be removed by
+     * encompasses all time [0..Long.MAX_VALUE] or a single execution time can be removed by
      * setting start and end time to the same value.
      *
      * @param tx
@@ -543,7 +543,7 @@ public class JobSchedulerImpl extends ServiceSupport implements Runnable, JobSch
     /**
      * Removes all scheduled jobs within the target range.
      *
-     * This method can be used to remove all the stored jobs by passing a range of [0...Long.MAX_VALUE]
+     * This method can be used to remove all the stored jobs by passing a range of [0..Long.MAX_VALUE]
      * or it can be used to remove all jobs at a given scheduled time by passing the same time value
      * for both start and end.  If the optional location parameter is set then this method will update
      * the store's remove location tracker with the location value and the Jobs that are being removed.

@@ -202,7 +202,7 @@ public class FailoverManagedClusterTest {
         slaveThreadStarted.await(10, TimeUnit.SECONDS);
 
         // force a failover before send
-        LOG.info("Stopping master to force failover..");
+        LOG.info("Stopping master to force failover.");
         master.stop();
         master = null;
         assertTrue("slave started ok", slave.waitUntilStarted());

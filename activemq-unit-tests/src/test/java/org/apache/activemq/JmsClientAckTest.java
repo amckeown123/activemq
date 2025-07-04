@@ -75,7 +75,7 @@ public class JmsClientAckTest {
         MessageProducer producer = session.createProducer(queue);
         producer.send(session.createTextMessage("Hello"));
 
-        // Consume the message...
+        // Consume the message..
         MessageConsumer consumer = session.createConsumer(queue);
         Message msg = consumer.receive(1000);
         assertNotNull(msg);
@@ -85,7 +85,7 @@ public class JmsClientAckTest {
         session.close();
         session = connection.createSession(false, Session.CLIENT_ACKNOWLEDGE);
 
-        // Attempt to Consume the message...
+        // Attempt to Consume the message..
         consumer = session.createConsumer(queue);
         msg = consumer.receive(500);
         assertNull(msg);
@@ -108,7 +108,7 @@ public class JmsClientAckTest {
         producer.send(session.createTextMessage("Hello2"));
         producer.send(session.createTextMessage("Hello3"));
 
-        // Consume the message...
+        // Consume the message..
         MessageConsumer consumer = session.createConsumer(queue);
         Message msg = consumer.receive(1000);
         assertNotNull(msg);
@@ -122,7 +122,7 @@ public class JmsClientAckTest {
         session.close();
         session = connection.createSession(false, Session.CLIENT_ACKNOWLEDGE);
 
-        // Attempt to Consume the message...
+        // Attempt to Consume the message..
         consumer = session.createConsumer(queue);
         msg = consumer.receive(500);
         assertNull(msg);
@@ -143,7 +143,7 @@ public class JmsClientAckTest {
         MessageProducer producer = session.createProducer(queue);
         producer.send(session.createTextMessage("Hello"));
 
-        // Consume the message...
+        // Consume the message..
         MessageConsumer consumer = session.createConsumer(queue);
         Message msg = consumer.receive(1000);
         assertNotNull(msg);
@@ -153,7 +153,7 @@ public class JmsClientAckTest {
         session.close();
         session = connection.createSession(false, Session.CLIENT_ACKNOWLEDGE);
 
-        // Attempt to Consume the message...
+        // Attempt to Consume the message..
         consumer = session.createConsumer(queue);
         msg = consumer.receive(2000);
         assertNotNull(msg);

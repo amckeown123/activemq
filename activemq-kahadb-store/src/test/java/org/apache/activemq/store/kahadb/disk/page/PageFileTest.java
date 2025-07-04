@@ -66,12 +66,12 @@ public class PageFileTest extends TestCase {
             tx.commit();
         }
 
-        // Reload it...
+        // Reload it..
         pf.unload();
         pf.load();
         tx = pf.tx();
 
-        // Iterate it to make sure they are still there..
+        // Iterate it to make sure they are still there.
         HashSet<String> actual = new HashSet<String>();
         for (Page<String> page : tx) {
             tx.load(page, StringMarshaller.INSTANCE);
@@ -79,7 +79,7 @@ public class PageFileTest extends TestCase {
         }
         assertEquals(expected, actual);
 
-        // Remove the odd records..
+        // Remove the odd records.
         for (int i = 0; i < 100; i++) {
             if (i % 2 == 0) {
                 break;
@@ -95,12 +95,12 @@ public class PageFileTest extends TestCase {
         }
         tx.commit();
 
-        // Reload it...
+        // Reload it..
         pf.unload();
         pf.load();
         tx = pf.tx();
 
-        // Iterate it to make sure the even records are still there..
+        // Iterate it to make sure the even records are still there.
         actual.clear();
         for (Page<String> page : tx) {
             tx.load(page, StringMarshaller.INSTANCE);
@@ -108,7 +108,7 @@ public class PageFileTest extends TestCase {
         }
         assertEquals(expected, actual);
 
-        // Update the records...
+        // Update the records..
         HashSet<String> t = expected;
         expected = new HashSet<String>();
         for (String s : t) {
@@ -121,12 +121,12 @@ public class PageFileTest extends TestCase {
         }
         tx.commit();
 
-        // Reload it...
+        // Reload it..
         pf.unload();
         pf.load();
         tx = pf.tx();
 
-        // Iterate it to make sure the updated records are still there..
+        // Iterate it to make sure the updated records are still there.
         actual.clear();
         for (Page<String> page : tx) {
             tx.load(page, StringMarshaller.INSTANCE);
@@ -199,12 +199,12 @@ public class PageFileTest extends TestCase {
 
         }
 
-        // Reload it...
+        // Reload it..
         pf.unload();
         pf.load();
         tx = pf.tx();
 
-        // Iterate it to make sure they are still there..
+        // Iterate it to make sure they are still there.
         HashSet<String> actual = new HashSet<String>();
         for (Page<String> page : tx) {
             tx.load(page, StringMarshaller.INSTANCE);

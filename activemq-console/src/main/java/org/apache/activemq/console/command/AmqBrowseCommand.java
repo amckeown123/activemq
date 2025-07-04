@@ -54,7 +54,7 @@ public class AmqBrowseCommand extends AbstractAmqCommand {
         "    --password <password>         Password to use for JMS connections.",
         "    -V<header|custom|body>        Predefined view that allows you to view the message header, custom",
         "                                  message header, or the message body.",
-        "    --view <attr1>,<attr2>,...    Select the specific attribute of the message to view.",
+        "    --view <attr1>,<attr2>,..    Select the specific attribute of the message to view.",
         "    --version                     Display the version information.",
         "    -h,-?,--help                  Display the browse broker help information.",
         "",

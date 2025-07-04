@@ -139,7 +139,7 @@ public class SubscriptionInfo implements DataStructure {
     }
 
     /**
-     * The destination the client originally subscribed to.. This may not match
+     * The destination the client originally subscribed to. This may not match
      * the {@see getDestination} method if the subscribed destination uses
      * patterns or composites.
      *

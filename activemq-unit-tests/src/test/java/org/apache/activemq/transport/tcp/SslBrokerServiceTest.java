@@ -24,14 +24,14 @@ import java.net.SocketException;
 import java.net.UnknownHostException;
 import java.security.KeyStore;
 
-import javax.net.ssl.KeyManager;
-import javax.net.ssl.KeyManagerFactory;
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.SSLException;
-import javax.net.ssl.SSLSession;
-import javax.net.ssl.SSLSocket;
-import javax.net.ssl.TrustManager;
-import javax.net.ssl.TrustManagerFactory;
+import jakarta.net.ssl.KeyManager;
+import jakarta.net.ssl.KeyManagerFactory;
+import jakarta.net.ssl.SSLContext;
+import jakarta.net.ssl.SSLException;
+import jakarta.net.ssl.SSLSession;
+import jakarta.net.ssl.SSLSocket;
+import jakarta.net.ssl.TrustManager;
+import jakarta.net.ssl.TrustManagerFactory;
 
 import junit.framework.Test;
 import junit.textui.TestRunner;
@@ -59,7 +59,7 @@ public class SslBrokerServiceTest extends TransportBrokerTestSupport {
     protected BrokerService createBroker() throws Exception {
         
         // http://java.sun.com/javase/javaseforbusiness/docs/TLSReadme.html
-        // work around: javax.net.ssl.SSLHandshakeException: renegotiation is not allowed
+        // work around: jakarta.net.ssl.SSLHandshakeException: renegotiation is not allowed
         System.setProperty("sun.security.ssl.allowUnsafeRenegotiation", "true");
         
         SslBrokerService service = new SslBrokerService();

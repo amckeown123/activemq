@@ -23,7 +23,7 @@ import java.io.OutputStream;
 import java.nio.ByteBuffer;
 import java.nio.channels.WritableByteChannel;
 
-import javax.net.ssl.SSLEngine;
+import jakarta.net.ssl.SSLEngine;
 
 import org.apache.activemq.transport.tcp.TimeStampStream;
 
@@ -120,7 +120,7 @@ public class NIOOutputStream extends OutputStream implements TimeStampStream {
     /**
      * flush the data to the output stream This doesn't call flush on the
      * underlying OutputStream, because TCP/IP is particularly efficient at doing
-     * this itself ....
+     * this itself ..
      *
      * @throws IOException if an error occurs while writing the data.
      */
@@ -185,7 +185,7 @@ public class NIOOutputStream extends OutputStream implements TimeStampStream {
             while (remaining > 0) {
 
                 // We may need to do a little bit of sleeping to avoid a busy
-                // loop. Slow down if no data was written out..
+                // loop. Slow down if no data was written out.
                 if (lastWriteSize == 0) {
                     try {
                         // Use exponential growth to increase sleep time.

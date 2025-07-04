@@ -24,7 +24,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.concurrent.TimeUnit;
 
-import javax.net.ssl.SSLSocketFactory;
+import jakarta.net.ssl.SSLSocketFactory;
 
 import org.apache.activemq.transport.auto.AutoTcpTransportServer;
 import org.apache.activemq.transport.stomp.StompTestSupport;

@@ -45,7 +45,7 @@ public final class InboundContextSupport {
 
     /**
      * Registers the session and producer which should be called before the
-     * {@link javax.resource.spi.endpoint.MessageEndpoint#beforeDelivery(java.lang.reflect.Method)}
+     * {@link jakarta.resource.spi.endpoint.MessageEndpoint#beforeDelivery(java.lang.reflect.Method)}
      * method is called.
      * 
      * @param sessionAndProducer
@@ -56,7 +56,7 @@ public final class InboundContextSupport {
 
     /**
      * Unregisters the session and producer which should be called after the
-     * {@link javax.resource.spi.endpoint.MessageEndpoint#afterDelivery()}
+     * {@link jakarta.resource.spi.endpoint.MessageEndpoint#afterDelivery()}
      * method is called.
      * 
      * @param sessionAndProducer

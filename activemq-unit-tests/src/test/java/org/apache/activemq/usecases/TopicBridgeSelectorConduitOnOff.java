@@ -139,7 +139,7 @@ public class TopicBridgeSelectorConduitOnOff {
         // need to be sure all subs are active before we publish to have some guaentee of stats
         consumersRegistered.await(20, TimeUnit.SECONDS);
 
-        // would really need to verify on the local broker...
+        // would really need to verify on the local broker..
         // lets do that
         Topic topic = (Topic) brokerA.getDestination(destination);
         LOG.info("Num consumers: " + topic.getConsumers().size());

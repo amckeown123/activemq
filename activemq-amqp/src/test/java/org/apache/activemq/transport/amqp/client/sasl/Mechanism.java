@@ -18,7 +18,7 @@ package org.apache.activemq.transport.amqp.client.sasl;
 
 import java.util.Map;
 
-import javax.security.sasl.SaslException;
+import jakarta.security.sasl.SaslException;
 
 /**
  * Interface for all SASL authentication mechanism implementations.

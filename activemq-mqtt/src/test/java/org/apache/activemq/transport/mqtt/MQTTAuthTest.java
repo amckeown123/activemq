@@ -31,7 +31,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import jakarta.jms.InvalidClientIDException;
-import javax.security.auth.login.CredentialException;
+import jakarta.security.auth.login.CredentialException;
 
 import org.apache.activemq.broker.Broker;
 import org.apache.activemq.broker.BrokerFilter;

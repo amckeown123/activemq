@@ -159,7 +159,7 @@ public class MQTTVirtualTopicSubscriptionStrategy extends AbstractMQTTSubscripti
                 protocol.sendToActiveMQ(remove, new ResponseHandler() {
                     @Override
                     public void onResponse(MQTTProtocolConverter converter, Response response) throws IOException {
-                        // ignore failures..
+                        // ignore failures.
                     }
                 });
             } else if (subscription.getConsumerInfo().getSubscriptionName() != null) {
@@ -173,7 +173,7 @@ public class MQTTVirtualTopicSubscriptionStrategy extends AbstractMQTTSubscripti
                 protocol.sendToActiveMQ(rsi, new ResponseHandler() {
                     @Override
                     public void onResponse(MQTTProtocolConverter converter, Response response) throws IOException {
-                        // ignore failures..
+                        // ignore failures.
                     }
                 });
             }
@@ -235,7 +235,7 @@ public class MQTTVirtualTopicSubscriptionStrategy extends AbstractMQTTSubscripti
                 protocol.sendToActiveMQ(removeAction, new ResponseHandler() {
                     @Override
                     public void onResponse(MQTTProtocolConverter converter, Response response) throws IOException {
-                        // ignore failures..
+                        // ignore failures.
                     }
                 });
             }

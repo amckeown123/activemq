@@ -241,7 +241,7 @@ public class VirtualConsumerDemandTest extends DynamicNetworkTestSupport {
         MessageConsumer bridgeConsumer2 = remoteSession.createConsumer(new ActiveMQQueue("Consumer.cons1.VirtualTopic.include.test.bar"));
         assertNotNull(bridgeConsumer2.receive(5000));
 
-        //should be 4 advisories...1 or the virtual destination creation to a queue,
+        //should be 4 advisories..1 or the virtual destination creation to a queue,
         //2 for new consumers, and 1 for a closed consumer
         assertRemoteAdvisoryCount(advisoryConsumer, 4);
         assertAdvisoryBrokerCounts(1,2,1);
@@ -1436,7 +1436,7 @@ public class VirtualConsumerDemandTest extends DynamicNetworkTestSupport {
         return brokerService;
     }
 
-    protected CompositeTopic createCompositeTopic(String name, ActiveMQDestination...forwardTo) {
+    protected CompositeTopic createCompositeTopic(String name, ActiveMQDestination..forwardTo) {
         CompositeTopic compositeTopic = new CompositeTopic();
         compositeTopic.setName(name);
         compositeTopic.setForwardOnly(true);
@@ -1449,7 +1449,7 @@ public class VirtualConsumerDemandTest extends DynamicNetworkTestSupport {
         return compositeTopic;
     }
 
-    protected CompositeQueue createCompositeQueue(String name, ActiveMQDestination...forwardTo) {
+    protected CompositeQueue createCompositeQueue(String name, ActiveMQDestination..forwardTo) {
         CompositeQueue compositeQueue = new CompositeQueue();
         compositeQueue.setName(name);
         compositeQueue.setForwardOnly(true);

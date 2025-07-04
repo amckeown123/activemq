@@ -23,8 +23,8 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-import javax.security.auth.login.AppConfigurationEntry;
-import javax.security.auth.login.Configuration;
+import jakarta.security.auth.login.AppConfigurationEntry;
+import jakarta.security.auth.login.Configuration;
 
 import junit.framework.TestCase;
 

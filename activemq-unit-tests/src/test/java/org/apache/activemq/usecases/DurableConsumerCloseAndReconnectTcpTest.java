@@ -25,7 +25,7 @@ import java.util.concurrent.TimeUnit;
 
 import jakarta.jms.ExceptionListener;
 import jakarta.jms.JMSException;
-import javax.net.SocketFactory;
+import jakarta.net.SocketFactory;
 
 import org.apache.activemq.ActiveMQConnection;
 import org.apache.activemq.ActiveMQConnectionFactory;

@@ -114,7 +114,7 @@ public class LinkedNode {
             throw new IllegalArgumentException("You only insert nodes that are the first in a list");
         }
 
-        // The left side is no longer going to be a tail..
+        // The left side is no longer going to be a tail.
         LinkedNode leftTail = leftHead.prev;
         leftTail.tail = false;
 
@@ -130,7 +130,7 @@ public class LinkedNode {
      * Removes this node out of the linked list it is chained in.
      */
     public void unlink() {
-        // If we are allready unlinked...
+        // If we are allready unlinked..
         if (prev == this) {
             reset();
             return;
@@ -140,11 +140,11 @@ public class LinkedNode {
             prev.tail = true;
         }
 
-        // Update the peers links..
+        // Update the peers links.
         next.prev = prev;
         prev.next = next;
 
-        // Update our links..
+        // Update our links.
         reset();
     }
 

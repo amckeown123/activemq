@@ -20,9 +20,9 @@ package org.apache.activemq.security;
 import java.security.Principal;
 import java.security.cert.X509Certificate;
 
-import javax.security.auth.Subject;
-import javax.security.auth.callback.CallbackHandler;
-import javax.security.auth.login.LoginContext;
+import jakarta.security.auth.Subject;
+import jakarta.security.auth.callback.CallbackHandler;
+import jakarta.security.auth.login.LoginContext;
 
 import org.apache.activemq.broker.Broker;
 import org.apache.activemq.broker.BrokerFilter;

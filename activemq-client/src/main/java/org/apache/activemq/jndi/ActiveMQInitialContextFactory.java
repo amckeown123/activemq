@@ -137,7 +137,7 @@ public class ActiveMQInitialContextFactory implements InitialContextFactory {
             Map.Entry entry = (Map.Entry)iter.next();
             String key = (String)entry.getKey();
             if (key.startsWith(prefix)) {
-                // Rename the key...
+                // Rename the key..
                 temp.remove(key);
                 key = key.substring(prefix.length());
                 temp.put(key, entry.getValue());

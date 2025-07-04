@@ -85,7 +85,7 @@ public class XAConsumerTest extends TestCase {
 
         try {
 
-            LOG.info(">>>INVOKE XA receive with PullRequest Consumer...");
+            LOG.info(">>>INVOKE XA receive with PullRequest Consumer..");
 
             XASession xaSession = connection.createXASession();
             XAResource xaResource = xaSession.getXAResource();
@@ -120,7 +120,7 @@ public class XAConsumerTest extends TestCase {
             xaResource.rollback(xid);
 
             // send a message after transaction is rolled back.
-            LOG.info(">>>Sending message...");
+            LOG.info(">>>Sending message..");
 
             Session session = autoAckConnection.createSession(false, Session.AUTO_ACKNOWLEDGE);
             Message messageToSend = session.createMessage();
@@ -164,7 +164,7 @@ public class XAConsumerTest extends TestCase {
 
         try {
 
-            LOG.info(">>>INVOKE XA receive with PullRequest Consumer...");
+            LOG.info(">>>INVOKE XA receive with PullRequest Consumer..");
 
             XASession xaSession = connection.createXASession();
             XAResource xaResource = xaSession.getXAResource();
@@ -205,7 +205,7 @@ public class XAConsumerTest extends TestCase {
                 xaResourceSend.start(xidSend, 0);
 
                 // send a message after transaction is rolled back.
-                LOG.info(">>>Sending message...");
+                LOG.info(">>>Sending message..");
 
                 ActiveMQMessage messageToSend = (ActiveMQMessage) xaSessionSend.createMessage();
                 messageToSend.setTransactionId(new XATransactionId(xidSend));

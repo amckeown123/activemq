@@ -26,8 +26,8 @@ import java.util.Collection;
 import java.util.List;
 
 import jakarta.jms.Connection;
-import javax.net.SocketFactory;
-import javax.net.ssl.SSLSocketFactory;
+import jakarta.net.SocketFactory;
+import jakarta.net.ssl.SSLSocketFactory;
 
 import org.apache.activemq.broker.Broker;
 import org.apache.activemq.broker.BrokerFilter;

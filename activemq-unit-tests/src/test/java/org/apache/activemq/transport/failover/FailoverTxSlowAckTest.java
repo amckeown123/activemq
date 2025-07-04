@@ -108,7 +108,7 @@ public class FailoverTxSlowAckTest {
                             executorService.execute(new Runnable() {
                                 @Override
                                 public void run() {
-                                    LOG.info("Stopping broker before commit...");
+                                    LOG.info("Stopping broker before commit..");
                                     try {
                                         broker.stop();
                                     } catch (Exception e) {

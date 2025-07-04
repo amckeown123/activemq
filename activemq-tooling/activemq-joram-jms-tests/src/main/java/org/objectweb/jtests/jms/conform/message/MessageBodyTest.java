@@ -90,7 +90,7 @@ public class MessageBodyTest extends PTPTestCase
 
    /**
     * Test that a call to the <code>TextMessage.setText()</code> method on a 
-    * received message raises a <code>javax.jms.MessageNotWriteableException</code>.
+    * received message raises a <code>jakarta.jms.MessageNotWriteableException</code>.
     */
    public void testWriteOnReceivedBody()
    {

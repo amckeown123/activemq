@@ -59,7 +59,7 @@ public class AMQPNativeOutboundTransformer implements OutboundTransformer {
         int count = message.getRedeliveryCounter();
         if (count >= 1) {
 
-            // decode...
+            // decode..
             ProtonJMessage amqp = (ProtonJMessage) org.apache.qpid.proton.message.Message.Factory.create();
             int offset = 0;
             int len = encodedSize;
@@ -70,7 +70,7 @@ public class AMQPNativeOutboundTransformer implements OutboundTransformer {
                 len -= decoded;
             }
 
-            // Update the DeliveryCount header...
+            // Update the DeliveryCount header..
             // The AMQP delivery-count field only includes prior failed delivery attempts,
             // whereas JMSXDeliveryCount includes the first/current delivery attempt. Subtract 1.
             if (amqp.getHeader() == null) {
@@ -79,7 +79,7 @@ public class AMQPNativeOutboundTransformer implements OutboundTransformer {
 
             amqp.getHeader().setDeliveryCount(new UnsignedInteger(count));
 
-            // Re-encode...
+            // Re-encode..
             final AmqpWritableBuffer buffer = new AmqpWritableBuffer();
             int written = amqp.encode(buffer);
 

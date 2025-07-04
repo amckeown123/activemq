@@ -20,8 +20,8 @@ import java.net.Socket;
 import java.net.URI;
 
 import javax.management.ObjectName;
-import javax.net.SocketFactory;
-import javax.net.ssl.SSLSocketFactory;
+import jakarta.net.SocketFactory;
+import jakarta.net.ssl.SSLSocketFactory;
 
 import junit.framework.TestCase;
 
@@ -76,12 +76,12 @@ public class AMQ4126Test {
     }
 
     public Socket createSocket(String host, int port) throws Exception {
-        System.setProperty("javax.net.ssl.trustStore", certBase + "/broker1.ks");
-        System.setProperty("javax.net.ssl.trustStorePassword", "password");
-        System.setProperty("javax.net.ssl.trustStoreType", "jks");
-        System.setProperty("javax.net.ssl.keyStore", certBase + "/client.ks");
-        System.setProperty("javax.net.ssl.keyStorePassword", "password");
-        System.setProperty("javax.net.ssl.keyStoreType", "jks");
+        System.setProperty("jakarta.net.ssl.trustStore", certBase + "/broker1.ks");
+        System.setProperty("jakarta.net.ssl.trustStorePassword", "password");
+        System.setProperty("jakarta.net.ssl.trustStoreType", "jks");
+        System.setProperty("jakarta.net.ssl.keyStore", certBase + "/client.ks");
+        System.setProperty("jakarta.net.ssl.keyStorePassword", "password");
+        System.setProperty("jakarta.net.ssl.keyStoreType", "jks");
 
         SocketFactory factory = SSLSocketFactory.getDefault();
         return factory.createSocket(host, port);

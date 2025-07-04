@@ -62,7 +62,7 @@ public class JMSIndividualAckTest extends TestSupport {
         MessageProducer producer = session.createProducer(queue);
         producer.send(session.createTextMessage("Hello"));
 
-        // Consume the message...
+        // Consume the message..
         MessageConsumer consumer = session.createConsumer(queue);
         Message msg = consumer.receive(1000);
         assertNotNull(msg);
@@ -72,7 +72,7 @@ public class JMSIndividualAckTest extends TestSupport {
         session.close();
         session = connection.createSession(false, ActiveMQSession.INDIVIDUAL_ACKNOWLEDGE);
 
-        // Attempt to Consume the message...
+        // Attempt to Consume the message..
         consumer = session.createConsumer(queue);
         msg = consumer.receive(1000);
         assertNull(msg);
@@ -97,7 +97,7 @@ public class JMSIndividualAckTest extends TestSupport {
         producer.send(msg2);
         producer.send(msg3);
 
-        // Consume the message...
+        // Consume the message..
         MessageConsumer consumer = session.createConsumer(queue);
         Message msg = consumer.receive(1000);
         assertNotNull(msg);
@@ -111,7 +111,7 @@ public class JMSIndividualAckTest extends TestSupport {
         session.close();
         session = connection.createSession(false, ActiveMQSession.INDIVIDUAL_ACKNOWLEDGE);
 
-        // Attempt to Consume the message...
+        // Attempt to Consume the message..
         consumer = session.createConsumer(queue);
         msg = consumer.receive(1000);
         assertNotNull(msg);
@@ -136,7 +136,7 @@ public class JMSIndividualAckTest extends TestSupport {
         MessageProducer producer = session.createProducer(queue);
         producer.send(session.createTextMessage("Hello"));
 
-        // Consume the message...
+        // Consume the message..
         MessageConsumer consumer = session.createConsumer(queue);
         Message msg = consumer.receive(1000);
         assertNotNull(msg);
@@ -146,7 +146,7 @@ public class JMSIndividualAckTest extends TestSupport {
         session.close();
         session = connection.createSession(false, ActiveMQSession.INDIVIDUAL_ACKNOWLEDGE);
 
-        // Attempt to Consume the message...
+        // Attempt to Consume the message..
         consumer = session.createConsumer(queue);
         msg = consumer.receive(2000);
         assertNotNull(msg);

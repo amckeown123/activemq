@@ -25,8 +25,8 @@ import java.io.InputStream;
 import java.util.HashSet;
 import java.util.Objects;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.namespace.DocumentBuilder;
+import javax.xml.namespace.DocumentBuilderFactory;
 
 import org.junit.Test;
 import org.xml.sax.EntityResolver;

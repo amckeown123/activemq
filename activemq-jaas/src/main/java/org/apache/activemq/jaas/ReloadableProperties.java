@@ -126,7 +126,7 @@ public class ReloadableProperties {
                 try {
                     EncryptionSupport.decrypt(this.props, key.getAlgorithm());
                 } catch (NoClassDefFoundError e) {
-                    // this Happens whe jasypt is not on the classpath..
+                    // this Happens whe jasypt is not on the classpath.
                     key.setDecrypt(false);
                     LOG.info("jasypt is not on the classpath: password decryption disabled.");
                 }

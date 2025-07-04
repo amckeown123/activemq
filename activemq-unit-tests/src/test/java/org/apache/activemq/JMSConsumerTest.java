@@ -253,7 +253,7 @@ public class JMSConsumerTest extends JmsTestSupport {
         final List<Subscription> subscriptions = getDestinationConsumers(broker, destination);
         Thread.sleep(1000);
 
-        assertTrue("prefetch extension..",
+        assertTrue("prefetch extension.",
                 subscriptions.stream().
                         filter(s -> s instanceof TopicSubscription).
                         mapToInt(s -> ((TopicSubscription)s).getPrefetchExtension().get()).
@@ -296,7 +296,7 @@ public class JMSConsumerTest extends JmsTestSupport {
 
         final List<Subscription> subscriptions = getDestinationConsumers(broker, destination);
 
-        assertTrue("prefetch extension..", Wait.waitFor(new Wait.Condition() {
+        assertTrue("prefetch extension.", Wait.waitFor(new Wait.Condition() {
                     @Override
                     public boolean isSatisified() throws Exception {
                         return subscriptions.stream().
@@ -783,7 +783,7 @@ public class JMSConsumerTest extends JmsTestSupport {
 
         // The prefetch should fill up with 1 message.
         // Since prefetch is still full, the 2nd message should get dispatched
-        // to another consumer.. lets create the 2nd consumer test that it does
+        // to another consumer. lets create the 2nd consumer test that it does
         // make sure it does.
         ActiveMQConnection connection2 = (ActiveMQConnection)factory.createConnection();
         connection2.start();
@@ -887,7 +887,7 @@ public class JMSConsumerTest extends JmsTestSupport {
         }
         assertNull(consumer.receive(500));
 
-        // Close out the consumer.. no other messages should be left on the queue.
+        // Close out the consumer. no other messages should be left on the queue.
         consumer.close();
 
         consumer = session.createConsumer(destination);

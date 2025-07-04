@@ -26,7 +26,7 @@ import jakarta.transaction.TransactionManager;
 import java.io.PrintWriter;
 import java.util.Set;
 
-import javax.security.auth.Subject;
+import jakarta.security.auth.Subject;
 
 import org.apache.geronimo.connector.outbound.GenericConnectionManager;
 import org.apache.geronimo.connector.outbound.SubjectSource;

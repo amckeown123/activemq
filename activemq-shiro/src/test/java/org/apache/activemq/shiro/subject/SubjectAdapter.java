@@ -55,7 +55,7 @@ public class SubjectAdapter implements Subject {
     }
 
     @Override
-    public boolean[] isPermitted(String... permissions) {
+    public boolean[] isPermitted(String.. permissions) {
         return new boolean[0];
     }
 
@@ -65,7 +65,7 @@ public class SubjectAdapter implements Subject {
     }
 
     @Override
-    public boolean isPermittedAll(String... permissions) {
+    public boolean isPermittedAll(String.. permissions) {
         return false;
     }
 
@@ -83,7 +83,7 @@ public class SubjectAdapter implements Subject {
     }
 
     @Override
-    public void checkPermissions(String... permissions) throws AuthorizationException {
+    public void checkPermissions(String.. permissions) throws AuthorizationException {
     }
 
     @Override
@@ -114,7 +114,7 @@ public class SubjectAdapter implements Subject {
     }
 
     @Override
-    public void checkRoles(String... roleIdentifiers) throws AuthorizationException {
+    public void checkRoles(String.. roleIdentifiers) throws AuthorizationException {
     }
 
     @Override

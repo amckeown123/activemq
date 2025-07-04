@@ -41,7 +41,7 @@ class Listener {
         MessageConsumer consumer = session.createConsumer(dest);
         long start = System.currentTimeMillis();
         long count = 1;
-        System.out.println("Waiting for messages...");
+        System.out.println("Waiting for messages..");
         while(true) {
             Message msg = consumer.receive();
             if( msg instanceof  TextMessage ) {

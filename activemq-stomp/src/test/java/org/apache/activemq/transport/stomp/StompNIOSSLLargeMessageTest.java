@@ -30,8 +30,8 @@ import org.slf4j.LoggerFactory;
 
 import jakarta.jms.Connection;
 import jakarta.jms.Session;
-import javax.net.SocketFactory;
-import javax.net.ssl.SSLSocketFactory;
+import jakarta.net.SocketFactory;
+import jakarta.net.ssl.SSLSocketFactory;
 
 import org.apache.activemq.util.DefaultTestAppender;
 

@@ -214,7 +214,7 @@ public class LinkedNode<T extends LinkedNode<T>> {
      */
     public boolean unlink() {
 
-        // If we are allready unlinked...
+        // If we are allready unlinked..
         if (list == null) {
             return false;
         }

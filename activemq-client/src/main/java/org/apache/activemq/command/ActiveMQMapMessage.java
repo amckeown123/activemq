@@ -776,7 +776,7 @@ public class ActiveMQMapMessage extends ActiveMQMessage implements MapMessage {
      * Sets an object value with the specified name into the Map.
      * <P>
      * This method works only for the objectified primitive object types (<code>Integer</code>,<code>Double</code>,
-     * <code>Long</code> &nbsp;...), <code>String</code> objects, and byte
+     * <code>Long</code> &nbsp;..), <code>String</code> objects, and byte
      * arrays.
      *
      * @param name the name of the Java object

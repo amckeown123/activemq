@@ -130,11 +130,11 @@ public abstract class AbstractStompSocket extends TransportSupport implements St
 
     protected void processStompFrame(String data) {
         if (!transportStartedAtLeastOnce()) {
-            LOG.debug("Waiting for StompSocket to be properly started...");
+            LOG.debug("Waiting for StompSocket to be properly started..");
             try {
                 socketTransportStarted.await();
             } catch (InterruptedException e) {
-                LOG.warn("While waiting for StompSocket to be properly started, we got interrupted!! Should be okay, but you could see race conditions...");
+                LOG.warn("While waiting for StompSocket to be properly started, we got interrupted!! Should be okay, but you could see race conditions..");
             }
         }
 

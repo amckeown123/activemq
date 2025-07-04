@@ -265,7 +265,7 @@ public class DurableSubProcessWithRestartTest {
         public final HashSet<String> messageTypeSet;
         public final String selector;
 
-        ClientType(String... messageTypes) {
+        ClientType(String.. messageTypes) {
             this.messageTypes = messageTypes;
             messageTypeSet = new HashSet<String>(Arrays.asList(messageTypes));
 

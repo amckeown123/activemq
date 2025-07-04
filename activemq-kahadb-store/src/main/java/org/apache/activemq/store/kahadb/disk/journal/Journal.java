@@ -557,7 +557,7 @@ public class Journal {
                 bs.setOffset(bs.offset + pos);
                 return pos;
             } else {
-                // need to load the next data chunck in..
+                // need to load the next data chunck in.
                 if (bs.length != bs.data.length) {
                     // If we had a short read then we were at EOF
                     return -1;
@@ -761,7 +761,7 @@ public class Journal {
 
     public synchronized boolean delete() throws IOException {
 
-        // Close all open file handles...
+        // Close all open file handles..
         appender.close();
         accessorPool.close();
 
@@ -788,7 +788,7 @@ public class Journal {
             lastAppendLocation.set(null);
             dataFiles = new LinkedNodeList<DataFile>();
         }
-        // reopen open file handles...
+        // reopen open file handles..
         accessorPool = new DataFileAccessorPool(this);
         appender = new DataFileAppender(this);
         return result;
@@ -884,7 +884,7 @@ public class Journal {
                     cur.setDataFileId(head.getDataFileId());
                     cur.setOffset(0);
                 } else {
-                    // Set to the next offset..
+                    // Set to the next offset.
                     if (location.getSize() == -1) {
                         cur = new Location(location);
                     } else {

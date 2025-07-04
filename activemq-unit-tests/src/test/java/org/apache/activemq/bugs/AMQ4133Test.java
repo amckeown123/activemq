@@ -28,9 +28,9 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import javax.net.SocketFactory;
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.SSLSocketFactory;
+import jakarta.net.SocketFactory;
+import jakarta.net.ssl.SSLContext;
+import jakarta.net.ssl.SSLSocketFactory;
 import java.net.Socket;
 
 public class AMQ4133Test {
@@ -55,12 +55,12 @@ public class AMQ4133Test {
         broker.start();
         broker.waitUntilStarted();
 
-        System.setProperty("javax.net.ssl.trustStore", certBase + "/" + "broker1.ks");
-        System.setProperty("javax.net.ssl.trustStorePassword", "password");
-        System.setProperty("javax.net.ssl.trustStoreType", "jks");
-        System.setProperty("javax.net.ssl.keyStore", certBase + "/" + "client.ks");
-        System.setProperty("javax.net.ssl.keyStorePassword", "password");
-        System.setProperty("javax.net.ssl.keyStoreType", "jks");
+        System.setProperty("jakarta.net.ssl.trustStore", certBase + "/" + "broker1.ks");
+        System.setProperty("jakarta.net.ssl.trustStorePassword", "password");
+        System.setProperty("jakarta.net.ssl.trustStoreType", "jks");
+        System.setProperty("jakarta.net.ssl.keyStore", certBase + "/" + "client.ks");
+        System.setProperty("jakarta.net.ssl.keyStorePassword", "password");
+        System.setProperty("jakarta.net.ssl.keyStoreType", "jks");
     }
 
     @After

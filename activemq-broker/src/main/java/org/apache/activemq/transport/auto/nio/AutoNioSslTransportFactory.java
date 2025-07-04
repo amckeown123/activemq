@@ -25,8 +25,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-import javax.net.ServerSocketFactory;
-import javax.net.ssl.SSLEngine;
+import jakarta.net.ServerSocketFactory;
+import jakarta.net.ssl.SSLEngine;
 
 import org.apache.activemq.broker.BrokerService;
 import org.apache.activemq.broker.BrokerServiceAware;

@@ -23,9 +23,9 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Set;
 
-import javax.net.ssl.SSLServerSocket;
-import javax.security.auth.login.AppConfigurationEntry;
-import javax.security.auth.login.Configuration;
+import jakarta.net.ssl.SSLServerSocket;
+import jakarta.security.auth.login.AppConfigurationEntry;
+import jakarta.security.auth.login.Configuration;
 
 import junit.framework.TestCase;
 

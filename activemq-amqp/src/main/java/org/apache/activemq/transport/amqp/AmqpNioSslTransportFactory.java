@@ -23,10 +23,10 @@ import java.net.URISyntaxException;
 import java.net.UnknownHostException;
 import java.nio.ByteBuffer;
 
-import javax.net.ServerSocketFactory;
-import javax.net.SocketFactory;
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.SSLEngine;
+import jakarta.net.ServerSocketFactory;
+import jakarta.net.SocketFactory;
+import jakarta.net.ssl.SSLContext;
+import jakarta.net.ssl.SSLEngine;
 
 import org.apache.activemq.broker.SslContext;
 import org.apache.activemq.transport.Transport;

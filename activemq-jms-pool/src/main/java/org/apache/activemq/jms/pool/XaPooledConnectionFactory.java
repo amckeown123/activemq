@@ -68,7 +68,7 @@ public class XaPooledConnectionFactory extends PooledConnectionFactory implement
         if (toUse instanceof XAConnectionFactory) {
             connectionFactory = toUse;
         } else {
-            throw new IllegalArgumentException("connectionFactory should implement javax.xml.XAConnectionFactory");
+            throw new IllegalArgumentException("connectionFactory should implement jakarta.xml.XAConnectionFactory");
         }
     }
 

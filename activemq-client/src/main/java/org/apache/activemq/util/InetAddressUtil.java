@@ -28,7 +28,7 @@ public class InetAddressUtil {
 	 * <code>
 	 * java.net.UnknownHostException: &lt;hostname&gt;: &lt;hostname&gt;
      *  at java.net.InetAddress.getLocalHost(InetAddress.java:1425)
-     *   ...
+     *   ..
 	 * </code>
 	 * Instead of just throwing an UnknownHostException and giving up, this 
 	 * method grabs a suitable hostname from the exception and prevents the 

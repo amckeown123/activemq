@@ -241,7 +241,7 @@ public class StartBrokerMojo extends AbstractMojo {
     /**
      * Perform the mojo operation, which starts the ActiveMQ broker unless configured to skip it.  Also registers the
      * connector URIs in the maven project properties on startup, which enables the use of variable substitution in
-     * the pom.xml file to determine the address of the connector using the standard ${...} syntax.
+     * the pom.xml file to determine the address of the connector using the standard ${..} syntax.
      *
      * @throws MojoExecutionException
      */

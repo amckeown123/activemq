@@ -57,14 +57,14 @@ public class NIOSSLBasicTest {
 
     @Before
     public void before() throws Exception {
-        System.setProperty("javax.net.ssl.trustStore", TRUST_KEYSTORE);
-        System.setProperty("javax.net.ssl.trustStorePassword", PASSWORD);
-        System.setProperty("javax.net.ssl.trustStoreType", KEYSTORE_TYPE);
-        System.setProperty("javax.net.ssl.keyStore", SERVER_KEYSTORE);
-        System.setProperty("javax.net.ssl.keyStoreType", KEYSTORE_TYPE);
-        System.setProperty("javax.net.ssl.keyStorePassword", PASSWORD);
+        System.setProperty("jakarta.net.ssl.trustStore", TRUST_KEYSTORE);
+        System.setProperty("jakarta.net.ssl.trustStorePassword", PASSWORD);
+        System.setProperty("jakarta.net.ssl.trustStoreType", KEYSTORE_TYPE);
+        System.setProperty("jakarta.net.ssl.keyStore", SERVER_KEYSTORE);
+        System.setProperty("jakarta.net.ssl.keyStoreType", KEYSTORE_TYPE);
+        System.setProperty("jakarta.net.ssl.keyStorePassword", PASSWORD);
         // Choose a value that's informative: ssl,handshake,data,trustmanager or all
-        //System.setProperty("javax.net.debug", "handshake");
+        //System.setProperty("jakarta.net.debug", "handshake");
     }
 
     @After

@@ -130,7 +130,7 @@ public class AMQ4222Test extends TestSupport {
 
         countDownLatch.await(2, TimeUnit.SECONDS);
 
-        // producer has not gone away yet...
+        // producer has not gone away yet..
         org.apache.activemq.broker.region.Destination tempDestination = getDestination(brokerService,
                 (ActiveMQDestination) replyTo);
         assertNotNull(tempDestination);
@@ -140,16 +140,16 @@ public class AMQ4222Test extends TestSupport {
         producerSession.close();
         producerConnection.close();
 
-        // producer has gone away.. so the temp queue should not exist anymore... let's see..
-        // producer has not gone away yet...
+        // producer has gone away. so the temp queue should not exist anymore.. let's see.
+        // producer has not gone away yet..
         tempDestination = getDestination(brokerService,
                 (ActiveMQDestination) replyTo);
         assertNull(tempDestination);
 
-        // now.. the connection on the broker side for the dude producing to the temp dest will
-        // still have a reference in his producerBrokerExchange.. this will keep the destination
-        // from being reclaimed by GC if there is never another send that producer makes...
-        // let's see if that reference is there...
+        // now. the connection on the broker side for the dude producing to the temp dest will
+        // still have a reference in his producerBrokerExchange. this will keep the destination
+        // from being reclaimed by GC if there is never another send that producer makes..
+        // let's see if that reference is there..
         final TransportConnector connector = VMTransportFactory.CONNECTORS.get("localhost");
         assertNotNull(connector);
         assertTrue(Wait.waitFor(new Wait.Condition() {
@@ -163,8 +163,8 @@ public class AMQ4222Test extends TestSupport {
         assertEquals(1, exchanges.size());
         ProducerBrokerExchange exchange = exchanges.values().iterator().next();
 
-        // so this is the reason for the test... we don't want these exchanges to hold a reference
-        // to a region destination.. after a send is completed, the destination is not used anymore on
+        // so this is the reason for the test.. we don't want these exchanges to hold a reference
+        // to a region destination. after a send is completed, the destination is not used anymore on
         // a producer exchange
         assertNull(exchange.getRegionDestination());
         assertNull(exchange.getRegion());

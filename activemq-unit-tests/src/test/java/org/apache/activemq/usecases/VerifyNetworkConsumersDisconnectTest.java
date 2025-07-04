@@ -117,7 +117,7 @@ public class VerifyNetworkConsumersDisconnectTest extends JmsMultipleBrokersTest
 
 
         if (!DUPLEX) {
-            LOG.info("... complete the mesh - 2->0");
+            LOG.info(".. complete the mesh - 2->0");
             nc = bridge("Broker2", "Broker0");
             nc.setBrokerName("Broker2");
             nc.start();
@@ -135,7 +135,7 @@ public class VerifyNetworkConsumersDisconnectTest extends JmsMultipleBrokersTest
         TimeUnit.SECONDS.sleep(1);
         consumerMap.get("Consumer:" + 0 + ":0").close();
 
-        LOG.info("Check for no consumers..");
+        LOG.info("Check for no consumers.");
         for (int i = 0; i < BROKER_COUNT; i++) {
         	assertExactConsumersConnect("Broker" + i, 0, 0, TIMEOUT);
         }
@@ -179,7 +179,7 @@ public class VerifyNetworkConsumersDisconnectTest extends JmsMultipleBrokersTest
 
 
         if (!DUPLEX) {
-            LOG.info("... complete the mesh - 2->0");
+            LOG.info(".. complete the mesh - 2->0");
             nc = bridge("Broker2", "Broker0");
             nc.setBrokerName("Broker2");
             nc.start();
@@ -192,7 +192,7 @@ public class VerifyNetworkConsumersDisconnectTest extends JmsMultipleBrokersTest
         TimeUnit.SECONDS.sleep(1);
         consumerMap.get("Consumer:" + 0 + ":0").close();
 
-        LOG.info("Check for no consumers..");
+        LOG.info("Check for no consumers.");
         for (int i = 0; i < BROKER_COUNT; i++) {
             assertExactConsumersConnect("Broker" + i, 0, 0, TIMEOUT);
         }
@@ -237,7 +237,7 @@ public class VerifyNetworkConsumersDisconnectTest extends JmsMultipleBrokersTest
         waitForBridgeFormation(brokers.get("Broker0").broker, 1, 1);
 
         if (!DUPLEX) {
-            LOG.info("... complete the mesh - 2->0");
+            LOG.info(".. complete the mesh - 2->0");
             nc = bridge("Broker2", "Broker0");
             nc.setBrokerName("Broker2");
             nc.start();
@@ -258,7 +258,7 @@ public class VerifyNetworkConsumersDisconnectTest extends JmsMultipleBrokersTest
             consumerMap.get("Consumer:" + 0 + ":" + i).close();
         }
 
-        LOG.info("Check for no consumers..");
+        LOG.info("Check for no consumers.");
         for (int i = 0; i < BROKER_COUNT; i++) {
         	assertExactConsumersConnect("Broker" + i, 0, 0, TIMEOUT);
         }

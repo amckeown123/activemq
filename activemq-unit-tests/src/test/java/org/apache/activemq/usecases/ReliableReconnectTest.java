@@ -143,7 +143,7 @@ public class ReliableReconnectTest extends org.apache.activemq.TestSupport {
         Connection consumerConnection = createConsumerConnection();
         createConsumer(consumerConnection);
         consumerConnection.close();
-        // send some messages ...
+        // send some messages ..
         Connection connection = createConnection();
         connection.setClientID(idGen.generateId());
         connection.start();

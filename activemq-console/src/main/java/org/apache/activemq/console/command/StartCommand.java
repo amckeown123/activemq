@@ -96,7 +96,7 @@ public class StartCommand extends AbstractCommand {
                 throw new Exception(broker.getStartException());
             }
 
-            // The broker started up fine.  Now lets wait for it to stop...
+            // The broker started up fine.  Now lets wait for it to stop..
             final CountDownLatch shutdownLatch = new CountDownLatch(1);
             final Thread jvmShutdownHook = new Thread() {
                 public void run() {
@@ -114,7 +114,7 @@ public class StartCommand extends AbstractCommand {
                 }
             });
 
-            // The broker has stopped..
+            // The broker has stopped.
             shutdownLatch.await();
             try {
                 Runtime.getRuntime().removeShutdownHook(jvmShutdownHook);

@@ -86,7 +86,7 @@ public class ManagedConnectionFactoryTest {
         ConnectionFactory connectionFactory = (ConnectionFactory)cf;
 
         // Make sure that the connection factory is using the
-        // ConnectionManager..
+        // ConnectionManager.
         Connection connection = connectionFactory.createConnection();
         assertTrue(allocateRequested[0]);
 

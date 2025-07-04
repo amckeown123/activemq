@@ -104,7 +104,7 @@ public class AMQ4607Test extends JmsMultipleBrokersTestSupport implements Uncaug
             assertExactMessageCount("Broker" + i, dest, 1, TIMEOUT);
 
             messageConsumer.close();
-            LOG.info("Check for no consumers..");
+            LOG.info("Check for no consumers.");
             for (int J = 0; J < BROKER_COUNT; J++) {
         	    assertExactConsumersConnect("Broker" + J, dest, 0, TIMEOUT);
             }
@@ -158,14 +158,14 @@ public class AMQ4607Test extends JmsMultipleBrokersTestSupport implements Uncaug
             assertExactMessageCount("Broker" + i, dest, 1, TIMEOUT);
 
             messageConsumer.close();
-            LOG.info("Check for no consumers..");
+            LOG.info("Check for no consumers.");
             for (int J = 0; J < BROKER_COUNT; J++) {
         	    assertExactConsumersConnect("Broker" + J, dest, 0, TIMEOUT);
             }
         }
 
         // now consume the message from the origin
-        LOG.info("Consume from origin...");
+        LOG.info("Consume from origin..");
         final String brokerId = "Broker0";
         MessageConsumer messageConsumer = createConsumer(brokerId, dest);
         assertTrue("Consumed ok", Wait.waitFor(new Wait.Condition() {

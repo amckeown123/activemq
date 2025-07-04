@@ -277,7 +277,7 @@ public final class ListNode<Key, Value> {
         public void writePayload(ListNode<Key, Value> node, DataOutput os) throws IOException {
             os.writeLong(node.next);
             short count = (short) node.entries.size(); // cast may truncate
-                                                       // value...
+                                                       // value..
             if (count != node.entries.size()) {
                 throw new IOException("short over flow, too many entries in list: " + node.entries.size());
             }

@@ -18,9 +18,9 @@ package org.apache.activemq.transport.amqp.joram;
 
 import java.util.concurrent.TimeUnit;
 
-import javax.net.ssl.KeyManager;
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.TrustManager;
+import jakarta.net.ssl.KeyManager;
+import jakarta.net.ssl.SSLContext;
+import jakarta.net.ssl.TrustManager;
 
 import org.apache.activemq.transport.amqp.DefaultTrustManager;
 import org.junit.AfterClass;

@@ -24,11 +24,11 @@ import java.net.UnknownHostException;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.net.ServerSocketFactory;
-import javax.net.SocketFactory;
-import javax.net.ssl.SSLServerSocketFactory;
-import javax.net.ssl.SSLSocket;
-import javax.net.ssl.SSLSocketFactory;
+import jakarta.net.ServerSocketFactory;
+import jakarta.net.SocketFactory;
+import jakarta.net.ssl.SSLServerSocketFactory;
+import jakarta.net.ssl.SSLSocket;
+import jakarta.net.ssl.SSLSocketFactory;
 
 import org.apache.activemq.broker.SslContext;
 import org.apache.activemq.transport.Transport;

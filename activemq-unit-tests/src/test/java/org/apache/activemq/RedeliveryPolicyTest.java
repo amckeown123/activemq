@@ -95,7 +95,7 @@ public class RedeliveryPolicyTest extends JmsTestSupport {
 
         // If the initial delay is 0, when given back to the policy via getNextRedeliveryDelay(), we get -100
         assertEquals(-100, policy.getNextRedeliveryDelay(0));
-        // .. but when invoked with anything else, the backoff multiplier is used
+        // . but when invoked with anything else, the backoff multiplier is used
         assertEquals(123 * 2, policy.getNextRedeliveryDelay(123));
 
         // If exponential backoff is disabled, the setRedeliveryDelay(-100) is used.
@@ -147,7 +147,7 @@ public class RedeliveryPolicyTest extends JmsTestSupport {
         assertEquals("1st", m.getText());
         session.rollback();
 
-        // No delay on first rollback..
+        // No delay on first rollback.
         m = (TextMessage)consumer.receive(100);
         assertNotNull(m);
         session.rollback();
@@ -266,7 +266,7 @@ public class RedeliveryPolicyTest extends JmsTestSupport {
         assertEquals("1st", m.getText());
         session.rollback();
 
-        // No delay on first rollback..
+        // No delay on first rollback.
         m = (TextMessage)consumer.receive(100);
         assertNotNull(m);
         session.rollback();

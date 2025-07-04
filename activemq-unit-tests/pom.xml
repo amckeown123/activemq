@@ -3,7 +3,7 @@
   Licensed to the Apache Software Foundation (ASF) under one or more
   contributor license agreements.  See the NOTICE file distributed with
   this work for additional information regarding copyright ownership.
-  The ASF licenses this file to You under the Apache License, Version 2.0
+  The ASF licenses this file to You under the Apache License, version 2.0
   (the "License"); you may not use this file except in compliance with
   the License.  You may obtain a copy of the License at
 
@@ -22,12 +22,34 @@
   <parent>
     <groupId>org.apache.activemq</groupId>
     <artifactId>activemq-parent</artifactId>
-    <version>6.2.0-SNAPSHOT</version>
+    <version>6.1.0</version>
   </parent>
 
   <artifactId>activemq-unit-tests</artifactId>
   <name>ActiveMQ :: Unit Tests</name>
   <description>The ActiveMQ Message Broker and Client Unit Tests</description>
+  
+     <properties>
+    <java.version>17</java.version>
+    <maven.compiler.source>${java.version}</maven.compiler.source>
+    <maven.compiler.target>${java.version}</maven.compiler.target>
+    <localRepository>C:/Users/a-mck/.m2</localRepository>
+        <!-- Plugins and Build -->
+    <maven.version>3.9.9</maven.version>
+     
+    <!-- Java SE version -->
+    <maven.compiler.source>${java.version}</maven.compiler.source>
+    <maven.compiler.target>${java.version}</maven.compiler.target>
+
+    <maven.compiler.release>${java.version}</maven.compiler.release>
+    <version.plugin.bundle>3.3.0</version.plugin.bundle>
+    <version.plugin.javadoc>3.0.1</version.plugin.javadoc>
+    <version.asciidoclet>1.5.0</version.asciidoclet>
+    <version.surefire>3.0.0-M5</version.surefire>
+    <surefire.argLine>-Xmx512M</surefire.argLine>
+
+</properties>
+
 
   <dependencies>
 
@@ -155,11 +177,7 @@
       <type>test-jar</type>
       <scope>test</scope>
     </dependency>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <scope>test</scope>
-    </dependency>
+  
     <dependency>
       <groupId>org.hamcrest</groupId>
       <artifactId>hamcrest-all</artifactId>
@@ -243,7 +261,7 @@
     <dependency>
       <groupId>org.apache.activemq.tooling</groupId>
       <artifactId>activemq-joram-jms-tests</artifactId>
-      <version>${project.version}</version>
+      <version>${revision}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -292,6 +310,13 @@
       <artifactId>mockito-inline</artifactId>
       <scope>test</scope>
     </dependency>
+  
+    <dependency>
+  <groupId>jakarta.xml.bind</groupId>
+<artifactId>jakarta.xml.bind-api</artifactId>
+<version>4.0.2</version>
+</dependency>
+  
   </dependencies>
 
   <reporting>
@@ -764,14 +789,14 @@
                 <exclude>org/apache/activemq/bugs/AMQ1893Test.*</exclude>
                 <exclude>org/apache/activemq/bugs/AMQ1917Test.*</exclude>
                 <exclude>org/apache/activemq/bugs/AMQ1936Test.*</exclude>
-                <exclude>org/apache/activemq/bugs/AMQ2021Test.*</exclude>
+                <exclude>org/apache/activemq/bugs/AMQ2017Test.*</exclude>
                 <exclude>org/apache/activemq/bugs/AMQ2084Test.*</exclude>
-                <exclude>org/apache/activemq/bugs/AMQ2149KahaDBTest.*</exclude>
-                <exclude>org/apache/activemq/bugs/AMQ2149Test.*</exclude>
-                <exclude>org/apache/activemq/bugs/AMQ2171Test.*</exclude>
-                <exclude>org/apache/activemq/bugs/AMQ2183Test.*</exclude>
+                <exclude>org/apache/activemq/bugs/AMQ1749KahaDBTest.*</exclude>
+                <exclude>org/apache/activemq/bugs/AMQ1749Test.*</exclude>
+                <exclude>org/apache/activemq/bugs/AMQ1771Test.*</exclude>
+                <exclude>org/apache/activemq/bugs/AMQ1783Test.*</exclude>
                 <exclude>org/apache/activemq/bugs/AMQ2200Test.*</exclude>
-                <exclude>org/apache/activemq/bugs/AMQ2213Test.*</exclude>
+                <exclude>org/apache/activemq/bugs/AMQ2173Test.*</exclude>
                 <exclude>org/apache/activemq/bugs/AMQ2314Test.*</exclude>
                 <exclude>org/apache/activemq/bugs/AMQ2356Test.*</exclude>
                 <exclude>org/apache/activemq/bugs/AMQ2364Test.*</exclude>
@@ -815,7 +840,7 @@
                 <exclude>org/apache/activemq/bugs/AMQ3678Test.*</exclude>
                 <exclude>org/apache/activemq/bugs/AMQ3732Test.*</exclude>
                 <exclude>org/apache/activemq/bugs/AMQ3841Test.*</exclude>
-                <exclude>org/apache/activemq/bugs/AMQ4221Test.*</exclude>
+                <exclude>org/apache/activemq/bugs/AMQ4217Test.*</exclude>
                 <exclude>org/apache/activemq/bugs/AMQ4677Test.*</exclude>
                 <exclude>org/apache/activemq/bugs/ActiveMQSlowConsumerManualTest.*</exclude>
                 <exclude>org/apache/activemq/bugs/ConnectionPerMessageTest.*</exclude>
@@ -898,7 +923,7 @@
                 <exclude>org/apache/activemq/store/kahadb/KahaDBStoreRecoveryExpiryTest.*</exclude>
                 <exclude>org/apache/activemq/store/kahadb/KahaDBStoreTest.*</exclude>
                 <exclude>org/apache/activemq/store/kahadb/KahaDBTest.*</exclude>
-                <exclude>org/apache/activemq/store/kahadb/KahaDBVersionTest.*</exclude>
+                <exclude>org/apache/activemq/store/kahadb/KahaDBversionTest.*</exclude>
                 <exclude>org/apache/activemq/store/kahadb/plist/PListTest.*</exclude>
                 <exclude>org/apache/activemq/test/JmsTopicSendReceiveWithEmbeddedBrokerAndUserIDTest.*</exclude>
                 <exclude>org/apache/activemq/test/JmsTopicSendReceiveWithTwoConnectionsAndEmbeddedBrokerTest.*</exclude>
@@ -1117,7 +1142,7 @@
                           <excludes combine.children="append">   <!-- See https://issues.apache.org/jira/browse/AMQ-4296 -->
                               <exclude>**/QueueMasterSlaveSingleUrlTest.*</exclude>
                               <exclude>**/AMQ1866.*</exclude>
-                              <exclude>**/AMQ2149Test.*</exclude>
+                              <exclude>**/AMQ1749Test.*</exclude>
                               <exclude>**/AMQ2584Test.*</exclude>
                               <exclude>**/ExpiredMessagesTest.*</exclude>
                               <exclude>**/ManagedDurableSubscriptionTest.*</exclude>
@@ -1144,7 +1169,7 @@
                       <configuration>
                           <excludes combine.children="append">
                               <exclude>**/QueueMasterSlaveSingleUrlTest.*</exclude>
-                              <exclude>**/AMQ2149Test.*</exclude>
+                              <exclude>**/AMQ1749Test.*</exclude>
                               <exclude>**/AMQ2584Test.*</exclude>
                               <exclude>**/ExpiredMessagesTest.*</exclude>
                               <exclude>**/ManagedDurableSubscriptionTest.*</exclude>

@@ -24,7 +24,7 @@ import org.apache.activemq.command.Message;
 public class CompositeNetworkBridgeListener implements NetworkBridgeListener {
     private final List<NetworkBridgeListener> listeners;
 
-    public CompositeNetworkBridgeListener(NetworkBridgeListener... wrapped) {
+    public CompositeNetworkBridgeListener(NetworkBridgeListener.. wrapped) {
         this.listeners = Arrays.asList(wrapped);
     }
 

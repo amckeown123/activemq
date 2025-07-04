@@ -24,8 +24,8 @@ import java.net.UnknownHostException;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.net.ServerSocketFactory;
-import javax.net.SocketFactory;
+import jakarta.net.ServerSocketFactory;
+import jakarta.net.SocketFactory;
 
 import org.apache.activemq.broker.BrokerService;
 import org.apache.activemq.broker.BrokerServiceAware;

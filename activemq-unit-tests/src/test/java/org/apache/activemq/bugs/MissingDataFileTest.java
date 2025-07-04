@@ -104,7 +104,7 @@ public class MissingDataFileTest extends TestCase {
         broker.setPersistenceAdapter(kahaDBPersistenceAdapter);
 
         broker.start();
-        LOG.info("Starting broker..");
+        LOG.info("Starting broker.");
     }
 
     @Override

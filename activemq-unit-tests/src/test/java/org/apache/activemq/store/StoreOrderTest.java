@@ -161,13 +161,13 @@ public abstract class StoreOrderTest {
         // can get lost in the cursor as it is behind the last sequenceId that was cached
         first.commit();
         
-        LOG.info("send/commit done..");
+        LOG.info("send/commit done.");
         
         dumpMessages();
         
         String received1, received2, received3 = null;
         if (true) {
-            LOG.info("receive and rollback...");
+            LOG.info("receive and rollback..");
             Session session = connection.createSession(true, Session.SESSION_TRANSACTED);
             received1 = receive(session);
             received2 = receive(session);
@@ -188,7 +188,7 @@ public abstract class StoreOrderTest {
         initConnection();
         
         if (true) {
-            LOG.info("receive and rollback after restart...");
+            LOG.info("receive and rollback after restart..");
             Session session = connection.createSession(true, Session.SESSION_TRANSACTED);
             received1 = receive(session);
             received2 = receive(session);

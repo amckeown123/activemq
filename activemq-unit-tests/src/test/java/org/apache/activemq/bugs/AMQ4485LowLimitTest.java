@@ -223,10 +223,10 @@ public class AMQ4485LowLimitTest extends JmsMultipleBrokersTestSupport {
 
         startAllGWFanoutConsumers(numBrokers);
 
-        LOG.info("Waiting for percolation of consumers..");
+        LOG.info("Waiting for percolation of consumers.");
         TimeUnit.SECONDS.sleep(5);
 
-        LOG.info("Produce mesages..");
+        LOG.info("Produce mesages.");
         long startTime = System.currentTimeMillis();
 
         // produce
@@ -440,7 +440,7 @@ public class AMQ4485LowLimitTest extends JmsMultipleBrokersTestSupport {
                 LOG.info(info.getBrokerName());
                 missing.remove(info.getBrokerName());
             }
-            LOG.info("Broker infos off.." + missing);
+            LOG.info("Broker infos off." + missing);
         }
         assertEquals(broker.getBrokerName(), max, regionBroker.getPeerBrokerInfos().length);
     }

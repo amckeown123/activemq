@@ -151,7 +151,7 @@ public class StompWireFormat implements WireFormat {
 
             } else {
 
-                // We don't know how much to read.. data ends when we hit a 0
+                // We don't know how much to read. data ends when we hit a 0
                 byte b;
                 ByteArrayOutputStream baos = null;
                 while ((b = in.readByte()) != 0) {

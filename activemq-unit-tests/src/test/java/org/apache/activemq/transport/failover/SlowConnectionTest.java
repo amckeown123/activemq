@@ -22,7 +22,7 @@ import java.util.*;
 import java.util.concurrent.CountDownLatch;
 
 import jakarta.jms.Connection;
-import javax.net.ServerSocketFactory;
+import jakarta.net.ServerSocketFactory;
 
 import junit.framework.TestCase;
 

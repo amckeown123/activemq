@@ -28,12 +28,12 @@ import org.apache.activemq.store.jdbc.Statements;
  */
 public class MySqlJDBCAdapter extends DefaultJDBCAdapter {
 
-    // The transactional types..
+    // The transactional types.
     public static final String INNODB = "INNODB";
     public static final String NDBCLUSTER = "NDBCLUSTER";
     public static final String BDB = "BDB";
 
-    // The non transactional types..
+    // The non transactional types.
     public static final String MYISAM = "MYISAM";
     public static final String ISAM = "ISAM";
     public static final String MERGE = "MERGE";
@@ -46,7 +46,7 @@ public class MySqlJDBCAdapter extends DefaultJDBCAdapter {
     public void setStatements(Statements statements) {
         String type = engineType.toUpperCase();
         if( !type.equals(INNODB) &&  !type.equals(NDBCLUSTER) ) {
-            // Don't use LOCK TABLE for the INNODB and NDBCLUSTER engine types...
+            // Don't use LOCK TABLE for the INNODB and NDBCLUSTER engine types..
             statements.setLockCreateStatement("LOCK TABLE " + statements.getFullLockTableName() + " WRITE");
         }
 

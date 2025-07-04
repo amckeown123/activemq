@@ -178,7 +178,7 @@ public class TargetedDataFileAppender implements FileAppender {
                 nextWriteBatch = new WriteBatch(target, target.getLength(), write);
                 break;
             } else {
-                // Append to current batch if possible..
+                // Append to current batch if possible.
                 if (nextWriteBatch.canAppend(write)) {
                     nextWriteBatch.append(write);
                     break;

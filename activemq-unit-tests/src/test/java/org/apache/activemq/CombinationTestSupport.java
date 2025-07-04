@@ -73,7 +73,7 @@ public abstract class CombinationTestSupport extends AutoFailTestSupport {
     static protected File basedir(Class<?> clazz) {
         try {
             ProtectionDomain protectionDomain = clazz.getProtectionDomain();
-            return new File(new File(protectionDomain.getCodeSource().getLocation().getPath()), "../..").getCanonicalFile();
+            return new File(new File(protectionDomain.getCodeSource().getLocation().getPath()), "./.").getCanonicalFile();
         } catch (IOException e) {
             return new File(".");
         }

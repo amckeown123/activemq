@@ -32,7 +32,7 @@ import org.springframework.core.io.Resource;
  * 
  */
 public class PublishOnTopicConsumerMessageUsingActivemqXMLTest extends PublishOnTopicConsumedMessageTest {
-    protected static final String JOURNAL_ROOT = "../data/";
+    protected static final String JOURNAL_ROOT = "./data/";
     private static final transient Logger LOG = LoggerFactory.getLogger(PublishOnTopicConsumerMessageUsingActivemqXMLTest.class);
 
     BrokerService broker;
@@ -56,7 +56,7 @@ public class PublishOnTopicConsumerMessageUsingActivemqXMLTest extends PublishOn
         File journalFile = new File(JOURNAL_ROOT);
         recursiveDelete(journalFile);
         // Create broker from resource
-        LOG.info("Creating broker... ");
+        LOG.info("Creating broker.. ");
         broker = createBroker("org/apache/activemq/usecases/activemq.xml");
         LOG.info("Success");
         super.setUp();
@@ -71,7 +71,7 @@ public class PublishOnTopicConsumerMessageUsingActivemqXMLTest extends PublishOn
         if (broker != null) {
             broker.stop();
         }
-        LOG.info("Broker closed...");
+        LOG.info("Broker closed..");
     }
 
     protected BrokerService createBroker(String resource) throws Exception {

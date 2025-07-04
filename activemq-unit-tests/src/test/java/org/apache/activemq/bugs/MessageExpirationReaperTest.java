@@ -142,8 +142,8 @@ public class MessageExpirationReaperTest {
         MessageProducer producer = session.createProducer(destination);
 
         // should have a durable sub because it's a little tricky to get messages to expire in
-        // non-durable subs.. with durable subs, we can just expire in the topic using the expire
-        // period.. also.. durable sub has to be "inactive" for the expire checker to actually
+        // non-durable subs. with durable subs, we can just expire in the topic using the expire
+        // period. also. durable sub has to be "inactive" for the expire checker to actually
         // expire the messages
         MessageConsumer consumer = session.createDurableSubscriber(destination, "test-durable");
 
@@ -157,7 +157,7 @@ public class MessageExpirationReaperTest {
         }
 
         DestinationViewMBean view = createView(destination);
-        // not expired yet...
+        // not expired yet..
         assertEquals("Incorrect enqueue count", 3, view.getEnqueueCount() );
 
         // close consumer so topic thinks consumer is inactive

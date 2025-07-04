@@ -65,7 +65,7 @@ public class Producer {
                 try {
                     connection.close();
                 } catch (JMSException e) {
-                    System.out.println("Could not close an open connection...");
+                    System.out.println("Could not close an open connection..");
                 }
             }
         }

@@ -180,7 +180,7 @@ public class AMQ4952Test {
                         // on first delivery ensure the message is pending an
                         // ack when it is resent from the producer broker
                         if (textMsg.getJMSMessageID().endsWith("1") && receivedMessageCount == 1) {
-                            LOG.info("Waiting for restart...");
+                            LOG.info("Waiting for restart..");
                             consumerRestartedAndMessageForwarded.await(90, TimeUnit.SECONDS);
                         }
 

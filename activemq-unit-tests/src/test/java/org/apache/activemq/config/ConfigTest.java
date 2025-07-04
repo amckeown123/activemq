@@ -71,12 +71,12 @@ public class ConfigTest {
     private static final Logger LOG = LoggerFactory.getLogger(ConfigTest.class);
 
     static {
-        System.setProperty("javax.net.ssl.trustStore", "src/test/resources/client.keystore");
-        System.setProperty("javax.net.ssl.trustStorePassword", "password");
-        System.setProperty("javax.net.ssl.trustStoreType", "jks");
-        System.setProperty("javax.net.ssl.keyStore", "src/test/resources/server.keystore");
-        System.setProperty("javax.net.ssl.keyStorePassword", "password");
-        System.setProperty("javax.net.ssl.keyStoreType", "jks");
+        System.setProperty("jakarta.net.ssl.trustStore", "src/test/resources/client.keystore");
+        System.setProperty("jakarta.net.ssl.trustStorePassword", "password");
+        System.setProperty("jakarta.net.ssl.trustStoreType", "jks");
+        System.setProperty("jakarta.net.ssl.keyStore", "src/test/resources/server.keystore");
+        System.setProperty("jakarta.net.ssl.keyStorePassword", "password");
+        System.setProperty("jakarta.net.ssl.keyStoreType", "jks");
     }
 
     /*
@@ -156,13 +156,13 @@ public class ConfigTest {
         recursiveDelete(journalFile);
 
         // Create broker from resource
-        // System.out.print("Creating broker... ");
+        // System.out.print("Creating broker.. ");
         broker = createBroker("org/apache/activemq/config/example.xml");
         LOG.info("Success");
 
         try {
             // Check broker configuration
-            // System.out.print("Checking broker configurations... ");
+            // System.out.print("Checking broker configurations.. ");
             assertEquals("Broker Config Error (brokerName)", "brokerConfigTest", broker.getBrokerName());
             assertEquals("Broker Config Error (populateJMSXUserID)", false, broker.isPopulateJMSXUserID());
             assertEquals("Broker Config Error (useLoggingForShutdownErrors)", true, broker.isUseLoggingForShutdownErrors());
@@ -173,12 +173,12 @@ public class ConfigTest {
             LOG.info("Success");
 
             // Check specific vm transport
-            // System.out.print("Checking vm connector... ");
+            // System.out.print("Checking vm connector.. ");
             assertEquals("Should have a specific VM Connector", "vm://javacoola", broker.getVmConnectorURI().toString());
             LOG.info("Success");
 
             // Check transport connectors list
-            // System.out.print("Checking transport connectors... ");
+            // System.out.print("Checking transport connectors.. ");
             List<TransportConnector> connectors = broker.getTransportConnectors();
             assertTrue("Should have created at least 3 connectors", connectors.size() >= 3);
             assertTrue("1st connector should be TcpTransportServer", connectors.get(0).getServer() instanceof TcpTransportServer);
@@ -186,13 +186,13 @@ public class ConfigTest {
             assertTrue("3rd connector should be TcpTransportServer", connectors.get(2).getServer() instanceof TcpTransportServer);
 
             // Check network connectors
-            // System.out.print("Checking network connectors... ");
+            // System.out.print("Checking network connectors.. ");
             List<NetworkConnector> networkConnectors = broker.getNetworkConnectors();
             assertEquals("Should have a single network connector", 1, networkConnectors.size());
             LOG.info("Success");
 
             // Check dispatch policy configuration
-            // System.out.print("Checking dispatch policies... ");
+            // System.out.print("Checking dispatch policies.. ");
 
             dest = new ActiveMQTopic("Topic.SimpleDispatch");
             assertTrue("Should have a simple dispatch policy for " + dest.getTopicName(),
@@ -208,7 +208,7 @@ public class ConfigTest {
             LOG.info("Success");
 
             // Check subscription policy configuration
-            // System.out.print("Checking subscription recovery policies... ");
+            // System.out.print("Checking subscription recovery policies.. ");
             SubscriptionRecoveryPolicy subsPolicy;
 
             dest = new ActiveMQTopic("Topic.FixedSizedSubs");
@@ -232,7 +232,7 @@ public class ConfigTest {
             LOG.info("Success");
 
             // Check usage manager
-            // System.out.print("Checking memory manager configurations... ");
+            // System.out.print("Checking memory manager configurations.. ");
             SystemUsage systemUsage = broker.getSystemUsage();
             assertTrue("Should have a SystemUsage", systemUsage != null);
             assertEquals("SystemUsage Config Error (MemoryUsage.limit)", 1024 * 1024 * 10, systemUsage.getMemoryUsage().getLimit());

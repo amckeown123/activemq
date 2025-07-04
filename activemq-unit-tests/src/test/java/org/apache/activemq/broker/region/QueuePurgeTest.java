@@ -106,7 +106,7 @@ public class QueuePurgeTest extends CombinationTestSupport {
         applyBrokerSpoolingPolicy(prioritizedMessages);
         createProducerAndSendMessages(NUM_TO_SEND);
         QueueViewMBean proxy = getProxyToQueueViewMBean();
-        LOG.info("purging..");
+        LOG.info("purging.");
 
         org.apache.logging.log4j.core.Logger log4jLogger = (org.apache.logging.log4j.core.Logger)LogManager.getLogger(org.apache.activemq.broker.jmx.QueueView.class);
         
@@ -195,7 +195,7 @@ public class QueuePurgeTest extends CombinationTestSupport {
         final long start = System.currentTimeMillis();
         ExecutorService service = Executors.newFixedThreadPool(1);
         try {
-            LOG.info("purging..");
+            LOG.info("purging.");
             service.submit(new Runnable() {
 
                 @Override
@@ -233,7 +233,7 @@ public class QueuePurgeTest extends CombinationTestSupport {
         QueueViewMBean proxy = getProxyToQueueViewMBean();
         createConsumer();
         long start = System.currentTimeMillis();
-        LOG.info("purging..");
+        LOG.info("purging.");
         proxy.purge();
         LOG.info("purge done: " + (System.currentTimeMillis() - start) + "ms");
         assertEquals("Queue size is not zero, it's " + proxy.getQueueSize(), 0,

@@ -104,7 +104,7 @@ public class MQTTDefaultSubscriptionStrategy extends AbstractMQTTSubscriptionStr
                 protocol.sendToActiveMQ(rsi, new ResponseHandler() {
                     @Override
                     public void onResponse(MQTTProtocolConverter converter, Response response) throws IOException {
-                        // ignore failures..
+                        // ignore failures.
                     }
                 });
             }

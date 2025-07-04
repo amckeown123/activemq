@@ -243,7 +243,7 @@ public class BrokerNetworkWithStuckMessagesTest {
         assertEquals(0, messages.length);
 
         // try and pull the messages from remote, should be denied b/c on networkTtl
-        LOG.info("creating demand on second remote...");
+        LOG.info("creating demand on second remote..");
         StubConnection connection3 = createSecondRemoteConnection();
         ConnectionInfo connectionInfo3 = createConnectionInfo();
         SessionInfo sessionInfo3 = createSessionInfo(connectionInfo3);
@@ -263,7 +263,7 @@ public class BrokerNetworkWithStuckMessagesTest {
         LOG.info("Closing consumer on remote");
         // Close the consumer on the remote broker
         connection2.send(consumerInfo2.createRemoveCommand());
-        // also close connection etc.. so messages get dropped from the local consumer  q
+        // also close connection etc. so messages get dropped from the local consumer  q
         connection2.send(connectionInfo2.createRemoveCommand());
 
         // There should now be 5 messages stuck on the remote broker

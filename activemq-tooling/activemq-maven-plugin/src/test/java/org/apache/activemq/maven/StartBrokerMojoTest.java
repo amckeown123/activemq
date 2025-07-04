@@ -310,7 +310,7 @@ public class StartBrokerMojoTest {
      * @param connectorNames names of the mock connectors to add for the test.
      * @throws Exception
      */
-    protected void createTestTransportConnectors(String... connectorNames) throws Exception {
+    protected void createTestTransportConnectors(String.. connectorNames) throws Exception {
         for ( String oneConnectorName : connectorNames ) {
             //
             // Mock the connector

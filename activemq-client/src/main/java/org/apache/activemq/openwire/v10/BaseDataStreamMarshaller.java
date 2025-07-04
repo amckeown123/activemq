@@ -649,7 +649,7 @@ public abstract class BaseDataStreamMarshaller implements DataStreamMarshaller {
     
     protected String cutMessageIfNeeded(final String message) {
         return (message.length() > MAX_EXCEPTION_MESSAGE_SIZE)?
-            message.substring(0, MAX_EXCEPTION_MESSAGE_SIZE - 3) + "..." : message;
+            message.substring(0, MAX_EXCEPTION_MESSAGE_SIZE - 3) + ".." : message;
             
     }
 }

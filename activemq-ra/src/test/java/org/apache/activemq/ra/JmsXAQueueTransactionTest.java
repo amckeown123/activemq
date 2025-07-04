@@ -202,7 +202,7 @@ public class JmsXAQueueTransactionTest extends JmsQueueTransactionTest {
         assertEquals(outbound[1], message);
         abortTx();
 
-        // Consume again.. the prev message should
+        // Consume again. the prev message should
         // get redelivered.
         beginTx();
         message = consumer.receive(5000);

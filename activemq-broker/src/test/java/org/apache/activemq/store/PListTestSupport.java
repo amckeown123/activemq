@@ -466,7 +466,7 @@ public abstract class PListTestSupport {
 
     protected abstract PListStore createConcurrentAddIterateRemovePListStore(boolean enablePageCache);
 
-    @Ignore("Takes too long.. might have broken it.")
+    @Ignore("Takes too long. might have broken it.")
     @Test
     public void testConcurrentAddIterate() throws Exception {
         File directory = store.getDirectory();

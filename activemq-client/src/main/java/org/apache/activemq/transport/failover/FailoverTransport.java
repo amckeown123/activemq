@@ -614,7 +614,7 @@ public class FailoverTransport implements CompositeTransport {
                         while (transport == null && !disposed && connectionFailure == null
                                 && !Thread.currentThread().isInterrupted() && willReconnect()) {
 
-                            LOG.trace("Waiting for transport to reconnect..: {}", command);
+                            LOG.trace("Waiting for transport to reconnect.: {}", command);
                             long end = System.currentTimeMillis();
                             if (command.isMessage() && timeout > 0 && (end - start > timeout)) {
                                 timedout = true;
@@ -674,11 +674,11 @@ public class FailoverTransport implements CompositeTransport {
                             }
                         } catch (IOException e) {
 
-                            // If the command was not tracked.. we will retry in
+                            // If the command was not tracked. we will retry in
                             // this method
                             if (tracked == null && canReconnect()) {
 
-                                // since we will retry in this method.. take it
+                                // since we will retry in this method. take it
                                 // out of the request
                                 // map so that it is not sent 2 times on
                                 // recovery

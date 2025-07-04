@@ -30,7 +30,7 @@ import org.objectweb.jtests.jms.framework.PubSubTestCase;
 import org.objectweb.jtests.jms.framework.TestConfig;
 
 /**
- * Test the <code>javax.jms.TemporaryTopic</code> features.
+ * Test the <code>jakarta.jms.TemporaryTopic</code> features.
  *
  * @author Jeff Mesnil (jmesnil@gmail.com)
  * @version $Id: TemporaryTopicTest.java,v 1.1 2007/03/29 04:28:34 starksm Exp $

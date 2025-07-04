@@ -64,12 +64,12 @@ public class InitalReconnectDelayTest {
         //Verify we can send quickly
         assertTrue((end - start) < 2000);
 
-        //Halt the broker1...
-        LOG.info("Stopping the Broker1...");
+        //Halt the broker1..
+        LOG.info("Stopping the Broker1..");
         start = (new Date()).getTime();
         broker1.stop();
 
-        LOG.info("Attempting to send... failover should kick in...");
+        LOG.info("Attempting to send.. failover should kick in..");
         producer.send(session.createTextMessage("TEST"));
         end = (new Date()).getTime();
 
@@ -124,10 +124,10 @@ public class InitalReconnectDelayTest {
         // clear listener state
         calls.set(0);
 
-        LOG.info("Stopping the Broker1...");
+        LOG.info("Stopping the Broker1..");
         broker1.stop();
 
-        LOG.info("Attempting to send... failover should throw on disconnect");
+        LOG.info("Attempting to send.. failover should throw on disconnect");
         try {
             producer.send(destination, message);
             fail("Expect IOException to bubble up on send");

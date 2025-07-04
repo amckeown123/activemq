@@ -759,7 +759,7 @@ public class ActiveMQBytesMessage extends ActiveMQMessage implements BytesMessag
      * Writes an object to the bytes message stream.
      * <P>
      * This method works only for the objectified primitive object types (<code>Integer</code>,<code>Double</code>,
-     * <code>Long</code> &nbsp;...), <code>String</code> objects, and byte
+     * <code>Long</code> &nbsp;..), <code>String</code> objects, and byte
      * arrays.
      *
      * @param value the object in the Java programming language ("Java object")

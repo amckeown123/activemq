@@ -309,7 +309,7 @@ public class DurableSubSelectorDelayWithRestartTest {
         broker.getSystemUsage().getTempUsage().setLimit(256 * 1024 * 1024);
         broker.getSystemUsage().getStoreUsage().setLimit(256 * 1024 * 1024);
 
-        LOG.info(toString() + "Starting Broker...");
+        LOG.info(toString() + "Starting Broker..");
         broker.start();
         broker.waitUntilStarted();
 

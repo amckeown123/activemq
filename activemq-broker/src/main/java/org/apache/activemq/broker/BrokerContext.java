@@ -27,7 +27,7 @@ public interface BrokerContext {
 
     Object getBean(String name);
     
-    Map getBeansOfType(Class type);
+    Map<?, ?> getBeansOfType(Class<?> type);
 
     String getConfigurationUrl();
 }

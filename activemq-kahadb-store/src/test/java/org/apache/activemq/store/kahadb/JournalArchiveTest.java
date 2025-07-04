@@ -70,7 +70,7 @@ public class JournalArchiveTest {
 
     private void doStartBroker(boolean delete) throws Exception {
         doCreateBroker(delete);
-        LOG.info("Starting broker..");
+        LOG.info("Starting broker.");
         broker.start();
     }
 

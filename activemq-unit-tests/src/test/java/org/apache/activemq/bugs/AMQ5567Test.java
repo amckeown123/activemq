@@ -113,7 +113,7 @@ public class AMQ5567Test extends BrokerRestartTestSupport {
         connection.send(message);
 
 
-        // Since prepared but not committed.. only one should get delivered
+        // Since prepared but not committed. only one should get delivered
         StubConnection connectionC = createConnection();
         ConnectionInfo connectionInfoC = createConnectionInfo();
         SessionInfo sessionInfoC = createSessionInfo(connectionInfoC);

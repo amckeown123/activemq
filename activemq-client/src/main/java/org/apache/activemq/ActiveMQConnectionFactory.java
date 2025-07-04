@@ -485,7 +485,7 @@ public class ActiveMQConnectionFactory extends JNDIBaseStorable implements Conne
         // factory
         // options.
         if (this.brokerURL.getQuery() != null) {
-            // It might be a standard URI or...
+            // It might be a standard URI or..
             try {
 
                 Map<String,String> map = URISupport.parseQuery(this.brokerURL.getQuery());

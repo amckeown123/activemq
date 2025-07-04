@@ -125,9 +125,10 @@ public class SingleTransportConnectionStateRegister  implements TransportConnect
 		if (other.isEmpty()){
 			clear();
 		}else{
-			Map map = other.mapStates();
-			Iterator i = map.entrySet().iterator();
-			Map.Entry<ConnectionId, TransportConnectionState> entry = (Entry<ConnectionId, TransportConnectionState>) i.next();
+			Map<ConnectionId, TransportConnectionState> map = other.mapStates();
+			Iterator<?> i = map.entrySet().iterator();
+			@SuppressWarnings("unchecked")
+			Map.Entry<ConnectionId, TransportConnectionState> entry = (Entry<ConnectionId, TransportConnectionState>)i.next();
 			connectionId = entry.getKey();
 			connectionState =entry.getValue();
 		}

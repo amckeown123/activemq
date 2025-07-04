@@ -75,7 +75,7 @@ public class SharedFileLocker extends AbstractLocker {
 
                         LOG.debug("Database "
                                     + lockFileName
-                                    + " is locked... waiting "
+                                    + " is locked.. waiting "
                                     + (lockAcquireSleepInterval / 1000)
                                     + " seconds for the database to be unlocked. Reason: "
                                     + e);

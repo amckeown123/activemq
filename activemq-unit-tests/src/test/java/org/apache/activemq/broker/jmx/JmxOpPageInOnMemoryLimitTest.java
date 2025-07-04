@@ -49,7 +49,7 @@ public class JmxOpPageInOnMemoryLimitTest {
     @Test(timeout = 60*1000)
     public void testNoHangOnPageInForJmxOps() throws Exception {
 
-        // Now get the QueueViewMBean and ...
+        // Now get the QueueViewMBean and ..
         String objectNameStr = broker.getBrokerObjectName().toString();
         objectNameStr += ",destinationType=Queue,destinationName="+destination.getQueueName();
         ObjectName queueViewMBeanName = assertRegisteredObjectName(objectNameStr);

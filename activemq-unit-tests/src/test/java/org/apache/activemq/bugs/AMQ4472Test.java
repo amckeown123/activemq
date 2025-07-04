@@ -61,7 +61,7 @@ public class AMQ4472Test {
 
             // in a new transaction, with prefetch>0, the message
             // 1 will be pending till second commit
-            LOG.info("Closing consumer 1...");
+            LOG.info("Closing consumer 1..");
             consumer.close();
 
             // create a consumer

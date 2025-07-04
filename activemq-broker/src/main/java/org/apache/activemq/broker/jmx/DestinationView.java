@@ -369,17 +369,18 @@ public class DestinationView implements DestinationViewMBean {
 
     @Override
     public String sendTextMessage(String body) throws Exception {
-        return sendTextMessage(Collections.EMPTY_MAP, body);
+        return sendTextMessage(Collections.emptyMap(), body);
     }
 
-    @Override
+    @SuppressWarnings({ "unchecked", "rawtypes" })
+	@Override
     public String sendTextMessage(Map headers, String body) throws Exception {
         return sendTextMessage(headers, body, null, null);
     }
 
     @Override
     public String sendTextMessage(String body, String user, @Sensitive String password) throws Exception {
-        return sendTextMessage(Collections.EMPTY_MAP, body, user, password);
+        return sendTextMessage(Collections.emptyMap(), body, user, password);
     }
 
     @Override

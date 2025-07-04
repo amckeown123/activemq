@@ -51,7 +51,7 @@ public class StopGracefullyCommand extends ShutdownCommand {
         public StopGracefullyCommand(){
             super();
             this.helpFile = new String[] {
-                "Task Usage: Main stopGracefully [stop-options] [broker-name1] [broker-name2] ...",
+                "Task Usage: Main stopGracefully [stop-options] [broker-name1] [broker-name2] ..",
                 "Description: Stops a running broker if there is no pending messages in the queues. It first stops the connector for client connection, then check queuesize until it becomes 0 before stop the broker.",
                 "", 
                 "Stop Options:",

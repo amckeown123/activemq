@@ -74,7 +74,7 @@ public class MQTTTestSupport {
 
     public File basedir() throws IOException {
         ProtectionDomain protectionDomain = getClass().getProtectionDomain();
-        return new File(new File(protectionDomain.getCodeSource().getLocation().getPath()), "../..").getCanonicalFile();
+        return new File(new File(protectionDomain.getCodeSource().getLocation().getPath()), "./.").getCanonicalFile();
     }
 
     public MQTTTestSupport() {
@@ -95,12 +95,12 @@ public class MQTTTestSupport {
     public void setUp() throws Exception {
 
         String basedir = basedir().getPath();
-        System.setProperty("javax.net.ssl.trustStore", basedir + "/src/test/resources/client.keystore");
-        System.setProperty("javax.net.ssl.trustStorePassword", "password");
-        System.setProperty("javax.net.ssl.trustStoreType", "jks");
-        System.setProperty("javax.net.ssl.keyStore", basedir + "/src/test/resources/server.keystore");
-        System.setProperty("javax.net.ssl.keyStorePassword", "password");
-        System.setProperty("javax.net.ssl.keyStoreType", "jks");
+        System.setProperty("jakarta.net.ssl.trustStore", basedir + "/src/test/resources/client.keystore");
+        System.setProperty("jakarta.net.ssl.trustStorePassword", "password");
+        System.setProperty("jakarta.net.ssl.trustStoreType", "jks");
+        System.setProperty("jakarta.net.ssl.keyStore", basedir + "/src/test/resources/server.keystore");
+        System.setProperty("jakarta.net.ssl.keyStorePassword", "password");
+        System.setProperty("jakarta.net.ssl.keyStoreType", "jks");
 
         exceptions.clear();
         startBroker();
@@ -159,7 +159,7 @@ public class MQTTTestSupport {
         applyBrokerPolicies(brokerService);
         applyMemoryLimitPolicy(brokerService);
 
-        // Setup SSL context...
+        // Setup SSL context..
         File keyStore = new File(basedir(), "src/test/resources/server.keystore");
         File trustStore = new File(basedir(), "src/test/resources/client.keystore");
 
@@ -305,7 +305,7 @@ public class MQTTTestSupport {
         if (!isUseSSL()) {
             provider.connect("tcp://localhost:" + port);
         } else {
-            // Setup SSL context...
+            // Setup SSL context..
             File trustStore = new File(basedir(), "src/test/resources/server.keystore");
             File keyStore = new File(basedir(), "src/test/resources/client.keystore");
 
@@ -424,7 +424,7 @@ public class MQTTTestSupport {
         }
         mqtt.setCleanSession(clean);
 
-        // Setup SSL context...
+        // Setup SSL context..
         File trustStore = new File(basedir(), "src/test/resources/server.keystore");
         File keyStore = new File(basedir(), "src/test/resources/client.keystore");
 
@@ -452,7 +452,7 @@ public class MQTTTestSupport {
             }
 
             @Override
-            public void debug(String message, Object... args) {
+            public void debug(String message, Object.. args) {
                 LOG.debug(String.format(message, args));
             }
         };

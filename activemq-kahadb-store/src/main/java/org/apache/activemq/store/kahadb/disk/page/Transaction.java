@@ -95,7 +95,7 @@ public class Transaction implements Iterable<Page> {
 
     // The page file that this Transaction operates against.
     private final PageFile pageFile;
-    // If this transaction is updating stuff.. this is the tx of
+    // If this transaction is updating stuff. this is the tx of
     private long writeTransactionId=-1;
     // List of pages that this transaction has modified.
     private TreeMap<Long, PageWrite> writes=new TreeMap<Long, PageWrite>();
@@ -310,7 +310,7 @@ public class Transaction implements Iterable<Page> {
                             current.makePagePart(next.getPageId(), getWriteTransactionId());
                             current.write(this);
 
-                            // Do the page write..
+                            // Do the page write.
                             byte[] data = new byte[pageSize];
                             System.arraycopy(buf, 0, data, 0, pageSize);
                             Transaction.this.write(current, data);
@@ -339,7 +339,7 @@ public class Transaction implements Iterable<Page> {
             public void close() throws IOException {
                 super.close();
 
-                // We need to free up the rest of the page chain..
+                // We need to free up the rest of the page chain.
                 if (current.getType() == Page.PAGE_PART_TYPE) {
                     free(current.getNext());
                 }
@@ -349,7 +349,7 @@ public class Transaction implements Iterable<Page> {
                 // make visible as end page
                 pageFile.addToCache(current);
 
-                // Write the header..
+                // Write the header.
                 pos = 0;
                 current.write(this);
 
@@ -399,20 +399,20 @@ public class Transaction implements Iterable<Page> {
     public <T> void load(Page<T> page, Marshaller<T> marshaller) throws IOException {
         pageFile.assertLoaded();
 
-        // Can't load invalid offsets...
+        // Can't load invalid offsets..
         long pageId = page.getPageId();
         if (pageId < 0) {
             throw new InvalidPageIOException("Page id is not valid", pageId);
         }
 
-        // It might be a page this transaction has modified...
+        // It might be a page this transaction has modified..
         PageWrite update = writes.get(pageId);
         if (update != null) {
             page.copy(update.getPage());
             return;
         }
 
-        // We may be able to get it from the cache...
+        // We may be able to get it from the cache..
         Page<T> t = pageFile.getFromCache(pageId);
         if (t != null) {
             page.copy(t);
@@ -420,7 +420,7 @@ public class Transaction implements Iterable<Page> {
         }
 
         if (marshaller != null) {
-            // Full page read..
+            // Full page read.
             InputStream is = openInputStream(page);
             DataInputStream dataIn = new DataInputStream(is);
             page.set(marshaller.readPayload(dataIn));
@@ -650,7 +650,7 @@ public class Transaction implements Iterable<Page> {
     }
 
     ///////////////////////////////////////////////////////////////////
-    // Commit / Rollback related methods..
+    // Commit / Rollback related methods.
     ///////////////////////////////////////////////////////////////////
 
     /**
@@ -665,9 +665,9 @@ public class Transaction implements Iterable<Page> {
                 tmpFile = null;
                 txFile = null;
             }
-            // Actually do the page writes...
+            // Actually do the page writes..
             pageFile.write(writes.entrySet());
-            // Release the pages that were freed up in the transaction..
+            // Release the pages that were freed up in the transaction.
             freePages(freeList);
 
             freeList.clear();
@@ -691,7 +691,7 @@ public class Transaction implements Iterable<Page> {
                 tmpFile = null;
                 txFile = null;
             }
-            // Release the pages that were allocated in the transaction...
+            // Release the pages that were allocated in the transaction..
             freePages(allocateList);
 
             freeList.clear();
@@ -769,7 +769,7 @@ public class Transaction implements Iterable<Page> {
     }
 
     ///////////////////////////////////////////////////////////////////
-    // Transaction closure helpers...
+    // Transaction closure helpers..
     ///////////////////////////////////////////////////////////////////
 
     /**

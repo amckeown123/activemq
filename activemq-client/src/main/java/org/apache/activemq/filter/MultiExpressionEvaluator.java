@@ -165,14 +165,14 @@ public class MultiExpressionEvaluator {
         if (d == null) {
             return false;
         }
-        // that selector did not have that listeners..
+        // that selector did not have that listeners.
         if (!d.listeners.remove(c)) {
             return false;
         }
 
-        // If there are no more listeners for this expression....
+        // If there are no more listeners for this expression..
         if (d.listeners.size() == 0) {
-            // Un-cache it...
+            // Un-cache it..
             removeFromCache((CacheExpression)d.expression);
             rootExpressions.remove(expKey);
         }

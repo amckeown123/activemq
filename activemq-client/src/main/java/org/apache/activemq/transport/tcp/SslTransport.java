@@ -24,12 +24,12 @@ import java.net.UnknownHostException;
 import java.security.cert.X509Certificate;
 import java.util.Collections;
 
-import javax.net.ssl.SNIHostName;
-import javax.net.ssl.SSLParameters;
-import javax.net.ssl.SSLPeerUnverifiedException;
-import javax.net.ssl.SSLSession;
-import javax.net.ssl.SSLSocket;
-import javax.net.ssl.SSLSocketFactory;
+import jakarta.net.ssl.SNIHostName;
+import jakarta.net.ssl.SSLParameters;
+import jakarta.net.ssl.SSLPeerUnverifiedException;
+import jakarta.net.ssl.SSLSession;
+import jakarta.net.ssl.SSLSocket;
+import jakarta.net.ssl.SSLSocketFactory;
 
 import org.apache.activemq.command.ConnectionInfo;
 import org.apache.activemq.wireformat.WireFormat;

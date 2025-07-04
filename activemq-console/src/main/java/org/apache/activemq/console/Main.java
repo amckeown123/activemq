@@ -54,7 +54,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // Create the tmpdir if it does not exist yet..
+        // Create the tmpdir if it does not exist yet.
         File tmpdir = new File(System.getProperty("java.io.tmpdir"));
         if(!tmpdir.exists()) {
             tmpdir.mkdirs();
@@ -361,7 +361,7 @@ public class Main {
                     try {
                         JarURLConnection jarConnection = (JarURLConnection)url.openConnection();
                         url = jarConnection.getJarFileURL();
-                        URI baseURI = new URI(url.toString()).resolve("..");
+                        URI baseURI = new URI(url.toString()).resolve(".");
                         activeMQHome = new File(baseURI).getCanonicalFile();
                         System.setProperty("activemq.home", activeMQHome.getAbsolutePath());
                     } catch (Exception ignored) {
@@ -370,7 +370,7 @@ public class Main {
             }
 
             if (activeMQHome == null) {
-                activeMQHome = new File("../.");
+                activeMQHome = new File("./.");
                 System.setProperty("activemq.home", activeMQHome.getAbsolutePath());
             }
         }

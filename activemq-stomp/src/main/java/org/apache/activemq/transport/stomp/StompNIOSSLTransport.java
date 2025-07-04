@@ -24,9 +24,9 @@ import java.net.UnknownHostException;
 import java.nio.ByteBuffer;
 import java.security.cert.X509Certificate;
 
-import javax.net.SocketFactory;
-import javax.net.ssl.SSLEngine;
-import javax.net.ssl.SSLHandshakeException;
+import jakarta.net.SocketFactory;
+import jakarta.net.ssl.SSLEngine;
+import jakarta.net.ssl.SSLHandshakeException;
 
 import org.apache.activemq.transport.nio.NIOSSLTransport;
 import org.apache.activemq.wireformat.WireFormat;

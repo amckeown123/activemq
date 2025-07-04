@@ -250,7 +250,7 @@ public class JDBCPersistenceAdapter extends DataSourceServiceSupport implements 
 
     /**
      * Cleanup method to remove any state associated with the given destination
-     * No state retained.... nothing to do
+     * No state retained.. nothing to do
      *
      * @param destination Destination to forget
      */

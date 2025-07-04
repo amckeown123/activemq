@@ -29,7 +29,7 @@ import jakarta.resource.spi.ConnectionRequestInfo;
 import jakarta.resource.spi.LocalTransaction;
 import jakarta.resource.spi.ManagedConnection;
 import jakarta.resource.spi.ManagedConnectionMetaData;
-import javax.security.auth.Subject;
+import jakarta.security.auth.Subject;
 import javax.transaction.xa.XAResource;
 import org.apache.activemq.ActiveMQConnection;
 import org.apache.activemq.LocalTransactionEventListener;
@@ -177,8 +177,8 @@ public class ActiveMQManagedConnection implements ManagedConnection, ExceptionLi
     }
 
     /**
-     * @see javax.resource.spi.ManagedConnection#getConnection(javax.security.auth.Subject,
-     *      javax.resource.spi.ConnectionRequestInfo)
+     * @see jakarta.resource.spi.ManagedConnection#getConnection(jakarta.security.auth.Subject,
+     *      jakarta.resource.spi.ConnectionRequestInfo)
      */
     public Object getConnection(Subject subject, ConnectionRequestInfo info) throws ResourceException {
         ManagedConnectionProxy proxy = new ManagedConnectionProxy(this, info);
@@ -193,7 +193,7 @@ public class ActiveMQManagedConnection implements ManagedConnection, ExceptionLi
     /**
      * Close down the physical connection to the server.
      * 
-     * @see javax.resource.spi.ManagedConnection#destroy()
+     * @see jakarta.resource.spi.ManagedConnection#destroy()
      */
     public void destroy() throws ResourceException {
         // Have we already been destroyed??
@@ -217,7 +217,7 @@ public class ActiveMQManagedConnection implements ManagedConnection, ExceptionLi
      * Cleans up all proxy handles attached to this physical connection so that
      * they cannot be used anymore.
      * 
-     * @see javax.resource.spi.ManagedConnection#cleanup()
+     * @see jakarta.resource.spi.ManagedConnection#cleanup()
      */
     public void cleanup() throws ResourceException {
 
@@ -242,7 +242,7 @@ public class ActiveMQManagedConnection implements ManagedConnection, ExceptionLi
     }
 
     /**
-     * @see javax.resource.spi.ManagedConnection#associateConnection(java.lang.Object)
+     * @see jakarta.resource.spi.ManagedConnection#associateConnection(java.lang.Object)
      */
     public void associateConnection(Object connection) throws ResourceException {
         if (connection instanceof ManagedConnectionProxy) {
@@ -254,35 +254,35 @@ public class ActiveMQManagedConnection implements ManagedConnection, ExceptionLi
     }
 
     /**
-     * @see javax.resource.spi.ManagedConnection#addConnectionEventListener(javax.resource.spi.ConnectionEventListener)
+     * @see jakarta.resource.spi.ManagedConnection#addConnectionEventListener(jakarta.resource.spi.ConnectionEventListener)
      */
     public void addConnectionEventListener(ConnectionEventListener listener) {
         listeners.add(listener);
     }
 
     /**
-     * @see javax.resource.spi.ManagedConnection#removeConnectionEventListener(javax.resource.spi.ConnectionEventListener)
+     * @see jakarta.resource.spi.ManagedConnection#removeConnectionEventListener(jakarta.resource.spi.ConnectionEventListener)
      */
     public void removeConnectionEventListener(ConnectionEventListener listener) {
         listeners.remove(listener);
     }
 
     /**
-     * @see javax.resource.spi.ManagedConnection#getXAResource()
+     * @see jakarta.resource.spi.ManagedConnection#getXAResource()
      */
     public XAResource getXAResource() throws ResourceException {
         return localAndXATransaction;
     }
 
     /**
-     * @see javax.resource.spi.ManagedConnection#getLocalTransaction()
+     * @see jakarta.resource.spi.ManagedConnection#getLocalTransaction()
      */
     public LocalTransaction getLocalTransaction() throws ResourceException {
         return localAndXATransaction;
     }
 
     /**
-     * @see javax.resource.spi.ManagedConnection#getMetaData()
+     * @see jakarta.resource.spi.ManagedConnection#getMetaData()
      */
     public ManagedConnectionMetaData getMetaData() throws ResourceException {
         return new ManagedConnectionMetaData() {
@@ -330,14 +330,14 @@ public class ActiveMQManagedConnection implements ManagedConnection, ExceptionLi
     }
 
     /**
-     * @see javax.resource.spi.ManagedConnection#setLogWriter(java.io.PrintWriter)
+     * @see jakarta.resource.spi.ManagedConnection#setLogWriter(java.io.PrintWriter)
      */
     public void setLogWriter(PrintWriter logWriter) throws ResourceException {
         this.logWriter = logWriter;
     }
 
     /**
-     * @see javax.resource.spi.ManagedConnection#getLogWriter()
+     * @see jakarta.resource.spi.ManagedConnection#getLogWriter()
      */
     public PrintWriter getLogWriter() throws ResourceException {
         return logWriter;

@@ -326,7 +326,7 @@ public class SelectorTest extends PTPTestCase
    }
 
    /**
-    * Test the LIKE ... ESCAPE condition in message selector
+    * Test the LIKE .. ESCAPE condition in message selector
     * <br />
     * <ul>
     *   <li>"underscored LIKE '\_%' ESCAPE '\'" is <code>true</code> for '_foo' and <code>false</code> for 'bar'</li>

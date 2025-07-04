@@ -246,7 +246,7 @@ public abstract class AbstractMQTTSubscriptionStrategy implements MQTTSubscripti
             protocol.sendToActiveMQ(removeInfo, new ResponseHandler() {
                 @Override
                 public void onResponse(MQTTProtocolConverter converter, Response response) throws IOException {
-                    // ignore failures..
+                    // ignore failures.
                 }
             });
         }
@@ -264,7 +264,7 @@ public abstract class AbstractMQTTSubscriptionStrategy implements MQTTSubscripti
                 protocol.sendToActiveMQ(rsi, new ResponseHandler() {
                     @Override
                     public void onResponse(MQTTProtocolConverter converter, Response response) throws IOException {
-                        // ignore failures..
+                        // ignore failures.
                     }
                 });
             }

@@ -151,7 +151,7 @@ public class TarInputStream extends FilterInputStream {
     public long skip(long numToSkip) throws IOException {
         // REVIEW
         // This is horribly inefficient, but it ensures that we
-        // properly skip over bytes via the TarBuffer...
+        // properly skip over bytes via the TarBuffer..
         //
         byte[] skipBuf = new byte[BUFFER_SIZE];
         long skip = numToSkip;

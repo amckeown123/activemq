@@ -32,13 +32,12 @@ import javax.management.NotCompliantMBeanException;
 import javax.management.ObjectName;
 import javax.management.ReflectionException;
 import javax.management.StandardMBean;
-import javax.security.auth.Subject;
+import jakarta.security.auth.Subject;
 
 import org.apache.activemq.broker.util.AuditLogEntry;
 import org.apache.activemq.broker.util.AuditLogService;
 import org.apache.activemq.broker.util.JMXAuditLogEntry;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
 
 /**
  * MBean that looks for method/parameter descriptions in the Info annotation.
@@ -47,7 +46,7 @@ public class AnnotatedMBean extends StandardMBean {
 
     private static final Map<String, Class<?>> primitives = new HashMap<String, Class<?>>();
 
-    private static final Logger LOG = LoggerFactory.getLogger("org.apache.activemq.audit");
+
 
     private static final byte OFF = 0b00;
     private static final byte ENTRY = 0b01;
@@ -183,7 +182,7 @@ public class AnnotatedMBean extends StandardMBean {
      *
      * @return a Method
      */
-    private static Method getMethod(Class<?> mbean, String method, String... params) {
+    private static Method getMethod(Class<?> mbean, String method, String.. params) {
         try {
             final ClassLoader loader = mbean.getClassLoader();
             final Class<?>[] paramClasses = new Class<?>[params.length];
@@ -200,13 +199,15 @@ public class AnnotatedMBean extends StandardMBean {
         }
     }
 
-    @Override
+	@SuppressWarnings({ "removal", "deprecation" })
+	@Override
     public Object invoke(String s, Object[] objects, String[] strings) throws MBeanException, ReflectionException {
         objects = (objects == null) ? new Object[]{} : objects;
         JMXAuditLogEntry entry = null;
         if (audit != OFF) {
             // [AMQ-9563] TODO: JDK 21 use Subject.current() instead
-            Subject subject = Subject.getSubject(AccessController.getContext());
+    
+			Subject subject = Subject.getSubject(AccessController.getContext());
             String caller = "anonymous";
             if (subject != null) {
                 caller = "";
@@ -267,8 +268,9 @@ public class AnnotatedMBean extends StandardMBean {
         return result;
     }
 
-    private Method getMBeanMethod(Class clazz, String methodName, String[] signature) throws ReflectiveOperationException {
-        Class[] parameterTypes = new Class[signature.length];
+    private Method getMBeanMethod(Class<?> clazz, String methodName, String[] signature) throws ReflectiveOperationException {
+        @SuppressWarnings("rawtypes")
+		Class[] parameterTypes = new Class[signature.length];
         for (int i = 0; i < signature.length; i++) {
             parameterTypes[i] = Class.forName(signature[i]);
         }

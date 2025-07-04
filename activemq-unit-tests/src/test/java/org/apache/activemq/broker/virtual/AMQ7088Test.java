@@ -122,7 +122,7 @@ public class AMQ7088Test {
             executorService.execute(runnable);
         }
 
-        LOG.info("Letting it run to completion...");
+        LOG.info("Letting it run to completion..");
         executorService.shutdown();
         assertTrue("all done", executorService.awaitTermination(5, TimeUnit.MINUTES));
     }

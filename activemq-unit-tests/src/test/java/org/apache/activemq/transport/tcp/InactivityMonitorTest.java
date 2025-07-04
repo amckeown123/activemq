@@ -22,7 +22,7 @@ import java.net.URISyntaxException;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import javax.net.SocketFactory;
+import jakarta.net.SocketFactory;
 
 import junit.framework.Test;
 import org.apache.activemq.CombinationTestSupport;

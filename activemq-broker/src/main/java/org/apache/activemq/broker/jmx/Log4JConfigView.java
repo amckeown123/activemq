@@ -17,9 +17,8 @@
 package org.apache.activemq.broker.jmx;
 
 import java.lang.reflect.InvocationTargetException;
+
 import java.lang.reflect.Method;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -83,7 +82,8 @@ public class Log4JConfigView implements Log4JConfigViewMBean {
         }
     }
 
-    @Override
+    @SuppressWarnings("unchecked")
+	@Override
     public List<String> getLoggers() throws Exception {
 
         ClassLoader cl = getClassLoader();

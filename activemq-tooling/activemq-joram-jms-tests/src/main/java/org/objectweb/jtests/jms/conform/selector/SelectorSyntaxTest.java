@@ -316,7 +316,7 @@ public class SelectorSyntaxTest extends PTPTestCase
    }
 
    /**
-    * Test syntax of "<em>identifier</em> [NOT] IN (<em>string-literal1</em>, <em>string-literal2</em>,...)"
+    * Test syntax of "<em>identifier</em> [NOT] IN (<em>string-literal1</em>, <em>string-literal2</em>,..)"
     */
    public void testIn()
    {

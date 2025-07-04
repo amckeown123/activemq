@@ -121,7 +121,7 @@ public class LockFile {
             return;
         }
 
-        // release the lock..
+        // release the lock.
         if (lock != null) {
             try {
                 lock.release();

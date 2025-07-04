@@ -157,7 +157,7 @@ public class DestinationGCTest {
         final Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
 
         // wait for the queue to be marked for GC
-        logger.info("Waiting for '{}' to be marked for GC...", q);
+        logger.info("Waiting for '{}' to be marked for GC..", q);
         Wait.waitFor(new Condition() {
             @Override
             public boolean isSatisified() throws Exception {

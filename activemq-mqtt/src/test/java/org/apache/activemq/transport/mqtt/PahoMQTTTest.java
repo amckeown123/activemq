@@ -108,7 +108,7 @@ public class PahoMQTTTest extends MQTTTestSupport {
         assertNull("Async error: " + asyncError.get(), asyncError.get());
         sendBarrier.countDown();
 
-        LOG.info("All clients connected... waiting to receive sent messages...");
+        LOG.info("All clients connected.. waiting to receive sent messages..");
 
         // We should eventually get all the messages.
         within(30, TimeUnit.SECONDS, new Task() {
@@ -251,12 +251,12 @@ public class PahoMQTTTest extends MQTTTestSupport {
         client.unsubscribe(ACCOUNT_PREFIX + "#");
         assertTrue(client.getPendingDeliveryTokens().length == 0);
 
-        expectedResult = "this should not come back...";
+        expectedResult = "this should not come back..";
         client.publish(ACCOUNT_PREFIX + "1/2/3/4", expectedResult.getBytes(StandardCharsets.UTF_8), 0, false);
         assertNull(listener.messageQ.poll(3, TimeUnit.SECONDS));
         assertTrue(client.getPendingDeliveryTokens().length == 0);
 
-        expectedResult = "this should not come back either...";
+        expectedResult = "this should not come back either..";
         client.publish(ACCOUNT_PREFIX + "a/b/c", expectedResult.getBytes(StandardCharsets.UTF_8), 0, false);
         assertNull(listener.messageQ.poll(3, TimeUnit.SECONDS));
         assertTrue(client.getPendingDeliveryTokens().length == 0);
@@ -271,10 +271,10 @@ public class PahoMQTTTest extends MQTTTestSupport {
         final DefaultListener listener = new DefaultListener();
 
         // subscriber connects and creates durable sub
-        LOG.info("Connecting durable subscriber...");
+        LOG.info("Connecting durable subscriber..");
         MqttClient client = createClient(false, "receive", listener);
         // subscribe and wait for the retain message to arrive
-        LOG.info("Subscribing durable subscriber...");
+        LOG.info("Subscribing durable subscriber..");
         client.subscribe(topic, 1);
         assertTrue(client.getPendingDeliveryTokens().length == 0);
         disconnect(client);
@@ -283,22 +283,22 @@ public class PahoMQTTTest extends MQTTTestSupport {
         // Publish message with QoS 1
         MqttClient client2 = createClient(true, "publish", listener);
 
-        LOG.info("Publish message with QoS 1...");
+        LOG.info("Publish message with QoS 1..");
         String expectedResult = "QOS 1 message";
         client2.publish(topic, expectedResult.getBytes(StandardCharsets.UTF_8), 1, false);
         waitForDelivery(client2);
 
         // Publish message with QoS 0
-        LOG.info("Publish message with QoS 0...");
+        LOG.info("Publish message with QoS 0..");
         expectedResult = "QOS 0 message";
         client2.publish(topic, expectedResult.getBytes(StandardCharsets.UTF_8), 0, false);
         waitForDelivery(client2);
 
         // subscriber reconnects
-        LOG.info("Reconnecting durable subscriber...");
+        LOG.info("Reconnecting durable subscriber..");
         MqttClient client3 = createClient(false, "receive", listener);
 
-        LOG.info("Subscribing durable subscriber...");
+        LOG.info("Subscribing durable subscriber..");
         client3.subscribe(topic, 1);
 
         assertTrue(Wait.waitFor(new Wait.Condition() {
@@ -314,10 +314,10 @@ public class PahoMQTTTest extends MQTTTestSupport {
         // make sure we consumed everything
         assertTrue(listener.received.compareAndSet(2, 0));
 
-        LOG.info("Reconnecting durable subscriber...");
+        LOG.info("Reconnecting durable subscriber..");
         MqttClient client4 = createClient(false, "receive", listener);
 
-        LOG.info("Subscribing durable subscriber...");
+        LOG.info("Subscribing durable subscriber..");
         client4.subscribe(topic, 1);
         TimeUnit.SECONDS.sleep(3);
         assertEquals(0, listener.received.get());

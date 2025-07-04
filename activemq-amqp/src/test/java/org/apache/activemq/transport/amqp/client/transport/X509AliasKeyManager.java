@@ -23,8 +23,8 @@ import java.security.Principal;
 import java.security.PrivateKey;
 import java.security.cert.X509Certificate;
 
-import javax.net.ssl.SSLEngine;
-import javax.net.ssl.X509ExtendedKeyManager;
+import jakarta.net.ssl.SSLEngine;
+import jakarta.net.ssl.X509ExtendedKeyManager;
 
 /**
  * An X509ExtendedKeyManager wrapper which always chooses and only

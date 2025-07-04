@@ -174,8 +174,8 @@ public class TempKahaDBStore extends TempMessageDatabase implements PersistenceA
         public Message getMessage(MessageId identity) throws IOException {
             final String key = identity.toProducerKey();
 
-            // Hopefully one day the page file supports concurrent read operations... but for now we must
-            // externally synchronize...
+            // Hopefully one day the page file supports concurrent read operations.. but for now we must
+            // externally synchronize..
             ByteSequence data;
             synchronized(indexMutex) {
                 data = pageFile.tx().execute(new Transaction.CallableClosure<ByteSequence, IOException>(){
@@ -282,8 +282,8 @@ public class TempKahaDBStore extends TempMessageDatabase implements PersistenceA
         public void setBatch(MessageId identity) throws IOException {
             final String key = identity.toProducerKey();
 
-            // Hopefully one day the page file supports concurrent read operations... but for now we must
-            // externally synchronize...
+            // Hopefully one day the page file supports concurrent read operations.. but for now we must
+            // externally synchronize..
             Long location;
             synchronized(indexMutex) {
                 location = pageFile.tx().execute(new Transaction.CallableClosure<Long, IOException>(){
@@ -345,7 +345,7 @@ public class TempKahaDBStore extends TempMessageDatabase implements PersistenceA
             command.setDestination(dest);
             command.setSubscriptionKey(subscriptionKey(clientId, subscriptionName));
             command.setMessageId(messageId.toProducerKey());
-            // We are not passed a transaction info.. so we can't participate in a transaction.
+            // We are not passed a transaction info. so we can't participate in a transaction.
             // Looks like a design issue with the TopicMessageStore interface.  Also we can't recover the original ack
             // to pass back to the XA recover method.
             // command.setTransactionInfo();

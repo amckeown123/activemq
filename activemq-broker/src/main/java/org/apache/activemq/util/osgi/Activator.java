@@ -95,7 +95,7 @@ public class Activator implements BundleActivator, SynchronousBundleListener, Ob
      *
      * @param classes interfaces we want to track
      */
-    private void cachePackageCapabilities(Class<?> ... classes) {
+    private void cachePackageCapabilities(Class<?> .. classes) {
         BundleWiring ourWiring = bundleContext.getBundle().adapt(BundleWiring.class);
         Set<String> packageNames = new HashSet<String>();
         for (Class<?> clazz: classes) {
@@ -149,7 +149,7 @@ public class Activator implements BundleActivator, SynchronousBundleListener, Ob
     }
 
     /**
-     * When bundles unload.. we remove them thier cached Class entries from the
+     * When bundles unload. we remove them thier cached Class entries from the
      * serviceCache.  Future service lookups for the service will fail.
      *
      * TODO: consider a way to get the Broker release any references to
@@ -199,14 +199,14 @@ public class Activator implements BundleActivator, SynchronousBundleListener, Ob
                     continue;
                 }
 
-                // Yay.. the class was found.  Now cache it.
+                // Yay. the class was found.  Now cache it.
                 serviceCache.put(path, clazz);
                 wrapper.cachedServices.add(path);
                 break;
             }
 
             if( clazz == null ) {
-                // Since OSGi is such a tricky environment to work in.. lets give folks the
+                // Since OSGi is such a tricky environment to work in. lets give folks the
                 // most information we can in the error message.
                 String msg = "Service not found: '" + path + "'";
                 if (warnings.length()!= 0) {

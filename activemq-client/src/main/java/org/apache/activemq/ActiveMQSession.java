@@ -1012,7 +1012,7 @@ public class ActiveMQSession implements Session, QueueSession, TopicSession, Sta
                                     * messages being delivered, once the message is redelivered we can restart it.
                                     * */
                                     if (!connection.isNonBlockingRedelivery()) {
-                                        LOG.debug("Blocking session until re-delivery...");
+                                        LOG.debug("Blocking session until re-delivery..");
                                         executor.stop();
                                     }
 
@@ -2032,7 +2032,7 @@ public class ActiveMQSession implements Session, QueueSession, TopicSession, Sta
                     // wire, this might not
                     // provide and accurate size. We may change over to doing
                     // more aggressive marshaling,
-                    // to get more accurate sizes.. this is more important once
+                    // to get more accurate sizes. this is more important once
                     // users start using producer window
                     // flow control.
                     int size = msg.getSize();

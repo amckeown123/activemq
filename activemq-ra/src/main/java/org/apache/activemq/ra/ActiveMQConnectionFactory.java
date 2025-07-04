@@ -127,7 +127,7 @@ public class ActiveMQConnectionFactory implements ConnectionFactory, QueueConnec
 
             return (Connection)manager.allocateConnection(factory, connectionRequestInfo);
         } catch (ResourceException e) {
-            // Throw the root cause if it was a JMSException..
+            // Throw the root cause if it was a JMSException.
             if (e.getCause() instanceof JMSException) {
                 throw (JMSException)e.getCause();
             }
@@ -146,7 +146,7 @@ public class ActiveMQConnectionFactory implements ConnectionFactory, QueueConnec
     }
 
     /**
-     * @see javax.resource.Referenceable#setReference(javax.naming.Reference)
+     * @see jakarta.resource.Referenceable#setReference(javax.naming.Reference)
      */
     public void setReference(Reference reference) {
         this.reference = reference;

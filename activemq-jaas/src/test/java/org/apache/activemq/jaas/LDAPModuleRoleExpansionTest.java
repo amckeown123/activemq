@@ -33,15 +33,15 @@ import javax.naming.NameClassPair;
 import javax.naming.NamingEnumeration;
 import javax.naming.directory.DirContext;
 import javax.naming.directory.InitialDirContext;
-import javax.security.auth.callback.*;
-import javax.security.auth.login.LoginContext;
-import javax.security.auth.login.LoginException;
+import jakarta.security.auth.callback.*;
+import jakarta.security.auth.login.LoginContext;
+import jakarta.security.auth.login.LoginException;
 import java.io.IOException;
 import java.net.URL;
 import java.security.Principal;
 import java.util.HashSet;
 import java.util.Hashtable;
-import javax.security.auth.Subject;
+import jakarta.security.auth.Subject;
 
 import static org.junit.Assert.assertTrue;
 

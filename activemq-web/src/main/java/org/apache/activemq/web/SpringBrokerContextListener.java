@@ -65,7 +65,7 @@ public class SpringBrokerContextListener implements ServletContextListener {
 
     public void contextInitialized(ServletContextEvent event) {
         ServletContext context = event.getServletContext();
-        context.log("Creating ActiveMQ Broker...");
+        context.log("Creating ActiveMQ Broker..");
         brokerContainer = createBroker(context);
 
         context.log("Starting ActiveMQ Broker");

@@ -124,7 +124,7 @@ public class TopicConnectionTest extends PubSubTestCase
     * see JMS javadoc 
     * http://java.sun.com/j2ee/sdk_1.3/techdocs/api/javax/jms/Connection.html#setClientID(java.lang.String)
     * 
-    *... This test is not valid... as getClientID is caleld before setClientID
+    *.. This test is not valid.. as getClientID is caleld before setClientID
     */
    /*public void testSetClientID_3()
    {

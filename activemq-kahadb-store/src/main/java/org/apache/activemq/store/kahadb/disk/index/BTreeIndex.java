@@ -158,7 +158,7 @@ public class BTreeIndex<Key,Value> implements Index<Key,Value> {
             
             final Page<BTreeNode<Key,Value>> p = tx.load(pageId, null);
             if( p.getType() == Page.PAGE_FREE_TYPE ) {
-                 // Need to initialize it..
+                 // Need to initialize it.
                 BTreeNode<Key, Value> root = createNode(p, null);
                 storeNode(tx, root, true);
             }

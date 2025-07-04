@@ -75,7 +75,7 @@ public class DoSTest extends JmsTestSupport {
         // run dos for a while
         TimeUnit.SECONDS.sleep(10);
 
-        LOG.info("trying genuine connection ...");
+        LOG.info("trying genuine connection ..");
         // verify a valid connection can work with one of the 2 allowed connections provided it is eager!
         // it could take a while as it is competing with the three other reconnect threads.
         // wonder if it makes sense to serialise these reconnect attempts on an executor

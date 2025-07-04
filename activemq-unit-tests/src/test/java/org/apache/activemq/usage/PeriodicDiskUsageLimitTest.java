@@ -104,7 +104,7 @@ public class PeriodicDiskUsageLimitTest {
     @Test(timeout=90000)
     public void testDiskUsageAdjustLower() throws Exception {
         //set the limit to max space so that if a file is added to eat up free space then
-        //the broker should adjust the usage limit..set time to 2 seconds for testing
+        //the broker should adjust the usage limit.set time to 2 seconds for testing
         setLimitMaxSpace();
         broker.setSchedulePeriodForDiskUsageCheck(2000);
         startBroker();
@@ -120,7 +120,7 @@ public class PeriodicDiskUsageLimitTest {
     @Test(timeout=90000)
     public void testDiskUsageAdjustLowerAndHigherUsingPercent() throws Exception {
         //set the limit to max space so that if a file is added to eat up free space then
-        //the broker should adjust the usage limit..add 5% above free space
+        //the broker should adjust the usage limit.add 5% above free space
         tempUsage.setPercentLimit(getFreePercentage(broker.getTempDataStore().getDirectory()) + 5);
         storeUsage.setPercentLimit(getFreePercentage(adapter.getDirectory()) + 5);
 

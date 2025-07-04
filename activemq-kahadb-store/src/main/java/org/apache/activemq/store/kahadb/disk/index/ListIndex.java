@@ -74,7 +74,7 @@ public class ListIndex<Key,Value> implements Index<Key,Value> {
             marshaller = new ListNode.NodeMarshaller<Key, Value>(keyMarshaller, valueMarshaller);
             final Page<ListNode<Key,Value>> p = tx.load(getHeadPageId(), null);
             if( p.getType() == Page.PAGE_FREE_TYPE ) {
-                 // Need to initialize it..
+                 // Need to initialize it.
                 ListNode<Key, Value> root = createNode(p);
                 storeNode(tx, root, true);
                 setHeadPageId(p.getPageId());

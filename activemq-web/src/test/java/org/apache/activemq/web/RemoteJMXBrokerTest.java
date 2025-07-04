@@ -74,7 +74,7 @@ public class RemoteJMXBrokerTest {
     }
 
     /**
-     * Test that we can query the remote broker...
+     * Test that we can query the remote broker..
      * Specifically this tests that the domain and objectnames are correct (type and brokerName
      * instead of Type and BrokerName, which they were)
      * @throws Exception

@@ -492,7 +492,7 @@ public class BrokerService implements Service {
 
     public void masterFailed() {
         if (shutdownOnMasterFailure) {
-            LOG.error("The Master has failed ... shutting down");
+            LOG.error("The Master has failed .. shutting down");
             try {
                 stop();
             } catch (Exception e) {
@@ -2081,7 +2081,7 @@ public class BrokerService implements Service {
             int oneMeg = 1024 * 1024;
 
             //Check if the store limit is less than the percent Limit that was set and also
-            //the usable space...this means we can grow the store larger
+            //the usable space..this means we can grow the store larger
             //Changes in partition size (total space) as well as changes in usable space should
             //be detected here
             if (diskUsageCheckRegrowThreshold > -1 && percentLimit > 0

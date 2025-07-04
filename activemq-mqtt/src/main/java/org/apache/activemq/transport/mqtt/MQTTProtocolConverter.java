@@ -27,7 +27,7 @@ import java.util.zip.Inflater;
 import jakarta.jms.InvalidClientIDException;
 import jakarta.jms.JMSException;
 import jakarta.jms.Message;
-import javax.security.auth.login.CredentialException;
+import jakarta.security.auth.login.CredentialException;
 
 import org.apache.activemq.broker.BrokerService;
 import org.apache.activemq.broker.BrokerServiceAware;
@@ -151,7 +151,7 @@ public class MQTTProtocolConverter {
 
     public void sendToActiveMQ(Command command, ResponseHandler handler) {
 
-        // Lets intercept message send requests..
+        // Lets intercept message send requests.
         if (command instanceof ActiveMQMessage) {
             ActiveMQMessage msg = (ActiveMQMessage) command;
             try {

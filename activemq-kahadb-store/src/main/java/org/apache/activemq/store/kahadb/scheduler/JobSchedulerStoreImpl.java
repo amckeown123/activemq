@@ -833,7 +833,7 @@ public class JobSchedulerStoreImpl extends AbstractKahaDBStore implements JobSch
                     }
                     recoveryPosition = journal.getNextLocation(recoveryPosition);
                      if (LOG.isInfoEnabled() && redoCounter % 100000 == 0) {
-                         LOG.info("@ {}, {} entries recovered ..", recoveryPosition, redoCounter);
+                         LOG.info("@ {}, {} entries recovered .", recoveryPosition, redoCounter);
                      }
                 }
                 long end = System.currentTimeMillis();
@@ -871,7 +871,7 @@ public class JobSchedulerStoreImpl extends AbstractKahaDBStore implements JobSch
     private void recoverIndex(Transaction tx) throws IOException {
         long start = System.currentTimeMillis();
 
-        // It is possible index updates got applied before the journal updates..
+        // It is possible index updates got applied before the journal updates.
         // in that case we need to removed references to Jobs that are not in the journal
         final Location lastAppendLocation = journal.getLastAppendLocation();
         long undoCounter = 0;

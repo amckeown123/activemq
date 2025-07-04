@@ -165,10 +165,10 @@ public class AMQ2489Test extends TestSupport {
 
         public void onMessage(Message message) {
             try {
-                // retrieve sequence number assigned by producer...
+                // retrieve sequence number assigned by producer..
                 final int seqNum = message.getIntProperty(SEQ_NUM_PROPERTY);
 
-                // ...and let's delay every second message a little bit before
+                // ..and let's delay every second message a little bit before
                 // acknowledgment
                 if ((seqNum % 2) == 0) {
                     System.out.println("Delayed message sequence numeber: "

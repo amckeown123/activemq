@@ -117,7 +117,7 @@ public class ClassLoadingAwareObjectInputStream extends ObjectInputStream {
         }
     }
 
-    private Class<?> load(String className, ClassLoader... cl) throws ClassNotFoundException {
+    private Class<?> load(String className, ClassLoader.. cl) throws ClassNotFoundException {
         // check for simple types first
         final Class<?> clazz = loadSimpleType(className);
         if (clazz != null) {

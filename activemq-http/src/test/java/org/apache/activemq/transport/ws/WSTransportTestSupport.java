@@ -23,7 +23,7 @@ import java.net.URI;
 import jakarta.jms.JMSException;
 import javax.management.MalformedObjectNameException;
 import javax.management.ObjectName;
-import javax.net.ServerSocketFactory;
+import jakarta.net.ServerSocketFactory;
 
 import org.apache.activemq.broker.BrokerService;
 import org.apache.activemq.broker.jmx.BrokerViewMBean;

@@ -47,7 +47,7 @@ public class QueryCommand extends AbstractJmxCommand {
         "                                  to the JMX object name format.",
         "    --xobjname <query>            Remove from the search list objects matched by the query",
         "                                  similar to the JMX object name format.",
-        "    --view <attr1>,<attr2>,...    Select the specific attribute of the object to view.",
+        "    --view <attr1>,<attr2>,..    Select the specific attribute of the object to view.",
         "                                  By default all attributes will be displayed.",
         "    --invoke <operation>          Specify the operation to invoke on matching objects",
         "    --jmxurl <url>                Set the JMX URL to connect to.",

@@ -43,7 +43,7 @@ public class RuntimeConfigTestSupport {
     public TestWatcher watchman = new TestWatcher() {
         @Override
         public void starting(Description description) {
-          LOG.info("{} being run...", description.getMethodName());
+          LOG.info("{} being run..", description.getMethodName());
         }
     };
 

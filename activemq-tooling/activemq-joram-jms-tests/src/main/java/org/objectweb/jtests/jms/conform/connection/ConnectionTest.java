@@ -50,7 +50,7 @@ public class ConnectionTest extends PTPTestCase
       {
          receiverConnection.stop();
          receiverSession = receiverConnection.createQueueSession(false, Session.CLIENT_ACKNOWLEDGE);
-         receiver.close(); // Before assigning a new receiver, we need to close the old one...
+         receiver.close(); // Before assigning a new receiver, we need to close the old one..
          // Not closing it could cause load balancing between receivers.
          // Not having this close might be valid for JORAM or JBossMQ, but it's not valid for HornetQ (and still legal)
 

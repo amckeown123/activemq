@@ -22,7 +22,7 @@ import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.replaceCo
 import java.io.File;
 import java.util.concurrent.Callable;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 import jakarta.jms.ConnectionFactory;
 
 import org.junit.Test;

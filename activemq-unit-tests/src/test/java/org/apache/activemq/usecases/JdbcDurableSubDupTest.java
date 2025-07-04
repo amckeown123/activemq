@@ -161,7 +161,7 @@ public class JdbcDurableSubDupTest {
                 topic = session.createTopic(queueName);
                 consumer = session.createDurableSubscriber(topic, subscriptionName, selector, false);
                 consumer.setMessageListener(this);
-                LOG.info("Waiting for messages...");
+                LOG.info("Waiting for messages..");
 
                 while (!done.get()) {
                     TimeUnit.SECONDS.sleep(5);

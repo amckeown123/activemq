@@ -52,7 +52,7 @@ public class MessagePropertyTest extends PTPTestCase
       {
          Message message = senderSession.createMessage();
          message.setObjectProperty("prop", new Vector());
-         Assert.fail("sec. 3.5.5 An attempt to use any other class [than Boolean, Byte,...,String] must throw " + "a JMS MessageFormatException.\n");
+         Assert.fail("sec. 3.5.5 An attempt to use any other class [than Boolean, Byte,..,String] must throw " + "a JMS MessageFormatException.\n");
       }
       catch (MessageFormatException e)
       {

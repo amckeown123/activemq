@@ -60,7 +60,7 @@ public class JmsClientAckListenerTest extends TestSupport implements MessageList
         MessageProducer producer = session.createProducer(queue);
         producer.send(session.createTextMessage("Hello"));
 
-        // Consume the message...
+        // Consume the message..
         MessageConsumer consumer = session.createConsumer(queue);
         consumer.setMessageListener(this);
 
@@ -71,7 +71,7 @@ public class JmsClientAckListenerTest extends TestSupport implements MessageList
 
         session = connection.createSession(false, Session.CLIENT_ACKNOWLEDGE);
 
-        // Attempt to Consume the message...
+        // Attempt to Consume the message..
         consumer = session.createConsumer(queue);
         Message msg = consumer.receive(1000);
         assertNull(msg);
@@ -94,7 +94,7 @@ public class JmsClientAckListenerTest extends TestSupport implements MessageList
         MessageProducer producer = session.createProducer(queue);
         producer.send(session.createTextMessage("Hello"));
 
-        // Consume the message...
+        // Consume the message..
         MessageConsumer consumer = session.createConsumer(queue);
         consumer.setMessageListener(this);
         // Don't ack the message.
@@ -105,7 +105,7 @@ public class JmsClientAckListenerTest extends TestSupport implements MessageList
 
         Thread.sleep(10000);
         session = connection.createSession(false, Session.CLIENT_ACKNOWLEDGE);
-        // Attempt to Consume the message...
+        // Attempt to Consume the message..
         consumer = session.createConsumer(queue);
         Message msg = consumer.receive(2000);
         assertNotNull(msg);

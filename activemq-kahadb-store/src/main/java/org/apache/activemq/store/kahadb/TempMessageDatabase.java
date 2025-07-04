@@ -249,9 +249,9 @@ public class TempMessageDatabase {
         if( previous == null ) {
             sd.orderIndex.put(tx, id, new MessageRecord(command.getMessageId(), data));
         } else {
-            // restore the previous value.. Looks like this was a redo of a previously
+            // restore the previous value. Looks like this was a redo of a previously
             // added message.  We don't want to assing it a new id as the other indexes would 
-            // be wrong..
+            // be wrong.
             sd.messageIdIndex.put(tx, command.getMessageId(), previous);
         }
     }
@@ -260,7 +260,7 @@ public class TempMessageDatabase {
         StoredDestination sd = getStoredDestination(command.getDestination(), tx);
         if (!command.hasSubscriptionKey()) {
             
-            // In the queue case we just remove the message from the index..
+            // In the queue case we just remove the message from the index.
             Long sequenceId = sd.messageIdIndex.remove(tx, command.getMessageId());
             if (sequenceId != null) {
                 sd.orderIndex.remove(tx, sequenceId);
@@ -270,7 +270,7 @@ public class TempMessageDatabase {
             // by all the subs
             Long sequence = sd.messageIdIndex.get(tx, command.getMessageId());
 
-            // Make sure it's a valid message id...
+            // Make sure it's a valid message id..
             if (sequence != null) {
                 String subscriptionKey = command.getSubscriptionKey();
                 Long prev = sd.subscriptionAcks.put(tx, subscriptionKey, sequence);
@@ -313,7 +313,7 @@ public class TempMessageDatabase {
     private void updateIndex(Transaction tx, KahaSubscriptionCommand command) throws IOException {
         StoredDestination sd = getStoredDestination(command.getDestination(), tx);
 
-        // If set then we are creating it.. otherwise we are destroying the sub
+        // If set then we are creating it. otherwise we are destroying the sub
         if (command.hasSubscriptionInfo()) {
             String subscriptionKey = command.getSubscriptionKey();
             sd.subscriptions.put(tx, subscriptionKey, command);
@@ -325,7 +325,7 @@ public class TempMessageDatabase {
             sd.subscriptionAcks.put(tx, subscriptionKey, ackByteSequence);
             addAckByteSequence(sd, ackByteSequence, subscriptionKey);
         } else {
-            // delete the sub...
+            // delete the sub..
             String subscriptionKey = command.getSubscriptionKey();
             sd.subscriptions.remove(tx, subscriptionKey);
             Long prev = sd.subscriptionAcks.remove(tx, subscriptionKey);
@@ -475,10 +475,10 @@ public class TempMessageDatabase {
      * @throws IOException
      */
     private StoredDestination loadStoredDestination(Transaction tx, String key, boolean topic) throws IOException {
-        // Try to load the existing indexes..
+        // Try to load the existing indexes.
         StoredDestination rc = destinations.get(tx, key);
         if (rc == null) {
-            // Brand new destination.. allocate indexes for it.
+            // Brand new destination. allocate indexes for it.
             rc = new StoredDestination();
             rc.orderIndex = new BTreeIndex<Long, MessageRecord>(pageFile, tx.allocate());
             rc.messageIdIndex = new BTreeIndex<String, Long>(pageFile, tx.allocate());
@@ -505,7 +505,7 @@ public class TempMessageDatabase {
         rc.messageIdIndex.setValueMarshaller(LongMarshaller.INSTANCE);
         rc.messageIdIndex.load(tx);
         
-        // If it was a topic...
+        // If it was a topic..
         if (topic) {
 
             rc.subscriptions.setKeyMarshaller(StringMarshaller.INSTANCE);
@@ -550,7 +550,7 @@ public class TempMessageDatabase {
      * @throws IOException
      */
     private void removeAckByteSequence(Transaction tx, StoredDestination sd, String subscriptionKey, Long sequenceId) throws IOException {
-        // Remove the sub from the previous location set..
+        // Remove the sub from the previous location set.
         if (sequenceId != null) {
             HashSet<String> hs = sd.ackPositions.get(sequenceId);
             if (hs != null) {

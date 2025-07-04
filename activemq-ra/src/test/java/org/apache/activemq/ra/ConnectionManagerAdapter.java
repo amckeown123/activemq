@@ -26,7 +26,7 @@ import jakarta.resource.spi.ConnectionManager;
 import jakarta.resource.spi.ConnectionRequestInfo;
 import jakarta.resource.spi.ManagedConnection;
 import jakarta.resource.spi.ManagedConnectionFactory;
-import javax.security.auth.Subject;
+import jakarta.security.auth.Subject;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -58,8 +58,8 @@ public class ConnectionManagerAdapter implements ConnectionManager, ConnectionEv
     }
 
     /**
-     * @see javax.resource.spi.ConnectionManager#allocateConnection(javax.resource.spi.ManagedConnectionFactory,
-     *      javax.resource.spi.ConnectionRequestInfo)
+     * @see jakarta.resource.spi.ConnectionManager#allocateConnection(jakarta.resource.spi.ManagedConnectionFactory,
+     *      jakarta.resource.spi.ConnectionRequestInfo)
      */
     @Override
     public Object allocateConnection(ManagedConnectionFactory connectionFactory, ConnectionRequestInfo info) throws ResourceException {
@@ -75,7 +75,7 @@ public class ConnectionManagerAdapter implements ConnectionManager, ConnectionEv
     }
 
     /**
-     * @see javax.resource.spi.ConnectionEventListener#connectionClosed(javax.resource.spi.ConnectionEvent)
+     * @see jakarta.resource.spi.ConnectionEventListener#connectionClosed(jakarta.resource.spi.ConnectionEvent)
      */
     @Override
     public void connectionClosed(ConnectionEvent event) {
@@ -90,28 +90,28 @@ public class ConnectionManagerAdapter implements ConnectionManager, ConnectionEv
     }
 
     /**
-     * @see javax.resource.spi.ConnectionEventListener#localTransactionStarted(javax.resource.spi.ConnectionEvent)
+     * @see jakarta.resource.spi.ConnectionEventListener#localTransactionStarted(jakarta.resource.spi.ConnectionEvent)
      */
     @Override
     public void localTransactionStarted(ConnectionEvent event) {
     }
 
     /**
-     * @see javax.resource.spi.ConnectionEventListener#localTransactionCommitted(javax.resource.spi.ConnectionEvent)
+     * @see jakarta.resource.spi.ConnectionEventListener#localTransactionCommitted(jakarta.resource.spi.ConnectionEvent)
      */
     @Override
     public void localTransactionCommitted(ConnectionEvent event) {
     }
 
     /**
-     * @see javax.resource.spi.ConnectionEventListener#localTransactionRolledback(javax.resource.spi.ConnectionEvent)
+     * @see jakarta.resource.spi.ConnectionEventListener#localTransactionRolledback(jakarta.resource.spi.ConnectionEvent)
      */
     @Override
     public void localTransactionRolledback(ConnectionEvent event) {
     }
 
     /**
-     * @see javax.resource.spi.ConnectionEventListener#connectionErrorOccurred(javax.resource.spi.ConnectionEvent)
+     * @see jakarta.resource.spi.ConnectionEventListener#connectionErrorOccurred(jakarta.resource.spi.ConnectionEvent)
      */
     @Override
     public void connectionErrorOccurred(ConnectionEvent event) {

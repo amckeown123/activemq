@@ -33,7 +33,7 @@ public class BrokerXmlConfigTest extends JmsTopicSendReceiveWithTwoConnectionsTe
         // configure the embedded broker using an XML config file
         // which is either a URL or a resource on the classpath
 
-        // TODO ...
+        // TODO ..
 
         //connectionFactory.setBrokerXmlConfig("file:src/sample-conf/default.xml");
 

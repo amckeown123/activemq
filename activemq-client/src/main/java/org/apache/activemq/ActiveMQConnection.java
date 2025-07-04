@@ -721,7 +721,7 @@ public class ActiveMQConnection implements Connection, TopicConnection, QueueCon
 
                     try {
                         if (isConnectionInfoSentToBroker) {
-                            // If we announced ourselves to the broker.. Try to let the broker
+                            // If we announced ourselves to the broker. Try to let the broker
                             // know that the connection is being shutdown.
                             RemoveInfo removeCommand = info.createRemoveCommand();
                             removeCommand.setLastDeliveredSequenceId(lastDeliveredSequenceId);
@@ -2158,7 +2158,7 @@ public class ActiveMQConnection implements Connection, TopicConnection, QueueCon
 
     public boolean isDeleted(ActiveMQDestination dest) {
 
-        // If we are not watching the advisories.. then
+        // If we are not watching the advisories. then
         // we will assume that the temp destination does exist.
         if (advisoryConsumer == null) {
             return false;

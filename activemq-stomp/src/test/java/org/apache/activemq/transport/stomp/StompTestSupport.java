@@ -75,7 +75,7 @@ public class StompTestSupport {
 
     public File basedir() throws IOException {
         ProtectionDomain protectionDomain = getClass().getProtectionDomain();
-        return new File(new File(protectionDomain.getCodeSource().getLocation().getPath()), "../..").getCanonicalFile();
+        return new File(new File(protectionDomain.getCodeSource().getLocation().getPath()), "./.").getCanonicalFile();
     }
 
     public static void main(String[] args) throws Exception {
@@ -130,7 +130,7 @@ public class StompTestSupport {
         applyBrokerPolicies();
         applyMemoryLimitPolicy();
 
-        // Setup SSL context...
+        // Setup SSL context..
         File keyStore = new File(basedir(), "src/test/resources/server.keystore");
         File trustStore = new File(basedir(), "src/test/resources/client.keystore");
 
@@ -142,12 +142,12 @@ public class StompTestSupport {
         sslContext.afterPropertiesSet();
         brokerService.setSslContext(sslContext);
 
-        System.setProperty("javax.net.ssl.trustStore", keyStore.getCanonicalPath());
-        System.setProperty("javax.net.ssl.trustStorePassword", "password");
-        System.setProperty("javax.net.ssl.trustStoreType", "jks");
-        System.setProperty("javax.net.ssl.keyStore", trustStore.getCanonicalPath());
-        System.setProperty("javax.net.ssl.keyStorePassword", "password");
-        System.setProperty("javax.net.ssl.keyStoreType", "jks");
+        System.setProperty("jakarta.net.ssl.trustStore", keyStore.getCanonicalPath());
+        System.setProperty("jakarta.net.ssl.trustStorePassword", "password");
+        System.setProperty("jakarta.net.ssl.trustStoreType", "jks");
+        System.setProperty("jakarta.net.ssl.keyStore", trustStore.getCanonicalPath());
+        System.setProperty("jakarta.net.ssl.keyStorePassword", "password");
+        System.setProperty("jakarta.net.ssl.keyStoreType", "jks");
 
         ArrayList<BrokerPlugin> plugins = new ArrayList<BrokerPlugin>();
 

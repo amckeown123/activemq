@@ -156,7 +156,7 @@ public class HTTPDiscoveryAgent implements DiscoveryAgent, Suspendable {
         if (event.failed.compareAndSet(false, true)) {
             discoveryListener.get().onServiceRemove(event);
             if (!event.removed.get()) {
-                // Setup a thread to re-raise the event...
+                // Setup a thread to re-raise the event..
                 Thread thread = new Thread() {
                     public void run() {
 
@@ -280,14 +280,14 @@ public class HTTPDiscoveryAgent implements DiscoveryAgent, Suspendable {
     }
 
     private void update() {
-        // Register all our services...
+        // Register all our services..
         synchronized (registeredServices) {
             for (String service : registeredServices) {
                 doRegister(service);
             }
         }
 
-        // Find new registered services...
+        // Find new registered services..
         DiscoveryListener discoveryListener = this.discoveryListener.get();
         if (discoveryListener != null) {
             Set<String> activeServices = doLookup(updateInterval * 3);

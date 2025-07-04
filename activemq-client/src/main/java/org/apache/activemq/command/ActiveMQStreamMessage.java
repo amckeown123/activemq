@@ -1084,7 +1084,7 @@ public class ActiveMQStreamMessage extends ActiveMQMessage implements StreamMess
      * Writes an object to the stream message. <p/>
      * <P>
      * This method works only for the objectified primitive object types (<code>Integer</code>,
-     * <code>Double</code>, <code>Long</code>&nbsp;...),
+     * <code>Double</code>, <code>Long</code>&nbsp;..),
      * <code>String</code> objects, and byte arrays.
      *
      * @param value the Java object to be written

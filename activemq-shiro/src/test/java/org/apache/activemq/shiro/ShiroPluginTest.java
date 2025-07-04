@@ -67,7 +67,7 @@ public class ShiroPluginTest extends TestSupport {
 
     @Override
     protected void tearDown() throws Exception {
-        LOG.info("Shutting down broker...");
+        LOG.info("Shutting down broker..");
 
         if (session != null) {
             session.close();
@@ -132,11 +132,11 @@ public class ShiroPluginTest extends TestSupport {
         broker.waitUntilStarted();
     }
 
-    protected BrokerService createBroker(BrokerPlugin... plugins) throws Exception {
+    protected BrokerService createBroker(BrokerPlugin.. plugins) throws Exception {
         return createBroker(plugins, resourceProvider.getServerUri());
     }
 
-    protected BrokerService createBroker(BrokerPlugin[] plugins, String... connectorUris) throws Exception {
+    protected BrokerService createBroker(BrokerPlugin[] plugins, String.. connectorUris) throws Exception {
         BrokerService brokerService = new BrokerService();
         if (plugins != null && plugins.length > 0) {
             brokerService.setPlugins(plugins);

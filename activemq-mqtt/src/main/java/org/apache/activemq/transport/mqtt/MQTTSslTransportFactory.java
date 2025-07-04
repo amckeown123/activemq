@@ -22,7 +22,7 @@ import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.net.ssl.SSLServerSocketFactory;
+import jakarta.net.ssl.SSLServerSocketFactory;
 
 import org.apache.activemq.broker.BrokerService;
 import org.apache.activemq.broker.BrokerServiceAware;

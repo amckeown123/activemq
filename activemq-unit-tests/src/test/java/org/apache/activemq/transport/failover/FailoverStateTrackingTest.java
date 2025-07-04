@@ -29,7 +29,7 @@ import java.util.concurrent.atomic.AtomicLong;
 import jakarta.jms.JMSSecurityException;
 import jakarta.jms.Queue;
 import jakarta.jms.Session;
-import javax.net.ServerSocketFactory;
+import jakarta.net.ServerSocketFactory;
 
 import org.apache.activemq.ActiveMQConnection;
 import org.apache.activemq.ActiveMQConnectionFactory;

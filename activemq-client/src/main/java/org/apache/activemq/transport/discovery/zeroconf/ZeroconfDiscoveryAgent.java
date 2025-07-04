@@ -24,10 +24,10 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-import javax.jmdns.JmDNS;
-import javax.jmdns.ServiceEvent;
-import javax.jmdns.ServiceInfo;
-import javax.jmdns.ServiceListener;
+import jakarta.jmdns.JmDNS;
+import jakarta.jmdns.ServiceEvent;
+import jakarta.jmdns.ServiceInfo;
+import jakarta.jmdns.ServiceListener;
 
 import org.apache.activemq.command.DiscoveryEvent;
 import org.apache.activemq.transport.discovery.DiscoveryAgent;

@@ -320,7 +320,7 @@ public class DurableSubDelayedUnsubscribeTest {
 
         public final String selector;
 
-        ClientType(String... messageTypes) {
+        ClientType(String.. messageTypes) {
             this.messageTypes = messageTypes;
 
             StringBuilder sb = new StringBuilder("TYPE in (");

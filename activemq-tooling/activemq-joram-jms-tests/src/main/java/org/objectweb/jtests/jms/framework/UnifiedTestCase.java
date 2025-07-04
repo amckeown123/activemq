@@ -154,7 +154,7 @@ public abstract class UnifiedTestCase extends JMSTestCase
 
       try
       {
-         // ...and creates administrated objects and binds them
+         // ..and creates administrated objects and binds them
          admin.createConnectionFactory(UnifiedTestCase.CF_NAME);
          admin.createQueueConnectionFactory(UnifiedTestCase.QCF_NAME);
          admin.createTopicConnectionFactory(UnifiedTestCase.TCF_NAME);

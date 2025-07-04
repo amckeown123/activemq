@@ -109,7 +109,7 @@ public abstract class PTPTestCase extends JMSTestCase
 
       try
       {
-         // ...and creates administrated objects and binds them
+         // ..and creates administrated objects and binds them
          admin.createQueueConnectionFactory(PTPTestCase.QCF_NAME);
          admin.createQueue(PTPTestCase.QUEUE_NAME);
 

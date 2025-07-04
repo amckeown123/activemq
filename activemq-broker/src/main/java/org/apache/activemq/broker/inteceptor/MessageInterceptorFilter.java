@@ -103,7 +103,9 @@ class MessageInterceptorFilter extends BrokerFilter {
     public void send(ProducerBrokerExchange producerExchange, final Message messageSend) throws Exception {
         ActiveMQDestination activeMQDestination = messageSend.getDestination();
         if (!interceptorMap.isEmpty() && activeMQDestination != null) {
-            Set<MessageInterceptor> set = interceptorMap.get(activeMQDestination);
+            var set2 = interceptorMap.get(activeMQDestination);
+			@SuppressWarnings("unchecked")
+			Set<MessageInterceptor> set = set2;
             if (set != null && !set.isEmpty()) {
                 for (MessageInterceptor mi : set) {
                     mi.intercept(producerExchange, messageSend);

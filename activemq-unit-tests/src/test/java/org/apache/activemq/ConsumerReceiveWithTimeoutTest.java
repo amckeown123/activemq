@@ -90,7 +90,7 @@ public class ConsumerReceiveWithTimeoutTest {
 
         t.start();
 
-        // Consume the message...
+        // Consume the message..
         MessageConsumer consumer = session.createConsumer(queue);
         Message msg = consumer.receive(60000);
         assertNotNull(msg);

@@ -20,8 +20,8 @@ import jakarta.jms.ConnectionFactory;
 import jakarta.jms.MessageProducer;
 import jakarta.jms.Queue;
 import jakarta.jms.Session;
-import javax.net.ssl.KeyManager;
-import javax.net.ssl.TrustManager;
+import jakarta.net.ssl.KeyManager;
+import jakarta.net.ssl.TrustManager;
 
 import org.apache.activemq.broker.SslBrokerService;
 import org.apache.activemq.broker.SslContext;

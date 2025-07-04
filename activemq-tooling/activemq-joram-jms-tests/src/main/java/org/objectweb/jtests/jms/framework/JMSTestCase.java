@@ -92,7 +92,7 @@ public abstract class JMSTestCase extends TestCase
       super.setUp();
 
       // Admin step
-      // gets the provider administration wrapper...
+      // gets the provider administration wrapper..
       Properties props = getProviderProperties();
       admin = AdminFactory.getAdmin(props);
 

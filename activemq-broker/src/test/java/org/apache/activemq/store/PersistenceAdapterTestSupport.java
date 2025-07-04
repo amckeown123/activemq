@@ -67,7 +67,7 @@ abstract public class PersistenceAdapterTestSupport extends TestCase {
         message.setMessageId(messageId);
         ms.addMessage(context, message);
 
-        // here comes the dup...
+        // here comes the dup..
         message = new ActiveMQTextMessage();
         message.setText("test");
         messageId = new MessageId("ID:localhost-56913-1254499826208-0:0:1:1:1");

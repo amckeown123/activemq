@@ -98,7 +98,7 @@ public class LeaseDatabaseLocker extends AbstractJDBCLocker {
                 close(connection);
             }
 
-            LOG.debug(getLeaseHolderId() + " failed to acquire lease.  Sleeping for " + lockAcquireSleepInterval + " milli(s) before trying again...");
+            LOG.debug(getLeaseHolderId() + " failed to acquire lease.  Sleeping for " + lockAcquireSleepInterval + " milli(s) before trying again..");
             TimeUnit.MILLISECONDS.sleep(lockAcquireSleepInterval);
         }
         if (isStopping()) {

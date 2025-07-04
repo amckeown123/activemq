@@ -24,10 +24,10 @@ import java.security.KeyStore;
 import java.security.SecureRandom;
 import java.security.UnrecoverableKeyException;
 
-import javax.net.ssl.KeyManager;
-import javax.net.ssl.KeyManagerFactory;
-import javax.net.ssl.TrustManager;
-import javax.net.ssl.TrustManagerFactory;
+import jakarta.net.ssl.KeyManager;
+import jakarta.net.ssl.KeyManagerFactory;
+import jakarta.net.ssl.TrustManager;
+import jakarta.net.ssl.TrustManagerFactory;
 
 import org.apache.activemq.broker.BrokerService;
 import org.apache.activemq.broker.SslBrokerService;
@@ -292,7 +292,7 @@ public class ActiveMQSslConnectionFactoryTest extends CombinationTestSupport {
     protected BrokerService createSslBroker(String uri) throws Exception {
 
         // http://java.sun.com/javase/javaseforbusiness/docs/TLSReadme.html
-        // work around: javax.net.ssl.SSLHandshakeException: renegotiation is not allowed
+        // work around: jakarta.net.ssl.SSLHandshakeException: renegotiation is not allowed
         //System.setProperty("sun.security.ssl.allowUnsafeRenegotiation", "true");
 
         SslBrokerService service = new SslBrokerService();

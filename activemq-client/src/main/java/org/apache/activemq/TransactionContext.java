@@ -642,7 +642,7 @@ public class TransactionContext implements XAResource {
             throw new XAException(XAException.XAER_PROTO);
         }
         if (equals(associatedXid, xid)) {
-            // TODO determine if this can happen... I think not.
+            // TODO determine if this can happen.. I think not.
             x = (XATransactionId)transactionId;
         } else {
             x = new XATransactionId(xid);

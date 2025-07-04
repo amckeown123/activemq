@@ -42,7 +42,7 @@ public interface MessageActivationSpec extends ActivationSpec {
     boolean isValidEnableBatch(List<String> errorMessages);
 
     /**
-     * @see javax.resource.spi.ResourceAdapterAssociation#getResourceAdapter()
+     * @see jakarta.resource.spi.ResourceAdapterAssociation#getResourceAdapter()
      */
     ResourceAdapter getResourceAdapter();
 

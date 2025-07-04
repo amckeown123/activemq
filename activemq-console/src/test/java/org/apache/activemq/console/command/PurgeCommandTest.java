@@ -113,7 +113,7 @@ public class PurgeCommandTest {
      * @param expected the expected value returned by the method
      * @return object array with the values used for the unit test
      */
-    static Object[] toParameterArray(String expected, String... tokens) {
+    static Object[] toParameterArray(String expected, String.. tokens) {
         return new Object[]{Arrays.asList(tokens), expected};
     }
 

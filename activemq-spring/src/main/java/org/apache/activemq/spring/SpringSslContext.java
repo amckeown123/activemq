@@ -28,7 +28,7 @@ import java.util.Arrays;
 import java.util.Collection;
 
 import jakarta.annotation.PostConstruct;
-import javax.net.ssl.*;
+import jakarta.net.ssl.*;
 
 import org.apache.activemq.broker.SslContext;
 import org.slf4j.Logger;

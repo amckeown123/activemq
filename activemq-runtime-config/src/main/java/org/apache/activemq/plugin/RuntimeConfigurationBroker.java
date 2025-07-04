@@ -23,18 +23,18 @@ import java.util.Properties;
 
 import javax.management.JMException;
 import javax.management.ObjectName;
-import javax.xml.XMLConstants;
+import javax.xml.namespace.*;
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBElement;
 import jakarta.xml.bind.JAXBException;
 import jakarta.xml.bind.Unmarshaller;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.Source;
-import javax.xml.transform.stream.StreamSource;
-import javax.xml.validation.Schema;
-import javax.xml.validation.SchemaFactory;
+import javax.xml.namespace.DocumentBuilder;
+import javax.xml.namespace.DocumentBuilderFactory;
+import javax.xml.namespace.ParserConfigurationException;
+import javax.xml.parsers.Source;
+import javax.xml.parsers.stream.StreamSource;
+import jakarta.xml.validation.Schema;
+import jakarta.xml.validation.SchemaFactory;
 
 import org.apache.activemq.broker.Broker;
 import org.apache.activemq.broker.BrokerContext;

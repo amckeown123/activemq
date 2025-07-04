@@ -29,15 +29,15 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import javax.net.ssl.KeyManager;
-import javax.net.ssl.KeyManagerFactory;
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.SSLEngine;
-import javax.net.ssl.SSLParameters;
-import javax.net.ssl.TrustManager;
-import javax.net.ssl.TrustManagerFactory;
-import javax.net.ssl.X509ExtendedKeyManager;
-import javax.net.ssl.X509TrustManager;
+import jakarta.net.ssl.KeyManager;
+import jakarta.net.ssl.KeyManagerFactory;
+import jakarta.net.ssl.SSLContext;
+import jakarta.net.ssl.SSLEngine;
+import jakarta.net.ssl.SSLParameters;
+import jakarta.net.ssl.TrustManager;
+import jakarta.net.ssl.TrustManagerFactory;
+import jakarta.net.ssl.X509ExtendedKeyManager;
+import jakarta.net.ssl.X509TrustManager;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
