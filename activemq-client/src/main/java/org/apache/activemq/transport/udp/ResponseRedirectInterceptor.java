@@ -27,9 +27,9 @@ import org.apache.activemq.transport.TransportFilter;
 public class ResponseRedirectInterceptor extends TransportFilter {
     private final UdpTransport transport;
 
-    public ResponseRedirectInterceptor(Transport next, UdpTransport transport) {
-        super(next);
-        this.transport = transport;
+    public ResponseRedirectInterceptor(Transport next1, UdpTransport transport1) {
+        super(next1);
+        this.transport = transport1;
     }
 
     public void onCommand(Object o) {

@@ -36,7 +36,6 @@
     <java.version>17</java.version>
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
-    <localRepository>C:/Users/a-mck/.m2</localRepository>
         <!-- Plugins and Build -->
     <maven.version>3.9.9</maven.version>
      
@@ -48,7 +47,7 @@
     <version.plugin.bundle>3.3.0</version.plugin.bundle>
     <version.plugin.javadoc>3.0.1</version.plugin.javadoc>
     <version.asciidoclet>1.5.0</version.asciidoclet>
-    <version.surefire>3.0.0-M5</version.surefire>
+    <version.surefire>2.22.2</version.surefire>
     <surefire.argLine>-Xmx512M</surefire.argLine>
 
 
@@ -104,7 +103,7 @@
     <junit-version>4.13.2</junit-version>
     <hamcrest-version>1.3</hamcrest-version>
     <karaf-version>4.3.7</karaf-version>
-    <log4j-version>2.23.1</log4j-version>
+    <log4j-version>2.17.2</log4j-version>
     <mockito-version>4.8.1</mockito-version>
     <owasp-dependency-check-version>9.2.0</owasp-dependency-check-version>
     <mqtt-client-version>1.16</mqtt-client-version>
@@ -116,7 +115,7 @@
     <regexp-version>1.4</regexp-version>
     <rome-version>2.1.0</rome-version>
     <shiro-version>1.13.0</shiro-version>
-    <slf4j-version>2.0.13</slf4j-version>
+    <slf4j-version>1.7.36</slf4j-version>
     <snappy-version>1.1.2</snappy-version>
     <spring-version>6.1.14</spring-version>
     <spring-version-range>[6,7)</spring-version-range>
@@ -127,7 +126,7 @@
     <xbean-version>4.25</xbean-version>
     <xerces-version>2.12.2</xerces-version>
     <jaxb-tools-version>4.0.8</jaxb-tools-version>
-    <stompjms-version>3.1.0</stompjms-version>
+    <stompjms-version>3.0.0</stompjms-version>
 
     <pax-logging-version>2.1.3</pax-logging-version>
     <pax-exam-version>4.13.1</pax-exam-version>
@@ -173,7 +172,7 @@
     <maven-project-info-reports-plugin-version>3.7.0</maven-project-info-reports-plugin-version>
     <maven-graph-plugin-version>1.45</maven-graph-plugin-version>
     <maven-plugin-plugin-version>3.13.1</maven-plugin-plugin-version>
-    <maven-core-version>3.8.6</maven-core-version>
+    <maven-core-version>3.9.9</maven-core-version>
     <!-- OSGi bundles properties -->
     <activemq.osgi.import.pkg>*</activemq.osgi.import.pkg>
     <activemq.osgi.export.pkg>org.apache.activemq*</activemq.osgi.export.pkg>
@@ -262,20 +261,101 @@
     <url>https://github.com/apache/activemq</url>
     <tag>main</tag>
   </scm>
+  
+   <repositories>
+  
+  <repository>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <id>central</id>
+      <name>Maven Repository Switchboard</name>
+      <url>https://repo1.maven.org/maven2</url>
+    </repository>
+  
+    <repository>
+      <id>apache-snapshots</id>
+      <name>Apache Snapshots Repository</name>
+      <url>https://repository.apache.org/content/groups/snapshots</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+    <repository>
+      <id>apache</id>
+      <name>Apache Repository</name>
+      <url>https://repository.apache.org/content/repositories/releases/</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+    <repository>
+      <id>sonatype-snapshots</id>
+      <name>Sonatype OSS Snapshots Repository</name>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+    <repository>
+      <id>JBoss Repository</id>
+      <url>https://repository.jboss.org/nexus/content/groups/public-jboss</url>
+      <layout>default</layout>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+
+    <!-- transitive dependency from WSS4J -->
+    <repository>
+      <id>B_shibboleth</id>
+      <name>OpenSAML</name>
+      <url>https://build.shibboleth.net/nexus/content/groups/public</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+    </repository>
+  </repositories>
 
   <dependencyManagement>
+    
     <dependencies>
+  
+  <dependency>
+    <groupId>org.apache.logging.log4j</groupId>
+    <artifactId>log4j-slf4j-impl</artifactId>
+    <version>2.17.2</version>
+    <scope>compile</scope>
+</dependency>
+    
+    <dependency>
+    <groupId>jakarta.security.auth.message</groupId>
+    <artifactId>jakarta.security.auth.message-api</artifactId>
+    <version>1.1.3</version>
+</dependency>
     <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
 <dependency>
     <groupId>org.apache.maven.plugins</groupId>
     <artifactId>maven-compiler-plugin</artifactId>
-    <version>3.13.0</version>
+    <version>3.9.0</version>
 </dependency>
 
   <dependency>
   <groupId>jakarta.xml.bind</groupId>
 <artifactId>jakarta.xml.bind-api</artifactId>
-<version>4.0.2</version>
+<version>3.0.1</version>
 </dependency>
 
       <!-- =============================== -->
@@ -300,7 +380,7 @@
 <dependency>
     <groupId>org.apache.commons</groupId>
     <artifactId>commons-lang3</artifactId>
-    <version>3.17.0</version>
+    <version>3.12.0</version>
 </dependency>
 
       <dependency>
@@ -476,12 +556,12 @@
         <artifactId>ant</artifactId>
         <version>${ant-version}</version>
       </dependency>
-
+      
       <dependency>
-        <groupId>jakarta.jms</groupId>
-        <artifactId>jakarta.jms-api</artifactId>
-        <version>${jakarta-jms-api-version}</version>
-      </dependency>
+    <groupId>jakarta.jms</groupId>
+    <artifactId>jakarta.jms-api</artifactId>
+    <version>3.1.0</version>
+</dependency>
 
       <dependency>
         <groupId>jakarta.transaction</groupId>
@@ -684,10 +764,11 @@
         <version>${log4j-version}</version>
       </dependency>
       <dependency>
-        <groupId>org.apache.logging.log4j</groupId>
-        <artifactId>log4j-slf4j2-impl</artifactId>
+    <groupId>org.apache.logging.log4j</groupId>
+    <artifactId>log4j-slf4j-impl</artifactId>
         <version>${log4j-version}</version>
-      </dependency>
+    <scope>compile</scope>
+</dependency>
 
       <!-- used to support optional transport configuration via URI query strings -->
 
@@ -937,13 +1018,7 @@
         <version>${jasypt-version}</version>
       </dependency>
 
-      <!-- testing dependencies -->
-      <dependency>
-        <groupId>junit</groupId>
-        <artifactId>junit</artifactId>
-        <version>${junit-version}</version>
-        <scope>test</scope>
-      </dependency>
+   
       <dependency>
         <groupId>org.mockito</groupId>
         <artifactId>mockito-core</artifactId>
@@ -1405,7 +1480,6 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
-        <version>${maven-javadoc-plugin-version}</version>
         <configuration>
           <links>
             <link>${javase-javadoc-url}</link>
@@ -1439,7 +1513,6 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-source-plugin</artifactId>
-        <version>${maven-source-plugin-version}</version>
         <executions>
           <execution>
             <id>attach-sources</id>

@@ -130,8 +130,8 @@ public class FactoryFinder {
         return objectFactory;
     }
 
-    public static void setObjectFactory(ObjectFactory objectFactory) {
-        FactoryFinder.objectFactory = objectFactory;
+    public static void setObjectFactory(ObjectFactory objectFactory1) {
+        FactoryFinder.objectFactory = objectFactory1;
     }
 
     // ================================================================
@@ -139,8 +139,8 @@ public class FactoryFinder {
     // ================================================================
     private final String path;
 
-    public FactoryFinder(String path) {
-        this.path = path;
+    public FactoryFinder(String path1) {
+        this.path = path1;
     }
 
     /**

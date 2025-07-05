@@ -41,20 +41,20 @@ public class MemoryUsage extends Usage<MemoryUsage> {
      *
      * @param parent
      */
-    public MemoryUsage(MemoryUsage parent) {
-        this(parent, "default");
+    public MemoryUsage(MemoryUsage parent1) {
+        this(parent1, "default");
     }
 
-    public MemoryUsage(String name) {
-        this(null, name);
+    public MemoryUsage(String name1) {
+        this(null, name1);
     }
 
-    public MemoryUsage(MemoryUsage parent, String name) {
-        this(parent, name, 1.0f);
+    public MemoryUsage(MemoryUsage parent1, String name1) {
+        this(parent1, name1, 1.0f);
     }
 
-    public MemoryUsage(MemoryUsage parent, String name, float portion) {
-        super(parent, name, portion);
+    public MemoryUsage(MemoryUsage parent1, String name1, float portion) {
+        super(parent1, name1, portion);
     }
 
     /**
@@ -205,8 +205,8 @@ public class MemoryUsage extends Usage<MemoryUsage> {
         return usage;
     }
 
-    public void setUsage(long usage) {
-        this.usage = usage;
+    public void setUsage(long usage1) {
+        this.usage = usage1;
     }
 
     public void setPercentOfJvmHeap(int percentOfJvmHeap) {

@@ -77,7 +77,7 @@ public class PooledTaskRunnerTest {
     @Test
     public void testWakeupResultsInThreadSafeCalls() throws Exception {
 
-        ThreadPoolExecutor executor = new ThreadPoolExecutor(0, Integer.MAX_VALUE, 10, TimeUnit.SECONDS, new SynchronousQueue<Runnable>(), new ThreadFactory() {
+        ThreadPoolExecutor executor1 = new ThreadPoolExecutor(0, Integer.MAX_VALUE, 10, TimeUnit.SECONDS, new SynchronousQueue<Runnable>(), new ThreadFactory() {
             @Override
             public Thread newThread(Runnable runnable) {
                 Thread thread = new Thread(runnable, name.getMethodName());

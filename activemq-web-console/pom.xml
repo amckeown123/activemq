@@ -329,12 +329,7 @@
     </dependency>
     -->
     
-    <!-- used for testing -->
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <scope>test</scope>
-    </dependency>
+   
 
     <dependency>
       <groupId>${project.groupId}</groupId>

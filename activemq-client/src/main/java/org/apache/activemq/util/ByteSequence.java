@@ -28,16 +28,16 @@ public class ByteSequence {
     public ByteSequence() {
     }
 
-    public ByteSequence(byte data[]) {
-        this.data = data;
+    public ByteSequence(byte data1[]) {
+        this.data = data1;
         this.offset = 0;
         this.length = data.length;
     }
 
-    public ByteSequence(byte data[], int offset, int length) {
-        this.data = data;
-        this.offset = offset;
-        this.length = length;
+    public ByteSequence(byte data1[], int offset1, int length1) {
+        this.data = data1;
+        this.offset = offset1;
+        this.length = length1;
     }
 
     public byte[] getData() {
@@ -54,16 +54,16 @@ public class ByteSequence {
 
     public int remaining() { return length - offset; }
 
-    public void setData(byte[] data) {
-        this.data = data;
+    public void setData(byte[] data1) {
+        this.data = data1;
     }
 
-    public void setLength(int length) {
-        this.length = length;
+    public void setLength(int length1) {
+        this.length = length1;
     }
 
-    public void setOffset(int offset) {
-        this.offset = offset;
+    public void setOffset(int offset1) {
+        this.offset = offset1;
     }
 
     public void compact() {

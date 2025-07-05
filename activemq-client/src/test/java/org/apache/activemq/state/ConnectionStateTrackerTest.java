@@ -90,11 +90,11 @@ public class ConnectionStateTrackerTest {
         return id;
     }
 
-    private SessionId createSessionId(ConnectionId connectionId) {
-        return new SessionId(connectionId, sessionId++);
+    private SessionId createSessionId(ConnectionId connectionId1) {
+        return new SessionId(connectionId1, sessionId++);
     }
 
-    private ConsumerId createConsumerId(SessionId sessionId) {
-        return new ConsumerId(sessionId, consumerId++);
+    private ConsumerId createConsumerId(SessionId sessionId1) {
+        return new ConsumerId(sessionId1, consumerId++);
     }
 }

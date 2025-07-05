@@ -34,7 +34,6 @@
     <java.version>17</java.version>
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
-    <localRepository>C:/Users/a-mck/.m2</localRepository>
         <!-- Plugins and Build -->
     <maven.version>3.9.9</maven.version>
      
@@ -46,23 +45,25 @@
     <version.plugin.bundle>3.3.0</version.plugin.bundle>
     <version.plugin.javadoc>3.0.1</version.plugin.javadoc>
     <version.asciidoclet>1.5.0</version.asciidoclet>
-    <version.surefire>3.0.0-M5</version.surefire>
+    <version.surefire>2.22.2</version.surefire>
     <surefire.argLine>-Xmx512M</surefire.argLine>
 
 </properties>
 
 
   <dependencies>
+  
+  <dependency>
+    <groupId>jakarta.jms</groupId>
+    <artifactId>jakarta.jms-api</artifactId>
+</dependency>
+
     <!-- =============================== -->
     <!-- Required Dependencies -->
     <!-- =============================== -->
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>jakarta.jms</groupId>
-      <artifactId>jakarta.jms-api</artifactId>
     </dependency>
     <dependency>
       <groupId>org.fusesource.hawtbuf</groupId>
@@ -95,8 +96,10 @@
       <dependency>
   <groupId>jakarta.xml.bind</groupId>
 <artifactId>jakarta.xml.bind-api</artifactId>
-<version>4.0.2</version>
 </dependency>
+
+
+
 
   </dependencies>
 

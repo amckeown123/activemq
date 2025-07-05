@@ -52,7 +52,7 @@ public class PropertiesLoader {
         final String absPath;
         final boolean reload;
         private boolean decrypt;
-        private boolean debug;
+        private boolean debug1;
         private String algorithm;
 
         public FileNameKey(String nameProperty, String fallbackName, Map options) {
@@ -85,8 +85,8 @@ public class PropertiesLoader {
             return decrypt;
         }
 
-        public void setDecrypt(boolean decrypt) {
-            this.decrypt = decrypt;
+        public void setDecrypt(boolean decrypt1) {
+            this.decrypt = decrypt1;
         }
 
         public String getAlgorithm() {
@@ -118,12 +118,12 @@ public class PropertiesLoader {
             return "PropsFile=" + absPath;
         }
 
-        public void setDebug(boolean debug) {
-            this.debug = debug;
+        public void setDebug(boolean debug2) {
+            this.debug1 = debug2;
         }
 
         public boolean isDebug() {
-            return debug;
+            return debug1;
         }
     }
 

@@ -468,11 +468,7 @@
       <artifactId>jasypt-spring4</artifactId>
       <version>${jasypt-version}</version>
     </dependency>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <scope>test</scope>
-    </dependency>
+   
 
     <!-- dependencies specific to this module -->
     <dependency>

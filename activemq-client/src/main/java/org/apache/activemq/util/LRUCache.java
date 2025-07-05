@@ -75,8 +75,8 @@ public class LRUCache<K, V> extends LinkedHashMap<K, V> {
     /**
      * @param maxCacheSize The maxCacheSize to set.
      */
-    public void setMaxCacheSize(int maxCacheSize) {
-        this.maxCacheSize = maxCacheSize;
+    public void setMaxCacheSize(int maxCacheSize1) {
+        this.maxCacheSize = maxCacheSize1;
     }
 
     protected boolean removeEldestEntry(Map.Entry<K,V> eldest) {

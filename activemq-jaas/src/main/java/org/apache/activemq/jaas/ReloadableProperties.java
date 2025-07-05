@@ -39,8 +39,8 @@ public class ReloadableProperties {
     private long reloadTime = -1;
     private final PropertiesLoader.FileNameKey key;
 
-    public ReloadableProperties(PropertiesLoader.FileNameKey key) {
-        this.key = key;
+    public ReloadableProperties(PropertiesLoader.FileNameKey key1) {
+        this.key = key1;
     }
 
     public synchronized Properties getProps() {
@@ -118,10 +118,10 @@ public class ReloadableProperties {
         return regexpProps;
     }
 
-    private void load(final File source, Properties props) throws IOException {
+    private void load(final File source, Properties props1) throws IOException {
         FileInputStream in = new FileInputStream(source);
         try {
-            props.load(in);
+            props1.load(in);
             if (key.isDecrypt()) {
                 try {
                     EncryptionSupport.decrypt(this.props, key.getAlgorithm());
@@ -137,8 +137,8 @@ public class ReloadableProperties {
         }
     }
 
-    private boolean hasModificationAfter(long reloadTime) {
-        return key.file.lastModified() > reloadTime;
+    private boolean hasModificationAfter(long reloadTime1) {
+        return key.file.lastModified() > reloadTime1;
     }
 
     private boolean looksLikeRegexp(String str) {

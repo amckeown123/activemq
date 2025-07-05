@@ -42,9 +42,9 @@ public class XASupportTest {
     private final int flags;
     private final String expectedResult;
 
-    public XASupportTest(int flags, String expectedResult) {
-        this.flags = flags;
-        this.expectedResult = expectedResult;
+    public XASupportTest(int flags1, String expectedResult1) {
+        this.flags = flags1;
+        this.expectedResult = expectedResult1;
     }
 
     @Parameters

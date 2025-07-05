@@ -50,7 +50,7 @@ public class DefaultUsageCapacity implements UsageCapacity{
     /**
      * @param limit the limit to set
      */
-    public final void setLimit(long limit){
-        this.limit=limit;
+    public final void setLimit(long limit1){
+        this.limit=limit1;
     }
 }

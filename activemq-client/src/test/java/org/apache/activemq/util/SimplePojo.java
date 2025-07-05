@@ -27,16 +27,16 @@ public class SimplePojo implements Serializable {
     public SimplePojo() {
     }
 
-    public SimplePojo(Object payload) {
-        this.payload = payload;
+    public SimplePojo(Object payload1) {
+        this.payload = payload1;
     }
 
     public Object getPayload() {
         return payload;
     }
 
-    public void setPayload(Object payload) {
-        this.payload = payload;
+    public void setPayload(Object payload1) {
+        this.payload = payload1;
     }
 
     @Override

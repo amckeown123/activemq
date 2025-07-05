@@ -43,9 +43,9 @@ public final class TypeConversionSupport {
         final Class<?> to;
         final int hashCode;
 
-        public ConversionKey(Class<?> from, Class<?> to) {
-            this.from = from;
-            this.to = to;
+        public ConversionKey(Class<?> from1, Class<?> to1) {
+            this.from = from1;
+            this.to = to1;
             this.hashCode = from.hashCode() ^ (to.hashCode() << 1);
         }
 

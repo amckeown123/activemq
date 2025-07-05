@@ -28,9 +28,9 @@ public class DatagramEndpoint extends BaseEndpoint {
 
     private final SocketAddress address;
 
-    public DatagramEndpoint(String name, SocketAddress address) {
+    public DatagramEndpoint(String name, SocketAddress address1) {
         super(name);
-        this.address = address;
+        this.address = address1;
     }
 
     public SocketAddress getAddress() {

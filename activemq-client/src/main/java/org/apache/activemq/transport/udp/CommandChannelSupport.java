@@ -39,12 +39,12 @@ public abstract class CommandChannelSupport implements CommandChannel {
     protected DatagramHeaderMarshaller headerMarshaller;
     private ReplayBuffer replayBuffer;
 
-    public CommandChannelSupport(UdpTransport transport, OpenWireFormat wireFormat, int datagramSize, SocketAddress targetAddress,
-            DatagramHeaderMarshaller headerMarshaller) {
-        this.wireFormat = wireFormat;
-        this.datagramSize = datagramSize;
-        this.targetAddress = targetAddress;
-        this.headerMarshaller = headerMarshaller;
+    public CommandChannelSupport(UdpTransport transport, OpenWireFormat wireFormat1, int datagramSize1, SocketAddress targetAddress1,
+            DatagramHeaderMarshaller headerMarshaller1) {
+        this.wireFormat = wireFormat1;
+        this.datagramSize = datagramSize1;
+        this.targetAddress = targetAddress1;
+        this.headerMarshaller = headerMarshaller1;
         this.name = transport.toString();
         this.sequenceGenerator = transport.getSequenceGenerator();
         this.replayAddress = targetAddress;
@@ -68,24 +68,24 @@ public abstract class CommandChannelSupport implements CommandChannel {
     /**
      * Sets the default size of a datagram on the network.
      */
-    public void setDatagramSize(int datagramSize) {
-        this.datagramSize = datagramSize;
+    public void setDatagramSize(int datagramSize1) {
+        this.datagramSize = datagramSize1;
     }
 
     public SocketAddress getTargetAddress() {
         return targetAddress;
     }
 
-    public void setTargetAddress(SocketAddress targetAddress) {
-        this.targetAddress = targetAddress;
+    public void setTargetAddress(SocketAddress targetAddress1) {
+        this.targetAddress = targetAddress1;
     }
 
     public SocketAddress getReplayAddress() {
         return replayAddress;
     }
 
-    public void setReplayAddress(SocketAddress replayAddress) {
-        this.replayAddress = replayAddress;
+    public void setReplayAddress(SocketAddress replayAddress1) {
+        this.replayAddress = replayAddress1;
     }
 
     public String toString() {
@@ -96,16 +96,16 @@ public abstract class CommandChannelSupport implements CommandChannel {
         return headerMarshaller;
     }
 
-    public void setHeaderMarshaller(DatagramHeaderMarshaller headerMarshaller) {
-        this.headerMarshaller = headerMarshaller;
+    public void setHeaderMarshaller(DatagramHeaderMarshaller headerMarshaller1) {
+        this.headerMarshaller = headerMarshaller1;
     }
 
     public ReplayBuffer getReplayBuffer() {
         return replayBuffer;
     }
 
-    public void setReplayBuffer(ReplayBuffer replayBuffer) {
-        this.replayBuffer = replayBuffer;
+    public void setReplayBuffer(ReplayBuffer replayBuffer1) {
+        this.replayBuffer = replayBuffer1;
     }
 
 }

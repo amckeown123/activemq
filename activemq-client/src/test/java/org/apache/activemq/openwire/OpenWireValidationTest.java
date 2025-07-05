@@ -68,8 +68,8 @@ public class OpenWireValidationTest {
         return versionObjs;
     }
 
-    public OpenWireValidationTest(int version) {
-        this.version = version;
+    public OpenWireValidationTest(int version1) {
+        this.version = version1;
     }
 
     @Test
@@ -110,8 +110,8 @@ public class OpenWireValidationTest {
             initialized.set(true);
         }
 
-        public NotAThrowable(String message) {
-            this.message = message;
+        public NotAThrowable(String message1) {
+            this.message = message1;
         }
 
         public NotAThrowable() {

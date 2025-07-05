@@ -52,9 +52,9 @@ public class ActiveMQMessageIsMarshalledTest {
             });
     }
 
-    public ActiveMQMessageIsMarshalledTest(final MessageType messageType) {
+    public ActiveMQMessageIsMarshalledTest(final MessageType messageType1) {
         super();
-        this.messageType = messageType;
+        this.messageType = messageType1;
     }
 
     @Test

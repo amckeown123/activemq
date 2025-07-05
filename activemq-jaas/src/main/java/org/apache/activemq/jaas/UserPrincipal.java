@@ -26,11 +26,11 @@ public class UserPrincipal implements Principal {
     private final String name;
     private transient int hash;
 
-    public UserPrincipal(String name) {
-        if (name == null) {
+    public UserPrincipal(String name1) {
+        if (name1 == null) {
             throw new IllegalArgumentException("name cannot be null");
         }
-        this.name = name;
+        this.name = name1;
     }
 
     @Override

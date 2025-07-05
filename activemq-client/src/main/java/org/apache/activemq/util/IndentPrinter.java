@@ -33,13 +33,13 @@ public class IndentPrinter {
         this(new PrintWriter(System.out), "  ");
     }
 
-    public IndentPrinter(PrintWriter out) {
-        this(out, "  ");
+    public IndentPrinter(PrintWriter out1) {
+        this(out1, "  ");
     }
 
-    public IndentPrinter(PrintWriter out, String indent) {
-        this.out = out;
-        this.indent = indent;
+    public IndentPrinter(PrintWriter out1, String indent1) {
+        this.out = out1;
+        this.indent = indent1;
     }
 
     public void println(Object value) {
@@ -78,8 +78,8 @@ public class IndentPrinter {
         return indentLevel;
     }
 
-    public void setIndentLevel(int indentLevel) {
-        this.indentLevel = indentLevel;
+    public void setIndentLevel(int indentLevel1) {
+        this.indentLevel = indentLevel1;
     }
 
     public void flush() {

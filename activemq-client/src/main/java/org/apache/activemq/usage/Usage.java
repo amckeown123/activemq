@@ -57,14 +57,14 @@ public abstract class Usage<T extends Usage> implements Service {
     private final AtomicBoolean started = new AtomicBoolean();
     private ThreadPoolExecutor executor;
 
-    public Usage(T parent, String name, float portion) {
-        this.parent = parent;
+    public Usage(T parent1, String name1, float portion) {
+        this.parent = parent1;
         this.usagePortion = portion;
         if (parent != null) {
             this.limiter.setLimit((long) (parent.getLimit() * (double)portion));
             name = parent.name + ":" + name;
         }
-        this.name = name;
+        this.name = name1;
     }
 
     protected abstract long retrieveUsage();
@@ -205,10 +205,10 @@ public abstract class Usage<T extends Usage> implements Service {
         }
     }
 
-    public void setUsagePortion(float usagePortion) {
+    public void setUsagePortion(float usagePortion1) {
         usageLock.writeLock().lock();
         try {
-            this.usagePortion = usagePortion;
+            this.usagePortion = usagePortion1;
         } finally {
             usageLock.writeLock().unlock();
         }
@@ -240,14 +240,14 @@ public abstract class Usage<T extends Usage> implements Service {
      * @param percentUsageMinDelta
      * @org.apache.xbean.Property propertyEditor="org.apache.activemq.util.MemoryPropertyEditor"
      */
-    public void setPercentUsageMinDelta(int percentUsageMinDelta) {
-        if (percentUsageMinDelta < 1) {
+    public void setPercentUsageMinDelta(int percentUsageMinDelta1) {
+        if (percentUsageMinDelta1 < 1) {
             throw new IllegalArgumentException("percentUsageMinDelta must be greater than 0");
         }
 
         usageLock.writeLock().lock();
         try {
-            this.percentUsageMinDelta = percentUsageMinDelta;
+            this.percentUsageMinDelta = percentUsageMinDelta1;
             setPercentUsage(caclPercentUsage());
         } finally {
             usageLock.writeLock().unlock();
@@ -431,8 +431,8 @@ public abstract class Usage<T extends Usage> implements Service {
      * @param limiter
      *            the limiter to set
      */
-    public void setLimiter(UsageCapacity limiter) {
-        this.limiter = limiter;
+    public void setLimiter(UsageCapacity limiter1) {
+        this.limiter = limiter1;
     }
 
     /**
@@ -446,24 +446,24 @@ public abstract class Usage<T extends Usage> implements Service {
      * @param pollingTime
      *            the pollingTime to set
      */
-    public void setPollingTime(int pollingTime) {
-        this.pollingTime = pollingTime;
+    public void setPollingTime(int pollingTime1) {
+        this.pollingTime = pollingTime1;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String name1) {
+        this.name = name1;
     }
 
     public T getParent() {
         return parent;
     }
 
-    public void setParent(T parent) {
-        this.parent = parent;
+    public void setParent(T parent1) {
+        this.parent = parent1;
     }
 
-    public void setExecutor(ThreadPoolExecutor executor) {
-        this.executor = executor;
+    public void setExecutor(ThreadPoolExecutor executor1) {
+        this.executor = executor1;
     }
 
     public ThreadPoolExecutor getExecutor() {

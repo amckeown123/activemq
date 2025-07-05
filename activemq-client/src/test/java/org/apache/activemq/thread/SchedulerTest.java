@@ -80,13 +80,13 @@ public class SchedulerTest {
         final CountDownLatch latch;
         final Long throwAtCount;
 
-        CountDownRunnable(final CountDownLatch latch) {
-            this(latch, null);
+        CountDownRunnable(final CountDownLatch latch1) {
+            this(latch1, null);
         }
 
-        CountDownRunnable(final CountDownLatch latch, Long throwAtCount) {
-            this.latch = latch;
-            this.throwAtCount = throwAtCount;
+        CountDownRunnable(final CountDownLatch latch1, Long throwAtCount1) {
+            this.latch = latch1;
+            this.throwAtCount = throwAtCount1;
         }
 
         @Override

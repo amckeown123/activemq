@@ -31,8 +31,8 @@ public class SimpleBufferPool implements ByteBufferPool {
         this(false);
     }
 
-    public SimpleBufferPool(boolean useDirect) {
-        this.useDirect = useDirect;
+    public SimpleBufferPool(boolean useDirect1) {
+        this.useDirect = useDirect1;
     }
 
     @Override
@@ -45,8 +45,8 @@ public class SimpleBufferPool implements ByteBufferPool {
     }
 
     @Override
-    public void setDefaultSize(int defaultSize) {
-        this.defaultSize = defaultSize;
+    public void setDefaultSize(int defaultSize1) {
+        this.defaultSize = defaultSize1;
     }
 
     public boolean isUseDirect() {
@@ -56,8 +56,8 @@ public class SimpleBufferPool implements ByteBufferPool {
     /**
      * Sets whether direct buffers are used or not
      */
-    public void setUseDirect(boolean useDirect) {
-        this.useDirect = useDirect;
+    public void setUseDirect(boolean useDirect1) {
+        this.useDirect = useDirect1;
     }
 
     @Override

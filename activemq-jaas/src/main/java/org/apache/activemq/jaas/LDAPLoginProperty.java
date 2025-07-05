@@ -21,13 +21,13 @@ public class LDAPLoginProperty {
 	private String name;
 	private String value;
 
-	public LDAPLoginProperty(String name) {
-		this.name = name;
+	public LDAPLoginProperty(String name1) {
+		this.name = name1;
 	}
 
-	public LDAPLoginProperty(String name, String value) {
-		this.name = name;
-		this.value = value;
+	public LDAPLoginProperty(String name1, String value1) {
+		this.name = name1;
+		this.value = value1;
 	}
 	
 	public String getPropertyName() {

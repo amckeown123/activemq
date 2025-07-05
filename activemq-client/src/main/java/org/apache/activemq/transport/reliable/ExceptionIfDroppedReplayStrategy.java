@@ -31,8 +31,8 @@ public class ExceptionIfDroppedReplayStrategy implements ReplayStrategy {
     public ExceptionIfDroppedReplayStrategy() {
     }
 
-    public ExceptionIfDroppedReplayStrategy(int maximumDifference) {
-        this.maximumDifference = maximumDifference;
+    public ExceptionIfDroppedReplayStrategy(int maximumDifference1) {
+        this.maximumDifference = maximumDifference1;
     }
 
     public boolean onDroppedPackets(ReliableTransport transport, int expectedCounter, int actualCounter, int nextAvailableCounter) throws IOException {
@@ -57,8 +57,8 @@ public class ExceptionIfDroppedReplayStrategy implements ReplayStrategy {
      * Sets the maximum allowed difference between an expected packet and an
      * actual packet before an error occurs
      */
-    public void setMaximumDifference(int maximumDifference) {
-        this.maximumDifference = maximumDifference;
+    public void setMaximumDifference(int maximumDifference1) {
+        this.maximumDifference = maximumDifference1;
     }
 
 }

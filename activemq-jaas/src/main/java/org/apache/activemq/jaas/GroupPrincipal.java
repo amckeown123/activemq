@@ -26,11 +26,11 @@ public class GroupPrincipal implements Principal {
     private final String name;
     private transient int hash;
 
-    public GroupPrincipal(String name) {
-        if (name == null) {
+    public GroupPrincipal(String name1) {
+		if (name1 == null) {
             throw new IllegalArgumentException("name cannot be null");
         }
-        this.name = name;
+        this.name = name1;
     }
 
     @Override

@@ -26,16 +26,16 @@ public class IntrospectionSupportTest {
 
         private boolean trace;
 
-        DummyClass(boolean trace) {
-            this.trace = trace;
+        DummyClass(boolean trace1) {
+            this.trace = trace1;
         }
 
         public boolean isTrace() {
             return trace;
         }
 
-        public void setTrace(boolean trace) {
-            this.trace = trace;
+        public void setTrace(boolean trace1) {
+            this.trace = trace1;
         }
     }
 

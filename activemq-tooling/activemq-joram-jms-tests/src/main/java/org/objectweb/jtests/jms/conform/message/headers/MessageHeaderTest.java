@@ -22,7 +22,6 @@ import jakarta.jms.JMSException;
 import jakarta.jms.Message;
 import jakarta.jms.Queue;
 import jakarta.jms.TemporaryQueue;
-import javax.naming.Context;
 import javax.naming.NamingException;
 
 import org.junit.Assert;
@@ -198,7 +197,6 @@ public class MessageHeaderTest extends PTPTestCase
       try
       {
          admin.createQueue("anotherQueue");
-         Context ctx = admin.createContext();
          Queue anotherQueue = (Queue)ctx.lookup("anotherQueue");
          Assert.assertTrue(anotherQueue != senderQueue);
 

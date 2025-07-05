@@ -113,8 +113,8 @@ public class BitArray implements Serializable {
      * 
      * @param bits
      */
-    public void reset(long bits) {
-        this.bits = bits;
+    public void reset(long bits1) {
+        this.bits = bits1;
     }
 
     private void writeObject(java.io.ObjectOutputStream out) throws IOException {

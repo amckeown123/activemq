@@ -24,7 +24,7 @@ public class LocalSimplePojoParent implements Serializable {
 
     private SimplePojo payload;
 
-    public LocalSimplePojoParent(Object simplePojoPayload) {
+    public LocalSimplePojoParent(Object simplePojoPayload1) {
         // Create an LOCAL simple payload, itself serializable, like we
         // have to be since the object references us and is used
         // during the serialization.
@@ -37,7 +37,7 @@ public class LocalSimplePojoParent implements Serializable {
             }
         }
 
-        payload = new LocalSimplPojo(simplePojoPayload);
+        payload = new LocalSimplPojo(simplePojoPayload1);
     }
 
     public SimplePojo getPayload() {
